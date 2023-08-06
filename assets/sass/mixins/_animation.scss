@@ -1,0 +1,78 @@
+/*animation mixins*/
+@keyframes scale-animation {
+    0% {transform: scale(1.5)}
+    33% {transform: scale(0.7)}
+    66% {transform: scale(1.5)}
+    100% {transform: scale(1)}
+}
+@keyframes translate-animation {
+    0% {transform: translate(-5em , 0)}
+    50% {transform: translate(5em , 0)}
+    100% {transform: translate(0)}
+}
+@keyframes from-top {
+    0% {transform: translate(0 , 2em)}
+    50% {transform: translate(0 , -2em)}
+    100% {transform: translate(0)}
+}
+@keyframes from-top-zoom-in {
+    0% {transform: translate(0 , -2em);z-index: 1000;}
+    33% {margin-bottom: 1.5em; transform: translate(0 , 2em);z-index: 1000;}
+    66% { transform: scale(1.2) translate(2em , 1em); z-index: 1000;  }
+    100% {transform: scale(1) translate(0)}
+}
+@mixin apply-animation($animation , $duration) {
+    animation-name: #{$animation};
+    animation-duration: #{$duration};
+    animation-fill-mode: forwards;
+    transform-origin: center center;
+    animation-timing-function: ease-in-out;
+}
+/*animation mixins ends*/
+
+/*hover effect*/
+@mixin hover-effect($baseColor, $hoverColor) {
+    background: linear-gradient(to left, $baseColor 50%, $hoverColor 50%) right;
+    transition: .25s ease-out;
+    background-size: 200%;
+  }
+  @mixin ar-hover-effect ($baseColor, $hoverColor) {
+    background: linear-gradient(to right, $baseColor 50%, $hoverColor 50%) left;
+    transition: .25s ease-out;
+    background-size: 200%;
+  }
+  /*hover effect*/
+
+  /*forms animations*/
+    /*error animations*/
+    /*error animations*/
+  @mixin add-error-field-animation {
+    @keyframes error-field-animate{
+        0% {
+            transform:translateX( 5px);
+            }
+        20% {
+        transform:translateX(-5px);
+        }
+        40% {
+        transform:translateX(4px);
+        }
+        60% {
+        transform:translateX(-4px);
+        }
+        80%{
+        transform:translateX(2px);
+        }
+        90%{
+        transform:translateX(-2px);
+        }
+        100%{
+        transform:translateX(0px);
+        }
+
+    }
+    animation-duration: 0.5s;
+    animation-name: error-field-animate;
+    animation-timing-function: ease-in;animation-timing-function: cubic-bezier(.55,.07,.95,.76);
+  }
+  /*forms animations*/

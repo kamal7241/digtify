@@ -1,0 +1,6 @@
+@function light-color($colorKey){
+    @return map-get($light-theme, $colorKey );
+}
+@function dark-color($colorKey){
+    @return map-get($light-theme, $colorKey);
+}

@@ -1,0 +1,13 @@
+
+@import "./style.scss";
+/*overrides*/
+.icon-check-solid .path1, .icon-check-solid .path2 {
+    font-family: inherit;
+}
+
+.icon-save-to-same-level{
+    @if($direction == 'ltr'){
+        display: inline-block;
+        transform: scaleX(-1);
+    }
+}

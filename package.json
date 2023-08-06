@@ -1,0 +1,24 @@
+{
+  "name": "digify",
+  "private": true,
+  "scripts": {
+    "start": "npm run dev",
+    "build": "nuxt build",
+    "dev": "nuxt dev --o",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@types/node": "^18.17.1",
+    "nuxt": "^3.6.5",
+    "sass": "^1.64.2"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "bootstrap": "^5.3.1",
+    "normalize.css": "^8.0.1",
+    "sass-loader": "^10.4.1"
+  }
+}

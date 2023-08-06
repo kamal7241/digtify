@@ -1,0 +1,76 @@
+@mixin font-size($x-large, $desktop: null, $tablet: null, $mobile: null) {
+  $params-numbers: 1;
+  $is-desktop: true;
+  $is-tablet: true;
+  $is-mobile: true;
+  @if ($mobile) {
+    $params-numbers: 4;
+    @if ($mobile == $tablet) {
+      $is-mobile: false;
+    }
+    @if ($tablet == $x-large) {
+      $is-tablet: false;
+    }
+    @if ($desktop == $x-large) {
+      $is-desktop: false;
+    }
+  } @else if $tablet {
+    $params-numbers: 3;
+    @if ($tablet == $desktop) {
+      $is-mobile: false;
+    }
+    @if ($desktop == $x-large) {
+      $is-tablet: false;
+    }
+    $mobile: $tablet;
+    $tablet: $desktop;
+    $desktop: $x-large;
+  } @else if $desktop {
+    $params-numbers: 2;
+    @if ($desktop == $x-large) {
+      $is-desktop: false;
+    }
+    $mobile: $desktop;
+  }
+  font-size: calc(var(--fontModifier) * #{$x-large});
+  // x-large if 4 params
+  @if $params-numbers == 4 and $is-desktop {
+    @media screen and (max-width: 1920px) {
+      font-size: font-equation($x-large, $desktop, 1920px, 1281px);
+    }
+  }
+  // desktop > 2
+  @if ($params-numbers > 2 and $is-tablet) {
+    @media screen and (max-width: 1280px) {
+      font-size: font-equation($desktop, $tablet, 1280px, 1025px);
+    }
+  }
+  // tablet if more than 2 param ..
+  @if ($params-numbers > 2 and $is-tablet) {
+    @media screen and (max-width: 1024px) {
+      font-size: calc(var(--fontModifier) * #{$tablet});
+    }
+  }
+  // if more than one param ... add mobile screen
+  @if ($params-numbers > 1 and $is-mobile) {
+    @media screen and (max-width: 767px) {
+      font-size: calc(var(--fontModifier) * #{$mobile});
+    }
+  }
+}
+@mixin clamp($desktop, $tablet: $desktop, $mobile: $tablet) {
+  display: -webkit-box;
+  -webkit-line-clamp: $desktop;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  @if $tablet != $desktop {
+    @media screen and (max-width:1024px) {
+      -webkit-line-clamp: $tablet;
+    }
+  }
+  @if $mobile != $tablet {
+    @media screen and (max-width:767px) {
+      -webkit-line-clamp: $mobile;
+    }
+  }
+}

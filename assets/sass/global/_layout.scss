@@ -1,0 +1,35 @@
+/*:root{
+    font-size: calc( var( --fontModifier ) * var(--bs-body-font-size) );
+}*/
+body{
+    font-family: $font-family;
+    font-weight: normal;
+    @include dark-mode-property(background-color , $secondary , map-get($dark-theme , 'bg-secondry') );
+}
+
+
+
+.footer{
+    @include dark-mode-property(/*property*/color ,/*light color*/ $primary ,/*dark color*/ white ); 
+    
+    @include dark-mode-property(/*property*/background-color ,white, /*dark color*/ $bg-primary-dark  );
+
+  }
+.footer{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    p{
+        
+      font-size: calc( var(--fontModifier) * 14px);
+      
+        font-weight: 200;
+        margin: 0;
+        padding: 10px 0px;
+    }
+
+}

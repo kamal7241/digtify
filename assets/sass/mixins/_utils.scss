@@ -1,0 +1,68 @@
+@mixin aspect-ratio($ratio) {
+    &:before{
+        content: "";
+        display: block;
+        padding-top: ($ratio) * 100%;
+    }
+  }
+
+  @mixin element-scrollbar($horizontal:false) {
+        &{
+            @include dark-mode-property(scrollbar-color , $primary #DBDFEA , $primary #DBDFEA);
+            scrollbar-width: thin;
+        }
+            /* width */
+        &::-webkit-scrollbar {
+            width: 5px;
+            @if $horizontal {
+                height: 5px;
+            }
+        }
+        /* Track */
+        &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            @include dark-mode-property(background-color, #DBDFEA, #DBDFEA);
+            border-radius: 3px;
+        }
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: $primary;
+            // border-radius: 10px;
+            border-radius: 3px;
+
+        }
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: rgba($color: $primary, $alpha: 0.8);
+        }
+
+  }
+
+  @mixin children-scrollbar($horizontal:false) {
+        @include dark-mode-property(scrollbar-color , $primary #DBDFEA , $primary #DBDFEA);
+        scrollbar-width: thin;
+        /* width */
+        ::-webkit-scrollbar {
+            width: 5px;
+            @if $horizontal {
+                height: 5px;
+            }
+        }
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            @include dark-mode-property(background-color, #DBDFEA, #DBDFEA);
+            border-radius: 3px;
+        }
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: $primary;
+            // border-radius: 10px;
+            border-radius: 3px;
+
+        }
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba($color: $primary, $alpha: 0.8);
+        }
+  }

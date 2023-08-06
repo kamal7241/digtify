@@ -1,0 +1,42 @@
+@function to-rgba($color , $alpha) {
+    @return #{"rgb(" + red($color) + ", " + green($color) + ", " + blue($color)+ "," + $alpha ")"};
+}
+/* set main variables colors set  */
+@mixin dark-mode-property($property , $light-color , $dark-color:null ){
+    @if $dark-color {
+        @at-root :root.light-mode &{
+            #{$property}:$light-color;
+            // @media screen and (prefers-color-scheme: light) {
+            //     #{$property}:$light-color;
+            // }
+        }
+    }@else{
+        $dark-color:$light-color;
+    }
+    @at-root :root.dark-mode &{
+        #{$property}:$dark-color;
+        // @media screen and (prefers-color-scheme: dark) {
+        //     #{$property}:$dark-color;
+        // }
+    }
+
+}
+@mixin dark-mode{
+    // @media screen and (prefers-color-scheme: dark) {
+    //     @content;
+    // }
+    @at-root :root.dark-mode &{
+        @content;
+    }
+}
+@mixin theme-property($property , $theme-color ) {
+   $light-color: map-get($map: $light-theme, $key: $theme-color );
+   $dark-color: map-get($map: $dark-theme, $key: $theme-color );
+   @include dark-mode-property( $property , $light-color, $dark-color);
+}
+
+@mixin invert-color {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    background-color: #000;
+}

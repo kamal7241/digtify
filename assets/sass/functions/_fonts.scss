@@ -1,0 +1,9 @@
+@use "sass:math";
+@function strip-unit($value) {
+    @return  math.div($value , ($value * 0 + 1) );
+}
+@function font-equation($max , $min , $max-vw , $min-vw ){
+    @return calc(
+        var(--fontModifier) * ( #{$min}  + #{strip-unit($max - $min)} * ((100vw - #{$min-vw} ) / #{strip-unit($max-vw - $min-vw )}) )
+        );
+}

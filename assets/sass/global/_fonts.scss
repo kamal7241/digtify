@@ -1,0 +1,25 @@
+.font-equation {
+    // optional paramters []
+    @include font-size(/* xlarge: */ 26px, /*[desktop]:*/22px , /*[tablet]:*/14px , /*[mobile]:*/20px  );
+    .font-equation__title{
+      // @include font-size(/* mobile: */ 50px , /*[tablet]:*/25px ,/*[desktop]:*/100px ,/*[xlarge]:*/ 200px );
+      @include font-size(/*[all]:*/50px, /* mobile: */ 30px );
+      /* warning : valid unit is px only */
+      // @include font-size(/* mobile: */ 1em , /*[tablet]:*/2em ,/*[desktop]:*/3em ,/*[xlarge]:*/ 4em );
+  }
+}
+.clamp-3{
+    @include clamp(3);
+}
+.title-description{
+    &.title-description--center{
+    }
+    text-align: start;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.title{
+    &.title--dimmed{
+        color : #767676;
+    }
+}

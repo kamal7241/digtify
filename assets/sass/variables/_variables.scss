@@ -1,0 +1,68 @@
+/* built in modules*/
+@use "sass:map";
+// $primary: #F16100;
+$secondary: #F0F2F5;
+$success: green;
+$info: #0dcaf0;
+$light: white;
+$dark: black;
+$danger:#dc3545;
+$warning:#ffc107;
+$dark-soft:#242424;
+$light-dark:#ffffffde;
+$grey-soft:#24242480;
+$dimmed:#F0F2F5;
+$dimmed-hard:#707070;
+$dimmed-medium:#898F9C;
+
+
+// For AWKAF :TODO=> Check with Micheal
+$primary: #4267b2;
+
+$dark-primary:#2E487D;
+// $secondary:#2E487D;
+$light-color:#7B95C9;
+$text:#515151;
+$input:#ECF0F7;
+$border:#8c8c8c45;
+$input-border:#A1B3D9;
+$input-text:#383944;
+$bg-primary:#F0F2F5;
+$bg-primary-dark:#141F35;
+$bg-secondry-dark:#0D1524;
+$bg-third: #52565E;
+
+$light-theme: (
+  "shdow": #00000029,
+  "primary" : #4267b2,
+  "dark-primary":#2E487D,
+  "secondary" : #2E487D,
+  "light-color" :#7B95C9,
+  "text":#515151,
+  "input":#ECF0F7,
+  "border":#8c8c8c45,
+  "input-border":#A1B3D9,
+  "input-text":#383944,
+  "bg-primary":#ffffffff,
+  "bg-secondry":#F0F2F5
+
+);
+$dark-theme:  (
+  "shdow": #000,
+  "primary":#141F35,
+  // "primary" : #FFFFFF,
+  "dark-primary":#2E487D,
+  "secondary" : #2E487D,
+  "light-color" :#7B95C9,
+  "text":#515151,
+  "input":#ECF0F7,
+  "border":#8c8c8c45,
+  "input-border":#A1B3D9,
+  "input-text":#383944,
+  "bg-primary":#141F35,
+  "bg-secondry":#0D1524
+);
+:root {
+  --fontModifier: 1;
+}
+/* Colors*/

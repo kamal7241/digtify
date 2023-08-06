@@ -1,0 +1,12 @@
+@font-face {
+    font-family: $font-family;
+    src: url('#{$font-path}/#{$font-family}-Regular.ttf');
+    // src: url('#{$font-path}/#{$font-family}-Regular.ttf')  format('truetype'),
+    //  url('#{$font-path}/#{$font-family}-Regular.eot')  format('truetype'),
+    //  url('#{$font-path}/#{$font-family}-Regular.woff')  format('truetype'),
+    //  url('#{$font-path}/#{$font-family}-Regular.svg')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+

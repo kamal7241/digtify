@@ -1,0 +1,321 @@
+@mixin btn-effects($effectColor , $effectColorBg  ) {
+    &:hover , &:focus{
+        color:$effectColor;
+        background-color: $effectColorBg;
+        box-shadow: none;
+    }
+}
+@mixin btn-dark-effects($effectColor , $effectColorBg  ) {
+    &:hover , &:focus{
+        @include dark-mode-property(color , $effectColor);
+        @include dark-mode-property(background-color ,  $effectColorBg);
+    }
+}
+
+.btn-primary {
+    @include dark-mode-property(color, $light, $dark );
+    @include dark-mode-property(background-color, $primary , $light );
+    @include dark-mode-property(border-color, $primary , $light );
+
+    &:focus,
+    &:hover {
+        box-shadow: none;
+        @include dark-mode-property(color, $light, $dark );
+        @include dark-mode-property(background-color, $primary , $light );
+        @include dark-mode-property(border-color, $primary , $light );
+    }
+}
+
+.btn-outline-secondary {
+    @include dark-mode-property(color, #6c757d, $light );
+
+    &:hover {
+        @include dark-mode-property(color, white, $light );
+    }
+}
+
+/*btns types*/
+.btn {
+    font-size: inherit;
+    /*primary btns*/
+    &.btn-primary {
+        @include dark-mode-property(color, $light, $dark );
+        @include dark-mode-property(background-color, $primary , $light );
+        @include dark-mode-property(border-color, $primary , $light );
+    
+        &:focus,
+        &:hover {
+            box-shadow: none;
+            @include dark-mode-property(color, $light, $dark );
+            @include dark-mode-property(background-color, $primary , $light );
+            @include dark-mode-property(border-color, $primary , $light );
+        }
+    }
+    &.btn-outline-primary{
+        border-color: $primary;
+        color: $primary;
+        @include dark-mode-property(color, $light);
+        @include dark-mode-property(background-color, $bg-primary-dark);
+        @include btn-effects($light , $primary);
+        @include btn-dark-effects( $light , $bg-primary-dark);
+    }
+    /*secondary btns*/
+    &.btn-secondary{
+        background-color: $secondary;
+        color: $primary;
+        outline: none;
+        border: none;
+        &:focus , &:hover{
+            background-color: $primary;
+            color:$light;
+            box-shadow: none;
+        }
+        &.btn-no-effects{
+            &:focus , &:hover{
+                background-color: $secondary;
+                color:$primary;
+            }
+        }
+    }
+    &.btn-outline-secondary {
+        @include dark-mode-property(color, #6c757d, $light );
+    
+        &:hover {
+            @include dark-mode-property(color, white, $light );
+        }
+    }
+    /*dash btns*/
+    &.dash-btn{
+    position: relative;
+    background-color: transparent;
+    &:hover , &:focus{
+        @include dark-mode-property(background-color, $bg-primary, $primary );
+    }
+    .dash-btn__border{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        rect{
+            fill: transparent;
+            stroke-width: 3;
+            stroke: #F0F2F5;
+            stroke-dasharray: 13;
+        }
+    }
+    &.dash-btn--primary{
+        @include dark-mode-property(color , $primary , $light);
+    }
+    }
+    &.btn--primary{
+        @include dark-mode-property(color, $light, $light );
+        @include dark-mode-property(background-color, $primary , $primary );
+        @include dark-mode-property(border-color, $primary , $primary );
+        &:hover ,&:focus{
+            @include dark-mode-property(background-color, $primary , rgba($primary , 0.8) );
+        }
+        font-size: calc(1.38rem * var( --fontModifier ) );
+        padding: calc(0.5rem * var( --fontModifier ) );
+        min-width: calc(15rem * var( --fontModifier ) );
+        min-height: calc(3.95rem * var( --fontModifier ) );
+    }
+    &.btn--secondary{
+        @extend .btn-secondary;
+        font-size: calc(1.38rem * var( --fontModifier ) );
+        padding:  calc(0.5rem * var( --fontModifier ) );
+        min-width: calc(15rem * var( --fontModifier ) );
+        min-height: calc(3.95rem * var( --fontModifier ) );
+        &:hover {
+            background-color: $primary!important;
+        }
+    }
+    &.btn--light{
+        @include dark-mode-property(color, $dimmed-hard, $dimmed-hard );
+        @include dark-mode-property(background-color, white , white );
+        @include dark-mode-property(border-color,  #D9E1F0 ,  #D9E1F0 );
+        &:hover ,&:focus{
+            @include dark-mode-property(background-color, $secondary , $secondary );
+        }
+        font-size: calc(1.38rem * var( --fontModifier ) );
+        padding: calc(0.5rem * var( --fontModifier ) );
+        min-width: calc(15rem * var( --fontModifier ) );
+        min-height: calc(3.95rem * var( --fontModifier ) );
+    }
+    &.btn--outline-primary{
+        @extend .btn-outline-primary;
+        font-size: calc(1.38rem * var( --fontModifier ) );
+        padding:  calc(0.5rem * var( --fontModifier ) );
+        min-width: calc(15rem * var( --fontModifier ) );
+        min-height: calc(3.95rem * var( --fontModifier ) );
+        @include dark-mode{
+            border-color: white;
+            &:hover {
+                background-color: #2E487D;
+            }
+        }
+    }
+    &.btn--tide{
+        min-width: 8.5rem;
+    }
+
+}
+.btn-primary-icon {
+    padding: 2px 10px;
+    border-radius: 3px;
+}
+
+.addition {
+    .btn-primary {
+        padding: 6px;
+        padding-#{$start}: 4px;
+    }
+    span {
+        margin-#{$end}: 5px;
+        &:before {
+            @include dark-mode-property(color, #fff, $bg-primary-dark );
+        }
+    }
+    .addition {
+        margin: 0 10px;
+    }
+}
+
+.additional-margin {
+    margin-#{$start}: 10px;
+}
+
+.btn-primary-transparent {
+    background: transparent;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 5px 0;
+    padding-#{$start}: 7px;
+    padding-#{$end}: 7px;
+    border: 1px solid;
+    @include dark-mode-property(border-color, $primary, #fff);
+    @include dark-mode-property(color, $primary, #fff);
+    span {
+        &::before {
+            @include dark-mode-property(color, $primary, #fff); 
+        }
+    }
+}
+
+
+/* .succesion-btn{
+   
+    height: 63px; 
+    padding: 15px 58px;
+    border: none;
+    color: white !important;
+    font-size: 22px;
+    @include dark-mode-property (background-color , $primary ,$primary !important);
+  } */
+
+  .popup-btn-primary{
+                   
+    padding: 19px 17px;
+    color: white;
+    background-color: #4267b2;
+    border: none;
+    min-width: 296px;
+    border-radius: 3px;
+    font-size: calc(var(--fontModifier) * 22px);
+    &:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+    &.popup-btn-primary--left-margin{
+        margin-#{$end}:24px ;
+        min-width: 49%;
+    }
+    
+    &:hover{
+        transition: 0.2s ease all;
+        background-color: #2E487D;
+    }
+    span {
+      color: white;
+      font-size: calc(var(--fontModifier) * 22px);
+    }
+
+}
+.popup-btn-sec{
+    padding: 19px 17px;
+    color: #898F9C;
+    border:1px solid #D9E1F0;
+    border-radius: 3px;
+    background-color: white;
+    min-width: 136px;
+    border-radius: 3px;
+    font-size: calc(var(--fontModifier) * 22px);
+    transition: 0.2s ease all;
+
+    &.popup-btn-sec--left-margin {
+        min-width: 23%;
+        &:disabled {
+            &:hover {
+                cursor: no-drop;
+            }
+        }
+    }
+    &:hover{
+        transition: 0.2s ease all;
+        color: #4267B2;
+        background-color: #F2F2F2;
+    }
+    span {
+      color: white;
+      font-size: calc(var(--fontModifier) * 22px);
+    }
+}
+.close-button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    position: absolute;
+    padding: 0px;
+    #{$end}: 23px;
+    top: 0px;
+
+  &.close-button--form{
+    text-decoration: none;
+    color: #383944;
+    font-size: 28px;
+    top: 0;
+    left: 0;
+    font-size: 38px;
+  }
+    .icon-x{
+        font-size: 38px;
+        @include dark-mode-property(color,#383944  ,white) ;
+    }
+  
+}
+.popup-close-btn{
+    background-color: transparent;
+    border: none;
+    .icon-x{
+        font-size: calc( var(--fontModifier) * 38px);
+        @include dark-mode-property (color,#383944,white);
+        &::before{
+            font-size: calc( var(--fontModifier) * 38px);
+            @include dark-mode-property (color,#383944,white);
+        }
+    }
+}
+.tabel-btn{
+    border:1px solid #4267B2;
+    @include dark-mode-property(background-color, #ffffffff, $bg-primary-dark);
+    font-size: calc( var(--fontModifier) * 16px);
+    @include dark-mode-property(color, #8C8C8C, #fff);
+    min-width: 136px;
+    border-radius: 3px;
+    padding: 7px 10px;
+    
+}
+.box-button {
+    padding: 9px 15px;
+    margin: 0;
+  }

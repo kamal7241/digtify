@@ -1,0 +1,18 @@
+/*main overrides*/
+.text-primary{
+    @include dark-mode-property(color , $primary!important , $light!important );
+}
+.text-secondary{
+    @include dark-mode-property(color , $secondary!important , $secondary!important );
+}
+
+.bg-primary{
+    @include dark-mode-property(background-color , $primary!important , $primary!important );
+}
+.text-black-white{
+    @include dark-mode-property(color , $dark , $light );
+}
+
+.bg-white-dark-primary{
+    @include dark-mode-property(background-color , white , $bg-primary-dark );
+}
