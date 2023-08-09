@@ -18,3 +18,34 @@
 .fade-leave-to {
   opacity: 0;
 }
+
+// fadeInUpOutLeft-leave-active fadeInUpOutLeft-leave-to
+
+.fadeInUpOutLeft-enter-active {
+  animation-name: fadeInUpBig;
+}
+.fadeInUpOutLeft-leave-active {
+  animation-name: fadeOutLeft;
+}
+
+.fadeInLeftOutTop-enter-active {
+  animation-name: fadeInLeft;
+}
+.fadeInRightOutTop-leave-active {
+  animation-name: fadeOutUp;
+}
+
+
+.delay-1-leave-active{
+  transition-delay: 0.3s;
+}
+
+// home-sec--banner__slogan fade-long-enter-active fade-long-enter-to
+.fade-long-enter-active,
+.fade-long-leave-active {
+  transition: opacity 2s ease;
+}
+.fade-long-enter-from,
+.fade-long-leave-to {
+  opacity: 0;
+}

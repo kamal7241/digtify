@@ -1,7 +1,10 @@
 /* built in modules*/
 @use "sass:map";
-// $primary: #F16100;
-$secondary: #F0F2F5;
+$primary: #042F3A;
+$primary-light: #0F99A6;
+$secondary: #EB3D26;
+$light: #E3E3E3;
+
 $success: green;
 $info: #0dcaf0;
 $light: white;
@@ -14,10 +17,6 @@ $grey-soft:#24242480;
 $dimmed:#F0F2F5;
 $dimmed-hard:#707070;
 $dimmed-medium:#898F9C;
-
-
-// For AWKAF :TODO=> Check with Micheal
-$primary: #4267b2;
 
 $dark-primary:#2E487D;
 // $secondary:#2E487D;
