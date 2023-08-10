@@ -14,6 +14,7 @@
 <script>
 export default defineNuxtComponent({
     props : ['text'] ,
+    
 
 })
 </script>
