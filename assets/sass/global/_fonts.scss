@@ -11,15 +11,8 @@
 .clamp-3{
     @include clamp(3);
 }
-.title-description{
-    &.title-description--center{
-    }
-    text-align: start;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-.title{
-    &.title--dimmed{
-        color : #767676;
-    }
-}
+
+
+
+
+

@@ -1,5 +1,6 @@
 <template>
         <Banner />
+        <about-us />
 </template>
 
 <style lang="scss"  >
