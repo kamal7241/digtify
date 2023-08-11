@@ -30,7 +30,7 @@ $bg-primary:#F0F2F5;
 $bg-primary-dark:#141F35;
 $bg-secondry-dark:#0D1524;
 $bg-third: #52565E;
-
+$swiperRatio : 20.271;
 $light-theme: (
   "shdow": #00000029,
   "primary" : #4267b2,
@@ -63,5 +63,7 @@ $dark-theme:  (
 );
 :root {
   --fontModifier: 1;
+  --swiperRatio : #{$swiperRatio};
 }
+
 /* Colors*/
