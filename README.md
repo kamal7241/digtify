@@ -2,7 +2,10 @@
 
 Digigy Description 
 
-## Frontend Tech
+# Frontend Tech
+## Nuxt 
+
+## Bootstrap
 
 
 # Nuxt 3 Minimal Starter
