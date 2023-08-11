@@ -1,6 +1,7 @@
 <template>
         <Banner />
         <about-us />
+        <services /> 
         <ContactUs /> 
 </template>
 
