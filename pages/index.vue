@@ -1,6 +1,7 @@
 <template>
         <Banner />
         <about-us />
+        <ContactUs /> 
 </template>
 
 <style lang="scss"  >
