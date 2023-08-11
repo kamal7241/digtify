@@ -49,3 +49,25 @@
 .fade-long-leave-to {
   opacity: 0;
 }
+
+.fadeInDownOutUp-enter-active {
+  animation-name: fadeInDown;
+  }
+  .fadeInDownOutUp-leave-active {
+  animation-name: fadeOutUp;
+  }
+
+  .fadeInOutUp-enter-active {
+  animation-name: fadeIn;
+  }
+  .fadeInOutUp-leave-active {
+  animation-name: fadeOutUp;
+  }
+
+  .fadeInDelayOutUp-enter-active {
+    animation-name: fadeIn;
+    animation-delay: 1s;
+    }
+    .fadeInDelayOutUp-leave-active {
+    animation-name: fadeOutUp;
+    }

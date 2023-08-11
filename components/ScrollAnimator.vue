@@ -53,16 +53,16 @@ export default defineNuxtComponent({
             }
         },
         registerScrollAnimator() {
-            onscroll = () => {
+            addEventListener('scroll' , () => {
                 // debounce(callback , 500 )
                 const { y } = this.$refs.animator.getBoundingClientRect()
                 this.updatePosition(y)
-            }
+            })
         },
 
     },
     mounted(){
-    this.registerScrollAnimator()
+        this.registerScrollAnimator()
     }
 
  })

@@ -1,0 +1,66 @@
+.home-sec{
+    &.home-sec--about-us{
+        .home-sec--about-us__title-wrapper{
+            
+            // position: absolute;
+            // top: 50%;
+            // left: 50%;
+            // transform: translate(-50% , -50%);
+            // animation: ;
+            // transform: scale(30);
+            // transform-origin: 10px 10px;
+            width: fit-content;
+            margin: auto;
+            .home-sec__title:first-child{
+                transform: scale(50);
+                transform-origin: 40px 115px;
+                z-index: 1;
+            }
+    
+        }
+    }
+
+}
+
+@keyframes zoom-out{
+    from {
+        // transition: transform 1s ease;
+    }
+    to {
+        transform: scale(1);
+    }
+}
+.animate__zoom-out{
+    animation-name: zoom-out;
+}
+
+@keyframes zoom-in{
+    from {
+        transform: scale(1);
+        // transition: transform 1s ease;
+    }
+    to {
+        transform: scale(50);
+    }
+}
+.animate__zoom-in{
+    animation-name: zoom-in;
+}
+
+@keyframes move-up{
+    from {
+        
+    }
+    to {
+        transform: translateY(var(--y));
+    }
+}
+
+.animate__move-up{
+    animation-name: move-up;
+
+}
+
+
+
+  

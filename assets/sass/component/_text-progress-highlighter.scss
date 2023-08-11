@@ -1,0 +1,22 @@
+
+.text-highlighter-wrapper{
+    position: relative;
+    display: inline-block;
+    line-height: 0.85;
+    .text-highlighter__faded{
+        opacity: 0.4;
+        line-height: 0.85;
+    }
+    .text-highlighter__highlighted{
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        max-width: fit-content;
+        width: calc(1% * var(--width ));
+        white-space: nowrap;
+        transition: width 1s ease;
+        line-height: 0.85;
+    }
+}
