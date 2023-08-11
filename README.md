@@ -4,6 +4,7 @@ Digigy Description
 
 # Frontend Tech
 ## Nuxt 
+used to provide SEO , images optmization
 
 ## Bootstrap
 
