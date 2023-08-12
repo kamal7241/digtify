@@ -1,8 +1,10 @@
 <template>
         <Banner />
         <about-us />
-        <services /> 
-        <ContactUs /> 
+        <services />
+        <portfolio />
+        <clients />
+        <contact-us />
 </template>
 
 <style lang="scss"  >

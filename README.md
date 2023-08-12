@@ -1,3 +1,14 @@
+# Digify
+
+Digigy Description 
+
+# Frontend Tech
+## Nuxt 
+used to provide SEO , images optmization
+
+## Bootstrap
+
+
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
