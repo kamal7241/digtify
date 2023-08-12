@@ -1,0 +1,7 @@
+.zoom-title{
+    position: relative;
+    transform: scale(var(--scale));
+    transform-origin: var(--origin);
+    z-index: 1;
+    transition: transform 1s ease;
+}

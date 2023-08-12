@@ -1,6 +1,8 @@
 <template>
         <Banner />
         <about-us />
+        <services />
+        <portfolio />
 </template>
 
 <style lang="scss"  >
