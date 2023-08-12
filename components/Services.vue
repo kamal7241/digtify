@@ -1,7 +1,7 @@
 <template>
     <scroll-animator @next="currentProgress++" @prev="currentProgress--" :breakPointsNumber="9" :gap="500" :startThresHold="100" >
-        <CoreHomeSection  class="bg-light home-sec--services" >
-            <core-zoomed-title origin="282px 157px"  
+        <CoreHomeSectionContainer  class="bg-light home-sec--services pt-4" >
+            <core-zoomed-title origin="325px 167px"  
                 :scale="currentProgress == PROGRESS.titleZoomIn ? 50 : 1"
             >
                     <div class="home-sec--services__title-wrapper " >
@@ -26,7 +26,7 @@
                 <core-card class="animate__animated bg-success" :key="6" v-else-if="currentProgress == PROGRESS.sixthSlide" />
             </transition-group>
               
-        </CoreHomeSection>
+        </CoreHomeSectionContainer>
     </scroll-animator>
 </template>
 

@@ -1,13 +1,13 @@
 <template>
     <scroll-animator @next="currentProgress++" @prev="currentProgress--" :breakPointsNumber="9" :gap="500" :startThresHold="100" >
-        <CoreHomeSection  class="home-sec--portfolio" >
+        <CoreHomeSectionContainer  class="home-sec--portfolio pt-4" >
             <div class="animate__animated animate__move-y"
                 :style="{ '--y' :  currentProgress >= PROGRESS.titleMoveUpAndFade ? '-12em' :'35%'}">
             <div class="home-sec--portfolio__title-wrapper" >
                     <core-zoomed-title 
-                    :origin="currentProgress >= PROGRESS.titleMoveUpAndFade ? '90px 100px' :'65px 100px'" 
+                    :origin="currentProgress >= PROGRESS.titleMoveUpAndFade ? '81px 100px' :'58px 100px'" 
                      class="home-sec__title position-absolute"  
-                        :scale="currentProgress == PROGRESS.titleZoomIn ? 50 :  currentProgress >= PROGRESS.titleMoveUpAndFade ? 160 : 1"
+                        :scale="currentProgress == PROGRESS.titleZoomIn ? 50 :  currentProgress >= PROGRESS.titleMoveUpAndFade ? 200 : 1"
                     >
                                 <span class="text-secondary" >OUR</span>
                             </core-zoomed-title>
@@ -32,7 +32,7 @@
                 <core-card class="animate__animated bg-success" :key="6" v-else-if="currentProgress == PROGRESS.sixthSlide" />
             </transition-group>
               
-        </CoreHomeSection>
+        </CoreHomeSectionContainer>
     </scroll-animator>
 </template>
 

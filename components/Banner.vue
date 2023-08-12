@@ -1,7 +1,7 @@
 <template>
     <scroll-animator @next="currentProgress++" @prev="currentProgress--" 
     :breakPointsNumber="3" :gap="300" :startThresHold="0">
-            <core-home-section ref="banner" class="home-sec--banner">
+            <core-home-section-container ref="banner" class="home-sec--banner">
                         <img class="logo" src="@/assets/image/Digify-Logo.png" />
                         <div class="home-sec--banner__img-group" :class="currentAnimation[0]">
                         <img
@@ -122,7 +122,7 @@
                             </div>
                         </transition>
                         </div>
-            </core-home-section>
+            </core-home-section-container>
     </scroll-animator>
 
 

@@ -1,7 +1,7 @@
 <template>
     <scroll-animator @next="currentProgress++" @prev="currentProgress--" :breakPointsNumber="7" :gap="500"
         :startThresHold="0">
-        <CoreHomeSection class="home-sec--about-us">
+        <CoreHomeSectionContainer class="home-sec--about-us pt-4">
             <!-- <h2 class="home-sec__title"> <span class="text-white" >
                     ABOUT</span> 
                     <span class="text-secondary">
@@ -19,8 +19,8 @@
                                         >
                                             <span class="text-white" >ABOUT</span>
                                         </core-text-progress-highlighter>
-                                    </core-zoomed-title>
-                                    <core-text-progress-highlighter :highlight-ratio="PROGRESS_HIGHLIGHT_RATIO[currentProgress][1]"
+                                </core-zoomed-title>
+                                <core-text-progress-highlighter :highlight-ratio="PROGRESS_HIGHLIGHT_RATIO[currentProgress][1]"
                                         class="home-sec__title">
                                         <span class="text-secondary">DIGIFY</span>
                                 </core-text-progress-highlighter>
@@ -29,61 +29,31 @@
 
             <span class="text-dark bg-secondary z-10 position-fixed top-0 left-0  h2">{{ 'current progress : ' +
                 currentProgress + ':' + ' progress type : ' + progressType }}</span>
-
-            <!-- <div class="home-sec--about-us__title-wrapper">
-                <div class="animate__animated"
-                    :class="{ 'animate__move-up': currentProgress >= PROGRESS.titleMoveUpAndFade }" style="--y:-20%">
-                    <core-text-progress-highlighter :highlight-ratio="PROGRESS_HIGHLIGHT_RATIO[currentProgress][0]"
-                        class="home-sec__title d-block animate__animated" :class="{
-                            'animate__zoom-in': currentProgress == PROGRESS.titleZoomOut && progressType == PROGRESS_TYPES.backward,
-                            'animate__zoom-out': currentProgress >= PROGRESS.titleZoomOut,
-                            //  'animate__zoom-out' : currentProgress >= PROGRESS.titleZoomOut  , 
-
-
-                        }">
-                        <span class="text-white">ABOUT </span>
-                    </core-text-progress-highlighter>
-                    <core-text-progress-highlighter :highlight-ratio="PROGRESS_HIGHLIGHT_RATIO[currentProgress][1]"
-                        class="home-sec__title">
-                        <span class="text-secondary">DIGIFY</span>
-                    </core-text-progress-highlighter>
+            <div class="home-sec--about-us__content text-light " >
+                <div class="row justify-content-center " >
+                    <div class="col-9" >
+                        <transition-group mode="out-in" name="fadeInDelayOutUp">
+                            <p v-if="currentProgress == PROGRESS.firstSlide" class="animate__animated ">
+                                <span>
+                                    Digify is an esteemed digital media consultancy firm that was established in 2014, Digify team is young and fresh in spirit, old and experienced at vision We at Digify specialize in a comprehensive range of digital marketing and advertising services
+                                </span>
+                            </p>
+                            <p v-else-if="currentProgress == PROGRESS.secondSlide" class="animate__animated">
+                                <span>
+                                    Our firm embodies a unique blend of youthful energy and seasoned expertise. With an exceptional team comprising talented content writers, expert social media analysts, proficient digital media buyers,
+                                </span>
+                            </p>
+                            <p v-else-if="currentProgress == PROGRESS.thirdSlide" class="animate__animated">
+                                <span>
+                                    skilled graphic designers, and accomplished 2D and 3D animators, we possess the capabilities to deliver incomparable results. With strategically located offices in Cairo and Jeddah, we have garnered an extensive client base in the MENA region, boasting over 50 satisfied clients. This diversity has enriched our understanding of various cultures and industries.
+                                </span>
+                            </p>
+                        </transition-group>
+                    </div>
                 </div>
+            </div>
 
-            </div> -->
-            <transition-group mode="out-in" name="fadeInDelayOutUp">
-                <p v-if="currentProgress == PROGRESS.firstSlide" class="text-light animate__animated ">
-                    <span>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quos velit sint. Aliquam quae
-                        repellat, amet dolore illum voluptate excepturi earum autem accusamus sunt consequuntur vero ut
-                        laudantium commodi. Repellendus!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quos velit sint. Aliquam quae
-                        repellat, amet dolore illum voluptate excepturi earum autem accusamus sunt consequuntur vero ut
-                        laudantium commodi. Repellendus!
-                    </span>
-                </p>
-                <p v-else-if="currentProgress == PROGRESS.secondSlide" class="text-secondary animate__animated">
-                    <span>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quos velit sint. Aliquam quae
-                        repellat, amet dolore illum voluptate excepturi earum autem accusamus sunt consequuntur vero ut
-                        laudantium commodi. Repellendus!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quos velit sint. Aliquam quae
-                        repellat, amet dolore illum voluptate excepturi earum autem accusamus sunt consequuntur vero ut
-                        laudantium commodi. Repellendus!
-                    </span>
-                </p>
-                <p v-else-if="currentProgress == PROGRESS.thirdSlide" class="text-warning animate__animated">
-                    <span>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quos velit sint. Aliquam quae
-                        repellat, amet dolore illum voluptate excepturi earum autem accusamus sunt consequuntur vero ut
-                        laudantium commodi. Repellendus!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quos velit sint. Aliquam quae
-                        repellat, amet dolore illum voluptate excepturi earum autem accusamus sunt consequuntur vero ut
-                        laudantium commodi. Repellendus!
-                    </span>
-                </p>
-            </transition-group>
-
-        </CoreHomeSection>
+        </CoreHomeSectionContainer>
     </scroll-animator>
 </template>
 
@@ -100,8 +70,8 @@ const PROGRESS_HIGHLIGHT_RATIO = Object.freeze({
     [PROGRESS.titleZoomIn]: [100, 100],
     [PROGRESS.titleZoomOut]: [100, 100],
     [PROGRESS.titleMoveUpAndFade]: [0, 0],
-    [PROGRESS.firstSlide]: [50, 0],
-    [PROGRESS.secondSlide]: [100, 0],
+    [PROGRESS.firstSlide]: [21.5, 0],
+    [PROGRESS.secondSlide]: [62, 0],
     [PROGRESS.thirdSlide]: [100, 100],
 })
 const PROGRESS_TYPES = Object.freeze({
