@@ -1,7 +1,6 @@
 .home-sec{
     &.home-sec--about-us{
         .home-sec--about-us__title-wrapper{
-            
             // position: absolute;
             // top: 50%;
             // left: 50%;
@@ -11,14 +10,23 @@
             // transform-origin: 10px 10px;
             width: fit-content;
             margin: auto;
-            .home-sec__title:first-child{
-                transform: scale(50);
-                transform-origin: 40px 115px;
-                z-index: 1;
-            }
+            // .home-sec__title:first-child{
+            //     transform: scale(50);
+            //     transform-origin: 40px 115px;
+            //     z-index: 1;
+            // }
     
         }
+
+        .home-sec--about-us__content{
+            font-size: 24px;
+            @include font-size(/* xlarge: */ 26px, /*[desktop]:*/24px , /*[tablet]:*/20px , /*[mobile]:*/18px  );
+
+            line-height: 1.3;
+            font-weight: bold;
+        }
     }
+    
 
 }
 
@@ -58,8 +66,13 @@
 
 .animate__move-up{
     animation-name: move-up;
-
 }
+
+.animate__move-y{
+    transform: translateY(var(--y));
+    transition: transform 1s ease;
+}
+
 
 
 

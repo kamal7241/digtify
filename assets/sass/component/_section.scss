@@ -12,11 +12,13 @@
         height: 100%;
     }
     .home-sec__title{
-        font-size: 228px;
+        // font-size: 228px;
+        @include font-size(/* xlarge: */ 228px, /*[desktop]:*/200px , /*[tablet]:*/150px , /*[mobile]:*/100px  );
         font-family: $title-font-family;
         font-weight: bold;
         line-height: 0.85;
     }
+
 
 }
 
