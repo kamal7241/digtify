@@ -1,13 +1,14 @@
 <template>
-    <scroll-animator @next="currentProgress++" @prev="currentProgress--" :breakPointsNumber="9" :gap="500" :startThresHold="100" >
-        <CoreHomeSectionContainer  class="bg-light home-sec--services pt-4" >
-            <core-zoomed-title origin="325px 167px"  
+  <scroll-animator @next="currentProgress++" @prev="currentProgress--" :breakPointsNumber="8" :gap="500" :startThresHold="100" >
+    <h1 class="text-secondary position-fixed top-0 left-0 z-10" >{{currentProgress}} : {{ PROGRESS.titleMoveUpAndFade }}</h1>
+        <CoreHomeSectionContainer  class="bg-light home-sec--services py-4" >
+          <div class="home-sec--services__title-wrapper text-center " >
+            <core-zoomed-title origin="17em 18em"  
                 :scale="currentProgress == PROGRESS.titleZoomIn ? 50 : 1"
             >
-                    <div class="home-sec--services__title-wrapper " >
                         
                                 <div class="animate__animated animate__move-y" 
-                                    :style="{ '--y' :  currentProgress >= PROGRESS.titleMoveUpAndFade ? '0' :'35%'}"
+                                    :style="{ '--y' :  currentProgress >= PROGRESS.titleMoveUpAndFade ? '0' :'30vh'}"
                                     >
                                     <core-text-progress-highlighter :highlight-ratio="PROGRESS_HIGHLIGHT_RATIO[currentProgress]" class="home-sec__title d-block"
                                     >
@@ -15,22 +16,68 @@
                                     </core-text-progress-highlighter>
                                 </div>
                                 
-                    </div>
-            </core-zoomed-title>
-            <transition-group mode="out-in"  name="fadeInDelayOutLeft" >
-                <core-card class="animate__animated" :key="1" v-if="currentProgress == PROGRESS.firstSlide" />
-                <core-card class="bg-primary animate__animated" :key="2" v-else-if="currentProgress == PROGRESS.secondSlide" />
-                <core-card class="animate__animated bg-info" :key="3" v-else-if="currentProgress == PROGRESS.thirdSlide" />
-                <core-card class="animate__animated bg-danger" :key="4" v-else-if="currentProgress == PROGRESS.fourthSlide" />
-                <core-card class="animate__animated bg-secondary" :key="5" v-else-if="currentProgress == PROGRESS.fifthSlide" />
-                <core-card class="animate__animated bg-success" :key="6" v-else-if="currentProgress == PROGRESS.sixthSlide" />
-            </transition-group>
+                              </core-zoomed-title>
+            </div>
+            <div class=" home-sec__content flex-grow-1"  >
+              <transition-group mode="out-in"  name="fadeInDelayOutLeft" >
+                  <service-item :key="1" v-if="currentProgress == PROGRESS.firstSlide" 
+                  class="animate__animated"   
+                  :title="services[currentProgress - 3 ].title" 
+                  :description="services[currentProgress - 3 ].description" >
+                  <img
+                      src="@/assets/image/peacock.png"
+                      alt="image-duck"
+                    />
+                </service-item>
+                  <service-item :key="2" v-if="currentProgress == PROGRESS.secondSlide" 
+                  class="animate__animated"   
+                  :title="services[currentProgress - 3 ].title" 
+                  :description="services[currentProgress - 3 ].description" >
+                  <img
+                      src="@/assets/image/monkey.png"
+                      alt="image-duck"
+                    />
+                </service-item>
+                  <service-item :key="3" v-if="currentProgress == PROGRESS.thirdSlide" 
+                  class="animate__animated"   :title="services[currentProgress - 3 ].title" 
+                  :description="services[currentProgress - 3 ].description" >
+                  <img
+                      src="@/assets/image/giraffe.png"
+                      alt="image-duck"
+                    />
+                </service-item>
+                  <service-item :key="4" v-if="currentProgress == PROGRESS.fourthSlide" 
+                  class="animate__animated"   :title="services[currentProgress - 3 ].title" 
+                  :description="services[currentProgress - 3 ].description" >
+                  <img
+                      src="@/assets/image/fox2.png"
+                      alt="image-duck"
+                    />
+                </service-item>
+                  <service-item :key="5" v-if="currentProgress == PROGRESS.fifthSlide" 
+                  class="animate__animated"   :title="services[currentProgress - 3 ].title" 
+                  :description="services[currentProgress - 3 ].description" >
+                  <img
+                      src="@/assets/image/tiger.png"
+                      alt="image-duck"
+                    />
+                </service-item>
+                <service-item :key="5" v-if="currentProgress >= PROGRESS.fifthSlide" 
+                  class="animate__animated"   :title="services[currentProgress - 3 ].title" 
+                  :description="services[currentProgress - 3 ].description" >
+                  <img
+                      src="@/assets/image/tiger.png"
+                      alt="image-duck"
+                    />
+                </service-item>
+              </transition-group>
+            </div>
               
         </CoreHomeSectionContainer>
     </scroll-animator>
-    <image-text-section  />
+    <!-- <image-text-section  /> -->
   <!--  SOCIAL MEDIA MARKETING  Service -->
-  <section>
+  <!-- <section>
     <div class="container py-5">
       <div class="row">
         <div class="col-md-5 offset-1">
@@ -63,10 +110,10 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- MOBILE APPS DEVELOPMENT Service  -->
-  <section>
+  <!-- <section>
     <div class="container py-5">
       <div class="row">
         <div class="col-md-5 offset-1">
@@ -95,9 +142,9 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- Creative-Designs Service  -->
-  <section>
+  <!-- <section>
     <div class="container py-5">
       <div class="row">
         <div class="col-md-5 offset-1">
@@ -130,9 +177,9 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- DIGITAL PR Service  -->
-  <section>
+  <!-- <section>
     <div class="container py-5">
       <div class="row">
         <div class="col-md-5 offset-1">
@@ -162,9 +209,9 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- website-development Service  -->
-  <section>
+  <!-- <section>
     <div class="container py-5">
       <div class="row">
         <div class="col-md-5 offset-1">
@@ -193,9 +240,9 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!--DIGITAL-ADVERTISING Service  -->
-  <section>
+  <!-- <section>
     <div class="container py-5">
       <div class="row">
         <div class="col-md-5 offset-1">
@@ -224,11 +271,12 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
 </template>
 
 <script>
+import servicesJson from "./services.json"
 const PROGRESS = Object.freeze({
     titleZoomIn : 0 , 
     titleZoomOut : 1 , 
@@ -238,18 +286,17 @@ const PROGRESS = Object.freeze({
     thirdSlide : 5  ,
     fourthSlide : 6  ,
     fifthSlide : 7  ,
-    sixthSlide : 8  ,
 }); 
+
 const PROGRESS_HIGHLIGHT_RATIO = Object.freeze({
     [PROGRESS.titleZoomIn] : 100 , 
     [PROGRESS.titleZoomOut] : 100 , 
     [PROGRESS.titleMoveUpAndFade] : 0 , 
-    [PROGRESS.firstSlide] : 15 ,
-    [PROGRESS.secondSlide] : 30 ,  
-    [PROGRESS.thirdSlide] : 45 ,  
-    [PROGRESS.fourthSlide] : 60 ,  
-    [PROGRESS.fifthSlide] : 75 ,  
-    [PROGRESS.sixthSlide] : 100 ,  
+    [PROGRESS.firstSlide] : 26 ,
+    [PROGRESS.secondSlide] : 54 ,  
+    [PROGRESS.thirdSlide] : 74 ,  
+    [PROGRESS.fourthSlide] : 87 ,  
+    [PROGRESS.fifthSlide] : 100 ,  
 })
 const PROGRESS_TYPES = Object.freeze({
   forward: 1,
@@ -263,6 +310,9 @@ export default defineNuxtComponent({
         }
     } ,
     computed:{
+        services(){
+          return servicesJson;
+        },
         PROGRESS(){
             return PROGRESS;
         } ,
