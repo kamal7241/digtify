@@ -1,5 +1,5 @@
 <template>
-    <scroll-animator @next="currentProgress++" @prev="currentProgress--" :breakPointsNumber="9" :gap="500" :startThresHold="100" >
+    <scroll-animator @next="currentProgress++" @prev="currentProgress--" :breakPointsNumber="7" :gap="500" :startThresHold="100" >
         <CoreHomeSectionContainer  class="home-sec--portfolio pt-4" >
             <div class="animate__animated animate__move-y"
                 :style="{ '--y' :  currentProgress >= PROGRESS.titleMoveUpAndFade ? '-12em' :'35%'}">
@@ -22,21 +22,55 @@
                     </div>
             </div>
         </div>
-            
-            <transition-group mode="out-in"  name="fadeInDelayOutLeft" >
-                <core-card class="animate__animated" :key="1" v-if="currentProgress == PROGRESS.firstSlide" />
-                <core-card class="bg-primary animate__animated" :key="2" v-else-if="currentProgress == PROGRESS.secondSlide" />
-                <core-card class="animate__animated bg-info" :key="3" v-else-if="currentProgress == PROGRESS.thirdSlide" />
-                <core-card class="animate__animated bg-danger" :key="4" v-else-if="currentProgress == PROGRESS.fourthSlide" />
-                <core-card class="animate__animated bg-secondary" :key="5" v-else-if="currentProgress == PROGRESS.fifthSlide" />
-                <core-card class="animate__animated bg-success" :key="6" v-else-if="currentProgress == PROGRESS.sixthSlide" />
-            </transition-group>
+        <div class="home-sec__content" >
+            <div class="row justify-content-center" >
+                <transition-group mode="out-in"  name="fadeInDelayOutLeft" >
+                    <template  v-if="currentProgress == PROGRESS.firstSlide" >
+                        <PortfolioItem class="animate__animated col-6" :title="portfolioList[0].title" >
+                            <img src="../assets/image/aqm.png"  />
+                        </PortfolioItem>
+                        <PortfolioItem :title="portfolioList[1].title" class="animate__animated col-6" >
+                                <img src="../assets/image/nit.png"  />
+                        </PortfolioItem>
+                    </template>
+                    <template v-if="currentProgress == PROGRESS.secondSlide" >
+
+                        <PortfolioItem  :title="portfolioList[2].title" class="animate__animated col-6"  >
+                                <img src="../assets/image/aqm.png"  />
+                        </PortfolioItem>
+                        <PortfolioItem :title="portfolioList[3].title" class="animate__animated col-6"  >
+                                <img src="../assets/image/nit.png"  />
+                        </PortfolioItem>
+                    </template>
+                    <template v-if="currentProgress == PROGRESS.thirdSlide"  >
+                        <PortfolioItem  :title="portfolioList[4].title" class="animate__animated col-6" >
+                                <img src="../assets/image/aqm.png"  />
+                        </PortfolioItem>
+                        <PortfolioItem :title="portfolioList[5].title" class="animate__animated col-6" >
+                                <img src="../assets/image/nit.png"  />
+                        </PortfolioItem>
+                    </template >
+                    <template v-if="currentProgress >= PROGRESS.fourthSlide">
+                        <PortfolioItem  :title="portfolioList[6].title" class="animate__animated col-6"  >
+                                <img src="../assets/image/aqm.png"  />
+                        </PortfolioItem>
+                        <PortfolioItem :title="portfolioList[7].title" class="animate__animated col-6"  >
+                                <img src="../assets/image/nit.png"  />
+                        </PortfolioItem>
+                    </template>
+         
+                </transition-group>
+            </div>
+        </div>
               
         </CoreHomeSectionContainer>
     </scroll-animator>
+
+
 </template>
 
 <script>
+import portfolioJson from "./portfolio.json"
 const PROGRESS = Object.freeze({
     titleZoomIn : 0 , 
     titleZoomOut : 1 , 
@@ -45,19 +79,15 @@ const PROGRESS = Object.freeze({
     secondSlide : 4  ,
     thirdSlide : 5  ,
     fourthSlide : 6  ,
-    fifthSlide : 7  ,
-    sixthSlide : 8  ,
 }); 
 const PROGRESS_HIGHLIGHT_RATIO = Object.freeze({
     [PROGRESS.titleZoomIn] : 100 , 
     [PROGRESS.titleZoomOut] : 100 , 
     [PROGRESS.titleMoveUpAndFade] : 0 , 
-    [PROGRESS.firstSlide] : 15 ,
-    [PROGRESS.secondSlide] : 30 ,  
-    [PROGRESS.thirdSlide] : 45 ,  
-    [PROGRESS.fourthSlide] : 60 ,  
-    [PROGRESS.fifthSlide] : 75 ,  
-    [PROGRESS.sixthSlide] : 100 ,  
+    [PROGRESS.firstSlide] : 36.5 ,
+    [PROGRESS.secondSlide] : 50 ,  
+    [PROGRESS.thirdSlide] : 60 ,  
+    [PROGRESS.fourthSlide] : 100 ,  
 })
 const PROGRESS_TYPES = Object.freeze({
   forward: 1,
@@ -71,6 +101,9 @@ export default defineNuxtComponent({
         }
     } ,
     computed:{
+        portfolioList(){
+            return portfolioJson;
+        },
         PROGRESS(){
             return PROGRESS;
         } ,
