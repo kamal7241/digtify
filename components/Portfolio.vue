@@ -34,6 +34,22 @@
               
         </CoreHomeSectionContainer>
     </scroll-animator>
+    <section class="py-5 bg-primary">
+        <div class="container ">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="../assets/image/aqm.png" alt="">
+                <span>aqm</span>
+            </div>
+        <div class="col-md-6">
+            <img src="../assets/image/nit.png" alt="">
+            <span></span>
+        </div>
+                </div>
+
+        </div>
+    </section>
+
 </template>
 
 <script>
