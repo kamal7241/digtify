@@ -13,7 +13,7 @@
                     :style="{ '--y' :  currentProgress >= PROGRESS.titleMoveUpAndFade ? '0' :'35%'}"
                     >
                                 <core-zoomed-title class="d-block" origin="40px 115px"  
-                                        :scale="currentProgress == PROGRESS.titleZoomIn ? 50 : 1"
+                                        :scale="currentProgress == PROGRESS.titleZoomIn ? 150 : 1"
                                     >
                                         <core-text-progress-highlighter :highlight-ratio="PROGRESS_HIGHLIGHT_RATIO[currentProgress][0]" class="home-sec__title d-block"
                                         >
