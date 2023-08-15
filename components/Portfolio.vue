@@ -5,9 +5,9 @@
                 :style="{ '--y' :  currentProgress >= PROGRESS.titleMoveUpAndFade ? '-12em' :'35%'}">
             <div class="home-sec--portfolio__title-wrapper" >
                     <core-zoomed-title 
-                    :origin="currentProgress >= PROGRESS.titleMoveUpAndFade ? '81px 100px' :'58px 100px'" 
+                    :origin="currentProgress >= PROGRESS.titleMoveUpAndFade ? '81px 100px' :'30px 100px'" 
                      class="home-sec__title position-absolute"  
-                        :scale="currentProgress == PROGRESS.titleZoomIn ? 50 :  currentProgress >= PROGRESS.titleMoveUpAndFade ? 200 : 1"
+                        :scale="currentProgress == PROGRESS.titleZoomIn ? 150 :  currentProgress >= PROGRESS.titleMoveUpAndFade ? 200 : 1"
                     >
                                 <span class="text-secondary" >OUR</span>
                             </core-zoomed-title>
