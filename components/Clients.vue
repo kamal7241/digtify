@@ -1,34 +1,40 @@
 <template>
-    <scroll-animator @next="currentProgress++" @prev="currentProgress--" :breakPointsNumber="9" :gap="500" :startThresHold="100" >
-        <CoreHomeSectionContainer  class="home-sec--portfolio pt-4" >
-            <div class="animate__animated "
-                :class="{ 'animate__fadeOutUpBig' :  currentProgress >= PROGRESS.titleMoveUpAndFade}">
-            <div class="home-sec--portfolio__title-wrapper" >
-                    <core-zoomed-title 
-                    origin="58px 100px" 
-                    class="home-sec__title"  
-                        :scale="currentProgress == PROGRESS.titleZoomIn ? 50 : 1"
+    <scroll-animator @next="currentProgress++" @prev="currentProgress--" :breakPointsNumber="20" :gap="200" :startThresHold="100" >
+        <span class="text-dark bg-secondary z-10 position-absolute top-0 left-0  h2">{{ 'current progress : ' +
+                currentProgress + ':' + ' progress type : ' + progressType }}</span>
+
+        <CoreHomeSection  class="home-sec--portfolio pt-4" >
+            <transition mode="out-in" name="fadeInDownOutUp"   >
+                <div class="animate__animated" v-if="currentProgress < PROGRESS.firstSlide" >
+                        <div class="home-sec--portfolio__title-wrapper" >
+                                <core-zoomed-title 
+                                origin="58px 100px" 
+                                class="home-sec__title"  
+                                    :scale="currentProgress == PROGRESS.titleZoomIn ? 50 : 1"
+                                >
+                                            <span class="text-secondary" >OUR</span>
+                                </core-zoomed-title>
+                <h2 class="text-white home-sec__title" >CLIENTS</h2>
+                        </div>
+                 </div>
+                 
+                </transition>
+                <transition mode="out-in"  name="fade-delay-1">
+                    <div v-if="currentProgress >= PROGRESS.firstSlide" class="clients animate__animated " 
                     >
-                                <span class="text-secondary" >OUR</span>
-                    </core-zoomed-title>
-    <h2 class="text-white home-sec__title" >CLIENTS</h2>
-            </div>
-        </div>
-            
-            <transition-group mode="out-in"  name="fadeInDelayOutLeft" >
-                <core-card class="animate__animated" :key="1" v-if="currentProgress == PROGRESS.firstSlide" />
-                <core-card class="bg-primary animate__animated" :key="2" v-else-if="currentProgress == PROGRESS.secondSlide" />
-                <core-card class="animate__animated bg-info" :key="3" v-else-if="currentProgress == PROGRESS.thirdSlide" />
-                <core-card class="animate__animated bg-danger" :key="4" v-else-if="currentProgress == PROGRESS.fourthSlide" />
-                <core-card class="animate__animated bg-secondary" :key="5" v-else-if="currentProgress == PROGRESS.fifthSlide" />
-                <core-card class="animate__animated bg-success" :key="6" v-else-if="currentProgress == PROGRESS.sixthSlide" />
-            </transition-group>
+                        <native-swiper :slide="currentProgress" className="swiper__container--right" :src="'rightSwiper'" />
+                        <native-swiper :slide="currentProgress" className="swiper__container--left"  :src="'leftSwiper'"/>
+                    </div>
+                </transition>
+            <!-- <clients-slider :slide="currentProgress"  /> -->
+          
               
-        </CoreHomeSectionContainer>
+        </CoreHomeSection>
     </scroll-animator>
 </template>
 
 <script>
+
 const PROGRESS = Object.freeze({
     titleZoomIn : 0 , 
     titleZoomOut : 1 , 

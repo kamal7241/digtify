@@ -19,6 +19,17 @@
   opacity: 0;
 }
 
+.fade-delay-1-enter-active,
+.fade-delay-1-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-delay-1-enter-active {
+  transition-delay: 1s;
+}
+.fade-delay-1-enter-from,
+.fade-delay-1-leave-to {
+  opacity: 0;
+}
 // fadeInUpOutLeft-leave-active fadeInUpOutLeft-leave-to
 
 .fadeInUpOutLeft-enter-active {
