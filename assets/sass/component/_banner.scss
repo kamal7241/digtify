@@ -21,6 +21,7 @@
     overflow: hidden;
     .logo {
       transform: translateY(-100%);
+      max-width: 187px;
     }
     .home-sec--banner__img-group {
       > img {
@@ -49,9 +50,10 @@
         > img {
           &:first-child {
             right: 0;
+            top: -50px;
           }
           &:last-child {
-            top: 1000px;
+            top: 450px;
           }
           &:nth-child(2) {
             transition-property: top, right;
@@ -67,8 +69,10 @@
             top: 1000px;
           }
           &:last-child {
+            top: 1000px;
           }
           &:nth-child(2) {
+            
           }
         }
       }
