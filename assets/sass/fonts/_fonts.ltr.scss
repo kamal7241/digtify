@@ -12,7 +12,7 @@
 @font-face {
     font-family: $title-font-family;
     src: url('#{$title-font-path}/#{$title-font-family}-Regular.eot');
-    src: url('#{$title-font-path}/#{$title-font-family}-eot?#iefix')  format('embedded-opentype'),
+    src: url('#{$title-font-path}/#{$title-font-family}-Regular.eot?#iefix')  format('embedded-opentype'),
      url('#{$title-font-path}/#{$title-font-family}-Regular.woff2')  format('woff2'),
      url('#{$title-font-path}/#{$title-font-family}-Regular.woff')  format('woff'),
      url('#{$title-font-path}/#{$title-font-family}-Regular.ttf')  format('truetype'),
