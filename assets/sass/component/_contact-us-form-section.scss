@@ -1,0 +1,15 @@
+.contact-us-form-section{
+    .contact-us-form-section__title{
+        font-size: 96px;
+        font-weight: bold;
+        color: $light;
+        font-family: $font-family;
+        line-height: 1;
+        letter-spacing: 5px;
+        margin: 0;
+        @media screen and (max-width: 622px) {
+                font-size: 60px;
+                line-height: 1;
+            }
+        }
+}
