@@ -1,0 +1,19 @@
+.branch-details{
+    .contact-us-branch-section__title{
+        font-family: $title-font-family;
+        color: $light;
+        font-weight: 400;
+        font-size: 96px;
+        line-height: 80,16px;
+        height: auto;
+    }
+    .contact-us-branch-section__desc{
+        font-family: $font-family;
+        color: $light;
+        text-transform: capitalize;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 40,96px;
+        height: auto;
+    }
+}
