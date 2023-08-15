@@ -11,7 +11,7 @@
           <div v-if="(currentProgress <= PROGRESS.titleMoveUpAndFade)"
             class="animate__animated"
             :class="{
-              animate__fadeOutLeftBig:
+              'animate__fadeOutLeftBig':
                 currentProgress >= PROGRESS.titleMoveUpAndFade,
             }"
           >
@@ -26,37 +26,38 @@
               <h2 class="text-secondary home-sec__title">US</h2>
             </div>
           </div>
-      <transition-group mode="out-in" name="fadeInDelayOutLeft">
-
-        <SaudiArabiaBranch
-          class=" animate__animated"
-          :key="2"
-          v-if="currentProgress == PROGRESS.secondSlide"
-        />
-        <CairoBranch
-          class="animate__animated "
-          :key="3"
-          v-else-if="currentProgress == PROGRESS.thirdSlide"
-        />
-        <ContactUsEmailSection
-          class="animate__animated "
-          :key="4"
-          v-else-if="currentProgress == PROGRESS.fourthSlide"
-        />
-        <RingUsRight
-          class="animate__animated "
-          :key="5"
-          v-else-if="currentProgress == PROGRESS.fifthSlide"
-        />
-        <RingUsLeft
-          class="animate__animated "
-          :key="6"
-          v-else-if="currentProgress == PROGRESS.firstSlide"
-        />
-        <ContactUsFormSection class="animate__animated"
-          :key="1"   v-else-if="currentProgress == PROGRESS.sixthSlide" 
-          />
-      </transition-group>
+        <div class="home-sec__content" >
+            <transition-group mode="out-in" name="fadeInDelayOutLeft">
+              <SaudiArabiaBranch
+                class=" animate__animated"
+                :key="2"
+                v-if="currentProgress == PROGRESS.secondSlide"
+              />
+              <CairoBranch
+                class="animate__animated "
+                :key="3"
+                v-else-if="currentProgress == PROGRESS.thirdSlide"
+              />
+              <ContactUsEmailSection
+                class="animate__animated "
+                :key="4"
+                v-else-if="currentProgress == PROGRESS.fourthSlide"
+              />
+              <RingUsRight
+                class="animate__animated "
+                :key="5"
+                v-else-if="currentProgress == PROGRESS.fifthSlide"
+              />
+              <RingUsLeft
+                class="animate__animated "
+                :key="6"
+                v-else-if="currentProgress == PROGRESS.firstSlide"
+              />
+              <ContactUsFormSection class="animate__animated"
+                :key="1"   v-else-if="currentProgress == PROGRESS.sixthSlide" 
+                />
+            </transition-group>
+        </div>
     </CoreHomeSectionContainer>
   </scroll-animator>
 </template>

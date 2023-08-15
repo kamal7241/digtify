@@ -2,10 +2,10 @@
   .contact-us-form__info{
       &> .contact-us-form__field-group{
           position: relative;
-          height: 66px;
+          height: 60px;
           width: 100%;
           border-bottom: 1px solid $light;
-          margin-bottom: 20px;
+          margin-bottom: 15px;
           input{
             position: absolute;
             left: 0;
@@ -13,7 +13,7 @@
             background-color: transparent;
             border: none ;
             outline: none;
-            font-size: 25px;
+            font-size: 22px;
             width: 100%;
             color: $light;
         &::placeholder{
