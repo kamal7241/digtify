@@ -26,9 +26,8 @@
                                 </core-text-progress-highlighter>
                             </div>
                 </div>
-
-            <span class="text-dark bg-secondary z-10 position-absolute top-0 left-0  h2">{{ 'current progress : ' +
-                currentProgress + ':' + ' progress type : ' + progressType }}</span>
+            <!-- <span class="text-dark bg-secondary z-10 position-absolute top-0 left-0  h2">{{ 'current progress : ' +
+                currentProgress + ':' + ' progress type : ' + progressType }}</span> -->
             <div class="home-sec--about-us__content text-light " >
                 <div class="row justify-content-center " >
                     <div class="col-9" >
