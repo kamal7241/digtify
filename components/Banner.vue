@@ -1,140 +1,119 @@
 <template>
-    <scroll-animator @next="currentProgress++" @prev="currentProgress--" 
-    :breakPointsNumber="3" :gap="300" :startThresHold="0">
-            <core-home-section-container ref="banner" class="home-sec--banner">
-                        <img class="logo" src="@/assets/image/Digify-Logo.png" />
-                        <div class="home-sec--banner__img-group" :class="currentAnimation[0]">
-                        <img
-                            src="../assets/image/banner3.png"
-                            class="animate__animated "
-                            alt="img"
-                            :class="[
-                                currentProgress == ANIMATION_PROGRESS.entry
-                                    ? progressType == PROGRESS_TYPES.forward
-                                    ? 'animate__fadeInDownBig'
-                                    : '' // enter
-                                    : 'animate__fadeOutUpBig'
-                                ]"
-                        />
-                        <img
-                            src="../assets/image/banner2.png"
-                            class="animate__animated "
-                            alt="img"
-                            :class="[
-                                currentProgress == ANIMATION_PROGRESS.entry
-                                    ? progressType == PROGRESS_TYPES.forward
-                                    ? 'animate__fadeInUpBig'
-                                    : '' // enter
-                                    : currentProgress == ANIMATION_PROGRESS.beforeEntry ? 
-                                    'animate__fadeOutDownBig' : ''
-                                ]"
-                        />
-                        <img
-                            src="../assets/image/banner1.png"
-                            class="animate__animated "
-                            alt="img"
-                            :class="[
-                                currentProgress == ANIMATION_PROGRESS.entry
-                                    ? progressType == PROGRESS_TYPES.forward
-                                    ? 'animate__fadeInDownBig'
-                                    : '' // enter
-                                    : 'animate__fadeOutUpBig'
-                                ]"
-                        />
-                        </div>
-                        <div class="home-sec--banner__slogan-group">
-                        <!-- <span class="text-light h1 position-absolute top-50 z-1">
-                                <span
-                                @click="currentProgress++"
-                                >Next </span
-                                >
-                                <span
-                                @click="currentProgress--" 
-                                >Prev </span
-                                >
-                                {{ currentProgress }}
-                        </span> -->
-                        <transition :duration="2000" name="delay">
-                            <div
-                            v-show="currentProgress == ANIMATION_PROGRESS.entry"
-                            class="home-sec--banner__slogan"
-                            >
-                            <span
-                                class="animate__animated"
-                                :class="[
-                                currentProgress == ANIMATION_PROGRESS.entry
-                                    ? progressType == PROGRESS_TYPES.forward
-                                    ? 'animate__fadeInDown'
-                                    : 'animate__fadeInLeft' // enter
-                                    : progressType == PROGRESS_TYPES.forward
-                                    ? 'animate__fadeOutLeft'
-                                    : 'animate__fadeOutDown', // leave
-                                ]"
-                                >SHAPPING THE</span
-                            >
-                            <span
-                                class="wavy title animate__animated"
-                                :class="[
-                                currentProgress == ANIMATION_PROGRESS.entry
-                                    ? progressType == PROGRESS_TYPES.forward
-                                    ? 'animate__fadeInUp'
-                                    : 'animate__fadeInDown' // enter
-                                    : progressType == PROGRESS_TYPES.forward
-                                    ? 'animate__fadeOutUp'
-                                    : 'animate__fadeOutDown', // leave
-                                ]"
-                            >
-                                <h2>DIGITAL</h2>
-                                <h2>DIGITAL</h2>
-                                <h2>DIGITAL</h2>
-                                <h2>DIGITAL</h2>
-                            </span>
-                            <span
-                                class="animate__animated"
-                                :class="[
-                                currentProgress == ANIMATION_PROGRESS.entry
-                                    ? progressType == PROGRESS_TYPES.forward
-                                    ? 'animate__fadeInUp'
-                                    : 'animate__fadeInDown' // enter
-                                    : progressType == PROGRESS_TYPES.forward
-                                    ? 'animate__fadeOutUp'
-                                    : 'animate__fadeOutDown', // leave
-                                ]"
-                            >
-                                ECOSYSTEM
-                            </span>
-                            </div>
-                        </transition>
-                        <transition>
-                            <div v-if="currentProgress == ANIMATION_PROGRESS.mid" class="home-sec--banner__slogan home-sec--banner__slogan--sec" >
-                                <span class="title " >
-                                    <span>THE NEXT</span>
-                                    <span>WAVE OF</span>
-                                    <span>DIGITAL MEDIA</span>
-                                </span>
-                            </div>
-                            <div class="home-sec--banner__slogan home-sec--banner__slogan--ternary" v-else-if="currentProgress == ANIMATION_PROGRESS.end">
-                                <span class="title " >
-                                    <span>DIGIFY</span>
-                                    <span><span class="" >WE</span> TALK</span>
-                                    <span>DIGITAL</span>
-                                </span>
-                            </div>
-                        </transition>
-                        </div>
-            </core-home-section-container>
-    </scroll-animator>
-
-
+            <core-screen-switcher :screens="[0 , 1]" >
+                <scroll-animator @next="currentProgress++" @prev="currentProgress--" 
+                :breakPointsNumber="3" :gap="300" :startThresHold="0">
+                        <core-home-section-container ref="banner" class="home-sec--banner">
+                                    <img class="logo" src="@/assets/image/Digify-Logo.png" />
+                                    <div class="home-sec--banner__img-group" :class="currentAnimation[0]">
+                                    <img
+                                        src="../assets/image/banner3.png"
+                                        class="animate__animated animate__fadeInDownBig"
+                                        alt="img"
+                                    />
+                                    <img
+                                        src="../assets/image/banner2.png"
+                                        class="animate__animated animate__fadeInUpBig"
+                                        alt="img"
+                                    />
+                                    <img
+                                        src="../assets/image/banner1.png"
+                                        class="animate__animated animate__fadeInDownBig"
+                                        alt="img"
+                                    />
+                                    </div>
+                                    <div class="home-sec--banner__slogan-group">
+                                    <!-- <span class="text-light h1 position-absolute top-50 z-1">
+                                            <span
+                                            @click="currentProgress++"
+                                            >Next </span
+                                            >
+                                            <span
+                                            @click="currentProgress--" 
+                                            >Prev </span
+                                            >
+                                            {{ currentProgress }}
+                                    </span> -->
+                                    <transition :duration="2000" name="delay">
+                                        <div
+                                        v-show="currentProgress == ANIMATION_PROGRESS.entry"
+                                        class="home-sec--banner__slogan"
+                                        >
+                                        <span
+                                            class="animate__animated"
+                                            :class="[
+                                            currentProgress == ANIMATION_PROGRESS.entry
+                                                ? progressType == PROGRESS_TYPES.forward
+                                                ? 'animate__fadeInDown'
+                                                : 'animate__fadeInLeft' // enter
+                                                : progressType == PROGRESS_TYPES.forward
+                                                ? 'animate__fadeOutLeft'
+                                                : 'animate__fadeOutDown', // leave
+                                            ]"
+                                            >SHAPPING THE</span
+                                        >
+                                        <span
+                                            class="wavy title animate__animated"
+                                            :class="[
+                                            currentProgress == ANIMATION_PROGRESS.entry
+                                                ? progressType == PROGRESS_TYPES.forward
+                                                ? 'animate__fadeInUp'
+                                                : 'animate__fadeInDown' // enter
+                                                : progressType == PROGRESS_TYPES.forward
+                                                ? 'animate__fadeOutUp'
+                                                : 'animate__fadeOutDown', // leave
+                                            ]"
+                                        >
+                                            <h2>DIGITAL</h2>
+                                            <h2>DIGITAL</h2>
+                                            <h2>DIGITAL</h2>
+                                            <h2>DIGITAL</h2>
+                                        </span>
+                                        <span
+                                            class="animate__animated"
+                                            :class="[
+                                            currentProgress == ANIMATION_PROGRESS.entry
+                                                ? progressType == PROGRESS_TYPES.forward
+                                                ? 'animate__fadeInUp'
+                                                : 'animate__fadeInDown' // enter
+                                                : progressType == PROGRESS_TYPES.forward
+                                                ? 'animate__fadeOutUp'
+                                                : 'animate__fadeOutDown', // leave
+                                            ]"
+                                        >
+                                            ECOSYSTEM
+                                        </span>
+                                        </div>
+                                    </transition>
+                                    <transition>
+                                        <div v-if="currentProgress == ANIMATION_PROGRESS.mid" class="home-sec--banner__slogan home-sec--banner__slogan--sec" >
+                                            <span class="title " >
+                                                <span>THE NEXT</span>
+                                                <span>WAVE OF</span>
+                                                <span>DIGITAL MEDIA</span>
+                                            </span>
+                                        </div>
+                                        <div class="home-sec--banner__slogan home-sec--banner__slogan--ternary" v-else-if="currentProgress == ANIMATION_PROGRESS.end">
+                                            <span class="title " >
+                                                <span>DIGIFY</span>
+                                                <span><span class="" >WE</span> TALK</span>
+                                                <span>DIGITAL</span>
+                                            </span>
+                                        </div>
+                                    </transition>
+                                    </div>
+                        </core-home-section-container>
+                </scroll-animator>
+        </core-screen-switcher>
+        
 </template>
 
 <script>
 
 const ANIMATION_PROGRESS = Object.freeze({
-  beforeEntry : 0 ,
-  entry: 1,
-  mid: 2,
-  end: 3,
+//   beforeEntry : 0 ,
+  entry: 0,
+  mid: 1,
+  end: 2,
 });
 const PROGRESS_TYPES = Object.freeze({
   forward: 1,
@@ -147,7 +126,7 @@ const BANNER_ELEMENTS_ANIMATIONS = Object.freeze({
 });
 export default defineNuxtComponent({
   data: () => ({
-    currentProgress: ANIMATION_PROGRESS.beforeEntry,
+    currentProgress: ANIMATION_PROGRESS.entry,
     animationsGap: 100, // by px
     startThresHold : 0.6 , 
     thresHoldNumber : 3 ,

@@ -1,0 +1,37 @@
+.contact-us-form{
+  .contact-us-form__info{
+      &> .contact-us-form__field-group{
+          position: relative;
+          height: 60px;
+          width: 100%;
+          border-bottom: 1px solid $light;
+          margin-bottom: 15px;
+          input{
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: transparent;
+            border: none ;
+            outline: none;
+            font-size: 22px;
+            width: 100%;
+            color: $light;
+        &::placeholder{
+            color:$light;
+            font-size: 22px;
+            font-family: $font-family;
+        }
+        }
+        .input-errors {
+          color: red;
+          font-size: 16px;
+          position: relative;
+          top: 70px;
+          text-align: end;
+            }
+      }
+     
+  }
+
+
+}

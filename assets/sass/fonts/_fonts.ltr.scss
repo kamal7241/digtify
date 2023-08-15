@@ -10,6 +10,17 @@
 }
 
 @font-face {
+    font-family: $font-family;
+    src: url('#{$font-path}/#{$font-family}-Bold.ttf');
+    // src: url('#{$font-path}/#{$font-family}-Regular.ttf')  format('truetype'),
+    //  url('#{$font-path}/#{$font-family}-Regular.eot')  format('truetype'),
+    //  url('#{$font-path}/#{$font-family}-Regular.woff')  format('truetype'),
+    //  url('#{$font-path}/#{$font-family}-Regular.svg')  format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
     font-family: $title-font-family;
     src: url('#{$title-font-path}/#{$title-font-family}-Regular.eot');
     src: url('#{$title-font-path}/#{$title-font-family}-Regular.eot?#iefix')  format('embedded-opentype'),

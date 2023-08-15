@@ -1,6 +1,6 @@
 <template>
     <scroll-animator @next="currentProgress++" @prev="currentProgress--" :breakPointsNumber="7" :gap="500"
-        :startThresHold="0">
+        :startThresHold="100">
         <CoreHomeSectionContainer class="home-sec--about-us pt-4">
             <!-- <h2 class="home-sec__title"> <span class="text-white" >
                     ABOUT</span> 
@@ -12,23 +12,22 @@
                     <div class="animate__animated animate__move-y"
                     :style="{ '--y' :  currentProgress >= PROGRESS.titleMoveUpAndFade ? '0' :'35%'}"
                     >
-                                <core-zoomed-title origin="40px 115px"  
-                                        :scale="currentProgress == PROGRESS.titleZoomIn ? 50 : 1"
+                                <core-zoomed-title class="d-block" origin="40px 115px"  
+                                        :scale="currentProgress == PROGRESS.titleZoomIn ? 150 : 1"
                                     >
                                         <core-text-progress-highlighter :highlight-ratio="PROGRESS_HIGHLIGHT_RATIO[currentProgress][0]" class="home-sec__title d-block"
                                         >
-                                            <span class="text-white" >ABOUT</span>
+                                            <h2 class="text-white home-sec__title" >ABOUT</h2>
                                         </core-text-progress-highlighter>
                                 </core-zoomed-title>
                                 <core-text-progress-highlighter :highlight-ratio="PROGRESS_HIGHLIGHT_RATIO[currentProgress][1]"
-                                        class="home-sec__title">
-                                        <span class="text-secondary">DIGIFY</span>
+                                        class="">
+                                        <h2 class="text-secondary home-sec__title">DIGIFY</h2>
                                 </core-text-progress-highlighter>
                             </div>
                 </div>
-
-            <span class="text-dark bg-secondary z-10 position-fixed top-0 left-0  h2">{{ 'current progress : ' +
-                currentProgress + ':' + ' progress type : ' + progressType }}</span>
+            <!-- <span class="text-dark bg-secondary z-10 position-absolute top-0 left-0  h2">{{ 'current progress : ' +
+                currentProgress + ':' + ' progress type : ' + progressType }}</span> -->
             <div class="home-sec--about-us__content text-light " >
                 <div class="row justify-content-center " >
                     <div class="col-9" >

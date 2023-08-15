@@ -1,0 +1,15 @@
+.services-content{
+    h1{
+        font-family: $title-font-family;
+        font-weight: 400;
+        font-size: 96px;
+        color: $secondary;
+    }
+    p{
+        font-family: $font-family;
+        font-size: 20px;
+        text-transform: capitalize;
+        line-height: 30px;
+
+    }
+}
