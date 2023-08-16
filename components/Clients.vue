@@ -1,16 +1,16 @@
 <template>
     <scroll-animator @next="currentProgress++" @prev="currentProgress--" :breakPointsNumber="20" :gap="200" :startThresHold="100" >
-        <span class="text-dark bg-secondary z-10 position-absolute top-0 left-0  h2">{{ 'current progress : ' +
-                currentProgress + ':' + ' progress type : ' + progressType }}</span>
+        <!-- <span class="text-dark bg-secondary z-10 position-absolute top-0 left-0  h2">{{ 'current progress : ' +
+                currentProgress + ':' + ' progress type : ' + progressType }}</span> -->
 
         <CoreHomeSection  class="home-sec--portfolio pt-4" >
             <transition mode="out-in" name="fadeInDownOutUp"   >
                 <div class="animate__animated" v-if="currentProgress < PROGRESS.firstSlide" >
                         <div class="home-sec--portfolio__title-wrapper" >
                                 <core-zoomed-title 
-                                origin="58px 100px" 
+                                origin="30px 100px" 
                                 class="home-sec__title"  
-                                    :scale="currentProgress == PROGRESS.titleZoomIn ? 50 : 1"
+                                    :scale="currentProgress == PROGRESS.titleZoomIn ? 150 : 1"
                                 >
                                             <span class="text-secondary" >OUR</span>
                                 </core-zoomed-title>
