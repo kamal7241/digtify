@@ -1,7 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
-    baseURL: '/digtify/',
+    // githup pages
+    // baseURL: '/digtify/',
+    // netilfy
+    baseURL: '/',
     buildAssetsDir: 'assets'
   },
   devtools: { enabled: true },
