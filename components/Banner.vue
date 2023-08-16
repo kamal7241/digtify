@@ -3,7 +3,7 @@
                 <scroll-animator @next="currentProgress++" @prev="currentProgress--" 
                 :breakPointsNumber="3" :gap="300" :startThresHold="0">
                         <core-home-section-container ref="banner" class="home-sec--banner">
-                                    <img class="logo" src="@/assets/image/Digify-Logo.png" />
+                                    <img class="logo" src="@/assets/image/digify-logo.png" />
                                     <div class="home-sec--banner__img-group" :class="currentAnimation[0]">
                                     <img
                                         src="../assets/image/banner3.png"
