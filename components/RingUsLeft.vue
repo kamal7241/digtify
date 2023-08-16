@@ -2,7 +2,7 @@
             <contact-us-info-section class="contact-us-info--saudi-branch" >
             <template #img >
                     <img
-                    src="../assets/image/Rectangle 40503.png"
+                    src="@/assets/image/ring-right.png"
                     alt="fox-image"
                   />
             </template>

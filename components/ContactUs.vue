@@ -3,7 +3,7 @@
     @next="currentProgress++"
     @prev="currentProgress--"
     :breakPointsNumber="8"
-    :gap="150"
+    :gap="300"
     :startThresHold="100"
   >
   <CoreHomeSectionContainer class="home-sec--portfolio py-4">
