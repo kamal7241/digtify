@@ -5,7 +5,7 @@
         color: $light;
         font-family: $font-family;
         line-height: 1;
-        letter-spacing: 2px;
+        letter-spacing: 1.5px;
         margin: 0;
         height: auto;
         *{
@@ -13,7 +13,7 @@
         }
         @media screen and (max-width: 576px) {
                 font-size: 50px;
-                line-height: 42px;
+                line-height: 50px;
                 letter-spacing: 4px;
             }
         @media screen and (max-width: 1200px) {

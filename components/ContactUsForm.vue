@@ -49,18 +49,19 @@
                             <div class="error-msg">{{ v$.message?.$errors[0]?.$message }}</div>
                             </div>
                         </div>
-                        <div class="contact-us-form__submit  mt-4 rounded-pill p-4 position-relative">
+                        <button type="submit" class="contact-us-form__submit  mt-4 rounded-pill p-4 position-relative">
                             <span class="title-submit text-light pe-4 text-capitalize">view more</span>
-                          <button type="submit" class=" submit-button btn btn-secondary rounded-pill   " >
+                          <span  class=" submit-button btn btn-secondary rounded-pill   " >
                              <img src="../assets/image/arrow-right.png"  alt=""> 
-                            </button>
-                        </div>
+                          </span>
+                        </button>
                         </div>
               </form>
 </template>
 <script>
 import { useVuelidate } from '@vuelidate/core'
-import { required, email  , helpers ,maxLength,minLength, numeric ,alpha} from '@vuelidate/validators'
+import { required, email  , helpers ,maxLength,minLength, numeric } from '@vuelidate/validators'
+const alpha = helpers.regex(/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/)
 export default {
     setup () {
     return { v$: useVuelidate({$autoDirty:true}) }
@@ -69,21 +70,22 @@ export default {
    validations () {
     return {
       name: {
-       required: helpers.withMessage('* Name is required .', required),
-        minLength:helpers.withMessage('* MinLenght must be (2) character .' ,minLength(2)) ,
-         maxLength:helpers.withMessage('* MaxLenght must be (50) character .' ,maxLength(30)) }, 
+        required: helpers.withMessage('* Name is required .', required),
+        alpha:helpers.withMessage('* Name must be char only .', alpha),
+        minLength:helpers.withMessage('* Name is (2) char min .' ,minLength(2)) ,
+         maxLength:helpers.withMessage('* MaxLenght must be (100) char .' ,maxLength(100)) }, 
       contact: {
         email: { required:helpers.withMessage('* Email is required .',
-         required), email:helpers.withMessage('* Value is not a valid email address .', email) } 
+         required), email:helpers.withMessage('* Enter a valid email address.', email) ,
+         maxLength:helpers.withMessage('* MaxLenght must be (100) char .' ,maxLength(100))
+        
+        } 
       },
       subject:{ required:helpers.withMessage('* Subject is required .', required) , 
-       minLength:helpers.withMessage('* MinLenght must be (2) character .' ,minLength(2)),
-       maxLength:helpers.withMessage('* MaxLenght must be (50) character .' ,maxLength(100)) 
+       minLength:helpers.withMessage('* Subject is (2) char min .' ,minLength(2)),
+       maxLength:helpers.withMessage('* MaxLenght must be (100) char .' ,maxLength(100)) 
         },
-       
-      message:{required:helpers.withMessage('* Message is required .', required)
-      ,  minLength:helpers.withMessage('* MinLenght must be (10) character .' ,minLength(10)) ,
-        maxLength:helpers.withMessage('* MaxLenght must be (500) character .' ,maxLength(500))}    }
+        message:{ maxLength:helpers.withMessage('* MaxLenght must be (500) char .' ,maxLength(500))}    }
 },
 data() {
     return {
@@ -98,7 +100,10 @@ data() {
   methods:{
     async submitForm () {
       const isFormCorrect =  await this.v$.$validate() 
-      console.log(`Name :${this.name} , Email : ${this.email} , Subject : ${this.subject} , Message :${this.message}`)
+      let value ={
+        Name :this.name , Email : this.contact.email , Subject : this.subject , Message :this.message
+      }
+      console.log(value)
       // you can show some extra alert to the user or just leave the each field to show it's `$errors`.
       if (!isFormCorrect){
       console.log("bad form")
