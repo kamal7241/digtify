@@ -31,27 +31,27 @@
               <SaudiArabiaBranch
                 class=" animate__animated"
                 :key="2"
-                v-if="currentProgress == PROGRESS.secondSlide"
+                v-if="currentProgress == PROGRESS.firstSlide"
               />
               <CairoBranch
                 class="animate__animated "
                 :key="3"
-                v-else-if="currentProgress == PROGRESS.thirdSlide"
+                v-else-if="currentProgress == PROGRESS. secondSlide"
               />
               <ContactUsEmailSection
                 class="animate__animated "
                 :key="4"
-                v-else-if="currentProgress == PROGRESS.fourthSlide"
+                v-else-if="currentProgress == PROGRESS.thirdSlide"
               />
               <RingUsRight
                 class="animate__animated "
                 :key="5"
-                v-else-if="currentProgress == PROGRESS.fifthSlide"
+                v-else-if="currentProgress == PROGRESS.fourthSlide"
               />
               <RingUsLeft
                 class="animate__animated "
                 :key="6"
-                v-else-if="currentProgress == PROGRESS.firstSlide"
+                v-else-if="currentProgress == PROGRESS.fifthSlide "
               />
               <ContactUsFormSection class="animate__animated"
                 :key="1"   v-else-if="currentProgress == PROGRESS.sixthSlide" 
@@ -115,15 +115,6 @@ export default defineNuxtComponent({
     getUrl() {
       return new URL(`../assets/image/404Error.jpg`, import.meta.url).href;
     },
-  },
-  methods:{
-    async submitForm () {
-      console.log("submitting")
-      const isFormCorrect =  await this.v$.$validate()
-      // you can show some extra alert to the user or just leave the each field to show it's `$errors`.
-      if (!isFormCorrect) console.log("bad form")
-      // actually submit form
-    }
   },
   watch: {
     currentProgress(curr, prev) {
