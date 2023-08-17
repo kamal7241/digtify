@@ -1,8 +1,9 @@
 <template>
-            <core-screen-switcher :screens="[0 , 1]" >
-                <scroll-animator @next="currentProgress++" @prev="currentProgress--" 
-                :breakPointsNumber="3" :gap="300" :startThresHold="0">
+    <core-screen-switcher :screens="[0 , 1]" >
+        <scroll-animator @next="currentProgress++" @prev="currentProgress--" 
+            :breakPointsNumber="2" :gap="300" :startThresHold="0">
                         <core-home-section-container ref="banner" class="home-sec--banner">
+                            <h1 class="text-info position-absolute top-0 start-0 bg-white" > {{ currentProgress }}</h1>
                                     <img class="logo" src="@/assets/image/digify-logo.png" />
                                     <div class="home-sec--banner__img-group" :class="currentAnimation[0]">
                                     <img
@@ -22,17 +23,6 @@
                                     />
                                     </div>
                                     <div class="home-sec--banner__slogan-group">
-                                    <!-- <span class="text-light h1 position-absolute top-50 z-1">
-                                            <span
-                                            @click="currentProgress++"
-                                            >Next </span
-                                            >
-                                            <span
-                                            @click="currentProgress--" 
-                                            >Prev </span
-                                            >
-                                            {{ currentProgress }}
-                                    </span> -->
                                     <transition :duration="2000" name="delay">
                                         <div
                                         v-show="currentProgress == ANIMATION_PROGRESS.entry"
@@ -102,9 +92,9 @@
                                     </transition>
                                     </div>
                         </core-home-section-container>
-                </scroll-animator>
-        </core-screen-switcher>
-        
+            </scroll-animator>
+    </core-screen-switcher>
+    
 </template>
 
 <script>
