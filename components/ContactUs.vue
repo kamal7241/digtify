@@ -2,8 +2,8 @@
   <scroll-animator
     @next="currentProgress++"
     @prev="currentProgress--"
-    :breakPointsNumber="9"
-    :gap="150"
+    :breakPointsNumber="8"
+    :gap="300"
     :startThresHold="100"
   >
   <CoreHomeSectionContainer class="home-sec--portfolio py-4">
@@ -17,9 +17,9 @@
           >
             <div class="home-sec--portfolio__title-wrapper">
               <core-zoomed-title
-                origin="58px 100px"
+                origin="30px 100px"
                 class="home-sec__title"
-                :scale="currentProgress == PROGRESS.titleZoomIn ? 50 : 1"
+                :scale="currentProgress == PROGRESS.titleZoomIn ? 150 : 1"
               >
                 <span class="text-white">CONTACT</span>
               </core-zoomed-title>
