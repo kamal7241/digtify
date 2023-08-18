@@ -2,7 +2,7 @@
   <scroll-animator
     @next="currentProgress++"
     @prev="currentProgress--"
-    :breakPointsNumber="8"
+    :breakPointsNumber="5"
     :gap="300"
     :startThresHold="100"
   >
@@ -28,33 +28,18 @@
           </div>
         <div class="home-sec__content" >
             <transition-group mode="out-in" name="fadeInDelayOutLeft">
-              <SaudiArabiaBranch
+              <Addresses
                 class=" animate__animated"
-                :key="2"
+                :key="1"
                 v-if="currentProgress == PROGRESS.firstSlide"
               />
-              <CairoBranch
+              <Contacts
                 class="animate__animated "
-                :key="3"
-                v-else-if="currentProgress == PROGRESS. secondSlide"
-              />
-              <ContactUsEmailSection
-                class="animate__animated "
-                :key="4"
-                v-else-if="currentProgress == PROGRESS.thirdSlide"
-              />
-              <RingUsRight
-                class="animate__animated "
-                :key="5"
-                v-else-if="currentProgress == PROGRESS.fourthSlide"
-              />
-              <RingUsLeft
-                class="animate__animated "
-                :key="6"
-                v-else-if="currentProgress == PROGRESS.fifthSlide "
+                :key="2"
+                v-else-if="currentProgress == PROGRESS.secondSlide "
               />
               <ContactUsFormSection class="animate__animated"
-                :key="1"   v-else-if="currentProgress == PROGRESS.sixthSlide" 
+                :key="3"   v-else-if="currentProgress == PROGRESS.thirdSlide" 
                 />
             </transition-group>
         </div>
@@ -71,20 +56,15 @@ const PROGRESS = Object.freeze({
   firstSlide: 3,
   secondSlide: 4,
   thirdSlide: 5,
-  fourthSlide: 6,
-  fifthSlide: 7,
-  sixthSlide: 8,
 });
 const PROGRESS_HIGHLIGHT_RATIO = Object.freeze({
   [PROGRESS.titleZoomIn]: 100,
   [PROGRESS.titleZoomOut]: 100,
   [PROGRESS.titleMoveUpAndFade]: 0,
-  [PROGRESS.firstSlide]: 15,
-  [PROGRESS.secondSlide]: 30,
-  [PROGRESS.thirdSlide]: 45,
-  [PROGRESS.fourthSlide]: 60,
-  [PROGRESS.fifthSlide]: 75,
-  [PROGRESS.sixthSlide]: 100,
+  [PROGRESS.firstSlide]: 30,
+  [PROGRESS.secondSlide]: 60,
+  [PROGRESS.thirdSlide]: 100,
+
 });
 const PROGRESS_TYPES = Object.freeze({
   forward: 1,

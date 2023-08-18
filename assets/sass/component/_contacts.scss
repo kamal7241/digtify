@@ -1,0 +1,23 @@
+.contact-us-info{
+    &.contact-us-info--contacts{
+        .contact-us-info__img{
+            .contacts-img{
+                background-image: url(/_nuxt/assets/image/ring.png);
+                background-position-x: left;
+                animation: moveToLeft .7s forwards linear 1;
+                animation-delay: 1.5s;
+                background-size: cover;
+                @keyframes moveToLeft {
+                    0%{
+                        background-position-x: left;
+                    }
+                     100%{
+                        background-position-x: right;
+                    }
+                }
+                }
+            }
+        }
+    }
+
+

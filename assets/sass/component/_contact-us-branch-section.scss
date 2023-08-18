@@ -1,4 +1,7 @@
 .branch-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     .contact-us-branch-section__title{
         font-family: $title-font-family;
         color: $light;
