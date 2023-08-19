@@ -15,8 +15,8 @@
     "gh-publish": "gh-pages -d dist",
     "predeploy:": "npm run generate",
     "deploy": "npm run  gh-publish",
-    "deploy:gh": "npm run generate:gh && npm run deploy" ,
-    "deploy:netilfy": "npm run generate:netilfy && npm run deploy" ,
+    "deploy:gh": "npm run generate:gh && npm run deploy",
+    "deploy:netilfy": "npm run generate:netilfy && npm run deploy",
     "preversion": "npm run deploy:netilfy"
   },
   "devDependencies": {
@@ -36,5 +36,6 @@
     "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
     "swiper": "^10.1.0"
-  }
+  },
+  "version": "1.0.0"
 }
