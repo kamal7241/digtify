@@ -7,12 +7,22 @@
     "build": "nuxt build",
     "dev": "nuxt dev --o",
     "generate": "nuxt generate",
+    "generate:dev": "nuxt --dotenv .env.dev generate ",
+    "generate:gh": "nuxt --dotenv .env.prod.gh generate",
+    "generate:netilfy": "nuxt --dotenv .env.prod.netilfy generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "gh-publish": "gh-pages -d dist",
+    "predeploy:": "npm run generate",
+    "deploy": "npm run  gh-publish",
+    "deploy:gh": "npm run generate:gh && npm run deploy" ,
+    "deploy:netilfy": "npm run generate:netilfy && npm run deploy" ,
+    "preversion": "npm run deploy:netilfy"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@types/node": "^18.17.1",
+    "gh-pages": "^6.0.0",
     "nuxt": "^3.6.5",
     "sass": "^1.64.2",
     "sass-loader": "^10.4.1"
