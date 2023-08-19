@@ -1,7 +1,7 @@
 <template>
     <contact-us-info-section class="contact-us-info contact-us-info--contacts" >
     <template #img >
-            <div class="contacts-img" ></div>
+            <div class="contacts-img" :style="{backgroundImage: `url(${img})` }"  ></div>
     </template>
     <template #title >
         <div class="branch-details">

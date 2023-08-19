@@ -1,6 +1,6 @@
 <template>
     <div ref="animator">
-        <div class="position-sticky top-0">
+        <div ref="observer" class="position-sticky top-0">
             <slot></slot>
         </div>
         <div  :style="{ height: (gap * breakPointsNumber +  startThresHold) + 'px' }"></div>
@@ -11,13 +11,14 @@
 // import { debounce } from "lodash"
 export default defineNuxtComponent({
     emits:['next' , 'prev'] ,
-    props: ['breakPointsNumber' ,  'gap'  ,'startThresHold' ],
+    props: ['breakPointsNumber' ,  'gap'  ,'startThresHold' ,  ],
     data(){
         return {
             // stikyHeight: '50vh',
             isScrollReachedEl: false,
             y: this.startThresHold,
             currentBreakPoint: 0 , 
+            thresHoldRatios:[0.1 , 0.8 , 1 ]
         }   
     },
     methods: {
@@ -56,13 +57,52 @@ export default defineNuxtComponent({
             addEventListener('scroll' , () => {
                 // debounce(callback , 500 )
                 const { y } = this.$refs.animator.getBoundingClientRect()
+                // console.log(y)
                 this.updatePosition(y)
             })
         },
+        observer(){
+        const root = document.querySelector('#root');
+            // const rootSize = document.querySelector('#rootSize');
+            const target = this.$refs.observer;
+            // const targetSize = document.querySelector('#targetSize');
+            // const output = document.querySelector('#output pre');
+            const io_options = {
+                root: root,
+                rootMargin: '0px',
+                threshold: [...this.thresHoldRatios]
+            };
+            let io_observer;
+
+            const io_callback = (entries)=> {
+                const ratio = entries[0].intersectionRatio;
+                const boundingRect = entries[0].boundingClientRect;
+                const intersectionRect = entries[0].intersectionRect;
+                console.log(intersectionRect , boundingRect )
+                console.log(ratio )
+                if(!this.observerSetteled){
+                    this.observerSetteled = true;
+                    return
+                }
+                if(this.triggerFromTop){
+                    if(intersectionRect.bottom == innerHeight )
+                      this.getProgress(ratio , intersectionRect.bottom ,  )
+
+                }else {
+                    if(intersectionRect.bottom < innerHeight )
+                      this.getProgress(ratio , intersectionRect.bottom ,  )
+  
+                }
+             
+            }
+            io_observer = new IntersectionObserver(io_callback, io_options);
+            io_observer.observe(target);
+        }
 
     },
     mounted(){
         this.registerScrollAnimator()
+        // this.observer()
     }
 
  })

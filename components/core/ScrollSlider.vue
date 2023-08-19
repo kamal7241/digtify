@@ -6,7 +6,7 @@
 
 <script>
 export default defineNuxtComponent({
-    props:['slidesNumber' ],
+    props:['slidesNumber' , 'firstReach' ],
     emits:['next' , 'prev' , 'end' , 'start' , 'leave:next' , 'leave:prev'] ,
     data(){
         return {
@@ -24,12 +24,10 @@ export default defineNuxtComponent({
     },
     methods:{
         onWheelUp(e){
-            if(this.isStart){
-                this.$emit("leave:prev")
-            }
-            else {
-                this.prev();
-            }
+            // if(this.isStart){
+            //     this.$emit("leave:prev")
+            // }
+            this.prev();
         },
         onWheelDown(e){
             if(this.isEnd){
@@ -59,7 +57,18 @@ export default defineNuxtComponent({
         },
     },
     mounted(){
-
+        if(this.reach && this.slide == 0)
+                this.slide = 1;
+    } ,
+    watch:{
+        slide(curr , prev){
+            if(curr == 0 && prev == 1)
+                this.$emit("leave:prev")
+        },
+        firstReach(){
+            if(this.firstReach  && this.slide == 0)
+                this.slide = 1;
+        }
     }
 
 })

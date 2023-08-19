@@ -15,7 +15,7 @@
         .img-text-sec__content__title{
             font-family: $title-font-family;
             font-weight: bold;
-            font-size: 96px;
+            font-size: 6rem;
             color: $secondary;
             height: auto;
             position: relative;
@@ -40,7 +40,7 @@
         }
         .img-text-sec__content__desc{
             font-family: $font-family;
-            font-size: 20px;
+            font-size: 1.25rem;
             line-height: 30px;
             animation-name: translate-desc;
             animation-timing-function: ease-in-out;

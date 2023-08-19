@@ -1,13 +1,14 @@
 <template>
-  <scroll-animator
+  <!-- <scroll-animator
     @next="currentProgress++"
     @prev="currentProgress--"
     :breakPointsNumber="5"
     :gap="300"
     :startThresHold="100"
   >
+</scroll-animator> -->
+
   <CoreHomeSectionContainer class="home-sec--portfolio py-4">
-      <h1 class="position-absolute top-0 right-0 bg-light z-10 text-info" >{{ currentProgress }}</h1>
           <div v-if="(currentProgress <= PROGRESS.titleMoveUpAndFade)"
             class="animate__animated"
             :class="{
@@ -17,9 +18,9 @@
           >
             <div class="home-sec--portfolio__title-wrapper">
               <core-zoomed-title
-                origin="30px 100px"
+                origin="3rem 1.89rem"
                 class="home-sec__title"
-                :scale="currentProgress == PROGRESS.titleZoomIn ? 150 : 1"
+                :scale="currentProgress == PROGRESS.titleZoomIn ? 50 : 1"
               >
                 <span class="text-white">CONTACT</span>
               </core-zoomed-title>
@@ -44,7 +45,6 @@
             </transition-group>
         </div>
     </CoreHomeSectionContainer>
-  </scroll-animator>
 </template>
 
 <script>
@@ -71,10 +71,9 @@ const PROGRESS_TYPES = Object.freeze({
   backward: 2,
 });
 export default defineNuxtComponent({
-
+  props:['currentProgress'] ,
   data() {
     return {
-      currentProgress: PROGRESS.titleZoomIn,
       progressType: PROGRESS_TYPES.forward  
     };
   },
@@ -92,9 +91,9 @@ export default defineNuxtComponent({
     // getUrl(){
     //     return require('../assets/image/404Error.jpg')
     // } ,
-    getUrl() {
-      return new URL(`../assets/image/404Error.jpg`, import.meta.url).href;
-    },
+    // getUrl() {
+    //   return new URL(`../assets/image/404Error.jpg`, import.meta.url).href;
+    // },
   },
   watch: {
     currentProgress(curr, prev) {

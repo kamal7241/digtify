@@ -1,10 +1,11 @@
 <template>
-  <scroll-animator @next="currentProgress++" @prev="currentProgress--" :breakPointsNumber="8" :gap="500" :startThresHold="100" >
+  <!-- <scroll-animator @next="currentProgress++" @prev="currentProgress--" :breakPointsNumber="8" :gap="500" :startThresHold="100" >
+  </scroll-animator> -->
     <!-- <h1 class="text-secondary position-absolute top-0 left-0 z-10" >{{currentProgress}} : {{ PROGRESS.titleMoveUpAndFade }}</h1> -->
         <CoreHomeSectionContainer  class="bg-light home-sec--services py-4" >
           <div class="home-sec--services__title-wrapper text-center " >
-            <core-zoomed-title origin="50px 255px"  
-                :scale="currentProgress == PROGRESS.titleZoomIn ? 150 : 1"
+            <core-zoomed-title origin="3rem 22rem"  
+                :scale="currentProgress == PROGRESS.titleZoomIn ? 100 : 1"
             >
                         
                                 <div class="animate__animated animate__move-y" 
@@ -20,61 +21,62 @@
             </div>
             <div class=" home-sec__content flex-grow-1"  >
               <transition-group mode="out-in"  name="fadeInDelayOutLeft" >
-                  <service-item :key="1" v-if="currentProgress == PROGRESS.firstSlide" 
-                  class="animate__animated"   
-                  :title="services[currentProgress - 3 ].title" 
-                  :description="services[currentProgress - 3 ].description" >
-                  <img
-                      src="@/assets/image/peacock.png"
-                      alt="image-duck"
-                    />
-                </service-item>
-                  <service-item :key="2" v-if="currentProgress == PROGRESS.secondSlide" 
-                  class="animate__animated"   
-                  :title="services[currentProgress - 3 ].title" 
-                  :description="services[currentProgress - 3 ].description" >
-                  <img
-                      src="@/assets/image/monkey.png"
-                      alt="image-duck"
-                    />
-                </service-item>
-                  <service-item :key="3" v-if="currentProgress == PROGRESS.thirdSlide" 
-                  class="animate__animated"   :title="services[currentProgress - 3 ].title" 
-                  :description="services[currentProgress - 3 ].description" >
-                  <img
-                      src="@/assets/image/giraffe.png"
-                      alt="image-duck"
-                    />
-                </service-item>
-                  <service-item :key="4" v-if="currentProgress == PROGRESS.fourthSlide" 
-                  class="animate__animated"   :title="services[currentProgress - 3 ].title" 
-                  :description="services[currentProgress - 3 ].description" >
-                  <img
-                      src="@/assets/image/fox2.png"
-                      alt="image-duck"
-                    />
-                </service-item>
-                  <service-item :key="5" v-if="currentProgress == PROGRESS.fifthSlide" 
-                  class="animate__animated"   :title="services[currentProgress - 3 ].title" 
-                  :description="services[currentProgress - 3 ].description" >
-                  <img
-                      src="@/assets/image/tiger.png"
-                      alt="image-duck"
-                    />
-                </service-item>
-                <service-item :key="5" v-if="currentProgress >= PROGRESS.fifthSlide" 
-                  class="animate__animated"   :title="services[currentProgress - 3 ].title" 
-                  :description="services[currentProgress - 3 ].description" >
-                  <img
-                      src="@/assets/image/tiger.png"
-                      alt="image-duck"
-                    />
-                </service-item>
+                <template v-for="_key in 5" :key="'service' + _key"  >
+                    <service-item  v-if="currentProgress == PROGRESS.firstSlide" 
+                      class="animate__animated"   
+                      :title="services[currentProgress - 3 ].title" 
+                      :description="services[currentProgress - 3 ].description" >
+                      <img
+                          src="@/assets/image/peacock.png"
+                          alt="image-duck"
+                        />
+                  </service-item>
+                    <service-item  v-else-if="currentProgress == PROGRESS.secondSlide" 
+                    class="animate__animated"   
+                    :title="services[currentProgress - 3 ].title" 
+                    :description="services[currentProgress - 3 ].description" >
+                    <img
+                        src="@/assets/image/monkey.png"
+                        alt="image-duck"
+                      />
+                  </service-item>
+                    <service-item  v-else-if="currentProgress == PROGRESS.thirdSlide" 
+                    class="animate__animated"   :title="services[currentProgress - 3 ].title" 
+                    :description="services[currentProgress - 3 ].description" >
+                    <img
+                        src="@/assets/image/giraffe.png"
+                        alt="image-duck"
+                      />
+                  </service-item>
+                    <service-item v-else-if="currentProgress == PROGRESS.fourthSlide" 
+                    class="animate__animated"   :title="services[currentProgress - 3 ].title" 
+                    :description="services[currentProgress - 3 ].description" >
+                    <img
+                        src="@/assets/image/fox2.png"
+                        alt="image-duck"
+                      />
+                  </service-item>
+                    <service-item  v-else-if="currentProgress == PROGRESS.fifthSlide" 
+                    class="animate__animated"   :title="services[currentProgress - 3 ].title" 
+                    :description="services[currentProgress - 3 ].description" >
+                    <img
+                        src="@/assets/image/tiger.png"
+                        alt="image-duck"
+                      />
+                  </service-item>
+                  <service-item  v-else-if="currentProgress >= PROGRESS.fifthSlide" 
+                    class="animate__animated"   :title="services[currentProgress - 3 ].title" 
+                    :description="services[currentProgress - 3 ].description" >
+                    <img
+                        src="@/assets/image/tiger.png"
+                        alt="image-duck"
+                      />
+                  </service-item>
+                </template>
               </transition-group>
             </div>
               
         </CoreHomeSectionContainer>
-    </scroll-animator>
     <!-- <image-text-section  /> -->
   <!--  SOCIAL MEDIA MARKETING  Service -->
   <!-- <section>
@@ -303,9 +305,9 @@ const PROGRESS_TYPES = Object.freeze({
   backward: 2,
 });
 export default defineNuxtComponent({
+    props:['currentProgress'],
     data(){
         return {
-            currentProgress : PROGRESS.titleZoomIn ,
             progressType: PROGRESS_TYPES.forward
         }
     } ,
@@ -325,9 +327,9 @@ export default defineNuxtComponent({
         // getUrl(){
         //     return require('../assets/image/404Error.jpg')
         // } , 
-        getUrl() {
-            return new URL(`../assets/image/404Error.jpg`, import.meta.url).href
-        }
+        // getUrl() {
+        //     return new URL(`../assets/image/404Error.jpg`, import.meta.url).href
+        // }
     },
     watch:{
         currentProgress(curr, prev) {

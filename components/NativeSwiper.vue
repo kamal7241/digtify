@@ -74,7 +74,6 @@ export default {
       }
     },
     swipeTo(slide ){
-      // debugger
         let ele = this.$refs.el;
         console.log(ele)
         let eleWidth = ele.offsetWidth;

@@ -66,16 +66,19 @@ export default defineNuxtComponent({
                 const ratio = entries[0].intersectionRatio;
                 const boundingRect = entries[0].boundingClientRect;
                 const intersectionRect = entries[0].intersectionRect;
-                console.log(ratio )
-                console.log(intersectionRect , boundingRect )
+                // console.log(ratio )
+                // console.log(intersectionRect , boundingRect )
                 this.ratio = ratio
                 if(!ratio )
                     return;
-                if( TARGET_STATE_ACTIONS[this.state].isNext(intersectionRect.top , boundingRect.top) )
-                 this.state = TARGET_STATE_ACTIONS[this.state].next
-                else 
-                this.state = TARGET_STATE_ACTIONS[this.state].prev
-
+                if( TARGET_STATE_ACTIONS[this.state].isNext(intersectionRect.top , boundingRect.top) ){
+                    console.log("is next to " , this.state , TARGET_STATE_ACTIONS[this.state])
+                    this.state = TARGET_STATE_ACTIONS[this.state].next
+                }
+                else{
+                    console.log("is prev to " , this.state , TARGET_STATE_ACTIONS[this.state] )
+                    this.state = TARGET_STATE_ACTIONS[this.state].prev
+                } 
                 this.$emit(EVENTS[this.state] , this.state)
                     // if (ratio === 0) {
                     //     console.log('not reached') 
@@ -123,7 +126,7 @@ export default defineNuxtComponent({
         else {
             const test =  (ratio - this.startThresHold + Number.EPSILON) 
             progress = Math.abs(test  - (this.gapRatio * this.thresHoldNumber) ) / this.gapRatio
-            console.log(progress)
+            // console.log(progress)
         }
 
         // if(yDist < this.distFromTop)
@@ -132,11 +135,11 @@ export default defineNuxtComponent({
         //     backward
         console.log("prog: " , progress , "prev:" ,  this.currentProgress )
         if(progress > this.currentProgress){
-            console.log("forward")
+            // console.log("forward")
             this.next()
         }
         else {
-            console.log('backward')
+            // console.log('backward')
             this.prev()
         }
      },

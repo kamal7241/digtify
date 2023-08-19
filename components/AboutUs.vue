@@ -1,7 +1,7 @@
 <template>
-    <scroll-animator @next="currentProgress < PROGRESS.thirdSlide ? currentProgress++ : ''" 
-    @prev="currentProgress > PROGRESS.titleZoomIn ? currentProgress-- : ''" :breakPointsNumber="6" :gap="300"
+    <!-- <scroll-animator @next="currentProgress++" @prev="currentProgress--" :breakPointsNumber="7" :gap="500"
         :startThresHold="100">
+    </scroll-animator> -->
         <CoreHomeSectionContainer class="home-sec--about-us pt-4">
             <!-- <h2 class="home-sec__title"> <span class="text-white" >
                     ABOUT</span> 
@@ -9,11 +9,11 @@
                         DIGIFY
                     </span> 
                 </h2> -->
-                <div class="home-sec--about-us__title-wrapper" >
+                <div class="home-sec--about-us__title-wrapper text-center" >
                     <div class="animate__animated animate__move-y"
                     :style="{ '--y' :  currentProgress >= PROGRESS.titleMoveUpAndFade ? '0' :'35%'}"
                     >
-                                <core-zoomed-title class="d-block" origin="40px 115px"  
+                                <core-zoomed-title class="d-block" origin="3rem 115px"  
                                         :scale="currentProgress == PROGRESS.titleZoomIn ? 150 : 1"
                                     >
                                         <core-text-progress-highlighter :highlight-ratio="PROGRESS_HIGHLIGHT_RATIO[currentProgress][0]" class="home-sec__title d-block"
@@ -33,28 +33,30 @@
                 <div class="row justify-content-center " >
                     <div class="col-9" >
                         <transition-group mode="out-in" name="fadeInDelayOutUp">
-                            <p v-if="currentProgress == PROGRESS.firstSlide" class="animate__animated ">
-                                <span>
-                                    Digify is an esteemed digital media consultancy firm that was established in 2014, Digify team is young and fresh in spirit, old and experienced at vision We at Digify specialize in a comprehensive range of digital marketing and advertising services
-                                </span>
-                            </p>
-                            <p v-if="currentProgress == PROGRESS.secondSlide" class="animate__animated">
-                                <span>
-                                    Our firm embodies a unique blend of youthful energy and seasoned expertise. With an exceptional team comprising talented content writers, expert social media analysts, proficient digital media buyers,
-                                </span>
-                            </p>
-                            <p v-if="currentProgress >= PROGRESS.thirdSlide" class="animate__animated">
-                                <span>
-                                    skilled graphic designers, and accomplished 2D and 3D animators, we possess the capabilities to deliver incomparable results. With strategically located offices in Cairo and Jeddah, we have garnered an extensive client base in the MENA region, boasting over 50 satisfied clients. This diversity has enriched our understanding of various cultures and industries.
-                                </span>
-                            </p>
+                            <template v-for="_ in PROGRESS.thirdSlide" :key="'content' + _" >
+                                <p v-if="currentProgress == PROGRESS.firstSlide" class="animate__animated ">
+                                    <span>
+                                        Digify is an esteemed digital media consultancy firm that was established in 2014, Digify team is young and fresh in spirit, old and experienced at vision We at Digify specialize in a comprehensive range of digital marketing and advertising services
+                                    </span>
+                                </p>
+                                <p v-else-if="currentProgress == PROGRESS.secondSlide" class="animate__animated">
+                                    <span>
+                                        Our firm embodies a unique blend of youthful energy and seasoned expertise. With an exceptional team comprising talented content writers, expert social media analysts, proficient digital media buyers,
+                                    </span>
+                                </p>
+                                <p v-else-if="currentProgress == PROGRESS.thirdSlide" class="animate__animated">
+                                    <span>
+                                        skilled graphic designers, and accomplished 2D and 3D animators, we possess the capabilities to deliver incomparable results. With strategically located offices in Cairo and Jeddah, we have garnered an extensive client base in the MENA region, boasting over 50 satisfied clients. This diversity has enriched our understanding of various cultures and industries.
+                                    </span>
+                                </p>
+
+                            </template>
                         </transition-group>
                     </div>
                 </div>
             </div>
 
         </CoreHomeSectionContainer>
-    </scroll-animator>
 </template>
 
 <script>
@@ -79,9 +81,9 @@ const PROGRESS_TYPES = Object.freeze({
     backward: 2,
 });
 export default defineNuxtComponent({
+    props:['currentProgress'] ,
     data() {
         return {
-            currentProgress: 0,
             progressType: PROGRESS_TYPES.forward
         }
     },
@@ -101,6 +103,11 @@ export default defineNuxtComponent({
             this.progressType =
                 curr > prev ? PROGRESS_TYPES.forward : PROGRESS_TYPES.backward;
         },
+        // currentProgress(curr, prev) {
+        //     if(curr == PROGRESS.titleMoveUpAndFade && prev == PROGRESS.titleZoomOut){
+        //             this.currentProgress++
+        //     }
+        // },
     }
 })
 

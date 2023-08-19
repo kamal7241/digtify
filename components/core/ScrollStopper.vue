@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import {debounce} from "lodash"
+import _ from "lodash"
 export default defineNuxtComponent({
     props:['disable-scroll'],
     emits:['up' , 'down'],
@@ -18,7 +18,7 @@ export default defineNuxtComponent({
     methods:{
         optimizer (e){
             if(!this.debounced)
-                this.debounced = debounce((e)=> this.handleWheel(e) , 500 );
+                this.debounced = _.debounce((e)=> this.handleWheel(e) , 200 );
             return this.debounced(e)
         },
         handleWheel(e){

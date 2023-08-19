@@ -1,5 +1,8 @@
 :root{
     font-size: calc( var( --fontModifier ) * var(--bs-body-font-size) );
+    @media screen and (min-width : 1920px) {
+        font-size:calc( var( --fontModifier ) * 0.835vw);
+    }
 }
 body{
     font-family: $font-family;

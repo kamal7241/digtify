@@ -4,5 +4,8 @@
             width: fit-content;
             margin: auto;
         }
+        .home-sec__content{
+            @include define-responsive-property(margin-top , 1.5rem , 1rem , 0 , 0);
+        }
     }
 }

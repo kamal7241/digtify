@@ -1,5 +1,6 @@
 <template>
-    <scroll-animator @next="currentProgress++" @prev="currentProgress--" :breakPointsNumber="7" :gap="500" :startThresHold="100" >
+    <!-- <scroll-animator @next="currentProgress++" @prev="currentProgress--" :breakPointsNumber="7" :gap="500" :startThresHold="100" >
+    </scroll-animator> -->
         <CoreHomeSectionContainer  class="home-sec--portfolio pt-4" >
             <div class="animate__animated animate__move-y"
                 :style="{ '--y' :  currentProgress >= PROGRESS.titleMoveUpAndFade ? '-12em' :'35%'}">
@@ -64,7 +65,6 @@
         </div>
               
         </CoreHomeSectionContainer>
-    </scroll-animator>
 
 
 </template>
@@ -94,9 +94,9 @@ const PROGRESS_TYPES = Object.freeze({
   backward: 2,
 });
 export default defineNuxtComponent({
+    props:['currentProgress'],
     data(){
         return {
-            currentProgress : PROGRESS.titleZoomIn ,
             progressType: PROGRESS_TYPES.forward
         }
     } ,
@@ -116,9 +116,9 @@ export default defineNuxtComponent({
         // getUrl(){
         //     return require('../assets/image/404Error.jpg')
         // } , 
-        getUrl() {
-            return new URL(`../assets/image/404Error.jpg`, import.meta.url).href
-        }
+        // getUrl() {
+        //     return new URL(`../assets/image/404Error.jpg`, import.meta.url).href
+        // }
     },
     watch:{
         currentProgress(curr, prev) {
