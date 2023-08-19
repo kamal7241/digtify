@@ -1,0 +1,19 @@
+.scroll-snap-container{
+    overflow: auto;
+    &.scroll-snap-container--vl{
+        scroll-snap-type: y mandatory;
+        -webkit-scroll-snap-type: y mandatory;
+        -ms-scroll-snap-type: y mandatory;
+        height: 100vh;
+    }
+    &.scroll-snap-container--hz{
+        scroll-snap-type: x mandatory;
+        -webkit-scroll-snap-type: x mandatory;
+        -ms-scroll-snap-type: x mandatory;
+        width: 100vh;
+    }
+}
+.scroll-snap {
+    scroll-snap-align: start;
+    height: 100vh;
+}
