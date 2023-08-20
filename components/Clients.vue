@@ -38,13 +38,12 @@
 const PROGRESS = Object.freeze({
     titleZoomIn : 0 , 
     titleZoomOut : 1 , 
-    titleMoveUpAndFade : 2 , 
-    firstSlide : 3 , 
-    secondSlide : 4  ,
-    thirdSlide : 5  ,
-    fourthSlide : 6  ,
-    fifthSlide : 7  ,
-    sixthSlide : 8  ,
+    firstSlide : 2 , 
+    secondSlide : 3  ,
+    thirdSlide : 4  ,
+    fourthSlide : 5  ,
+    fifthSlide : 6  ,
+    sixthSlide : 7  ,
 }); 
 const PROGRESS_HIGHLIGHT_RATIO = Object.freeze({
     [PROGRESS.titleZoomIn] : 100 , 

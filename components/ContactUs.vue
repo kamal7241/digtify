@@ -28,16 +28,14 @@
             <transition mode="out-in" name="fadeInDelayOutLeft">
               <Addresses
                 class=" animate__animated"
-                :key="1"
                 v-if="currentProgress == PROGRESS.firstSlide"
               />
               <Contacts
                 class="animate__animated "
-                :key="2"
                 v-else-if="currentProgress == PROGRESS.secondSlide "
               />
               <ContactUsFormSection class="animate__animated"
-                :key="3"   v-else-if="currentProgress == PROGRESS.thirdSlide" 
+                 v-else-if="currentProgress == PROGRESS.thirdSlide" 
                 />
             </transition>
         </div>

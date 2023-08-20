@@ -28,35 +28,35 @@
                 <transition-group mode="out-in"  name="fadeInDelayOutLeft" >
                     <template  v-if="currentProgress == PROGRESS.firstSlide" >
                         <PortfolioItem class="animate__animated col-6" :title="portfolioList[0].title" >
-                            <img src="../assets/image/aqm.png"  />
+                            <img src="../assets/image/portfolio/1.png"  />
                         </PortfolioItem>
                         <PortfolioItem :title="portfolioList[1].title" class="animate__animated col-6" >
-                                <img src="../assets/image/nit.png"  />
+                                <img src="../assets/image/portfolio/2.png"  />
                         </PortfolioItem>
                     </template>
                     <template v-if="currentProgress == PROGRESS.secondSlide" >
 
                         <PortfolioItem  :title="portfolioList[2].title" class="animate__animated col-6"  >
-                                <img src="../assets/image/aqm.png"  />
+                                <img src="../assets/image/portfolio/3.png"  />
                         </PortfolioItem>
                         <PortfolioItem :title="portfolioList[3].title" class="animate__animated col-6"  >
-                                <img src="../assets/image/nit.png"  />
+                                <img src="../assets/image/portfolio/4.png"  />
                         </PortfolioItem>
                     </template>
                     <template v-if="currentProgress == PROGRESS.thirdSlide"  >
                         <PortfolioItem  :title="portfolioList[4].title" class="animate__animated col-6" >
-                                <img src="../assets/image/aqm.png"  />
+                                <img src="../assets/image/portfolio/5.png"  />
                         </PortfolioItem>
                         <PortfolioItem :title="portfolioList[5].title" class="animate__animated col-6" >
-                                <img src="../assets/image/nit.png"  />
+                                <img src="../assets/image/portfolio/6.png"  />
                         </PortfolioItem>
                     </template >
                     <template v-if="currentProgress >= PROGRESS.fourthSlide">
                         <PortfolioItem  :title="portfolioList[6].title" class="animate__animated col-6"  >
-                                <img src="../assets/image/aqm.png"  />
+                                <img src="../assets/image/portfolio/7.png"  />
                         </PortfolioItem>
                         <PortfolioItem :title="portfolioList[7].title" class="animate__animated col-6"  >
-                                <img src="../assets/image/nit.png"  />
+                                <img src="../assets/image/portfolio/8.png"  />
                         </PortfolioItem>
                     </template>
          

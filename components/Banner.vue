@@ -32,7 +32,7 @@
                                     class="home-sec--banner__slogan "
                                     >
                                         <div class="row justify-content-center" >
-                                            <div class="col-8" >
+                                            <div class="col-12" >
                                                     <span
                                                         class="animate__animated title d-block"
                                                         :class="[
