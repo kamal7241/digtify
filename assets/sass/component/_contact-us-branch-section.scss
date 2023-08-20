@@ -1,3 +1,4 @@
+// todo replace media with better responsive approach
 .branch-details{
     display: flex;
     flex-direction: column;
@@ -9,6 +10,9 @@
         font-size: 96px;
         line-height: 80,16px;
         height: auto;
+        @media screen and (min-width:2500px) {
+            font-size: 160px;
+            }
     }
     .contact-us-branch-section__desc{
         font-family: $font-family;
@@ -18,5 +22,8 @@
         font-weight: 600;
         line-height: 40,96px;
         height: auto;
+        @media screen and (min-width:2500px) {
+            font-size: 60px;
+            }
     }
 }

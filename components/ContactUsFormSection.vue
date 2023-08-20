@@ -1,7 +1,7 @@
 <template>
   <div  class="row  justify-content-center contact-us-form-section">
-    <div class="col-lg-5 col-sm-12">
-      <div class="row h-auto">
+    <div class="col-lg-5 col-sm-12 d-flex flex-column justify-content-center">
+      <div class="row h-auto ">
         <div class="col-md-12">
           <div class="title contact-us-form-section__title d-flex flex-column align-content-start text-center">
             <p class="text-uppercase m-0">get in touch</p>

@@ -2,16 +2,18 @@
     &.contact-us-info--contacts{
         .contact-us-info__img{
             .contacts-img{
-                background-position-x: left;
-                animation: moveToLeft .7s forwards linear 1;
-                animation-delay: 1.5s;
-                background-size: cover;
+                background-position: 0 center;
+                animation: moveToLeft 1s ease;
+                animation-delay: 1s;
+                background-size: 146%;
+                animation-fill-mode: both;
+                background-repeat: no-repeat;
+                height: 100%;
+                width: 100%;
                 @keyframes moveToLeft {
-                    0%{
-                        background-position-x: left;
-                    }
-                     100%{
-                        background-position-x: right;
+              
+                     to{
+                        background-position: 100% center;
                     }
                 }
                 }
