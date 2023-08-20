@@ -3,6 +3,12 @@
         .home-sec--services__title-wrapper{
             width: fit-content;
             margin: auto;
+                .zoom-title{
+                    --origin:3.5rem 22rem;
+                    @media screen and (max-width: 1366px) {
+                        --origin:2rem 15rem!important;
+                    }
+                }
         }
         .home-sec__content{
             @include define-responsive-property(margin-top , 1.5rem , 1rem , 0 , 0);

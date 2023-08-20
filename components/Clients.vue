@@ -4,10 +4,10 @@
         <!-- <span class="text-dark bg-secondary z-10 position-absolute top-0 left-0  h2">{{ 'current progress : ' +
                 currentProgress + ':' + ' progress type : ' + progressType }}</span> -->
 
-        <CoreHomeSection  class="home-sec--portfolio pt-4" >
+        <CoreHomeSection  class="home-sec--portfolio " >
             <transition mode="out-in" name="fadeInDownOutUp"   >
                 <div class="animate__animated" v-if="currentProgress < PROGRESS.firstSlide" >
-                        <div class="home-sec--portfolio__title-wrapper" >
+                        <div class="home-sec--portfolio__title-wrapper pt-4" >
                                 <core-zoomed-title 
                                 origin="30px 100px" 
                                 class="home-sec__title"  
@@ -23,8 +23,8 @@
                 <transition mode="out-in"  name="fade-delay-1">
                     <div v-if="currentProgress >= PROGRESS.firstSlide" class="clients animate__animated " 
                     >
-                        <native-swiper :slide="currentProgress" className="swiper__container--right" :src="'rightSwiper'" />
-                        <native-swiper :slide="currentProgress" className="swiper__container--left"  :src="'leftSwiper'"/>
+                        <right-swiper :slide="currentProgress"  :src="'rightSwiper'" />
+                        <left-swiper :slide="currentProgress"   :src="'leftSwiper'"/>
                     </div>
                 </transition>
             <!-- <clients-slider :slide="currentProgress"  /> -->

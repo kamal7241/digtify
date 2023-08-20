@@ -9,26 +9,23 @@
 </scroll-animator> -->
 
   <CoreHomeSectionContainer class="home-sec--portfolio py-4">
-          <div v-if="(currentProgress <= PROGRESS.titleMoveUpAndFade)"
-            class="animate__animated"
-            :class="{
-              'animate__fadeOutLeftBig':
-                currentProgress >= PROGRESS.titleMoveUpAndFade,
-            }"
-          >
-            <div class="home-sec--portfolio__title-wrapper">
-              <core-zoomed-title
-                origin="3rem 1.89rem"
-                class="home-sec__title"
-                :scale="currentProgress == PROGRESS.titleZoomIn ? 50 : 1"
-              >
-                <span class="text-white">CONTACT</span>
-              </core-zoomed-title>
-              <h2 class="text-secondary home-sec__title">US</h2>
-            </div>
+    <transition mode="out-in" name="fadeInRightBigOutLeftBig">
+        <div v-if="(currentProgress < PROGRESS.firstSlide)"
+          class="animate__animated"
+        >
+          <div class="home-sec--portfolio__title-wrapper">
+            <core-zoomed-title
+              origin="4rem 1.23rem"
+              class="home-sec__title"
+              :scale="currentProgress == PROGRESS.titleZoomIn ? 100 : 1"
+            >
+              <span class="text-white">CONTACT</span>
+            </core-zoomed-title>
+            <h2 class="text-secondary home-sec__title">US</h2>
           </div>
-        <div class="home-sec__content" >
-            <transition-group mode="out-in" name="fadeInDelayOutLeft">
+        </div>
+        <div v-else class="home-sec__content animate__animated" >
+            <transition mode="out-in" name="fadeInDelayOutLeft">
               <Addresses
                 class=" animate__animated"
                 :key="1"
@@ -42,8 +39,9 @@
               <ContactUsFormSection class="animate__animated"
                 :key="3"   v-else-if="currentProgress == PROGRESS.thirdSlide" 
                 />
-            </transition-group>
+            </transition>
         </div>
+      </transition>
     </CoreHomeSectionContainer>
 </template>
 
@@ -52,10 +50,9 @@
 const PROGRESS = Object.freeze({
   titleZoomIn: 0,
   titleZoomOut: 1,
-  titleMoveUpAndFade: 2,
-  firstSlide: 3,
-  secondSlide: 4,
-  thirdSlide: 5,
+  firstSlide: 2,
+  secondSlide: 3,
+  thirdSlide: 4,
 });
 const PROGRESS_HIGHLIGHT_RATIO = Object.freeze({
   [PROGRESS.titleZoomIn]: 100,

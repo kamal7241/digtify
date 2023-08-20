@@ -4,7 +4,7 @@
     <!-- <h1 class="text-secondary position-absolute top-0 left-0 z-10" >{{currentProgress}} : {{ PROGRESS.titleMoveUpAndFade }}</h1> -->
         <CoreHomeSectionContainer  class="bg-light home-sec--services py-4" >
           <div class="home-sec--services__title-wrapper text-center " >
-            <core-zoomed-title origin="3rem 22rem"  
+            <core-zoomed-title 
                 :scale="currentProgress == PROGRESS.titleZoomIn ? 100 : 1"
             >
                         

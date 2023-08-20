@@ -15,7 +15,7 @@
         .img-text-sec__content__title{
             font-family: $title-font-family;
             font-weight: bold;
-            font-size: 6rem;
+            @include define-responsive-property(font-size , 7rem , 6rem , 6rem , 6rem);
             color: $secondary;
             height: auto;
             position: relative;
@@ -30,7 +30,7 @@
                 // top: 50%;
                 // transform: translateY(-50%);
                 height: auto;
-                line-height: inherit;
+                line-height: 0.85;
                 margin: 0;
             }
             * {
@@ -40,8 +40,8 @@
         }
         .img-text-sec__content__desc{
             font-family: $font-family;
-            font-size: 1.25rem;
-            line-height: 30px;
+            @include define-responsive-property(font-size , 1.7rem , 1.18rem , 1rem , 1rem );
+            line-height: initial;
             animation-name: translate-desc;
             animation-timing-function: ease-in-out;
 

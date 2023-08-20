@@ -2,7 +2,7 @@
                 <core-scroll-snap-container :disable="false" full-screen >
                         <core-scroll-snap-item ref="snapItems" v-for="key in 6" :key="'scroll-snap'+ key"  >
                                 <core-scroll-observer v-if="key == 1" @reach="index = 0"  :thresHoldRatio="0.1" :observe="true" class="h-100" >
-                                                <core-scroll-slider @leave:next="index++"    :slidesNumber="3" >
+                                                <core-scroll-slider @leave:next="index++"    :slidesNumber="2" >
                                                         <template v-slot="{slide}" >
                                                                 <Banner  :current-progress="slide" />
                                                         </template>
@@ -10,7 +10,7 @@
                                 </core-scroll-observer>
                                 <!--  -->
                                 <core-scroll-observer v-else-if="key == 2"  @reach="index = 1"   :thresHoldRatio="0.1" :observe="true"  >
-                                                <core-scroll-slider :first-reach="index == 1" @leave:next="index++" @leave:prev="index--"  :slidesNumber="6" >
+                                                <core-scroll-slider :first-reach="index == 1" @leave:next="index++" @leave:prev="index--"  :slidesNumber="3" >
                                                         <template v-slot="{slide}" >
                                                                 <AboutUs  :current-progress="slide" />
                                                         </template>
@@ -31,7 +31,7 @@
                                                 </core-scroll-slider>
                                 </core-scroll-observer>
                                <core-scroll-observer  v-else-if="key == 5"  @reach="index = 4"   :thresHoldRatio="0.1" :observe="true"  >
-                                                <core-scroll-slider :first-reach="index == 4" @leave:next="index++" @leave:prev="index--"  :slidesNumber="9" >
+                                                <core-scroll-slider :first-reach="index == 4" @leave:next="index++" @leave:prev="index--"  :slidesNumber="10" >
                                                         <template v-slot="{slide}" >
                                                                 <clients  :current-progress="slide"  />
                                                         </template>

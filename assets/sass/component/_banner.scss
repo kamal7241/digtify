@@ -19,9 +19,19 @@
     position: relative;
     height: 100vh;
     overflow: hidden;
+    background: url("@/assets/image/banner-1.png"),url("@/assets/image/banner.png")  ;
+    background-repeat: no-repeat;
+    background-size: cover , cover;
+    background-position: center center , 0 100vh;
+    transition: background-position 1s ease;
+    &.swipe-bg{
+      background-position: 0 100vh , 0 center;
+    }
     .logo {
       // transform: translateY(-100%);
-      max-width: 187px;
+      min-width: 100px;
+      display: inline-block;
+      width: 11.68vw;
     }
     .home-sec--banner__slogan-group , .home-sec--banner__img-group-wrapper {
       position: absolute;
@@ -45,58 +55,7 @@
           height: auto;
           width: 21%;
           position: absolute;
-          &:first-child {
-            transition: right 1s ease;
-            top: 0;
-            right: calc(21% * 2 + 0.625rem);
-            }
-          &:last-child {
-            position: absolute;
-            transition: top 1s ease;
-            top: 0;
-            right: 0;
-          }
-          &:nth-child(2) {
-            position: absolute;
-            transition: top, right 1s ease;
-            // position: relative;
-            // top: 50px;
-            top: 50px;
-            right: 21%;
-            }
-        }
-        &.animate-mid {
-          > img {
-            &:first-child {
-              right: 0;
-              top: -50px;
-            }
-            &:last-child {
-              top: 70%;
-              @media screen and (min-width : 1920px) {
-                top: 82%;
-              }
-            }
-            &:nth-child(2) {
-              transition-property: top, right;
-              top: 0;
-              right: calc(79%);
-            }
-          }
-        }
-        &.animate-last {
-          > img {
-            &:first-child {
-              transition-property: top, right;
-              top: 100vh;
-            }
-            &:last-child {
-              top: 100vh;
-            }
-            &:nth-child(2) {
-              right: 0;
-            }
-          }
+          right: 0;
         }
       }
     }
@@ -120,6 +79,9 @@
       @include font-size(85px , 75px , 50px , 50px);
       @media screen and (min-width : 1920px) {
         font-size: 5.3125rem;
+      }
+      * {
+        line-height: 0.85;
       }
       &.home-sec--banner__slogan--sec {
         top: 0;
@@ -149,8 +111,14 @@
       }
       .title {
         @include font-size(228px , 180px , 140px , 150px);
+        &.title--bigger{
+          @include font-size(1.05 * 228px ,1.05 * 180px , 1.05 * 140px , 1.05 * 150px);
+        }
         @media screen and (min-width : 1920px) {
-          font-size: 14.25rem;
+          font-size: 16.25rem;;
+          &.title--bigger{
+            font-size: 18.25rem;;
+          }
         }
 
       }
