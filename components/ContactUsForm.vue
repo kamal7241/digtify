@@ -70,22 +70,22 @@ export default {
    validations () {
     return {
       name: {
-        required: helpers.withMessage('* Name is required .', required),
-        alpha:helpers.withMessage('* Name must be char only .', alpha),
-        minLength:helpers.withMessage('* Name is (2) char min .' ,minLength(2)) ,
-         maxLength:helpers.withMessage('* MaxLenght must be (100) char .' ,maxLength(100)) }, 
+        required: helpers.withMessage('* name is required .', required),
+        alpha:helpers.withMessage('* name must be char only .', alpha),
+        minLength:helpers.withMessage('* name is (2) char min .' ,minLength(2)) ,
+         maxLength:helpers.withMessage('* maxLenght must be (100) char .' ,maxLength(100)) }, 
       contact: {
-        email: { required:helpers.withMessage('* Email is required .',
-         required), email:helpers.withMessage('* Enter a valid email address.', email) ,
-         maxLength:helpers.withMessage('* MaxLenght must be (100) char .' ,maxLength(100))
+        email: { required:helpers.withMessage('* email is required .',
+         required), email:helpers.withMessage('* enter a valid email address.', email) ,
+         maxLength:helpers.withMessage('* maxLenght must be (100) char .' ,maxLength(100))
         
         } 
       },
-      subject:{ required:helpers.withMessage('* Subject is required .', required) , 
-       minLength:helpers.withMessage('* Subject is (2) char min .' ,minLength(2)),
-       maxLength:helpers.withMessage('* MaxLenght must be (100) char .' ,maxLength(100)) 
+      subject:{ required:helpers.withMessage('* subject is required .', required) , 
+       minLength:helpers.withMessage('* subject is (2) char min .' ,minLength(2)),
+       maxLength:helpers.withMessage('* maxLenght must be (100) char .' ,maxLength(100)) 
         },
-        message:{ maxLength:helpers.withMessage('* MaxLenght must be (500) char .' ,maxLength(500))}    }
+        message:{ maxLength:helpers.withMessage('* maxLenght must be (500) char .' ,maxLength(500))}    }
 },
 data() {
     return {
