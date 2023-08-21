@@ -1,7 +1,7 @@
 <template>
-    <slot v-if="targetDesktop && !isMobile && !isTablet" ></slot>
-    <slot v-else-if="targetTablet  && isTablet" ></slot>
-    <slot v-else-if="targetMobile && isMobile " ></slot>
+    <slot v-if="isLoaded && targetDesktop && !isMobile && !isTablet" ></slot>
+    <slot v-else-if="isLoaded && targetTablet  && isTablet" ></slot>
+    <slot v-else-if="isLoaded && targetMobile && isMobile " ></slot>
 </template>
 
 
@@ -12,7 +12,13 @@ const SCREENS = Object.freeze({
     mobile : 2 ,
 })
 export default defineNuxtComponent({
+    emits:["mobile"],
     props:['screens'] ,
+    data(){
+        return {
+            isLoaded : false , 
+        }
+    },
     computed:{
         targetDesktop(){
             return this.screens.some(sc => sc == SCREENS.desktop)
@@ -27,6 +33,17 @@ export default defineNuxtComponent({
     setup(){
         return  useResponsive()
     } ,
+    mounted(){
+            if(this.isMobile)
+                this.$emit("mobile")
+            this.isLoaded = true;
+    },
+    watch:{
+        isMobile(){
+            if(this.isMobile)
+                this.$emit("mobile")
+        }
+    }
 })
 
 </script>

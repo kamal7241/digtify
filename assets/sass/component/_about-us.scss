@@ -66,8 +66,9 @@
         .home-sec--about-us__content{
             // @include font-size(/* xlarge: */ 26px, /*[desktop]:*/24px , /*[tablet]:*/20px , /*[mobile]:*/18px  );
             @include define-responsive-property(font-size , 1.9rem, 1.3rem , 1rem , 1rem);
-            line-height: initial    ;
+            line-height: initial;
             font-weight: bold;
+            text-align: justify;
         }
         .home-sec__container{
             gap: 1rem;
