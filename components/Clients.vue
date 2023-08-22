@@ -5,14 +5,19 @@
                 currentProgress + ':' + ' progress type : ' + progressType }}</span> -->
 
         <CoreHomeSection  class="home-sec--portfolio " >
-            <transition mode="out-in" name="fadeInDownOutUp"   >
-                <div class="animate__animated" v-if="currentProgress < PROGRESS.firstSlide" >
+            <transition mode="out-in" name="fade-delay-1" >
+                <div class="animate__animated" v-show="currentProgress < PROGRESS.firstSlide" 
+                :class="{
+                    'animate__fadeOutUp animate__delay-1s zoom-out-title' : currentProgress >= PROGRESS.firstSlide && progressType == PROGRESS_TYPES.forward , 
+                    'animate__fadeInDown animate__delay-1s zoom-in-title' : currentProgress < PROGRESS.firstSlide && progressType == PROGRESS_TYPES.backward, 
+                }"
+                >
+                    
                         <div class="home-sec--portfolio__title-wrapper pt-4" >
                                 <core-zoomed-title 
                                 origin="30px 100px" 
                                 class="home-sec__title"  
-                                    :scale="currentProgress == PROGRESS.titleZoomIn ? 150 : 1"
-                                >
+           >
                                             <span class="text-secondary" >OUR</span>
                                 </core-zoomed-title>
                 <h2 class="text-white home-sec__title" >CLIENTS</h2>
@@ -20,11 +25,15 @@
                  </div>
                  
                 </transition>
-                <transition mode="out-in"  name="fade-delay-1">
+                <transition mode="out-in"  name="fade-delay-2">
                     <div v-if="currentProgress >= PROGRESS.firstSlide" class="clients animate__animated " 
                     >
-                        <right-swiper :slide="currentProgress"  :src="'rightSwiper'" />
-                        <left-swiper :slide="currentProgress"   :src="'leftSwiper'"/>
+                    <clients-slider class="mb-5" />
+                    <clients-slider :reverseDirection="true" />
+                        <!-- <div class="native-swiper" >
+                            <right-swiper :slide="currentProgress"  :src="'rightSwiper'" />
+                                <left-swiper :slide="currentProgress"   :src="'leftSwiper'"/>
+                        </div> -->
                     </div>
                 </transition>
             <!-- <clients-slider :slide="currentProgress"  /> -->
@@ -37,13 +46,12 @@
 
 const PROGRESS = Object.freeze({
     titleZoomIn : 0 , 
-    titleZoomOut : 1 , 
-    firstSlide : 2 , 
-    secondSlide : 3  ,
-    thirdSlide : 4  ,
-    fourthSlide : 5  ,
-    fifthSlide : 6  ,
-    sixthSlide : 7  ,
+    firstSlide : 1 , 
+    secondSlide : 2  ,
+    thirdSlide : 3  ,
+    fourthSlide : 4  ,
+    fifthSlide : 5  ,
+    sixthSlide : 6  ,
 }); 
 const PROGRESS_HIGHLIGHT_RATIO = Object.freeze({
     [PROGRESS.titleZoomIn] : 100 , 

@@ -1,17 +1,19 @@
 <template>
     <div class="client-slider"  >
         <swiper 
-              :slides-per-view="3"
-              :slidesPerGroup="3"
+              :slides-per-view="'auto'"
+              :slidesPerGroup="5"
               :space-between="50"
-              :speed="1000"
+              :speed="1500"
+              :loop="true"
               @swiper="onSwiper"
-              @slideChange="onSlideChange"
+              :modules="modules"
+                :autoplay="autoplayOptions"
           >
               <!-- <swiper-slide class="text-secondary .swiper-slide--transparent" >no content</swiper-slide>
               <swiper-slide class="text-secondary .swiper-slide--transparent" >no content</swiper-slide> -->
-              <swiper-slide v-for="(slide, index) in 16" :key="index"  >
-                      <img :src="getImage(slide)" alt="image" />
+              <swiper-slide v-for="(img, index) in imgs" :key="index"  >
+                      <img :src="img" alt="image" />
               </swiper-slide>
               <!-- <swiper-slide  >Slide 1</swiper-slide>
               <swiper-slide  > Slide 2</swiper-slide>
@@ -32,19 +34,34 @@
 
 <script>
   import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { Autoplay } from 'swiper/modules';
+  import LeftImages from "./clientSliderImgsLeft"
+  import RightImages from "./clientSliderImgsRight"
+
   import 'swiper/css';
   export default defineNuxtComponent({
-    props:["slide"],
+    props:[ "reverseDirection"],
     components:{
         Swiper,
         SwiperSlide,
     },
     data(){
         return {
-            swiper : undefined
+            swiper : undefined ,
+            modules: [Autoplay],
+            autoplayOptions:{
+                delay: 1500,
+                disableOnInteraction: false,
+                reverseDirection : this.reverseDirection
+            }
         }
     },
     computed:{
+        imgs(){
+            if(this.reverseDirection)
+                return RightImages
+            return LeftImages
+        }
     },
     methods:{
         getImage(name) {
@@ -54,16 +71,7 @@
             this.swiper = swiper
         console.log(swiper);
       },
-      onSlideChange(){
-        console.log('slide change');
-      }
     }, 
-    watch:{
-        slide(){
-            console.log(this.swiper.slideTo)
-            this.swiper.slideTo(this.slide)
-        }
-    }
 })
 
 </script>

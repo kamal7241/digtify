@@ -3,15 +3,27 @@
   </scroll-animator> -->
     <!-- <h1 class="text-secondary position-absolute top-0 left-0 z-10" >{{currentProgress}} : {{ PROGRESS.titleMoveUpAndFade }}</h1> -->
         <CoreHomeSectionContainer  class="bg-light home-sec--services py-4" >
-          <div class="home-sec--services__title-wrapper text-center " >
+          <div class="home-sec--services__title-wrapper text-center "
+          :class="[ 
+          {'entry-reverse' : currentProgress == PROGRESS.titleZoomIn && progressType == PROGRESS_TYPES.backward},
+          {'entry' : currentProgress >= PROGRESS.firstSlide} , 
+          {'first reverse' : currentProgress == PROGRESS.firstSlide  && progressType == PROGRESS_TYPES.backward} , 
+          {'second' : currentProgress == PROGRESS.secondSlide  && progressType == PROGRESS_TYPES.forward} , 
+          {'second reverse' : currentProgress == PROGRESS.secondSlide && progressType == PROGRESS_TYPES.backward} , 
+          {'third' : currentProgress == PROGRESS.thirdSlide && progressType == PROGRESS_TYPES.forward} , 
+          {'third reverse' : currentProgress == PROGRESS.thirdSlide && progressType == PROGRESS_TYPES.backward} , 
+          {'fourth' : currentProgress == PROGRESS.fourthSlide && progressType == PROGRESS_TYPES.forward} , 
+          {'fourth reverse' : currentProgress == PROGRESS.fourthSlide && progressType == PROGRESS_TYPES.backward} , 
+          {'fifth' : currentProgress == PROGRESS.fifthSlide} , 
+        ]"
+          >
             <core-zoomed-title 
-                :scale="currentProgress == PROGRESS.titleZoomIn ? 100 : 1"
             >
                         
-                                <div class="animate__animated animate__move-y" 
-                                    :style="{ '--y' :  currentProgress >= PROGRESS.titleMoveUpAndFade ? '0' :'30vh'}"
+                                <div class="translate-container animate__move-y animate__animated" 
                                     >
-                                    <core-text-progress-highlighter :highlight-ratio="PROGRESS_HIGHLIGHT_RATIO[currentProgress]" class="home-sec__title d-block"
+                                    <core-text-progress-highlighter  class="home-sec__title d-block"
+                                    
                                     >
                                         <span class="text-primary" >SERVICES</span>
                                     </core-text-progress-highlighter>
@@ -24,8 +36,8 @@
                 <template v-for="_key in 5" :key="'service' + _key"  >
                     <service-item  v-if="currentProgress == PROGRESS.firstSlide" 
                       class="animate__animated"   
-                      :title="services[currentProgress - 3 ].title" 
-                      :description="services[currentProgress - 3 ].description" >
+                      :title="services[currentProgress - 1 ].title" 
+                      :description="services[currentProgress - 1 ].description" >
                       <img
                           src="@/assets/image/peacock.png"
                           alt="image-duck"
@@ -33,40 +45,40 @@
                   </service-item>
                     <service-item  v-else-if="currentProgress == PROGRESS.secondSlide" 
                     class="animate__animated"   
-                    :title="services[currentProgress - 3 ].title" 
-                    :description="services[currentProgress - 3 ].description" >
+                    :title="services[currentProgress - 1 ].title" 
+                    :description="services[currentProgress - 1 ].description" >
                     <img
                         src="@/assets/image/monkey.png"
                         alt="image-duck"
                       />
                   </service-item>
                     <service-item  v-else-if="currentProgress == PROGRESS.thirdSlide" 
-                    class="animate__animated"   :title="services[currentProgress - 3 ].title" 
-                    :description="services[currentProgress - 3 ].description" >
+                    class="animate__animated"   :title="services[currentProgress - 1 ].title" 
+                    :description="services[currentProgress - 1 ].description" >
                     <img
                         src="@/assets/image/giraffe.png"
                         alt="image-duck"
                       />
                   </service-item>
                     <service-item v-else-if="currentProgress == PROGRESS.fourthSlide" 
-                    class="animate__animated"   :title="services[currentProgress - 3 ].title" 
-                    :description="services[currentProgress - 3 ].description" >
+                    class="animate__animated"   :title="services[currentProgress - 1 ].title" 
+                    :description="services[currentProgress - 1 ].description" >
                     <img
                         src="@/assets/image/fox2.png"
                         alt="image-duck"
                       />
                   </service-item>
                     <service-item  v-else-if="currentProgress == PROGRESS.fifthSlide" 
-                    class="animate__animated"   :title="services[currentProgress - 3 ].title" 
-                    :description="services[currentProgress - 3 ].description" >
+                    class="animate__animated"   :title="services[currentProgress - 1 ].title" 
+                    :description="services[currentProgress - 1 ].description" >
                     <img
                         src="@/assets/image/tiger.png"
                         alt="image-duck"
                       />
                   </service-item>
                   <service-item  v-else-if="currentProgress >= PROGRESS.fifthSlide" 
-                    class="animate__animated"   :title="services[currentProgress - 3 ].title" 
-                    :description="services[currentProgress - 3 ].description" >
+                    class="animate__animated"   :title="services[currentProgress - 1 ].title" 
+                    :description="services[currentProgress - 1 ].description" >
                     <img
                         src="@/assets/image/tiger.png"
                         alt="image-duck"
@@ -281,19 +293,15 @@
 import servicesJson from "./services.json"
 const PROGRESS = Object.freeze({
     titleZoomIn : 0 , 
-    titleZoomOut : 1 , 
-    titleMoveUpAndFade : 2 , 
-    firstSlide : 3 , 
-    secondSlide : 4  ,
-    thirdSlide : 5  ,
-    fourthSlide : 6  ,
-    fifthSlide : 7  ,
+    firstSlide : 1 , 
+    secondSlide : 2  ,
+    thirdSlide : 3  ,
+    fourthSlide : 4  ,
+    fifthSlide : 5  ,
 }); 
 
 const PROGRESS_HIGHLIGHT_RATIO = Object.freeze({
-    [PROGRESS.titleZoomIn] : 100 , 
-    [PROGRESS.titleZoomOut] : 100 , 
-    [PROGRESS.titleMoveUpAndFade] : 0 , 
+    [PROGRESS.titleZoomIn] : undefined , 
     [PROGRESS.firstSlide] : 26 ,
     [PROGRESS.secondSlide] : 54 ,  
     [PROGRESS.thirdSlide] : 74 ,  

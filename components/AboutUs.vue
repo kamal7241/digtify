@@ -33,7 +33,7 @@
                 currentProgress + ':' + ' progress type : ' + progressType }}</span> -->
             <div class="home-sec--about-us__content text-light " >
                 <div class="row justify-content-center " >
-                    <div class="col-9" >
+                    <div class="col-10 col-xxl-11 col-xxx-9" >
                                     <transition-group mode="out-in" name="fadeInDelayOutUp">
                                         <p v-if="currentProgress == PROGRESS.firstSlide" class="animate__animated ">
                                             <span>

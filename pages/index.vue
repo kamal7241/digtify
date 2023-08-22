@@ -32,7 +32,7 @@
                                                 </core-scroll-slider>
                                 </core-scroll-observer>
                                <core-scroll-observer  v-else-if="key == 5"  @reach="index = 4"   :thresHoldRatio="0.1" :observe="true"  >
-                                                <core-scroll-slider :first-reach="index == 4" @leave:next="index++" @leave:prev="index--"  :slidesNumber="10" >
+                                                <core-scroll-slider :first-reach="index == 4" @leave:next="index++" @leave:prev="index--"  :slidesNumber="3" >
                                                         <template v-slot="{slide}" >
                                                                 <clients  :current-progress="slide"  />
                                                         </template>

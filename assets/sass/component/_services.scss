@@ -3,12 +3,190 @@
         .home-sec--services__title-wrapper{
             width: fit-content;
             margin: auto;
+            &.entry{
+                // zoom out , then move up , then highlight 
                 .zoom-title{
-                    --origin:3.5rem 22rem;
-                    @media screen and (max-width: 1366px) {
-                        --origin:2rem 15rem!important;
+                --scale:1
+                }
+                .translate-container{
+                    --y:0;
+                    transition-delay: 1s;
+                }
+                .text-highlighter-wrapper .text-highlighter__highlighted{
+                    @keyframes translateText {
+                        0% {
+                            width : 100%;
+                        }
+                        50% {
+                            width : 0;
+                        }
+                        100% {
+                            width : 26%;
+                        }
+                    }
+                    animation-name: translateText;
+                    animation-delay: 1s;
+                }
+            }
+            &.entry-reverse{
+                // zoom out , then move up , then highlight 
+                .zoom-title{
+                //    --scale:100;
+                //    transition-delay: 0.3s;
+                }
+                // .translate-container{
+                //     --y:30vh;
+                // }
+                .text-highlighter-wrapper .text-highlighter__highlighted{
+                    // @keyframes translateTextReverse {
+                    //     100% {
+                    //         width : 100%;
+                    //     }
+                    //     50% {
+                    //         width : 0%;
+                    //     }
+                    //     0% {
+                    //         width : 26%;
+                    //     }
+
+                    // }
+                    // animation-name: translateTextReverse;
+                    width: 26%;
+                }
+            }
+            &.first{
+                &.reverse{
+                    @keyframes firstHighlightReverse {
+                        from{
+                            width: 54%;
+                        }
+                        to{
+                            width:26%;
+                        }
+                    }
+                    .text-highlighter-wrapper .text-highlighter__highlighted{
+                        animation-name: firstHighlightReverse;
                     }
                 }
+                .text-highlighter-wrapper .text-highlighter__highlighted{
+                animation-delay: 0s;
+                }
+            }
+            &.second{
+                @keyframes secondHighlight {
+                    from{
+                        width: 26%;
+                    }
+                    to{
+                        width:54%;
+                    }
+                }
+                &.reverse{
+                    @keyframes secHighlightReverse {
+                        from{
+                            width: 74%;
+                        }
+                        to{
+                            width:54%;
+                        }
+                    }
+                    .text-highlighter-wrapper .text-highlighter__highlighted{
+                        animation-name: secHighlightReverse;
+                    }
+                }
+                .text-highlighter-wrapper .text-highlighter__highlighted{
+                animation-delay: 0s;
+                animation-name: secondHighlight;
+                }
+            }
+            &.third{
+
+                @keyframes thirdHighlight {
+                    from{
+                        width: 54%;
+                    } 
+                    to{
+                        width:74%;
+                    }
+                }
+                &.reverse{
+                    @keyframes thirdHighlightReverse {
+                        from{
+                            width: 87%;
+                        }
+                        to{
+                            width:74%;
+                        }
+                    }
+                    .text-highlighter-wrapper .text-highlighter__highlighted{
+                        animation-name: thirdHighlightReverse;
+                    }
+                }
+                .text-highlighter-wrapper .text-highlighter__highlighted{
+                    animation-delay: 0s;
+                    animation-name: thirdHighlight;
+                }
+            }
+            &.fourth{
+
+                @keyframes fourthHighlight {
+                    from{
+                        width: 74%;
+                    }
+                    to{
+                        width:87%;
+                    }
+                }
+                &.reverse{
+                    @keyframes fourthHighlightReverse {
+                        from{
+                            width: 100%;
+                        }
+                        to{
+                            width:87%;
+                        }
+                    }
+                    .text-highlighter-wrapper .text-highlighter__highlighted{
+                        animation-name: fourthHighlightReverse;
+                    }
+                }
+                .text-highlighter-wrapper .text-highlighter__highlighted{
+                    animation-delay: 0s;
+                    animation-name: fourthHighlight;
+                }
+            }
+            &.fifth{
+                @keyframes fifthHighlight {
+                    from{
+                        width: 87%;
+                    }
+                    to{
+                        width:100%;
+                    }
+                }
+
+                .text-highlighter-wrapper .text-highlighter__highlighted{
+                    animation-delay: 0s;
+                    animation-name: fifthHighlight;
+                }
+            }
+            .text-highlighter-wrapper .text-highlighter__highlighted{
+                animation-delay: 0;
+                animation-duration: 1s;
+                animation-timing-function: ease;
+                animation-fill-mode: both;
+            }
+            .translate-container{
+                --y:30vh;
+                transition-delay: 1s;
+            }
+            .zoom-title{
+                --scale:100;
+                --origin:3.5rem 22rem;
+                @media screen and (max-width: 1366px) {
+                    --origin:2rem 15rem!important;
+                }
+            }
         }
         .home-sec__content{
             @include define-responsive-property(margin-top , 1.5rem , 1rem , 0 , 0);
