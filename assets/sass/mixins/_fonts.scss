@@ -58,6 +58,12 @@
     }
   }
 }
+@mixin font-sizeVertical($x-large, $desktop: null, $tablet: null, $mobile: null) {
+    @media screen and (max-height : 600px) {
+      font-size: vertical-font-size(0.7rem , 1rem ,  );
+    }
+}
+
 @mixin clamp($desktop, $tablet: $desktop, $mobile: $tablet) {
   display: -webkit-box;
   -webkit-line-clamp: $desktop;

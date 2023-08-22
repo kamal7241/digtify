@@ -7,3 +7,11 @@
         var(--fontModifier) * ( #{$min}  + #{strip-unit($max - $min)} * ((100vw - #{$min-vw} ) / #{strip-unit($max-vw - $min-vw )}) )
         );
 }
+
+@function vertical-font-equation($max , $min , $max-vh , $min-vh ){
+    @return calc(
+        var(--fontModifier) * 
+        ( #{$min}  + 
+        #{strip-unit($max - $min)} * ((100vh - #{$min-vh} ) / #{strip-unit($max-vh - $min-vh )}) )
+        );
+}
