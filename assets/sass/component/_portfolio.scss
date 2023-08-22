@@ -1,10 +1,25 @@
 
 .home-sec{
     &.home-sec--portfolio{
+        .zoom-out-title{
+            .home-sec--portfolio__title-wrapper{
+                .home-sec__title{
+                    --scale: 1;
+                }
+            }
+        }
+        .zoom-in-title{
+            .home-sec--portfolio__title-wrapper{
+                .home-sec__title{
+                    --scale: 150;
+                }         
+            }
+        }
         .home-sec--portfolio__title-wrapper{
             width: fit-content;
             margin: auto;
             .home-sec__title{
+                --scale: 150;
             }
         }
     }
