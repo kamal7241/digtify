@@ -96,11 +96,25 @@
 }
 
 
+.fadeInOutLeft-enter-active {
+  animation-name: fadeIn;
+}
+.fadeInOutLeft-leave-active {
+  animation-name: fadeOutLeft;
+}
 .fadeInDelayOutLeft-enter-active {
   animation-name: fadeIn;
   animation-delay: 1s;
 }
 .fadeInDelayOutLeft-leave-active {
+  animation-name: fadeOutLeft;
+}
+
+.fadeInDelay3sOutLeft-enter-active {
+  animation-name: fadeIn;
+  animation-delay: 3s;
+}
+.fadeInDelay3sOutLeft-leave-active {
   animation-name: fadeOutLeft;
 }
 

@@ -18,14 +18,14 @@
                                                 </core-scroll-slider>
                                 </core-scroll-observer>
                                 <core-scroll-observer  v-else-if="key == 3"  @reach="index = 2"   :thresHoldRatio="0.1" :observe="true"  >
-                                                <core-scroll-slider :first-reach="index == 2" @leave:next="index++" @leave:prev="index--"  :slidesNumber="8" >
+                                                <core-scroll-slider :first-reach="index == 2" @leave:next="index++" @leave:prev="index--"  :slidesNumber="7" >
                                                         <template v-slot="{slide}" >
                                                                 <services  :current-progress="slide"  />
                                                         </template>
                                                 </core-scroll-slider>
                                  </core-scroll-observer>
                              <core-scroll-observer  v-else-if="key == 4"  @reach="index = 3"   :thresHoldRatio="0.1" :observe="true"  >
-                                                <core-scroll-slider :first-reach="index == 3" @leave:next="index++" @leave:prev="index--"  :slidesNumber="7" >
+                                                <core-scroll-slider :first-reach="index == 3" @leave:next="index++" @leave:prev="index--"  :slidesNumber="5" >
                                                         <template v-slot="{slide}" >
                                                                 <portfolio  :current-progress="slide"  />
                                                         </template>

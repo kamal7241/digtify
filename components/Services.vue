@@ -14,7 +14,9 @@
           {'third reverse' : currentProgress == PROGRESS.thirdSlide && progressType == PROGRESS_TYPES.backward} , 
           {'fourth' : currentProgress == PROGRESS.fourthSlide && progressType == PROGRESS_TYPES.forward} , 
           {'fourth reverse' : currentProgress == PROGRESS.fourthSlide && progressType == PROGRESS_TYPES.backward} , 
-          {'fifth' : currentProgress == PROGRESS.fifthSlide} , 
+          {'fifth' : currentProgress == PROGRESS.fifthSlide && progressType == PROGRESS_TYPES.forward} , 
+          {'fifth reverse' : currentProgress == PROGRESS.fifthSlide && progressType == PROGRESS_TYPES.backward} , 
+          {'sixth' : currentProgress >= PROGRESS.sixthSlide} , 
         ]"
           >
             <core-zoomed-title 
@@ -33,7 +35,7 @@
             </div>
             <div class=" home-sec__content flex-grow-1"  >
               <transition-group mode="out-in"  name="fadeInDelayOutLeft" >
-                <template v-for="_key in 5" :key="'service' + _key"  >
+                <template v-for="_key in 6" :key="'service' + _key"  >
                     <service-item  v-if="currentProgress == PROGRESS.firstSlide" 
                       class="animate__animated"   
                       :title="services[currentProgress - 1 ].title" 
@@ -76,7 +78,7 @@
                         alt="image-duck"
                       />
                   </service-item>
-                  <service-item  v-else-if="currentProgress >= PROGRESS.fifthSlide" 
+                  <service-item  v-else-if="currentProgress >= PROGRESS.sixthSlide" 
                     class="animate__animated"   :title="services[currentProgress - 1 ].title" 
                     :description="services[currentProgress - 1 ].description" >
                     <img
@@ -298,6 +300,7 @@ const PROGRESS = Object.freeze({
     thirdSlide : 3  ,
     fourthSlide : 4  ,
     fifthSlide : 5  ,
+    sixthSlide : 6  ,
 }); 
 
 const PROGRESS_HIGHLIGHT_RATIO = Object.freeze({

@@ -1,3 +1,25 @@
+@mixin slideHighlight($slidesNumber ){
+    // todo make slide highlight dynamic
+    &.first{
+        &.reverse{
+            @keyframes firstHighlightReverse {
+                from{
+                    width: 54%;
+                }
+                to{
+                    width:26%;
+                }
+            }
+            .text-highlighter-wrapper .text-highlighter__highlighted{
+                animation-name: firstHighlightReverse;
+            }
+        }
+        .text-highlighter-wrapper .text-highlighter__highlighted{
+        animation-delay: 0s;
+        }
+    }
+}
+
 .home-sec{
     &.home-sec--services{
         .home-sec--services__title-wrapper{
@@ -84,7 +106,7 @@
                 &.reverse{
                     @keyframes secHighlightReverse {
                         from{
-                            width: 74%;
+                            width: 60%;
                         }
                         to{
                             width:54%;
@@ -106,16 +128,16 @@
                         width: 54%;
                     } 
                     to{
-                        width:74%;
+                        width:60%;
                     }
                 }
                 &.reverse{
                     @keyframes thirdHighlightReverse {
                         from{
-                            width: 87%;
+                            width: 74%;
                         }
                         to{
-                            width:74%;
+                            width:60%;
                         }
                     }
                     .text-highlighter-wrapper .text-highlighter__highlighted{
@@ -131,19 +153,19 @@
 
                 @keyframes fourthHighlight {
                     from{
-                        width: 74%;
+                        width: 60%;
                     }
                     to{
-                        width:87%;
+                        width:74%;
                     }
                 }
                 &.reverse{
                     @keyframes fourthHighlightReverse {
                         from{
-                            width: 100%;
+                            width: 87%;
                         }
                         to{
-                            width:87%;
+                            width:74%;
                         }
                     }
                     .text-highlighter-wrapper .text-highlighter__highlighted{
@@ -158,6 +180,33 @@
             &.fifth{
                 @keyframes fifthHighlight {
                     from{
+                        width: 74%;
+                    }
+                    to{
+                        width:87%;
+                    }
+                }
+                &.reverse{
+                    @keyframes fifthHighlightReverse {
+                        from{
+                            width: 100%;
+                        }
+                        to{
+                            width:87%;
+                        }
+                    }
+                    .text-highlighter-wrapper .text-highlighter__highlighted{
+                        animation-name: fifthHighlightReverse;
+                    }
+                }
+                .text-highlighter-wrapper .text-highlighter__highlighted{
+                    animation-delay: 0s;
+                    animation-name: fifthHighlight;
+                }
+            }
+            &.sixth{
+                @keyframes sixthHighlight {
+                    from{
                         width: 87%;
                     }
                     to{
@@ -167,7 +216,7 @@
 
                 .text-highlighter-wrapper .text-highlighter__highlighted{
                     animation-delay: 0s;
-                    animation-name: fifthHighlight;
+                    animation-name: sixthHighlight;
                 }
             }
             .text-highlighter-wrapper .text-highlighter__highlighted{
