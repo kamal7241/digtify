@@ -37,54 +37,48 @@
               <transition-group mode="out-in"  name="fadeInDelayOutLeft" >
                 <template v-for="_key in 6" :key="'service' + _key"  >
                     <service-item  v-if="currentProgress == PROGRESS.firstSlide" 
-                      class="animate__animated"   
+                      class=""   
                       :title="services[currentProgress - 1 ].title" 
                       :description="services[currentProgress - 1 ].description" >
-                      <img
-                          src="@/assets/image/peacock.png"
-                          alt="image-duck"
-                        />
+                      <div class="animate__animated img" :style="{backgroundImage : `url('${imgs[0]}')`}" >
+                      </div>
                   </service-item>
                     <service-item  v-else-if="currentProgress == PROGRESS.secondSlide" 
-                    class="animate__animated"   
+                    class=""   
                     :title="services[currentProgress - 1 ].title" 
                     :description="services[currentProgress - 1 ].description" >
-                    <img
-                        src="@/assets/image/monkey.png"
-                        alt="image-duck"
-                      />
+                    <div  class="animate__animated img" :style="{backgroundImage : `url('${imgs[1]}')`}" >
+
+                    </div>
                   </service-item>
                     <service-item  v-else-if="currentProgress == PROGRESS.thirdSlide" 
-                    class="animate__animated"   :title="services[currentProgress - 1 ].title" 
+                    class=""   :title="services[currentProgress - 1 ].title" 
                     :description="services[currentProgress - 1 ].description" >
-                    <img
-                        src="@/assets/image/giraffe.png"
-                        alt="image-duck"
-                      />
+                    <div  class="animate__animated img" :style="{backgroundImage : `url('${imgs[2]}')`}" >
+
+                    </div>
+            
                   </service-item>
                     <service-item v-else-if="currentProgress == PROGRESS.fourthSlide" 
-                    class="animate__animated"   :title="services[currentProgress - 1 ].title" 
+                    class=""   :title="services[currentProgress - 1 ].title" 
                     :description="services[currentProgress - 1 ].description" >
-                    <img
-                        src="@/assets/image/fox2.png"
-                        alt="image-duck"
-                      />
+                    <div   class="animate__animated img" :style="{backgroundImage : `url('${imgs[3]}')`}" >
+
+                    </div>
                   </service-item>
                     <service-item  v-else-if="currentProgress == PROGRESS.fifthSlide" 
-                    class="animate__animated"   :title="services[currentProgress - 1 ].title" 
+                    class=""   :title="services[currentProgress - 1 ].title" 
                     :description="services[currentProgress - 1 ].description" >
-                    <img
-                        src="@/assets/image/tiger.png"
-                        alt="image-duck"
-                      />
+                    <div  class="animate__animated img" :style="{backgroundImage : `url('${imgs[4]}')`}" >
+
+                    </div>
                   </service-item>
                   <service-item  v-else-if="currentProgress >= PROGRESS.sixthSlide" 
-                    class="animate__animated"   :title="services[currentProgress - 1 ].title" 
+                    class=""   :title="services[currentProgress - 1 ].title" 
                     :description="services[currentProgress - 1 ].description" >
-                    <img
-                        src="@/assets/image/tiger.png"
-                        alt="image-duck"
-                      />
+                    <div  class="animate__animated img" :style="{backgroundImage : `url('${imgs[5]}')`}" >
+
+                    </div>
                   </service-item>
                 </template>
               </transition-group>
@@ -292,6 +286,13 @@
 </template>
 
 <script>
+import img1 from "@/assets/image/peacock.png";
+import img2 from "@/assets/image/monkey.png";
+import img3 from "@/assets/image/giraffe.png";
+import img4 from "@/assets/image/fox2.png";
+import img5 from "@/assets/image/tiger.png";
+import img6 from "@/assets/image/tiger.png";
+const imgs = [img1,img2,img3,img4,img5,img6,]
 import servicesJson from "./services.json"
 const PROGRESS = Object.freeze({
     titleZoomIn : 0 , 
@@ -323,6 +324,9 @@ export default defineNuxtComponent({
         }
     } ,
     computed:{
+        imgs(){
+          return imgs;
+        },
         services(){
           return servicesJson;
         },

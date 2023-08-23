@@ -1,12 +1,12 @@
 <template>
   <section class="img-text-sec" >
       <div  class="row justify-content-center" >
-        <div class="col-lg-5">
+        <div class="col-lg-4">
           <div class="img-text-sec__img animate__animated animate__delay-1s animate__fast">
             <slot name="img" ></slot>
           </div>
         </div>
-        <div class="col-lg-7 col-xl-6">
+        <div class="col-lg-8 col-xl-6">
           <div class="img-text-sec__content">
             <div class="img-text-sec__content__title animate__animated animate__delay-1s animate__fast " >
               <slot name="title" ></slot>

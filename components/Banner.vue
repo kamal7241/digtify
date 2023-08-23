@@ -90,8 +90,8 @@
                                         </div>
                                     </div>
                                 </transition>
-                                <transition>
-                                    <div class="home-sec--banner__slogan home-sec--banner__slogan--ternary" v-if="currentProgress == ANIMATION_PROGRESS.end">
+                                <transition mode="out-in" name="fadeInDelayOut" >
+                                    <div class="animate__animated home-sec--banner__slogan home-sec--banner__slogan--ternary" v-if="currentProgress == ANIMATION_PROGRESS.end">
                                         <span class="title " >
                                             <span>DIGIFY</span>
                                             <span><span class="" >WE</span> TALK</span>

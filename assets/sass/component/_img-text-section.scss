@@ -1,11 +1,22 @@
 .img-text-sec{
     .img-text-sec__img{
-        animation-name: img-scale; 
-        animation-timing-function: ease-in-out;
         text-align: center;
-        img{
-            max-width: 100%;
-            max-height: 100%;   
+        .img{
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-size: 150%;
+            background-position: center;
+            animation-timing-function: ease-in-out;
+            animation-name: img-section-zoom-out;
+            animation-delay: 1s;
+            @keyframes img-section-zoom-out {
+                from{
+                    background-size: 150%;
+                }
+                to{
+                    background-size: 100%;
+                }
+            }
         }
     }
     .img-text-sec__content{
