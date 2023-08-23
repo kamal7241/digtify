@@ -1,6 +1,9 @@
 
 .home-sec{
     &.home-sec--portfolio{
+        .home-sec__container{
+            row-gap: 2rem;
+        }
         .home-sec--portfolio__title-wrapper{
             .text-highlighter-wrapper .text-highlighter__highlighted{
                 animation-delay: 0;
@@ -26,7 +29,7 @@
                         25%{
                             transform:scale(1);
                         }
-                        75%{
+                        50%{
                             transform:scale(1);
                         }
                         100%{
@@ -39,7 +42,7 @@
                     animation-duration: 3.5s;
                 }
                 .translate-container{
-                    transition-delay: 3s;
+                    transition-delay: 1.8s;
                     --y:-12em;
                 }
                 .text-highlighter-wrapper .text-highlighter__highlighted{
@@ -55,7 +58,7 @@
                         }
                     }
                     animation-name: portfolioTranslateText;
-                    animation-delay: 4s;
+                    animation-delay: 2.5s;
                 }
             }
             &.entry-reverse{
@@ -128,7 +131,7 @@
                 &.reverse{
                     @keyframes portfolioSecHighlightReverse {
                         from{
-                            width: 80%;
+                            width: 100%;
                         }
                         to{
                             width:58%;
@@ -145,37 +148,9 @@
             }
             &.third{
 
-                @keyframes portfolioThirdHighlight {
-                    from{
-                        width: 58%;
-                    } 
-                    to{
-                        width:80%;
-                    }
-                }
-                &.reverse{
-                    @keyframes portfolioThirdHighlightReverse {
-                        from{
-                            width: 100%;
-                        }
-                        to{
-                            width:80%;
-                        }
-                    }
-                    .text-highlighter-wrapper .text-highlighter__highlighted{
-                        animation-name: portfolioThirdHighlightReverse;
-                    }
-                }
-                .text-highlighter-wrapper .text-highlighter__highlighted{
-                    animation-delay: 0s;
-                    animation-name: portfolioThirdHighlight;
-                }
-            }
-            &.fourth{
-
                 @keyframes portfolioFourthHighlight {
                     from{
-                        width: 80%;
+                        width: 58%;
                     }
                     to{
                         width:100%;

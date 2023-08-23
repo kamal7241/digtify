@@ -10,9 +10,7 @@
           {'first reverse' : currentProgress == PROGRESS.firstSlide  && progressType == PROGRESS_TYPES.backward} , 
           {'second' : currentProgress == PROGRESS.secondSlide  && progressType == PROGRESS_TYPES.forward} , 
           {'second reverse' : currentProgress == PROGRESS.secondSlide && progressType == PROGRESS_TYPES.backward} , 
-          {'third' : currentProgress == PROGRESS.thirdSlide && progressType == PROGRESS_TYPES.forward} , 
-          {'third reverse' : currentProgress == PROGRESS.thirdSlide && progressType == PROGRESS_TYPES.backward} , 
-          {'fourth' : currentProgress >= PROGRESS.fourthSlide} , 
+          {'third' : currentProgress >= PROGRESS.thirdSlide} , 
         ]"
             >
                 <div class="animate__animated animate__move-y translate-container">
@@ -37,41 +35,38 @@
             <div v-if="currentProgress >= PROGRESS.firstSlide" class="home-sec__content animate__animated" >
                 <div class="row justify-content-center" >
                     <div class="col-lg-10 col-12" >
-                        <div class="row" >
-                            <transition-group mode="out-in"  name="fadeInOutLeft" >
+                        <div class="row justify-content-center" >
+                            <transition-group mode="out-in"  name="fadeInDelayOutLeft" >
                                 <template  v-if="currentProgress == PROGRESS.firstSlide" >
-                                    <PortfolioItem class="animate__animated col-6" :title="portfolioList[0].title" >
+                                    <PortfolioItem class="animate__animated col-4" :title="portfolioList[0].title" >
                                         <img src="../assets/image/portfolio/1.png"  />
                                     </PortfolioItem>
-                                    <PortfolioItem :title="portfolioList[1].title" class="animate__animated col-6" >
+                                    <PortfolioItem :title="portfolioList[1].title" class="animate__animated col-4" >
                                             <img src="../assets/image/portfolio/2.png"  />
+                                    </PortfolioItem>
+                                    <PortfolioItem  :title="portfolioList[2].title" class="animate__animated col-4"  >
+                                            <img src="../assets/image/portfolio/3.png"  />
                                     </PortfolioItem>
                                 </template>
                                 <template v-else-if="currentProgress == PROGRESS.secondSlide" >
-            
-                                    <PortfolioItem  :title="portfolioList[2].title" class="animate__animated col-6"  >
-                                            <img src="../assets/image/portfolio/3.png"  />
-                                    </PortfolioItem>
-                                    <PortfolioItem :title="portfolioList[3].title" class="animate__animated col-6"  >
+                                    <PortfolioItem :title="portfolioList[3].title" class="animate__animated col-4"  >
                                             <img src="../assets/image/portfolio/4.png"  />
+                                    </PortfolioItem>
+                                    <PortfolioItem  :title="portfolioList[4].title" class="animate__animated col-4" >
+                                            <img src="../assets/image/portfolio/5.png"  />
+                                    </PortfolioItem>
+                                    <PortfolioItem :title="portfolioList[5].title" class="animate__animated col-4" >
+                                            <img src="../assets/image/portfolio/6.png"  />
                                     </PortfolioItem>
                                 </template>
                                 <template v-else-if="currentProgress == PROGRESS.thirdSlide"  >
-                                    <PortfolioItem  :title="portfolioList[4].title" class="animate__animated col-6" >
-                                            <img src="../assets/image/portfolio/5.png"  />
-                                    </PortfolioItem>
-                                    <PortfolioItem :title="portfolioList[5].title" class="animate__animated col-6" >
-                                            <img src="../assets/image/portfolio/6.png"  />
-                                    </PortfolioItem>
-                                </template >
-                                <template v-else-if="currentProgress >= PROGRESS.fourthSlide">
-                                    <PortfolioItem  :title="portfolioList[6].title" class="animate__animated col-6"  >
+                                    <PortfolioItem  :title="portfolioList[6].title" class="animate__animated col-4"  >
                                             <img src="../assets/image/portfolio/7.png"  />
                                     </PortfolioItem>
-                                    <PortfolioItem :title="portfolioList[7].title" class="animate__animated col-6"  >
+                                    <PortfolioItem :title="portfolioList[7].title" class="animate__animated col-4"  >
                                             <img src="../assets/image/portfolio/8.png"  />
                                     </PortfolioItem>
-                                </template>
+                                </template >
                             </transition-group>
                         </div>
                     </div>
@@ -91,7 +86,6 @@ const PROGRESS = Object.freeze({
     firstSlide : 1 , 
     secondSlide : 2  ,
     thirdSlide : 3  ,
-    fourthSlide : 4  ,
 }); 
 const PROGRESS_HIGHLIGHT_RATIO = Object.freeze({
     [PROGRESS.titleZoomIn] : 100 , 
