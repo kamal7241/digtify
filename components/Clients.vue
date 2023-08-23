@@ -1,10 +1,10 @@
 <template>
     <!-- <scroll-animator @next="currentProgress++" @prev="currentProgress--" :breakPointsNumber="20" :gap="200" :startThresHold="100" >
     </scroll-animator> -->
-        <!-- <span class="text-dark bg-secondary z-10 position-absolute top-0 left-0  h2">{{ 'current progress : ' +
+        <!-- <span class="text-dark bg-secondary z-1 position-fixed top-0 left-0  h2">{{ 'current progress : ' +
                 currentProgress + ':' + ' progress type : ' + progressType }}</span> -->
 
-        <CoreHomeSection  class="home-sec--portfolio " >
+        <CoreHomeSection  class="home-sec--portfolio" >
             <transition mode="out-in" name="fade-delay-1" >
                 <div class="animate__animated" v-show="currentProgress < PROGRESS.firstSlide" 
                 :class="{

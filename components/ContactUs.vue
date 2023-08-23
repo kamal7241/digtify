@@ -7,38 +7,40 @@
     :startThresHold="100"
   >
 </scroll-animator> -->
-
   <CoreHomeSectionContainer class="home-sec--portfolio py-4">
-    <transition mode="out-in" name="fadeInRightBigOutLeftBig">
-        <div v-if="(currentProgress < PROGRESS.firstSlide)"
+    <transition mode="out-in" name="fadeInRightBigOutDelayLeftBig">
+        <div v-show="(currentProgress < PROGRESS.firstSlide)"
           class="animate__animated"
         >
           <div class="home-sec--portfolio__title-wrapper">
             <core-zoomed-title
               origin="4rem 1.23rem"
               class="home-sec__title"
-              :scale="currentProgress == PROGRESS.titleZoomIn ? 100 : 1"
+              :scale="currentProgress < PROGRESS.firstSlide  
+              ? 100 : 1"
             >
               <span class="text-white">CONTACT</span>
             </core-zoomed-title>
             <h2 class="text-secondary home-sec__title">US</h2>
           </div>
         </div>
-        <div v-else class="home-sec__content animate__animated" >
-            <transition mode="out-in" name="fadeInDelayOutLeft">
-              <Addresses
-                class=" animate__animated"
-                v-if="currentProgress == PROGRESS.firstSlide"
-              />
-              <Contacts
-                class="animate__animated "
-                v-else-if="currentProgress == PROGRESS.secondSlide "
-              />
-              <ContactUsFormSection class="animate__animated"
-                 v-else-if="currentProgress == PROGRESS.thirdSlide" 
+      </transition>
+      <transition mode="out-in" name="fadeInDelayBigOutLeftBig">
+          <div v-if="currentProgress >= PROGRESS.firstSlide" class="home-sec__content animate__animated" >
+              <transition mode="out-in" name="fadeInOutLeft">
+                <Addresses
+                  class=" animate__animated"
+                  v-if="currentProgress == PROGRESS.firstSlide"
                 />
-            </transition>
-        </div>
+                <Contacts
+                  class="animate__animated "
+                  v-else-if="currentProgress == PROGRESS.secondSlide "
+                />
+                <ContactUsFormSection class="animate__animated"
+                  v-else-if="currentProgress == PROGRESS.thirdSlide" 
+                  />
+              </transition>
+          </div>
       </transition>
     </CoreHomeSectionContainer>
 </template>
@@ -47,10 +49,9 @@
 
 const PROGRESS = Object.freeze({
   titleZoomIn: 0,
-  titleZoomOut: 1,
-  firstSlide: 2,
-  secondSlide: 3,
-  thirdSlide: 4,
+  firstSlide: 1,
+  secondSlide: 2,
+  thirdSlide: 3,
 });
 const PROGRESS_HIGHLIGHT_RATIO = Object.freeze({
   [PROGRESS.titleZoomIn]: 100,

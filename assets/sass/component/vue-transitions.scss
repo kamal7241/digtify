@@ -119,9 +119,17 @@
 }
 
 
-.fadeInRightBigOutLeftBig-enter-active {
+.fadeInRightBigOutDelayLeftBig-enter-active {
   animation-name: fadeInLeftBig;
 }
-.fadeInRightBigOutLeftBig-leave-active {
+.fadeInRightBigOutDelayLeftBig-leave-active {
+  animation-name: fadeOutLeftBig;
+  animation-delay: 1s;
+}
+.fadeInDelayBigOutLeftBig-enter-active {
+  animation-name: fadeIn;
+  animation-delay: 1.8s;
+}
+.fadeInDelayBigOutLeftBig-leave-active {
   animation-name: fadeOutLeftBig;
 }

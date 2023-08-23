@@ -32,14 +32,14 @@
                                                 </core-scroll-slider>
                                 </core-scroll-observer>
                                <core-scroll-observer  v-else-if="key == 5"  @reach="index = 4"   :thresHoldRatio="0.1" :observe="true"  >
-                                                <core-scroll-slider :first-reach="index == 4" @leave:next="index++" @leave:prev="index--"  :slidesNumber="3" >
+                                                <core-scroll-slider :first-reach="index == 4" @leave:next="index++" @leave:prev="index--"  :slidesNumber="2" >
                                                         <template v-slot="{slide}" >
                                                                 <clients  :current-progress="slide"  />
                                                         </template>
                                                 </core-scroll-slider>
                                 </core-scroll-observer>
                                 <core-scroll-observer   v-else-if="key == 6"  @reach="index = 5"   :thresHoldRatio="0.1" :observe="true"  >
-                                                <core-scroll-slider :first-reach="index == 5"  @leave:prev="index--"  :slidesNumber="5" >
+                                                <core-scroll-slider :first-reach="index == 5"  @leave:prev="index--"  :slidesNumber="4" >
                                                         <template v-slot="{slide}" >
                                                                 <contact-us  :current-progress="slide"  />
                                                         </template>
