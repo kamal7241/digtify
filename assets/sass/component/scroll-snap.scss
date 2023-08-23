@@ -1,5 +1,5 @@
 .scroll-snap-container{
-    overflow: auto;
+    overflow: hidden;
     &.scroll-snap-container--vl{
         scroll-snap-type: y mandatory;
         -webkit-scroll-snap-type: y mandatory;

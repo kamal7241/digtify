@@ -1,4 +1,12 @@
 <template>
+        <div class=" navigators-btns w-100  position-fixed bottom-0 end-0" >
+                <div class="container-fluid text-end" >
+                        <div class="pe-4 pb-3 d-inline-flex flex-column gap-3" >
+                                <button @click="index=0" :disabled="index == 0" class="navigators-btns__up btn-primary btn  rounded-circle icon-up-chevron-svgrepo-com"  ></button>
+                                <button @click="index=5" :disabled="index == 5" class="navigators-btns__down btn-primary btn  rounded-circle icon-down-chevron-svgrepo-com"  ></button>
+                        </div>
+                </div>
+        </div>
         <core-screen-switcher :screens="[0]" >
                 <core-scroll-snap-container :disable="false" full-screen >
                         <core-scroll-snap-item ref="snapItems" v-for="key in 6" :key="'scroll-snap'+ key"  >
