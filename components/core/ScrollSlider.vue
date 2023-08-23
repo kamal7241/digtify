@@ -6,8 +6,8 @@
 
 <script>
 export default defineNuxtComponent({
-    props:['slidesNumber' , 'firstReach' ],
-    emits:['next' , 'prev' , 'end' , 'start' , 'leave:next' , 'leave:prev'] ,
+    props:['slidesNumber' , 'firstReach', "modelValue" ],
+    emits:['next' , 'prev' , 'end' , 'start' , 'leave:next' , 'leave:prev' , "update:modelValue"] ,
     data(){
         return {
             slide : 0 , 
@@ -23,13 +23,19 @@ export default defineNuxtComponent({
         },
     },
     methods:{
+        checkIsSliderActive(){
+            if(!this.modelValue)
+                this.$emit("update:modelValue" , true)
+        },
         onWheelUp(e){
+            this.checkIsSliderActive()
             // if(this.isStart){
             //     this.$emit("leave:prev")
             // }
             this.prev();
         },
         onWheelDown(e){
+            this.checkIsSliderActive()
             if(this.isEnd){
                 this.$emit("leave:next")
             }
