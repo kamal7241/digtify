@@ -25,6 +25,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-left-chevron-svgrepo-com:before {
+  content: "\e969";
+}
+.icon-right-chevron-svgrepo-com:before {
+  content: "\e96a";
+}
+.icon-up-chevron-svgrepo-com:before {
+  content: "\e96b";
+}
+.icon-down-chevron-svgrepo-com:before {
+  content: "\e96c";
+}
 .icon-privileges:before {
   content: "\e968";
 }
