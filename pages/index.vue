@@ -88,6 +88,19 @@
 <script >
 
 export default defineNuxtComponent({
+        head: {
+                title: 'Digify',
+                meta: [
+                        { charset: 'utf-8' },
+                        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+                        {
+                                hid: 'Digify is a full-featured digital media consultancy house founded in 2014 that provides all aspects of digital marketing & advertising services.',
+                                name: 'Digify is a full-featured digital media consultancy house founded in 2014 that provides all aspects of digital marketing & advertising services.',
+                                content: 'Digify is a full-featured digital media consultancy house founded in 2014 that provides all aspects of digital marketing & advertising services.'
+                        }
+                ],
+                link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+        },
         data(){
                 return {
                         index : 0 , 
