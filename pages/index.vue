@@ -1,13 +1,13 @@
 <template>
-        <div class=" navigators-btns w-100  position-fixed bottom-0 end-0" >
-                <div class="container-fluid text-end" >
-                        <div class="pe-4 pb-3 d-inline-flex flex-column gap-3" >
-                                <button @click="index=0" :disabled="index == 0" class="navigators-btns__up btn-primary btn  rounded-circle icon-up-chevron-svgrepo-com"  ></button>
-                                <button @click="index=5" :disabled="index == 5" class="navigators-btns__down btn-primary btn  rounded-circle icon-down-chevron-svgrepo-com"  ></button>
+        <core-screen-switcher :screens="[SCREENS.desktop]" >
+                <div class=" navigators-btns w-100  position-fixed bottom-0 end-0" >
+                        <div class="container-fluid text-end" >
+                                <div class="pe-4 pb-3 d-inline-flex flex-column gap-3" >
+                                        <button @click="index=0" :disabled="index == 0" class="navigators-btns__up btn-primary btn  rounded-circle icon-up-chevron-svgrepo-com"  ></button>
+                                        <button @click="index=5" :disabled="index == 5" class="navigators-btns__down btn-primary btn  rounded-circle icon-down-chevron-svgrepo-com"  ></button>
+                                </div>
                         </div>
                 </div>
-        </div>
-        <core-screen-switcher :screens="[0]" >
                 <core-scroll-snap-container :disable="false" full-screen >
                         <core-scroll-snap-item ref="snapItems" v-for="key in 6" :key="'scroll-snap'+ key"  >
                                                 <core-scroll-slider  :model-value="index == index" @update:model-value="index = 0"  v-if="key == 1" class="h-100"  @leave:next="next"    :slidesNumber="2" >
@@ -70,8 +70,8 @@
                        <contact-us  /> -->
                 </core-scroll-snap-container>
         </core-screen-switcher>
-        <core-screen-switcher @mobile="runCountDown" :screens="[1 , 2]" >
-                <div class="container">
+        <core-screen-switcher @mobile="runCountDown" :screens="[SCREENS.tablet , SCREENS.mobile]" >
+                <!-- <div class="container">
                                 <div class="row">
                                 <div class="col">
                                         <div class="comming-soon" >
@@ -82,11 +82,18 @@
                                         </div>
                                 </div>
                                 </div>
-                        </div>
-                </core-screen-switcher>      
+                </div> -->
+                hello from mobile and tablet
+                <banner-mobile />
+                <clients-mobile />
+        </core-screen-switcher>      
 </template>
 <script >
-
+const SCREENS = Object.freeze({
+    desktop : 0 , 
+    tablet : 1 , 
+    mobile : 2 ,
+})
 export default defineNuxtComponent({
         head: {
                 title: 'Digify',
@@ -107,6 +114,11 @@ export default defineNuxtComponent({
                         activeIndex : 0 , 
                 }
         } ,
+        computed:{
+                SCREENS(){
+                        return SCREENS
+                }
+        },
         watch:{
                 index(curr , prev){
                         if(curr !=  prev)

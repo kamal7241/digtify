@@ -3,6 +3,7 @@
     // padding: 20px 40px;
     height: 100vh;
     overflow: hidden;
+    @include define-responsive-property(height , 100vh , 100vh , auto  , auto);
     &.home-sec--light{
         background-color: $light;
 

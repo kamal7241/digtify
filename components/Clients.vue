@@ -4,7 +4,7 @@
         <!-- <span class="text-dark bg-secondary z-1 position-fixed top-0 left-0  h2">{{ 'current progress : ' +
                 currentProgress + ':' + ' progress type : ' + progressType }}</span> -->
 
-        <CoreHomeSection  class="home-sec--portfolio" >
+        <CoreHomeSection  class="home-sec--clients" >
             <transition mode="out-in" name="fade-delay-1" >
                 <div class="animate__animated" v-show="currentProgress < PROGRESS.firstSlide" 
                 :class="{
@@ -13,7 +13,7 @@
                 }"
                 >
                     
-                        <div class="home-sec--portfolio__title-wrapper pt-4" >
+                        <div class="home-sec--clients__title-wrapper pt-4" >
                                 <core-zoomed-title 
                                 origin="30px 100px" 
                                 class="home-sec__title"  

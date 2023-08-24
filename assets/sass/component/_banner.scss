@@ -151,6 +151,9 @@
         }
       }
     }
+    @media screen and (max-width : 1024px) {
+      background: $primary  ;
+    }
   }
 }
 
@@ -245,33 +248,3 @@
   }
 }
 
-.slide-1-forward-enter-active {
-  .home-sec--banner__slogan {
-    > span:first-child {
-      color: blue;
-      animation-name: fadeInUpBig;
-    }
-  }
-}
-.slide-1-forward-leave-active {
-  .home-sec--banner__slogan {
-    > span:first-child {
-      animation-name: fadeOutUp;
-    }
-  }
-}
-
-.slide-1-backward-enter-active {
-  .home-sec--banner__slogan {
-    > span:first-child {
-      animation-name: fadeInUpBig;
-    }
-  }
-}
-.slide-1-backward-leave-active {
-  .home-sec--banner__slogan {
-    > span:first-child {
-      animation-name: fadeOutUp;
-    }
-  }
-}
