@@ -8,6 +8,14 @@
 }
 .home-sec{
     &.home-sec--clients{
+        @media screen and (max-width : 1024px) and (min-width:768px) {
+            padding-bottom: 3.5rem;
+        }
+        .zoom-title{
+            --scale:100;
+            --origin:30px 100px;
+
+        }
         .zoom-out-title{
             .home-sec--clients__title-wrapper{
                 .home-sec__title{

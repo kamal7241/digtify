@@ -14,51 +14,56 @@
     <div class="home-sec__content flex-grow-1 py-5">
         <template v-for="(_ , index) in services" :key="'service' + index">
         <service-item
+        class="mb-md-4 mb-xl-0"
             v-if="index == 0"
           :title="services[0].title"
           :description="services[0].description"
           
         >
           <div data-aos="fade-up-right" data-aos-anchor-placement="top-center">
-            <img src="@/assets/image/peacock.png" alt="image-duck" />
+            <img class="img" src="@/assets/image/peacock.png" alt="image-duck" />
           </div>
         </service-item>
         <service-item
+        class="mb-md-4 mb-xl-0"
         v-if="index == 1"
           :title="services[1].title"
           :description="services[1].description"
         >
           <div data-aos="fade-up-left" data-aos-anchor-placement="top-center">
-            <img src="@/assets/image/monkey.png" alt="image-duck" />
+            <img class="img" src="@/assets/image/monkey.png" alt="image-duck" />
           </div>
         </service-item>
         <service-item
+        class="mb-md-4 mb-xl-0"
         v-if="index == 2"
           :title="services[2].title"
           :description="services[2].description"
         >
           <div data-aos="fade-up-right" data-aos-anchor-placement="top-center">
-            <img src="@/assets/image/giraffe.png" alt="image-duck" />
+            <img class="img" src="@/assets/image/giraffe.png" alt="image-duck" />
           </div>
         </service-item>
         <service-item
+        class="mb-md-4 mb-xl-0"
         v-if="index == 3"
         :title="services[3].title"
           :description="services[3].description"
         >
           <div data-aos="fade-up-left" data-aos-anchor-placement="top-center">
 
-            <img src="@/assets/image/fox2.png" alt="image-duck" />
+            <img class="img" src="@/assets/image/fox2.png" alt="image-duck" />
           </div>
         </service-item>
         <service-item
+        class="mb-md-4 mb-xl-0"
         v-if="index == 4"
         :title="services[4].title"
           :description="services[4].description"
 
         >
           <div data-aos="fade-up-right" data-aos-anchor-placement="top-center">
-            <img src="@/assets/image/tiger.png" alt="image-duck" />
+            <img class="img" src="@/assets/image/tiger.png" alt="image-duck" />
           </div>
         </service-item>
         <service-item
@@ -68,7 +73,7 @@
 
         >
           <div data-aos="fade-up-left" data-aos-anchor-placement="top-center">
-            <img src="@/assets/image/tiger.png" alt="image-duck" />
+            <img class="img" src="@/assets/image/tiger.png" alt="image-duck" />
           </div>
         </service-item>
       </template> 

@@ -1,5 +1,5 @@
 <template>
-        <core-home-section-container ref="banner" class="home-sec--banner banner"
+        <core-home-section ref="banner" class="home-sec--banner banner"
         >
             <div class="" >
                 <img class="logo" src="@/assets/image/digify-logo.png" />
@@ -8,7 +8,7 @@
                 <banner-slider />
             
             </div>        
-        </core-home-section-container>
+        </core-home-section>
 </template>
 
 <script>
