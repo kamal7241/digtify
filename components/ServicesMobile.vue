@@ -5,7 +5,7 @@
   <CoreHomeSectionContainer class="bg-light home-sec--services py-4">
     <div class="home-sec--services__title-wrapper text-center">
       <div>
-        <core-text-progress-highlighter class="home-sec__title d-block">
+        <core-text-progress-highlighter class="home-sec__title d-block" data-aos="zoom-out">
           <span class="text-primary">SERVICES</span>
         </core-text-progress-highlighter>
       </div>
@@ -30,7 +30,7 @@
           :title="services[1].title"
           :description="services[1].description"
         >
-          <div data-aos="fade-up-left" data-aos-anchor-placement="top-center">
+          <div data-aos="fade-up-right" data-aos-anchor-placement="top-center">
             <img class="img" src="@/assets/image/monkey.png" alt="image-duck" />
           </div>
         </service-item>
@@ -50,7 +50,7 @@
         :title="services[3].title"
           :description="services[3].description"
         >
-          <div data-aos="fade-up-left" data-aos-anchor-placement="top-center">
+          <div data-aos="fade-up-right" data-aos-anchor-placement="top-center">
 
             <img class="img" src="@/assets/image/fox2.png" alt="image-duck" />
           </div>
@@ -60,7 +60,7 @@
         v-if="index == 4"
         :title="services[4].title"
           :description="services[4].description"
-
+        
         >
           <div data-aos="fade-up-right" data-aos-anchor-placement="top-center">
             <img class="img" src="@/assets/image/tiger.png" alt="image-duck" />
@@ -72,7 +72,7 @@
           :description="services[5].description"
 
         >
-          <div data-aos="fade-up-left" data-aos-anchor-placement="top-center">
+          <div data-aos="fade-up-right" data-aos-anchor-placement="top-center">
             <img class="img" src="@/assets/image/tiger.png" alt="image-duck" />
           </div>
         </service-item>

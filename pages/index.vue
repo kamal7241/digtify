@@ -16,7 +16,7 @@
                                                         </template>
                                                 </core-scroll-slider>
                                 <!--  -->
-                                                <core-scroll-slider   :model-value="index == 0" @update:model-value="index = 1" v-else-if="key == 2" class="h-100"  :first-reach="index == 1" @leave:next="next" @leave:prev="prev"  :slidesNumber="3" >
+                                                <core-scroll-slider   :model-value="index == 0" @update:model-value="index = 1" v-else-if="key == 2" class="h-100"  :first-reach="index == 1" @leave:next="next" @leave:prev="prev"  :slidesNumber="2" >
                                                         <template v-slot="{slide}" >
                                                                 <AboutUs  :current-progress="slide" />
                                                         </template>
@@ -70,8 +70,11 @@
                        <contact-us  /> -->
                 </core-scroll-snap-container>
         </core-screen-switcher>
-        <core-screen-switcher @mobile="runCountDown" :screens="[SCREENS.tablet , SCREENS.mobile]" >
-                <tablet-and-mobile-container />
+        <core-screen-switcher :screens="[SCREENS.tablet ]" >
+                <tablet-container />
+        </core-screen-switcher>  
+        <core-screen-switcher  :screens="[ SCREENS.mobile]" >
+                <mobile-container />
         </core-screen-switcher>      
 </template>
 <script >

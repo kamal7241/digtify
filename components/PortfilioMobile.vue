@@ -3,11 +3,14 @@
             <div 
                >
             <div class="home-sec--portfolio__title-wrapper" >
+                <div data-aos="fade-left">
                     <span class="home-sec__title text-secondary" >OUR</span>
-                    <div >
+
+                </div>
+                    <div  data-aos="fade-right">
                         <core-text-progress-highlighter  class=" home-sec__title d-block"
                         >
-                        <span class="text-white" >PORTFOLIO</span>
+                            <span class="text-white" >PORTFOLIO</span>
                     </core-text-progress-highlighter>
                     </div>
             </div>

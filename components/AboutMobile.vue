@@ -10,7 +10,7 @@
                     </span> 
                 </h2> -->
     <div class="home-sec--about-us__title-wrapper text-center">
-      <core-text-progress-highlighter class="d-block" >
+      <core-text-progress-highlighter class="d-block" data-aos="fade-left" >
         <h2 class="text-white home-sec__title mb-0">ABOUT</h2>
       </core-text-progress-highlighter>
       <core-text-progress-highlighter
@@ -20,6 +20,7 @@
             : '',
         ]"
         class=""
+        data-aos="fade-right"
       >
         <h2 class="text-secondary home-sec__title mb-0">DIGIFY</h2>
       </core-text-progress-highlighter>

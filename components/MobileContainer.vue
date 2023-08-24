@@ -1,6 +1,6 @@
 <template>
-            <banner-mobile />
-            <about-mobile/>
+            <banner-mobile data-aos="zoom-in"/>
+            <about-mobile />
             <services-mobile/>
             <portfilio-mobile />
             <clients-mobile />

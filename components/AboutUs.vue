@@ -23,11 +23,11 @@
                                         <core-text-progress-highlighter 
                                         class="text-highlighter-wrapper--first"
                                         >
-                                            <h2 class="text-white home-sec__title mb-0" >ABOUT</h2>
+                                            <h2 class="text-white home-sec__title mb-0"  >ABOUT</h2>
                                         </core-text-progress-highlighter>
                                 </core-zoomed-title>
                                 <core-text-progress-highlighter 
-                                        class="text-highlighter-wrapper--second">
+                                        class="text-highlighter-wrapper--second" >
                                         <h2 class="text-secondary home-sec__title mb-0">DIGIFY</h2>
                                 </core-text-progress-highlighter>
                             </div>
@@ -41,7 +41,7 @@
                                         <p v-if="currentProgress == PROGRESS.firstSlide" class="animate__animated ">
                                             <span>
                                                 Digify is a digital media consultancy firm that was established in 2014, Digify team is young and fresh in spirit, old and experienced at vision
-We at Digify specialize in a comprehensive range of digital marketing and advertising services. With an exceptional team comprising talented content writers, expert social media analysts, proficient digital media buyers, skilled graphic designers, and accomplished 2D and 3D animators, we possess the capabilities to deliver incomparable results. 
+We at Digify specialize in a comprehensive r ange of digital marketing and advertising services. With an exceptional team comprising talented content writers, expert social media analysts, proficient digital media buyers, skilled graphic designers, and accomplished 2D and 3D animators, we possess the capabilities to deliver incomparable results. 
 With strategically located offices in Cairo and Jeddah, we have garnered an extensive client base in the MENA region. This diversity has enriched our understanding of various cultures and industries.
                                             </span>
                                         </p>
