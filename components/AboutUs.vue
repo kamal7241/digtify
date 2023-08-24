@@ -9,22 +9,25 @@
                         DIGIFY
                     </span> 
                 </h2> -->
-                <div class="home-sec--about-us__title-wrapper text-center" >
-                    <div class="animate__animated animate__move-y"
-                    :style="{ '--y' :  currentProgress >= PROGRESS.titleZoomOut ? '0' :'35%'}"
+                <div class="home-sec--about-us__title-wrapper text-center" 
+                :class="[ 
+                    {'entry-reverse' : currentProgress == PROGRESS.titleZoomIn && progressType == PROGRESS_TYPES.backward},
+                    {'entry' : currentProgress >= PROGRESS.firstSlide} , 
+                ]"
+                >
+                    <div class="animate__animated animate__move-y translate-container"
                     >
                                 <core-zoomed-title class="d-block" origin="2.5rem 6rem"  
                                         :scale="currentProgress == PROGRESS.titleZoomIn ? 100 : 1"
                                     >
                                         <core-text-progress-highlighter 
-                                        :class="[currentProgress >= PROGRESS.firstSlide ? 'text-highlighter-wrapper--first' : '']"
+                                        class="text-highlighter-wrapper--first"
                                         >
                                             <h2 class="text-white home-sec__title mb-0" >ABOUT</h2>
                                         </core-text-progress-highlighter>
                                 </core-zoomed-title>
                                 <core-text-progress-highlighter 
-                                :class="[currentProgress >= PROGRESS.firstSlide ? 'text-highlighter-wrapper--second' : '']"
-                                        class="">
+                                        class="text-highlighter-wrapper--second">
                                         <h2 class="text-secondary home-sec__title mb-0">DIGIFY</h2>
                                 </core-text-progress-highlighter>
                             </div>
@@ -53,8 +56,7 @@ With strategically located offices in Cairo and Jeddah, we have garnered an exte
 <script>
 const PROGRESS = Object.freeze({
     titleZoomIn: 0,
-    titleZoomOut: 1,
-    firstSlide: 2,
+    firstSlide: 1,
 
 });
 const PROGRESS_HIGHLIGHT_RATIO = Object.freeze({

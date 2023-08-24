@@ -10,7 +10,7 @@
                     </span> 
                 </h2> -->
     <div class="home-sec--about-us__title-wrapper text-center">
-      <core-text-progress-highlighter>
+      <core-text-progress-highlighter class="d-block" >
         <h2 class="text-white home-sec__title mb-0">ABOUT</h2>
       </core-text-progress-highlighter>
       <core-text-progress-highlighter
@@ -28,7 +28,7 @@
                 currentProgress + ':' + ' progress type : ' + progressType }}</span> -->
     <div class="home-sec--about-us__content text-light">
       <div class="row justify-content-center">
-        <div class="col-12">
+        <div class="col-12 col-md-10 col-xxl-11 col-xxx-9">
           <p data-aos="fade-right" data-aos-anchor-placement="top-center">
             <span>
               Digify is a digital media consultancy firm that was established in

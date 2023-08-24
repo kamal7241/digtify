@@ -153,6 +153,21 @@
     }
     @media screen and (max-width : 1024px) {
       background: $primary  ;
+        .home-sec--banner__img-group-wrapper {
+          width: 100%;
+          max-height: initial;
+          /* object-fit: cover; */
+          height: 100%;
+          max-width: initial;
+           .home-sec--banner__img-group{
+              > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 60% center;
+             }
+           }
+      }
     }
   }
 }

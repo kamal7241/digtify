@@ -9,7 +9,8 @@
           <p class="contact-us-branch-section__desc">
             info@digifymena.com <br>
             +20227748700 <br />
-            +201144447609
+            +201144447609 <br />
+            +96655987100
           </p>
     </div>
     </template>

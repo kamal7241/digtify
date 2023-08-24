@@ -1,13 +1,68 @@
 .home-sec{
     &.home-sec--about-us{
         .home-sec--about-us__title-wrapper{
-            // position: absolute;
-            // top: 50%;
-            // left: 50%;
-            // transform: translate(-50% , -50%);
-            // animation: ;
-            // transform: scale(30);
-            // transform-origin: 10px 10px;
+            .translate-container{
+                --y:35%;
+                transition-delay: 1s;
+            }
+            .zoom-title{
+                --scale:100;
+                --origin:2.5rem 6rem;
+            }
+            &.entry{
+                .zoom-title{
+                    --scale:1
+                    }
+                    .translate-container{
+                        --y:0;
+                        transition-delay: 1s;
+                    }
+                    @keyframes highlightAboutUs {
+                        0%{
+                            width:100%;
+                        }
+                        25% {
+                            width:0%;
+                        }
+                        50% {
+                            width:100%;
+                        }
+                        100% {
+                            width:100%;
+                        }
+                    }
+                    @keyframes highlightAboutUs2 {
+                        0%{
+                            width:100%;
+                        }
+                        50% {
+                            width:0%;
+                        }
+                        100% {
+                            width:100%;
+                        }
+        
+                    }
+                    .text-highlighter-wrapper.text-highlighter-wrapper--first{
+                        .text-highlighter__highlighted {
+                            animation-name: highlightAboutUs;
+                            animation-duration: 2s;
+                            animation-fill-mode: both;
+                            animation-timing-function: ease;
+                            animation-delay: 1s;
+                        }
+                    }
+                    .text-highlighter-wrapper.text-highlighter-wrapper--second{
+                        .text-highlighter__highlighted {
+                            animation-name: highlightAboutUs2;
+                            animation-duration: 2s;
+                            animation-fill-mode: both;
+                            animation-timing-function: ease;
+                            animation-delay: 1s;
+        
+                        }
+                    }
+            }
             width: fit-content;
             margin-left: auto;
             margin-right: auto;
@@ -16,65 +71,24 @@
             //     transform-origin: 40px 115px;
             //     z-index: 1;
             // }
-            @keyframes highlightAboutUs {
-                0%{
-                    width:100%;
-                }
-                25% {
-                    width:0%;
-                }
-                50% {
-                    width:100%;
-                }
-                100% {
-                    width:100%;
-                }
-            }
-            @keyframes highlightAboutUs2 {
-                0%{
-                    width:100%;
-                }
-                25% {
-                    width:0%;
-                }
-                100% {
-                    width:100%;
-                }
-
-            }
-            .text-highlighter-wrapper.text-highlighter-wrapper--first{
-                .text-highlighter__highlighted {
-                    animation-name: highlightAboutUs;
-                    animation-duration: 3s;
-                    animation-fill-mode: both;
-                    animation-timing-function: ease;
-                }
-            }
-            .text-highlighter-wrapper.text-highlighter-wrapper--second{
-                .text-highlighter__highlighted {
-                    animation-name: highlightAboutUs2;
-                    animation-duration: 3s;
-                    animation-fill-mode: both;
-                    animation-timing-function: ease;
-
-                }
-            }
     
         }
         
 
         .home-sec--about-us__content{
             // @include font-size(/* xlarge: */ 26px, /*[desktop]:*/24px , /*[tablet]:*/20px , /*[mobile]:*/18px  );
-            @include define-responsive-property(font-size , 1.56rem, 1.3rem , 1rem , 1rem);
+            @include define-responsive-property(font-size , 1.56rem, 1.3rem , 1.5rem , 1rem);
             @media screen and ( min-width: 1440px) and ( min-height : 800px) {
                 font-size: 1.9rem;
             }
             line-height: initial;
-            font-weight: bold;
             text-align: justify;
         }
         .home-sec__container{
             gap: 1rem;
+        }
+        @media screen and (max-width : 1024px) {
+            min-height: 100vh;
         }
     }
     

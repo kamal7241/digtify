@@ -17,6 +17,9 @@
                     background-size: 100%;
                 }
             }
+            @media screen and (max-width : 1024px) and (min-width : 768px) {
+                width: 100%;
+            }
         }
     }
     .img-text-sec__content{
@@ -58,9 +61,12 @@
         }
         .img-text-sec__content__desc{
             font-family: $font-family;
-            @include define-responsive-property(font-size , 1.5rem , 1.18rem , 1rem , 1rem );
+            @include define-responsive-property(font-size , 1.5rem , 1.18rem , 1.5rem , 1rem );
             @media screen and ( min-width: 1440px) and ( min-height : 800px) {
                 font-size: 1.7rem;
+            }
+            @media screen and (max-width: 900px){
+                font-size: 1.16rem;
             }
             line-height: initial;
             animation-name: translate-desc;

@@ -7,7 +7,7 @@
               :loop="true"
               @swiper="onSwiper"
               :modules="modules"
-                :autoplay="autoplayOptions"
+                :autoplay="false"
           >
               <swiper-slide  >  
                   <div class="home-sec--banner__img-group-wrapper" >
