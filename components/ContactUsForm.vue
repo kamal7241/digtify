@@ -145,14 +145,11 @@ export default {
         await axios
           .post(`https://ecommerce.routemisr.com/api/v1/categories` , formModel)
           .then((response) => {
-            console.log(response);
-            
             $toast.default("Success, we will contact you soon", {
               position: "bottom-left",
             });
           })
           .catch((error) => {
-            console.log(error);
             $toast.error("Sorry, something went wrong please try again", {
               position: "bottom-left",
             });

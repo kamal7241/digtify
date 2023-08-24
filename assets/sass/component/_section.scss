@@ -17,7 +17,7 @@
     }
     .home-sec__title{
         // font-size: 228px;
-        @include font-size(/* xlarge: */ 228px, /*[desktop]:*/160px , /*[tablet]:*/130px , /*[mobile]:*/50px  );
+        @include font-size(/* xlarge: */ 228px, /*[desktop]:*/160px , /*[tablet]:*/130px , /*[mobile]:*/53px  );
         @media screen and (min-width : 1920px) {
             font-size: 14.25rem;
         }

@@ -3,11 +3,10 @@
         <swiper 
               :slides-per-view="1"
               :space-between="50"
-              :speed="1500"
               :loop="true"
               @swiper="onSwiper"
               :modules="modules"
-                :autoplay="false"
+                :autoplay="autoplayOptions"
           >
               <swiper-slide  >  
                   <div class="home-sec--banner__img-group-wrapper" >

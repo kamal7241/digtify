@@ -4,16 +4,11 @@
                 <div class="animate__animated" 
                 >
                     
-                        <div class="home-sec--clients__title-wrapper pt-4" >
-                                <core-zoomed-title 
-                                origin="30px 100px" 
-                                class="home-sec__title"  
-           >
-                                            <span class="text-secondary" >OUR</span>
-                                </core-zoomed-title>
+                        <div class="home-sec--clients__title-wrapper pt-4 pb-4" >
+                          <span class="text-secondary home-sec__title" >OUR</span>
                 <h2 class="text-white home-sec__title" >CLIENTS</h2>
                         </div>
-                 </div>
+                 </div> 
                  
                 </transition>
                     <div class="clients animate__animated " 

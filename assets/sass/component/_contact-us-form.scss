@@ -22,8 +22,11 @@
 }
 @mixin placeholder{
     color:$light;
-    font-size:1.5vw;
+    font-size:22px;
     font-family: $font-family;
+    @media screen and (min-width:2500px) {
+      font-size: 1.5rem;
+    }
     @media screen and (max-width:767px) {
     font-size: 18px;   
   }
@@ -38,23 +41,25 @@
 }
 .contact-us-form{
   .contact-us-form__info{
+
       &> .contact-us-form__field-group{
           position: relative;
           // height: 65px;
           width: 100%;
           // margin-top: 25px;
-          height: 3.6rem;
-          margin-top: 1.8rem;
+          height: 3.3rem;
+          margin-top: 1.7rem;
           @media screen and (max-width:767px) {
             margin-top: 1rem; 
-            }
-          input{
-          @include input();
-          
-            &::placeholder{
-                @include placeholder();
+            
         }
-      }
+          input{
+            @include input();
+            
+              &::placeholder{
+                  @include placeholder();
+           }
+        }
       @media screen and (min-width:2000px) {
           height: 125px;
           margin-top: 40px;
@@ -84,12 +89,16 @@
      
       .contact-us-form__field-area{
     @extend .contact-us-form__field-group;
+    @media screen and (max-width:1024px) {
+      height: 72px!important;
+    }
     textarea{
       @include input();
       resize: none;
       &::placeholder{
           @include placeholder();
       }
+
       @media screen and (max-width:767px) {
         height: 45px;
       }

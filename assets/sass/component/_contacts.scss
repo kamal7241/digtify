@@ -16,6 +16,9 @@
                         background-position: 100% center;
                     }
                 }
+                @media screen and (max-width:1024px) {
+                    aspect-ratio: 0.8;
+                }
                 @media screen and (max-width:767px) {
                        aspect-ratio: 1;
                 }
