@@ -7,12 +7,12 @@
     :startThresHold="100"
   >
 </scroll-animator> -->
-  <CoreHomeSectionContainer class="home-sec--portfolio py-4">
+  <CoreHomeSectionContainer class="home-sec--contact-us py-4">
     <transition mode="out-in" name="fadeInRightBigOutDelayLeftBig">
         <div v-show="(currentProgress < PROGRESS.firstSlide)"
           class="animate__animated"
         >
-          <div class="home-sec--portfolio__title-wrapper">
+          <div class="home-sec--contact-us__title-wrapper">
             <core-zoomed-title
               origin="4rem 1.23rem"
               class="home-sec__title"

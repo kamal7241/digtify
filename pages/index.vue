@@ -71,21 +71,7 @@
                 </core-scroll-snap-container>
         </core-screen-switcher>
         <core-screen-switcher @mobile="runCountDown" :screens="[SCREENS.tablet , SCREENS.mobile]" >
-                <!-- <div class="container">
-                                <div class="row">
-                                <div class="col">
-                                        <div class="comming-soon" >
-                                        <img src="@/assets/image/digify-logo.png" alt="Logo" class="logo">
-                                        <h1 class="title" >Coming Soon ...</h1>
-                                        <p class="sub-title" >We are working hard to bring you an amazing website.</p>
-                                        <div class="countdown" id="countdown"></div>
-                                        </div>
-                                </div>
-                                </div>
-                </div> -->
-                hello from mobile and tablet
-                <banner-mobile />
-                <clients-mobile />
+                <tablet-and-mobile-container />
         </core-screen-switcher>      
 </template>
 <script >
@@ -142,23 +128,7 @@ export default defineNuxtComponent({
                                 this.index--
                         })
                 },
-                runCountDown(){
-                var countdownDate = new Date("2023-09-01T00:00:00Z").getTime();
-                        var countdown = setInterval(function() {
-                        var now = new Date().getTime();
-                        var distance = countdownDate - now;
 
-                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                        document.getElementById("countdown").innerHTML = "<span class='time days' >" + days + "</span>d <span class='time hours' >" + hours + "</span>h <span class='time min'>" + minutes + "</span>m <span class='time sec'>" + seconds + "</span>s ";
-                        if (distance < 0) {
-                                clearInterval(countdown);
-                                document.getElementById("countdown").innerHTML = "Website is live!";
-                        }
-                        }, 1000);
-                }
         } ,
 })
 </script>

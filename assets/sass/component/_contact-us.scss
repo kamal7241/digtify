@@ -1,0 +1,11 @@
+.home-sec{
+    &.home-sec--contact-us{
+        .home-sec--contact-us__title-wrapper{
+            width: fit-content;
+            margin: auto;
+            .home-sec__title{
+            }
+        }
+        @media screen and ( max-width:767px) {
+            height: auto;
+    }}}

@@ -16,9 +16,19 @@
     --bs-btn-border-color: #{$primary};
     --bs-btn-hover-bg: #{$primary};
     --bs-btn-hover-border-color: #{$primary};
-    --bs-btn-focus-shadow-rgb: 49, 132, 253;
     --bs-btn-active-bg: #{$primary};
     --bs-btn-active-border-color:  #{$primary};
     --bs-btn-disabled-bg: #{$primary};
     --bs-btn-disabled-border-color: #{$primary};
+}
+
+.btn-secondary {
+    --bs-btn-bg: #{$secondary};
+    --bs-btn-border-color: #{$secondary};
+    --bs-btn-hover-bg: #{$secondary};
+    --bs-btn-hover-border-color: #{$secondary};
+    --bs-btn-active-bg: #{$secondary};
+    --bs-btn-active-border-color:  #{$secondary};
+    --bs-btn-disabled-bg: #{$secondary};
+    --bs-btn-disabled-border-color: #{$secondary};
 }

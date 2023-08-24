@@ -241,4 +241,8 @@
             @include define-responsive-property(margin-top , 1.5rem , 1rem , 0 , 0);
         }
     }
+    @media screen and (max-width: 767px) {
+        height: auto;
+    
+    }
 }
