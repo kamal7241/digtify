@@ -89,6 +89,13 @@
         }
         @media screen and (max-width : 1024px) {
             min-height: 100vh;
+            
+        }
+        @media screen and (max-width : 767px) {
+            .home-sec--about-us__content{
+                text-align: start;
+            }
+            
         }
     }
     

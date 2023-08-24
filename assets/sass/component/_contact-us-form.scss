@@ -147,7 +147,8 @@
             }
     }
     &:hover{
-      width: 160px;
+      // width: 160px;
+      width: 13rem;
       background-color: $text;
     }
 
@@ -160,7 +161,8 @@
     }
     @media screen and (min-width:2500px) {
       &:hover{
-        width: 200px;
+        width: 12rem;
+        // width: 200px;
         background-color: $text;
       }
   }

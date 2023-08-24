@@ -50,7 +50,7 @@
         class="contact-us-form__submit mt-4 mt-xxl-5 rounded-pill p-md-4 p-3 position-relative"
       >
         <span class="title-submit text-light pe-4 text-capitalize"
-          >view more</span
+          >Send Message</span
         >
         <span class="submit-button btn btn-secondary rounded-pill">
           <img src="../assets/image/arrow-right.png" alt="" />
@@ -73,12 +73,13 @@ import {
   numeric,
 } from "@vuelidate/validators";
 import axios from "axios";
-import { useToast } from "vue-toast-notification";
-import "vue-toast-notification/dist/theme-sugar.css";
+// import  {useToast} from "vue-toast-notification"
+// import { useToast } from "vue-toast-notification";
+// import "vue-toast-notification/dist/theme-sugar.css";
 // import {ref} from "vue"
 // const isLoading = ref(false);
 // todo check to be moved to setup or not
-const $toast = useToast();
+// const $toast = useToast(vueToast);
 
 const alpha = helpers.regex(/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/);
 export default {
@@ -130,7 +131,7 @@ export default {
   },
   data() {
     return {
-      show: true,
+      show: false,
       name: "",
       contact: {
         email: "",
@@ -145,14 +146,14 @@ export default {
         await axios
           .post(`https://ecommerce.routemisr.com/api/v1/categories` , formModel)
           .then((response) => {
-            $toast.default("Success, we will contact you soon", {
-              position: "bottom-left",
-            });
+            // $toast.default("Success, we will contact you soon", {
+            //   position: "bottom-left",
+            // });
           })
           .catch((error) => {
-            $toast.error("Sorry, something went wrong please try again", {
-              position: "bottom-left",
-            });
+            // $toast.error("Sorry, something went wrong please try again", {
+            //   position: "bottom-left",
+            // });
           });
 
           this.show=false
