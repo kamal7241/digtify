@@ -2,7 +2,7 @@
     <section class="contact-us-info ">
     <div class="row justify-content-center">
       <div class="col-12 col-md-10" >
-          <div class="row g-5">
+          <div class="row gx-xxl-5 ">
               <div class="col-md-6 col-12">
                 <div class="contact-us-info__img"  >
                 <slot  name="img" ></slot>
