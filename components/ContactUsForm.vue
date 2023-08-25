@@ -1,8 +1,5 @@
 <template>
   <div class="contact-us-form-container" >
-        <div  >
-                <loader :targetScrollEl="$refs.scrollSnapRef" :show="show" />
-        </div>
     <form class="contact-us-form" @submit.prevent="submitForm">
     <div class="contact-us-form__info d-flex flex-column align-items-start">
       <div class="input-name contact-us-form__field-group">
@@ -63,6 +60,7 @@
 
 </template>
 <script>
+import { useMainStore } from '~/store'
 import { useVuelidate } from "@vuelidate/core";
 import {
   required,
@@ -70,21 +68,27 @@ import {
   helpers,
   maxLength,
   minLength,
-  numeric,
 } from "@vuelidate/validators";
 import axios from "axios";
 // import  {useToast} from "vue-toast-notification"
-// import { useToast } from "vue-toast-notification";
-// import "vue-toast-notification/dist/theme-sugar.css";
-// import {ref} from "vue"
-// const isLoading = ref(false);
+// import toast from "vue-toast-notification"
+// console.log(toast);
+// import * as vueToast from "vue-toast-notification";
 // todo check to be moved to setup or not
 // const $toast = useToast(vueToast);
+import { mapStores } from 'pinia'
 
 const alpha = helpers.regex(/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/);
 export default {
   setup() {
+  //   const store = useMainStore()
+  // const { data } = await useAsyncData('user', () => store.fetchUser())
+
     return { v$: useVuelidate({ $autoDirty: true }) };
+  },
+  computed:{
+    ...mapStores(useMainStore),
+
   },
   validations() {
     return {
@@ -131,7 +135,6 @@ export default {
   },
   data() {
     return {
-      show: false,
       name: "",
       contact: {
         email: "",
@@ -141,22 +144,28 @@ export default {
     };
   },
   methods: {
+    showLoader(){
+      this.mainStore.showLoader()
+    },
+    hideLoader(){
+      this.mainStore.hideLoader()
+    },
     async getApi(formModel) {
-      this.show=true
+      this.showLoader()
         await axios
           .post(`https://ecommerce.routemisr.com/api/v1/categories` , formModel)
           .then((response) => {
-            // $toast.default("Success, we will contact you soon", {
-            //   position: "bottom-left",
-            // });
+            this.$toast.default("Success, we will contact you soon", {
+              position: "bottom-left",
+            });
           })
           .catch((error) => {
-            // $toast.error("Sorry, something went wrong please try again", {
-            //   position: "bottom-left",
-            // });
+            this.$toast.error("Sorry, something went wrong please try again", {
+              position: "bottom-left",
+            });
           });
 
-          this.show=false
+          this.hideLoader();
 
       },
     async submitForm() {

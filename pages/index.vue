@@ -1,4 +1,5 @@
 <template>
+        <loader :show="isLoader" />
         <core-screen-switcher :screens="[SCREENS.desktop]" >
                 <div class=" navigators-btns w-100  position-fixed bottom-0 end-0" >
                         <div class="container-fluid text-end" >
@@ -78,6 +79,10 @@
         </core-screen-switcher>      
 </template>
 <script >
+import { mapState } from 'pinia'
+import { useMainStore } from '~/store'
+// import {mapGetters} from "vuex"
+// console.log(mapGetters)
 const SCREENS = Object.freeze({
     desktop : 0 , 
     tablet : 1 , 
@@ -99,14 +104,17 @@ export default defineNuxtComponent({
         },
         data(){
                 return {
+                        show:true,
                         index : 0 , 
                         activeIndex : 0 , 
                 }
         } ,
         computed:{
+                // ...mapGetters("loader" , ["isLoader"]),
                 SCREENS(){
                         return SCREENS
-                }
+                },
+                ...mapState(useMainStore, ['isLoader'])
         },
         watch:{
                 index(curr , prev){
@@ -133,6 +141,9 @@ export default defineNuxtComponent({
                 },
 
         } ,
+        mounted(){
+                console.log(this.isLoader)
+        }
 })
 </script>
 <style lang="scss"  >
