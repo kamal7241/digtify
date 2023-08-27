@@ -2,16 +2,15 @@
   .dropdown{
       z-index: 16;
       position: fixed;
-      top: 50%;
       @include define-responsive-property(left , 10px , 10px , 5px , 5px);
-      @include define-responsive-property(top , 50% , 50% , 10% , 10%);
+      @include define-responsive-property(top , 40% , 40% , 20% , 20%);
       //transform: translateY(-50%);
      // background: $primary;
      // border-radius: 20px;
      // left: 0rem;
    //   box-shadow: 0 0 0.3rem white;
       color: $primary;
-      @include font-size(3rem , 2rem);
+      @include font-size(2rem , 1.5rem);
       .btn-dropdown{
         background-color: white;
         border-radius: 50%;
@@ -39,7 +38,7 @@
        // background-color: white;
         //padding: 5px;
        // border-radius: 5px;
-      @include font-size(2rem , 1.5rem);
+      @include font-size(1.5rem , 1rem);
 
         .drop-item{
             text-align: center;
@@ -78,8 +77,8 @@
     
         span {
           display: block;
-          width: 1rem;
-          height: 1rem;
+          @include define-responsive-property(width , 0.8rem , 0.8rem , 0.6rem , 0.6rem);
+          @include define-responsive-property(height , 0.8rem , 0.8rem , 0.6rem , 0.6rem);
           border-bottom: 2px solid white;
           border-right: 2px solid white;
           transform: rotate(45deg);
