@@ -15,22 +15,22 @@
 
   <transition name="slide">
     <ul class=" list" v-if="isDropped">
-      <li class="drop-item "><a target="_blank" href="www.linkedin.com/company/digifymena"> 
+      <li class="drop-item "><a target="_blank" href="https://www.linkedin.com/company/digifymena"> 
         <span class="icon-linkedin-outline" >
         </span>
     
       </a></li>
-      <li class="drop-item "><a target="_blank" href="www.facebook.com/DigifyMena"> 
+      <li class="drop-item "><a target="_blank"  href="https://www.facebook.com/DigifyMena"> 
         <span class="icon-facebook-outline" >
         </span>
 
       </a></li>
-      <li class="drop-item "><a target="_blank" href="www.behance.net/digify-mena">
+      <li class="drop-item "><a target="_blank" href="https://www.behance.net/digify-mena">
         <span class="icon-behance-outline" >
         </span>
 
       </a></li>
-      <li class="drop-item "><a target="_blank" href="www.instagram.com/digifymena"> 
+      <li class="drop-item "><a target="_blank" href="https://www.instagram.com/digifymena"> 
         <span class="icon-instgram-outline" >
         </span>
   
