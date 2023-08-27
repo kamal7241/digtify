@@ -1,0 +1,34 @@
+.social-links{
+  .dropdown{
+      z-index: 99999999999999;
+      position: fixed;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      .btn-dropdown{
+        padding: 12px ;
+      }
+      .list{
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        transform-origin: top;
+        transition: transform .4s ease-in-out;
+        overflow: hidden;
+        .drop-item{
+            text-align: center;
+          background: white;
+          border-bottom: solid thin #eee;
+          border-left: solid medium #cbc;
+        }
+      }
+      .slide-enter-from,
+      .slide-leave-to{
+        transform: scaleY(0);
+      }
+      .icon-file-text:before {
+          content: "\e922";
+        }
+  }
+}
