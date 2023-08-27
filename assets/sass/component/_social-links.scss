@@ -2,7 +2,7 @@
   .dropdown{
       z-index: 16;
       position: fixed;
-      @include define-responsive-property(left , 10px , 10px , 5px , 5px);
+      @include define-responsive-property(right , 10px , 10px , 5px , 5px);
       @include define-responsive-property(top , 40% , 40% , 20% , 20%);
       //transform: translateY(-50%);
      // background: $primary;
