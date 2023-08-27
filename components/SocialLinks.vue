@@ -2,12 +2,39 @@
 <div class="social-links" >
     <div class="dropdown  ">
         <div id="menu">
-  <button @click="dropIt" class="btn-dropdown  rounded-pill">Pet </button>
+  <div @click="dropIt" class="btn-dropdown"><span class="icon-info" ></span> 
+  </div>
+  <div class="arrow" v-show="!isDropped">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+
+
+
   <transition name="slide">
     <ul class=" list" v-if="isDropped">
-      <li class="drop-item rounded-pill"><a href=""><img src= '../assets/image/facebook.svg'    ></a></li>
-      <li class="drop-item rounded-pill"><a href=""> <img src="../assets/image/linkedin.svg" ></a></li>
-      <li class="drop-item rounded-pill"><a href=""> <img src="../assets/image/youtube.svg"> </a></li>
+      <li class="drop-item "><a target="_blank" href="www.linkedin.com/company/digifymena"> 
+        <span class="icon-linkedin-outline" >
+        </span>
+    
+      </a></li>
+      <li class="drop-item "><a target="_blank" href="www.facebook.com/DigifyMena"> 
+        <span class="icon-facebook-outline" >
+        </span>
+
+      </a></li>
+      <li class="drop-item "><a target="_blank" href="www.behance.net/digify-mena">
+        <span class="icon-behance-outline" >
+        </span>
+
+      </a></li>
+      <li class="drop-item "><a target="_blank" href="www.instagram.com/digifymena"> 
+        <span class="icon-instgram-outline" >
+        </span>
+  
+      </a></li>
     </ul>
   </transition>
   </div>
