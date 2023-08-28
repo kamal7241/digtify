@@ -1,10 +1,10 @@
 <template>
         <loader :show="isLoader" />
-        <social-links/>
         <core-screen-switcher :screens="[SCREENS.desktop]" >
                 <div class=" navigators-btns w-100  position-fixed bottom-0 end-0" >
                         <div class="container-fluid text-end" >
-                                <div class="pe-4 pb-3 d-inline-flex flex-column gap-3" >
+                                <div class="pe-0 pb-3 d-inline-flex flex-column gap-3" >
+                                        <social-links :drop-direction="1" />
                                         <button @click="index=0" :disabled="index == 0" class="navigators-btns__up btn-primary btn  rounded-circle icon-up-chevron-svgrepo-com"  ></button>
                                         <button @click="index=5" :disabled="index == 5" class="navigators-btns__down btn-primary btn  rounded-circle icon-down-chevron-svgrepo-com"  ></button>
                                 </div>
@@ -73,9 +73,23 @@
                 </core-scroll-snap-container>
         </core-screen-switcher>
         <core-screen-switcher :screens="[SCREENS.tablet ]" >
+                <div class=" navigators-btns w-100  position-fixed bottom-0 end-0" >
+                        <div class="container-fluid text-end" >
+                                <div class="pe-0 pb-3 d-inline-flex flex-column gap-3" >
+                                        <social-links :drop-direction="1" />
+                                </div>
+                        </div>
+                </div>
                 <tablet-container />
         </core-screen-switcher>  
         <core-screen-switcher  :screens="[ SCREENS.mobile]" >
+                <div class=" navigators-btns w-100  position-fixed bottom-0 end-0" >
+                        <div class="container-fluid text-end" >
+                                <div class="pe-0 pb-3 d-inline-flex flex-column gap-3" >
+                                        <social-links :drop-direction="1" />
+                                </div>
+                        </div>
+                </div>
                 <mobile-container />
         </core-screen-switcher>      
 </template>

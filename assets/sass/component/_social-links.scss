@@ -1,23 +1,57 @@
 .social-links{
+  &.social-links--open{
+    .dropdown{
+      .btn-dropdown{
+        //margin-bottom: 0;
+      }
+    }
+  }
+  &.social-links--dropup{
+    .dropdown{
+      .btn-dropdown{
+        margin-bottom: 0;
+      }
+      .list{
+        transform-origin: bottom;
+        transition: transform .4s ease-in-out;
+        transform : translate(-50% , calc(-100% - 4.5rem));
+        .drop-item{
+        }
+      }
+      .slide-enter-from,
+      .slide-leave-to{
+        transform: translate( -50% , calc(-100% - 4.5rem)) scaleY(0);
+      }
+      .arrow{
+        transform: rotate(180deg) translate(0.25rem , calc(100% + 1.25rem ) );
+        cursor: pointer;
+        margin-top: 0;
+        top: 0;
+        left: -50%;
+        width: 100%;
+      }
+
+      }
+  }
   .dropdown{
-      z-index: 16;
-      position: fixed;
-      @include define-responsive-property(right , 10px , 10px , 5px , 5px);
-      @include define-responsive-property(top , 40% , 40% , 20% , 20%);
+      // z-index: 16;
+      // position: fixed;
+      // @include define-responsive-property(right , 10px , 10px , 5px , 5px);
+      // @include define-responsive-property(top , 40% , 40% , 20% , 20%);
       //transform: translateY(-50%);
      // background: $primary;
      // border-radius: 20px;
      // left: 0rem;
    //   box-shadow: 0 0 0.3rem white;
-      color: $secondary;
-      @include font-size(2rem , 1.5rem);
+      color: white;
+      //@include font-size(2rem , 1.5rem);
       .btn-dropdown{
-        background-color: white;
         border-radius: 50%;
-        @include define-responsive-property(padding , .7rem , .7rem , 0.6rem , 0.6rem);
-        margin-bottom: 1rem;
+        //@include define-responsive-property(padding , .7rem , .7rem , 0.6rem , 0.6rem);
+        margin-bottom: 3rem;
         line-height: 1;
         box-shadow: 0 0 1rem rgba($color: black, $alpha: 0.5) ;
+        @include define-responsive-property(width , 3rem , 3rem , 2.5rem , 2.5rem);
         cursor: pointer;
           &:hover{
             ~ .arrow{
@@ -26,6 +60,8 @@
           }
       }
       .list{
+        position: absolute;
+        top: 4.4rem;
         margin: 0;
         padding: 0;
         list-style-type: none;
@@ -35,21 +71,26 @@
         font-size: 1.8rem;
         width: fit-content;
         margin: auto;
+        left: 50%;
+        transform: translateX(-50%);
        // background-color: white;
         //padding: 5px;
        // border-radius: 5px;
-      @include font-size(1.5rem , 1rem);
+      @include font-size(1.2rem ,1.2rem ,0.9rem , 0.9rem);
 
         .drop-item{
+            @include define-responsive-property(width  , 2.5rem , 2.5rem , 2rem , 2rem);
+            aspect-ratio: 1;
+            overflow: hidden;
             text-align: center;
             line-height: 1;
             padding: 0.5em;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: solid $secondary;
+            border: solid white;
             @include define-responsive-property(border-width , 1px , 1px , 1px , 1px);
-            background-color: white;
+            background-color: $primary;
             border-radius: 50%;
             margin-bottom: 10px;
 
@@ -69,13 +110,13 @@
         }
 
       }
-      
-      
       .arrow {
-        transform: rotate(0deg) translateX(50%);
+        position: absolute;
         cursor: pointer;
-        margin-top: 0.25rem;
-    
+        transform: rotate(0deg) translate(0.05rem , 1rem);
+        top: 100%;
+        width: 100%;
+        left: 50%;
         span {
           display: block;
           @include define-responsive-property(width , 0.8rem , 0.8rem , 0.6rem , 0.6rem);

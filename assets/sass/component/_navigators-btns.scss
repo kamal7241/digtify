@@ -2,9 +2,12 @@
     z-index: 10;
     font-size: 1rem;
     pointer-events: none;
+    .social-links{
+        pointer-events: auto;
+    }
     .navigators-btns__up{
-        width:3rem;
-        height: 3rem;
+        width:2.8em;
+        height: 2.8rem;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -12,8 +15,8 @@
         pointer-events: auto;
     }
     .navigators-btns__down{
-        width:3rem;
-        height: 3rem;
+        width:2.8em;
+        height: 2.8rem;
         display: inline-flex;
         align-items: center;
         justify-content: center;
