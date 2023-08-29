@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import vsharp from "vite-plugin-vsharp";
+
 const netilfyConfig = {
   baseURL: '/',
   buildAssetsDir: 'assets'
@@ -19,6 +21,7 @@ export default defineNuxtConfig({
     // '@/assets/sass/main-ltr.scss',
   ],
   vite: {
+    plugins: [vsharp()],
     css: {
       preprocessorOptions: {
         scss: {
