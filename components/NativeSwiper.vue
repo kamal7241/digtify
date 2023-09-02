@@ -32,7 +32,6 @@ export default {
         window.innerWidth) /
       100;
     this.swiperRatio = this.swiperRatio.toFixed();
-    console.log(this.swiperRatio);
   },
   methods: {
     getImage(name) {
@@ -44,25 +43,19 @@ export default {
       let eleWidth = ele.offsetWidth;
       if (eleWidth == this.swiperRatio) {
         ele.style.width =  this.getSlideWidth();
-        console.log(this.getSlideWidth())
       } else {
         ele.style.width = `calc(${eleWidth}px + ${this.getSlideWidth()})`;
-        console.log(`calc(${eleWidth}px + ${this.getSlideWidth()})`);
       }
     },
     swipeTo(slide ){
         let ele = this.$refs.el;
-        console.log(ele)
         let eleWidth = ele.offsetWidth;
-        console.log(eleWidth)
         if (eleWidth == this.swiperRatio) {
           ele.style.width = /* width */ this.swiperRatio * /* number of slides */ 4  + /* margin */ 22 * 3 + "px";
         // console.log(this.swiperRatio , "margin :"  , 22 * 2  )
-          console.log(ele.style.width)
         } else {
           ele.style.width = eleWidth + (this.swiperRatio * 4 + 22 * 2) + "px";
         // console.log("new width of else : " , eleWidth , "+" , "swiper ratio: " ,   this.swiperRatio ,"+" ,  "margin :"  , 22 * 2  )
-        console.log(ele.style.width)
 
         }
     },
@@ -75,7 +68,6 @@ export default {
 
       let eleWidth = ele.offsetWidth;
       let newWidth = `calc(${eleWidth}px - ${this.getSlideWidth()})`;
-      console.log(`calc(${eleWidth}px - ${this.getSlideWidth()})`);
 
       // if (newWidth == 0) {
       //   newWidth = this.swiperRatio;

@@ -69,7 +69,6 @@
         },
         onSwiper(swiper){
             this.swiper = swiper
-        console.log(swiper);
       },
     }, 
 })

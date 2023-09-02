@@ -23,7 +23,6 @@ export default defineNuxtComponent({
     },
     methods: {
         callBack() {
-            console.log("new break point");
         },
         next() {
             this.y += this.gap
@@ -78,8 +77,6 @@ export default defineNuxtComponent({
                 const ratio = entries[0].intersectionRatio;
                 const boundingRect = entries[0].boundingClientRect;
                 const intersectionRect = entries[0].intersectionRect;
-                console.log(intersectionRect , boundingRect )
-                console.log(ratio )
                 if(!this.observerSetteled){
                     this.observerSetteled = true;
                     return

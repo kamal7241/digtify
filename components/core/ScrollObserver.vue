@@ -72,11 +72,9 @@ export default defineNuxtComponent({
                 if(!ratio )
                     return;
                 if( TARGET_STATE_ACTIONS[this.state].isNext(intersectionRect.top , boundingRect.top) ){
-                    console.log("is next to " , this.state , TARGET_STATE_ACTIONS[this.state])
                     this.state = TARGET_STATE_ACTIONS[this.state].next
                 }
                 else{
-                    console.log("is prev to " , this.state , TARGET_STATE_ACTIONS[this.state] )
                     this.state = TARGET_STATE_ACTIONS[this.state].prev
                 } 
                 this.$emit(EVENTS[this.state] , this.state)
