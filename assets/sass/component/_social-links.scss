@@ -13,15 +13,62 @@
       }
       .list{
         transform-origin: bottom;
-        transition: transform .4s ease-in-out;
         transform : translate(-50% , calc(-100% - 4.5rem));
-        .drop-item{
+
+        &.slide-enter-from{      
+          .drop-item{
+            transform : translateY(500%);
+        
+          }
         }
+        &.slide-enter-to{
+          .drop-item{
+           transform: translateY( 0% );
+          }
+        }
+        &.slide-enter-active {
+          transition-duration:1.45s ;
+          .drop-item{
+            transition: transform 0.75s ease;
+            &:first-child{
+              transition-delay: 0.75s;
+            }
+            &:nth-child(2){
+              transition-delay: 0.5s;
+            }
+            &:nth-child(3){
+              transition-delay: 0.25s;
+            }
+            &:nth-child(4){
+            }
+          }
+
+        }
+        &.slide-leave-active{
+          transition-duration:1s ;
+          .drop-item{
+            transform: translateY( 500% );
+            transition: transform 1s ease;
+            &:first-child{
+            }
+            &:nth-child(2){
+              transition-delay: 0.25s;
+            }
+            &:nth-child(3){
+              transition-delay: 0.5s;
+            }
+            &:nth-child(4){
+              transition-delay: 0.75s;
+            }
+          }
+        }
+        // &.slide-enter-from , &.slide-leave-to{
+        //   .drop-item{
+        //     transform: translateY( 500% );
+        //   }  
+        // }
       }
-      .slide-enter-from,
-      .slide-leave-to{
-        transform: translate( -50% , calc(-100% - 4.5rem)) scaleY(0);
-      }
+
       .arrow{
         transform: rotate(180deg) translate(0.25rem , calc(100% + 1.25rem ) );
         cursor: pointer;
@@ -66,7 +113,7 @@
         padding: 0;
         list-style-type: none;
         transform-origin: top;
-        transition: transform .4s ease-in-out;
+        //transition: transform .4s ease-in-out;
         overflow: hidden;
         font-size: 1.8rem;
         width: fit-content;
@@ -103,7 +150,11 @@
       }
       .slide-enter-from,
       .slide-leave-to{
-        transform: scaleY(0);
+        // transform: scaleY(0);
+        .drop-item{
+
+        }
+        
       }
       .icon-file-text:before {
           content: "\e922";

@@ -1,5 +1,5 @@
 <template>
-<div class="social-links" :class="[
+<div ref="socialRef" class="social-links" :class="[
   dropDirection == DROP_DIRECTIONS.up ? 'social-links--dropup' :''  ,
   isDropped ? 'social-links--open' : ''
 ]">
@@ -63,10 +63,20 @@ export default {
     },
   },
   methods: {
+    onClickOut(){
+      if(!this.isDropped)
+        return
+      this.isDropped = false;
+    },
     dropIt() {
       this.isDropped = !this.isDropped
     }
-  }
+  },
+  mounted() {
+    import("click-outside").then(({default : clickOutSide}) => {
+      const unbind =  clickOutSide(this.$refs.socialRef , this.onClickOut)
+    })
+  },
 
 }
 </script>
