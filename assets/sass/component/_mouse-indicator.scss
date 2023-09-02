@@ -1,0 +1,42 @@
+
+  .mouse{
+    @keyframes wheel-up-down {
+        0% {
+            margin-top: 2px;
+        }
+     
+        100% {
+            margin-top: 20px;
+        }
+    }
+     width: 3rem;
+     aspect-ratio: 0.56;
+     overflow: hidden;
+     border: 2px solid white;
+     border-radius: 1.5rem;
+     cursor: pointer;
+     position: relative;
+     text-align: center;
+     .mouse-wheel{
+       height: 0.75rem;
+       margin: 2px auto 0;
+       display: block;
+       width: 0.375rem;
+       background-color: white;
+       border-radius: 50%;
+       animation: 1.6s ease infinite wheel-up-down;
+       animation-fill-mode: both;
+       animation-direction: alternate;
+     }
+  }
+  .mouse-indicator{
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    background-color: rgba($color: black, $alpha: 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    backdrop-filter: blur(3px);
+  } 
