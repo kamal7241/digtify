@@ -1,6 +1,7 @@
 <template>
         <loader :show="isLoader" />
         <core-screen-switcher :screens="[SCREENS.desktop]" >
+                <core-mouse-indicator />
                 <div class=" navigators-btns w-100  position-fixed bottom-0 end-0" >
                         <div class="container-fluid text-end" >
                                 <div class="pe-0 pb-3 d-inline-flex flex-column gap-3" >
