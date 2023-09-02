@@ -185,6 +185,7 @@ const BANNER_ELEMENTS_ANIMATIONS = Object.freeze({
 });
 export default defineNuxtComponent({
   props:['currentProgress'] ,
+  emits:["reset"],
   data: () => ({
     // currentProgress: ANIMATION_PROGRESS.entry,
     animationsGap: 100, // by px
@@ -327,6 +328,8 @@ export default defineNuxtComponent({
   },
   watch: {
     currentProgress(curr, prev) {
+    if(curr == 0 && prev > curr)
+        this.$emit("reset");
       this.progressType =
         curr > prev ? PROGRESS_TYPES.forward : PROGRESS_TYPES.backward;
     },
