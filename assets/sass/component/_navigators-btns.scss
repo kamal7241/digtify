@@ -13,6 +13,7 @@
         justify-content: center;
         box-shadow: 0px 0px 3px 4px rgba($color: $primary-light, $alpha: 0.5);
         pointer-events: auto;
+        font-weight: bold;
     }
     .navigators-btns__down{
         width:2.8em;
@@ -22,5 +23,6 @@
         justify-content: center;
         box-shadow: 0px 0px 3px 4px rgba($color: $primary-light, $alpha: 0.5);
         pointer-events: auto;
+        font-weight: bold;
     }
 }
