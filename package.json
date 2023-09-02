@@ -17,7 +17,7 @@
     "deploy": "npm run  gh-publish",
     "deploy:gh": "npm run generate:gh && npm run deploy",
     "deploy:netilfy": "npm run generate:netilfy && npm run deploy",
-    "preversion": "npm run deploy:netilfy" ,
+    "preversion": "npm run deploy:netilfy",
     "postversion": "git push && git push --tags"
   },
   "devDependencies": {
@@ -43,7 +43,7 @@
     "swiper": "^10.1.0",
     "vue-toast-notification": "^3.1.1"
   },
-  "version": "2.0.0",
+  "version": "2.1.0",
   "overrides": {
     "vue": "latest"
   }
