@@ -121,7 +121,13 @@
                                 content: 'Digify is a full-featured digital media consultancy house founded in 2014 that provides all aspects of digital marketing & advertising services.'
                         }
                 ],
-                link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+                link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }] ,
+                script: [
+                        {
+                                src: "https://smtpjs.com/v3/smtp.js",
+                                body: true,
+                        },
+                ],
         },
         data(){
                 return {
