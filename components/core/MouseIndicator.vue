@@ -4,7 +4,7 @@
             <div class="mouse">
                 <span class="mouse-wheel"></span>
             </div>
-            <h1 class="postion-relative text-white mt-3" > Explore Digify using your mouse or trackpad </h1>
+            <h1 class="postion-relative text-white mt-3" > Scroll to Explore Digify</h1>
         </div>
 
     </Transition>

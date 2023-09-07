@@ -9,11 +9,11 @@
             margin-top: 20px;
         }
     }
-     width: 3rem;
+     width: 1em;
      aspect-ratio: 0.56;
      overflow: hidden;
      border: 2px solid white;
-     border-radius: 1.5rem;
+     border-radius: .5em;
      cursor: pointer;
      position: relative;
      text-align: center;
@@ -39,4 +39,5 @@
     justify-content: center;
     flex-direction: column;
     backdrop-filter: blur(3px);
+    font-size: 3rem;
   } 

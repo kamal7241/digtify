@@ -17,8 +17,7 @@
 
 
 
-  <transition name="slide">
-    <ul class=" list social-links__list"   v-if="isDropped">
+    <ul class=" list social-links__list" >
       <li class="drop-item "><a target="_blank" href="https://www.linkedin.com/company/digifymena"> 
         <span class="icon-linkedin-outline" >
         </span>
@@ -39,7 +38,6 @@
   
       </a></li>
     </ul>
-  </transition>
   </div>
   </div>
 </div>
