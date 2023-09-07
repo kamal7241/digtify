@@ -62,6 +62,8 @@
 <script>
 import { useMainStore } from '~/store'
 import { useVuelidate } from "@vuelidate/core";
+import emailjs from '@emailjs/browser';
+
 import {
   required,
   email,
@@ -153,7 +155,7 @@ export default {
     async getApi(formModel) {
       this.showLoader()
         await axios
-          .post(`https://ecommerce.routemisr.com/api/v1/categories` , formModel)
+          .post(`http://104.236.254.17/api/v1/message/create` , formModel)
           .then((response) => {
             this.$toast.default("Success, we will contact you soon", {
               position: "bottom-left",
@@ -182,7 +184,24 @@ export default {
         this.getApi(value);
       }
     },
+    async sendMail(){
+      const msg =  await emailjs.send('service_pn3zt5l', 'template_dwduqwa', {from_address : "" ,  from_name : "kamal" , to_name : "test"} , "iqy0uj76_814S6jzT")
+    // const msg =   await Email.send({
+    //     // SecureToken : "75e62f8eb6490f5bc04cb811a85d500448579eeec34e9dc8beace34afb6b3c2d",
+    //     // Host : "mailslurp.mx",
+    //     // Username : "info@digifymena.com",
+    //     // Password : "Digify2021Mena",
+    //     To : "kamal.korney@gmail.com",
+    //     From : "kamal.korney@gmail.com",
+    //     Subject : "This is the subject",
+    //     Body : "And this is the body"
+    // })
+      console.log(msg)
+    }
  
+  },
+  mounted() {
+   
   },
 };
 </script>

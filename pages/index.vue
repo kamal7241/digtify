@@ -6,7 +6,12 @@
                         <div class="container-fluid text-end" >
                                 <div class="pe-0 pb-3 d-inline-flex flex-column gap-3" >
                                         <social-links :drop-direction="1" />
-                                        <button @click="index=0" v-show="index>0" :disabled="index == 0" class="navigators-btns__up btn-primary btn  rounded-circle icon-up-chevron-svgrepo-com"  ></button>
+                                        <transition>
+                                                <button @click="index=0" v-if="index ==5" :disabled="index == 0" class="navigators-btns__up btn-primary btn  rounded-circle icon-up-chevron-svgrepo-com"  ></button>
+                                                <div v-else="index<5" class="mouse h2 m-auto">
+                                                        <span class="mouse-wheel"></span>
+                                                </div>
+                                        </transition>
                                         <!-- <button @click="index=5" :disabled="index == 5" class="navigators-btns__down btn-primary btn  rounded-circle icon-down-chevron-svgrepo-com"  ></button> -->
                                 </div>
                         </div>
@@ -105,6 +110,7 @@
     mobile : 2 ,
     })
     export default defineNuxtComponent({
+        
         head: {
                 title: 'Digify',
                 meta: [
@@ -116,7 +122,13 @@
                                 content: 'Digify is a full-featured digital media consultancy house founded in 2014 that provides all aspects of digital marketing & advertising services.'
                         }
                 ],
-                link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+                link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }] ,
+                script: [
+                        {
+                                src: "https://smtpjs.com/v3/smtp.js",
+                                body: true,
+                        },
+                ],
         },
         data(){
                 return {
