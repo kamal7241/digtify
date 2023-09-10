@@ -66,6 +66,9 @@
                                     <PortfolioItem :title="portfolioList[7].title" class="animate__animated col-4"  >
                                             <img src="../assets/image/portfolio/8.png"  />
                                     </PortfolioItem>
+                                    <PortfolioItem :title="portfolioList[8].title" class="animate__animated col-4"  >
+                                            <img src="../assets/image/portfolio/9.png"  />
+                                    </PortfolioItem>
                                 </template >
                             </transition-group>
                         </div>

@@ -286,12 +286,12 @@
 </template>
 
 <script>
-import img1 from "@/assets/image/peacock.png";
-import img2 from "@/assets/image/monkey.png";
-import img3 from "@/assets/image/giraffe.png";
-import img4 from "@/assets/image/fox2.png";
-import img5 from "@/assets/image/tiger.png";
-import img6 from "@/assets/image/tiger.png";
+import img1 from "@/assets/image/services/1.jpg";
+import img2 from "@/assets/image/services/2.jpg";
+import img3 from "@/assets/image/services/3.jpg";
+import img4 from "@/assets/image/services/5.jpg";
+import img5 from "@/assets/image/services/6.jpg";
+import img6 from "@/assets/image/services/7.jpg";
 const imgs = [img1,img2,img3,img4,img5,img6,]
 import servicesJson from "./services.json"
 const PROGRESS = Object.freeze({

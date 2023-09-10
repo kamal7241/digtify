@@ -1,0 +1,22 @@
+.slide-indicator{
+    list-style: none;
+    padding: 0;
+    .indicator{
+        margin: auto;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        --indicator-color:white;
+        border: 1px solid var(--indicator-color);
+        margin-bottom: 0.5em;
+        &.indicator--active{
+            background-color: var(--indicator-color);
+        }
+        &:last-child{
+            margin-bottom: 0;
+        }
+        &.indicator--primary{
+            --indicator-color:#{$primary};
+        }
+    }
+}

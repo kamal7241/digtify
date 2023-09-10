@@ -25,4 +25,24 @@
         pointer-events: auto;
         font-weight: bold;
     }
+    &.control-navs{
+        left: 0;
+        width: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        .control-navs__btns{
+            position: relative;
+            height: 20rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .control-navs__btns__indicators{
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                left: 50%;
+            }
+        }
+
+    }
 }

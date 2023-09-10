@@ -21,7 +21,10 @@ export default defineNuxtConfig({
     // '@/assets/sass/main-ltr.scss',
   ],
   vite: {
-    plugins: [vsharp()],
+    plugins: [
+        vsharp()
+    
+    ],
     css: {
       preprocessorOptions: {
         scss: {

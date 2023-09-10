@@ -4,17 +4,17 @@
         .img{
             background-repeat: no-repeat;
             background-size: cover;
-            background-size: 150%;
+            background-size: auto 150%;
             background-position: center;
             animation-timing-function: ease-in-out;
             animation-name: img-section-zoom-out;
             animation-delay: 1s;
             @keyframes img-section-zoom-out {
                 from{
-                    background-size: 150%;
+                    background-size: auto 150%;
                 }
                 to{
-                    background-size: 100%;
+                    background-size: auto 100%;
                 }
             }
             @media screen and (max-width : 1024px) {
