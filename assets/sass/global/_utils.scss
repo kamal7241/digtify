@@ -58,3 +58,19 @@
 .pointer{
     cursor: pointer;
 }
+
+.shadow-primary{
+    box-shadow: 0 0 10px $primary-light;
+}
+.pointer-events-none{
+    pointer-events: none;
+}
+
+
+.square-size{
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+.pointer-events-auto{
+    pointer-events: auto;
+}

@@ -286,13 +286,7 @@
 </template>
 
 <script>
-import img1 from "@/assets/image/peacock.png";
-import img2 from "@/assets/image/monkey.png";
-import img3 from "@/assets/image/giraffe.png";
-import img4 from "@/assets/image/fox2.png";
-import img5 from "@/assets/image/tiger.png";
-import img6 from "@/assets/image/tiger.png";
-const imgs = [img1,img2,img3,img4,img5,img6,]
+import imgs from "./servicesImages"
 import servicesJson from "./services.json"
 const PROGRESS = Object.freeze({
     titleZoomIn : 0 , 
