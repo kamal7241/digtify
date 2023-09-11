@@ -1,13 +1,13 @@
 <template>
-        <core-scroll-stopper @up="onWheelUp" @down="onWheelDown" :disable-scroll="disableScroll" >
+        <core-scroll-stopper  @up="onWheelUp" @down="onWheelDown" :disable-scroll="disableScroll" >
             <slot :slide="slide" ></slot>
         </core-scroll-stopper>
 </template>
 
 <script>
 export default defineNuxtComponent({
-    props:['slidesNumber' , 'firstReach', "modelValue" , "reset"  , "name"],
-    emits:['next' , 'prev' , 'end' , 'start' , 'leave:next' , 'leave:prev' , "update:modelValue" , 'reset']  ,
+    props:['slidesNumber' , 'firstReach', "modelValue" , "reset"  , "name" , "pressPrev" , "pressNext"], // v-model for current active index 
+    emits:['next' , 'prev' , 'end' , 'start' , 'leave:next' , 'leave:prev' , "update:modelValue" , 'reset' , 'slide-change' , "update:pressPrev" , 'update:pressNext' ,]  ,
     data(){
         return {
             slide : 0 , 
@@ -23,6 +23,14 @@ export default defineNuxtComponent({
         },
     },
     methods:{
+        slideByArrows(e){
+            console.log(e)
+            if(e.key == "ArrowLeft")
+                this.onWheelUp();
+            else if(e.key == "ArrowRight"){
+                this.onWheelDown();
+            }
+        },
         checkIsSliderActive(){
             if(!this.modelValue)
                 this.$emit("update:modelValue" , true)
@@ -79,6 +87,7 @@ export default defineNuxtComponent({
     } ,
     watch:{
         slide(curr , prev){
+            this.$emit("slide-change" , curr);
             if(curr == 0 && prev == 1 && !this.reset ){
                 this.$emit("leave:prev")
             }
@@ -95,6 +104,22 @@ export default defineNuxtComponent({
             if(this.reset){
                 this.slide = 0;
             }
+        },
+        pressPrev(){
+            console.log("press Prev" , this.name)
+            if(this.pressPrev){
+                this.onWheelUp();
+                this.$emit("update:pressPrev" , false );
+            }
+        },
+        pressNext(){
+            console.log("press next" , this.name)
+
+            if(this.pressNext){
+                this.onWheelDown();
+                this.$emit("update:pressNext" , false );
+            }
+
         }
     }
 
