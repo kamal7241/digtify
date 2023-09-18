@@ -7,7 +7,7 @@
                     width: 54%;
                 }
                 to{
-                    width:26%;
+                    width:25.5%;
                 }
             }
             .text-highlighter-wrapper .text-highlighter__highlighted{
@@ -43,7 +43,7 @@
                             width : 0;
                         }
                         100% {
-                            width : 26%;
+                            width : 25.5%;
                         }
                     }
                     animation-name: translateText;
@@ -73,7 +73,7 @@
 
                     // }
                     // animation-name: translateTextReverse;
-                    width: 26%;
+                    width: 25.5%;
                 }
             }
             &.first{
@@ -83,7 +83,7 @@
                             width: 54%;
                         }
                         to{
-                            width:26%;
+                            width:25.5%;
                         }
                     }
                     .text-highlighter-wrapper .text-highlighter__highlighted{
@@ -97,7 +97,7 @@
             &.second{
                 @keyframes secondHighlight {
                     from{
-                        width: 26%;
+                        width: 25.5%;
                     }
                     to{
                         width:54%;
@@ -134,7 +134,7 @@
                 &.reverse{
                     @keyframes thirdHighlightReverse {
                         from{
-                            width: 74%;
+                            width: 75.5%;
                         }
                         to{
                             width:60%;
@@ -156,7 +156,7 @@
                         width: 60%;
                     }
                     to{
-                        width:74%;
+                        width:75.5%;
                     }
                 }
                 &.reverse{
@@ -165,7 +165,7 @@
                             width: 87%;
                         }
                         to{
-                            width:74%;
+                            width:75.5%;
                         }
                     }
                     .text-highlighter-wrapper .text-highlighter__highlighted{
@@ -180,7 +180,7 @@
             &.fifth{
                 @keyframes fifthHighlight {
                     from{
-                        width: 74%;
+                        width: 75.5%;
                     }
                     to{
                         width:87%;
