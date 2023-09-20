@@ -6,7 +6,7 @@
     <div class="dropdown  ">
         <div id="menu">
   <div @click="dropIt" class="btn-dropdown">
-    <img class="img-fluid" src="@/assets/image/digify-icon.svg"  />
+    <img class="img-fluid" alt="social-links" src="@/assets/image/digify-icon.svg"  />
   </div>
   <div class="arrow" v-show="!isDropped">
         <span></span>
@@ -18,21 +18,21 @@
 
 
     <ul class=" list social-links__list" >
-      <li class="drop-item "><a target="_blank" href="https://www.linkedin.com/company/digifymena"> 
+      <li class="drop-item "><a target="_blank" rel="noreferer noopener" href="https://www.linkedin.com/company/digifymena"> 
         <span class="icon-linkedin-outline" >
         </span>
       </a></li>
-      <li class="drop-item "><a target="_blank"  href="https://www.facebook.com/DigifyMena"> 
+      <li class="drop-item "><a target="_blank"  rel="noreferer noopener" href="https://www.facebook.com/DigifyMena"> 
         <span class="icon-facebook-outline" >
         </span>
 
       </a></li>
-      <li class="drop-item "><a target="_blank" href="https://www.behance.net/digify-mena">
+      <li class="drop-item "><a target="_blank" rel="noreferer noopener" href="https://www.behance.net/digify-mena">
         <span class="icon-behance-outline" >
         </span>
 
       </a></li>
-      <li class="drop-item "><a target="_blank" href="https://www.instagram.com/digifymena"> 
+      <li class="drop-item "><a target="_blank" rel="noreferer noopener" href="https://www.instagram.com/digifymena"> 
         <span class="icon-instgram-outline" >
         </span>
   

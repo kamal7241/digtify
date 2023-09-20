@@ -18,7 +18,7 @@
                         <template #img >
                             <div data-aos="flip-left"
                                 data-aos-easing="ease-out-cubic" >
-                                        <img class="img" src="@/assets/image/peacock.png" alt="image-duck" />
+                                        <img class="img" src="@/assets/image/peacock.png" alt="service-img" />
                             </div>
                         </template>
                         <template #title >
@@ -38,7 +38,7 @@
                         <template #img >
                             <div data-aos="flip-left"
                                 data-aos-easing="ease-out-cubic" >
-                                        <img class="img" src="@/assets/image/monkey.png" alt="image-duck" />
+                                        <img class="img" src="@/assets/image/monkey.png" alt="service-img" />
                             </div>
                         </template>
                         <template #title >
@@ -58,7 +58,7 @@
                         <template #img >
                             <div data-aos="flip-left"
                                 data-aos-easing="ease-out-cubic" >
-                                        <img class="img" src="@/assets/image/giraffe.png" alt="image-duck" />
+                                        <img class="img" src="@/assets/image/giraffe.png" alt="service-img" />
                             </div>
                         </template>
                         <template #title >
@@ -79,7 +79,7 @@
                         <template #img >
                             <div data-aos="flip-left"
                                 data-aos-easing="ease-out-cubic" >
-                                        <img class="img" src="@/assets/image/fox2.png" alt="image-duck" />
+                                        <img class="img" src="@/assets/image/fox2.png" alt="service-img" />
                             </div>
                         </template>
                         <template #title >
@@ -99,7 +99,7 @@
                         <template #img >
                             <div data-aos="flip-left"
                                 data-aos-easing="ease-out-cubic" >
-                                        <img class="img" src="@/assets/image/tiger.png" alt="image-duck" />
+                                        <img class="img" src="@/assets/image/tiger.png" alt="service-img" />
                             </div>
                         </template>
                         <template #title >
@@ -120,7 +120,7 @@
                         <template #img >
                             <div data-aos="flip-left"
                                 data-aos-easing="ease-out-cubic" >
-                                        <img class="img" src="@/assets/image/tiger.png" alt="image-duck" />
+                                        <img class="img" src="@/assets/image/tiger.png" alt="service-img" />
                             </div>
                         </template>
                         <template #title >

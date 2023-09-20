@@ -1,6 +1,6 @@
 <template>
   <div v-show="show" class="lds" >
-    <img src="@/assets/image/lds.gif" />
+    <img alt="loading..." src="@/assets/image/lds.gif" />
 
   </div>
   </template>

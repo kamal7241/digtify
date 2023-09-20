@@ -21,7 +21,7 @@
           
         >
           <div data-aos="fade-up-right" data-aos-anchor-placement="top-center">
-            <img class="img" :src="imgs[0]" alt="image-duck" />
+            <img class="img" :src="imgs[0]" alt="service-img" />
           </div>
         </service-item>
         <service-item
@@ -31,7 +31,7 @@
           :description="services[1].description"
         >
           <div data-aos="fade-up-right" data-aos-anchor-placement="top-center">
-            <img class="img" :src="imgs[1]" alt="image-duck" />
+            <img class="img" :src="imgs[1]" alt="service-img" />
           </div>
         </service-item>
         <service-item
@@ -41,7 +41,7 @@
           :description="services[2].description"
         >
           <div data-aos="fade-up-right" data-aos-anchor-placement="top-center">
-            <img class="img" :src="imgs[2]" alt="image-duck" />
+            <img class="img" :src="imgs[2]" alt="service-img" />
           </div>
         </service-item>
         <service-item
@@ -52,7 +52,7 @@
         >
           <div data-aos="fade-up-right" data-aos-anchor-placement="top-center">
 
-            <img class="img" :src="imgs[3]" alt="image-duck" />
+            <img class="img" :src="imgs[3]" alt="service-img" />
           </div>
         </service-item>
         <service-item
@@ -63,7 +63,7 @@
         
         >
           <div data-aos="fade-up-right" data-aos-anchor-placement="top-center">
-            <img class="img" :src="imgs[4]" alt="image-duck" />
+            <img class="img" :src="imgs[4]" alt="service-img" />
           </div>
         </service-item>
         <service-item
@@ -73,7 +73,7 @@
 
         >
           <div data-aos="fade-up-right" data-aos-anchor-placement="top-center">
-            <img class="img" :src="imgs[5]" alt="image-duck" />
+            <img class="img" :src="imgs[5]" alt="service-img" />
           </div>
         </service-item>
       </template> 

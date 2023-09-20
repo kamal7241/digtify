@@ -10,7 +10,7 @@
                         :class="currentProgress == ANIMATION_PROGRESS.end ? 'swipe-bg' : '' "
                         >
                             <div class="" >
-                                <img class="logo" src="@/assets/image/digify-logo.png" />
+                                <img class="logo" alt="digify-logo" src="@/assets/image/digify-logo.png" />
                             </div>
                             <div class="home-sec__content" >
                                 <div class="home-sec--banner__img-group-wrapper" >

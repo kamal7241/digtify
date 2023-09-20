@@ -19,45 +19,50 @@
         <div class="row justify-content-center py-4" >
                     <PortfolioItem class=" col-xl-10 col-12 col-md-6 "   :title="portfolioList[0].title">
                         <div data-aos="zoom-in"    >
-                            <img  src="../assets/image/portfolio/1.png"  />
+                            <img  alt="portfolio-img1"  :src="imgs[0]"  />
 
                         </div>
                     </PortfolioItem>
                     <PortfolioItem  :title="portfolioList[1].title" class=" col-xl-10 col-12 col-md-6"  >
                         <div data-aos="zoom-in"    >
-                            <img  src="../assets/image/portfolio/2.png"  />
+                            <img  alt="portfolio-img2"  :src="imgs[1]"  />
                         </div>
                     </PortfolioItem>
                     <PortfolioItem   :title="portfolioList[2].title" class=" col-xl-10 col-12 col-md-6"   >
                         <div data-aos="zoom-in"    >
-                            <img  src="../assets/image/portfolio/3.png"  />
+                            <img  alt="portfolio-img3"  :src="imgs[2]"  />
                         </div>
                     </PortfolioItem>
                     <PortfolioItem  :title="portfolioList[3].title" class=" col-xl-10 col-12 col-md-6"   >
                         <div data-aos="zoom-in"    >
-                            <img  src="../assets/image/portfolio/4.png"  />
+                            <img  alt="portfolio-img4"  :src="imgs[3]"  />
                         </div>
                     </PortfolioItem>
                     <PortfolioItem   :title="portfolioList[4].title" class=" col-xl-10 col-12 col-md-6"  >
                         <div data-aos="zoom-in"    >
-                            <img  src="../assets/image/portfolio/5.png"  />
+                            <img  alt="portfolio-img5"  :src="imgs[4]"  />
                         </div>
                     </PortfolioItem>
                     <PortfolioItem  :title="portfolioList[5].title" class=" col-xl-10 col-12 col-md-6"  >
                         <div  data-aos="zoom-in"    >
-                            <img  src="../assets/image/portfolio/6.png"  />
+                            <img  alt="portfolio-img6"  :src="imgs[5]"  />
 
                         </div>
                     </PortfolioItem>
                     <PortfolioItem   :title="portfolioList[6].title" class=" col-xl-10 col-12 col-md-6"   >
                         <div data-aos="zoom-in"    >
-                            <img  src="../assets/image/portfolio/7.png"  />
+                            <img  alt="portfolio-img7"  :src="imgs[6]"  />
 
                         </div>
                     </PortfolioItem>
                     <PortfolioItem  :title="portfolioList[7].title" class=" col-xl-10 col-12 col-md-6"   >
                         <div data-aos="zoom-in"    >
-                            <img  src="../assets/image/portfolio/8.png"  />
+                            <img  alt="portfolio-img8"  :src="imgs[7]"  />
+                        </div>
+                    </PortfolioItem>
+                    <PortfolioItem  :title="portfolioList[8].title" class=" col-xl-10 col-12 col-md-6"   >
+                        <div data-aos="zoom-in"    >
+                            <img  alt="portfolio-img9"  :src="imgs[8]"  />
                         </div>
                     </PortfolioItem>
      
@@ -70,9 +75,13 @@
 </template>
 
 <script>
+import imgs from "./portfolioImages"
 import portfolioJson from "./portfolio.json"
 export default defineNuxtComponent({
 computed:{
+    imgs(){
+        return imgs;
+    },
     portfolioList(){
         return portfolioJson;
     },

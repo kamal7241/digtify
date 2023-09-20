@@ -13,7 +13,7 @@
               <!-- <swiper-slide class="text-secondary .swiper-slide--transparent" >no content</swiper-slide>
               <swiper-slide class="text-secondary .swiper-slide--transparent" >no content</swiper-slide> -->
               <swiper-slide v-for="(img, index) in imgs" :key="index"  >
-                      <img :src="img" alt="image" />
+                      <img :src="img" :alt="'service-img' + img.split('/').reverse()[0].split('.png')[0]" />
               </swiper-slide>
               <!-- <swiper-slide  >Slide 1</swiper-slide>
               <swiper-slide  > Slide 2</swiper-slide>

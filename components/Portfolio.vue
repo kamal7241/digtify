@@ -39,35 +39,35 @@
                             <transition-group mode="out-in"  name="fadeInDelayOutLeft" >
                                 <template  v-if="currentProgress == PROGRESS.firstSlide" >
                                     <PortfolioItem class="animate__animated col-4" :title="portfolioList[0].title" >
-                                        <img src="../assets/image/portfolio/1.png"  />
+                                        <img alt="portfolio-img1" :src="imgs[0]"  />
                                     </PortfolioItem>
                                     <PortfolioItem :title="portfolioList[1].title" class="animate__animated col-4" >
-                                            <img src="../assets/image/portfolio/2.png"  />
+                                            <img alt="portfolio-img2" :src="imgs[1]"  />
                                     </PortfolioItem>
                                     <PortfolioItem  :title="portfolioList[2].title" class="animate__animated col-4"  >
-                                            <img src="../assets/image/portfolio/3.png"  />
+                                            <img alt="portfolio-img3" :src="imgs[2]"  />
                                     </PortfolioItem>
                                 </template>
                                 <template v-else-if="currentProgress == PROGRESS.secondSlide" >
                                     <PortfolioItem :title="portfolioList[3].title" class="animate__animated col-4"  >
-                                            <img src="../assets/image/portfolio/4.png"  />
+                                            <img alt="portfolio-img4" :src="imgs[3]"  />
                                     </PortfolioItem>
                                     <PortfolioItem  :title="portfolioList[4].title" class="animate__animated col-4" >
-                                            <img src="../assets/image/portfolio/5.png"  />
+                                            <img alt="portfolio-img5" :src="imgs[4]"  />
                                     </PortfolioItem>
                                     <PortfolioItem :title="portfolioList[5].title" class="animate__animated col-4" >
-                                            <img src="../assets/image/portfolio/6.png"  />
+                                            <img alt="portfolio-img6" :src="imgs[5]"  />
                                     </PortfolioItem>
                                 </template>
                                 <template v-else-if="currentProgress == PROGRESS.thirdSlide"  >
                                     <PortfolioItem  :title="portfolioList[6].title" class="animate__animated col-4"  >
-                                            <img src="../assets/image/portfolio/7.png"  />
+                                            <img alt="portfolio-img7" :src="imgs[6]"  />
                                     </PortfolioItem>
                                     <PortfolioItem :title="portfolioList[7].title" class="animate__animated col-4"  >
-                                            <img src="../assets/image/portfolio/8.png"  />
+                                            <img alt="portfolio-img8" :src="imgs[7]"  />
                                     </PortfolioItem>
                                     <PortfolioItem :title="portfolioList[8].title" class="animate__animated col-4"  >
-                                            <img src="../assets/image/portfolio/9.png"  />
+                                            <img alt="portfolio-img9" :src="imgs[8]"  />
                                     </PortfolioItem>
                                 </template >
                             </transition-group>
@@ -84,6 +84,7 @@
 
 <script>
 import portfolioJson from "./portfolio.json"
+import imgs from "./portfolioImages"
 const PROGRESS = Object.freeze({
     titleZoomIn : 0 , 
     firstSlide : 1 , 
@@ -109,6 +110,9 @@ export default defineNuxtComponent({
         }
     } ,
     computed:{
+        imgs(){
+            return imgs
+        },
         portfolioList(){
             return portfolioJson;
         },

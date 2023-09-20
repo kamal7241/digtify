@@ -11,7 +11,7 @@
               <swiper-slide  >  
                   <div class="home-sec--banner__img-group-wrapper" >
                     <div class="home-sec--banner__img-group">
-                        <img src="../assets/image/banner.png" />
+                        <img alt="digify-banner-bg" src="../assets/image/banner.png" />
                     </div>
                 </div>
                 <div class="home-sec--banner__slogan-group">
@@ -53,7 +53,7 @@
               <swiper-slide  >     
                 <div class="home-sec--banner__img-group-wrapper" >
                     <div class="home-sec--banner__img-group">
-                        <img src="../assets/image/banner-1.png" />
+                        <img alt="digify-banner-bg2" src="../assets/image/banner-1.png" />
                     </div>
                 </div>
                 <div class="home-sec--banner__slogan-group">
