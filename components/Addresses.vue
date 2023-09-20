@@ -4,6 +4,7 @@
          <img
          src="../assets/image/fox.png"
          alt="fox-image"
+         :style="{'animation-delay' : delay || '1s' }"
        />
  </template>
  <template #title >
@@ -18,3 +19,10 @@
  </template>
 </contact-us-info-section>
 </template>
+
+<script>
+export default defineNuxtComponent({
+  props:['delay']
+})
+
+</script>

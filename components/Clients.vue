@@ -5,10 +5,10 @@
                 currentProgress + ':' + ' progress type : ' + progressType }}</span> -->
 
         <CoreHomeSection  class="home-sec--clients" >
-            <transition mode="out-in" name="fade-delay-1" >
-                <div class="animate__animated" v-show="currentProgress < PROGRESS.firstSlide" 
+            <transition mode="out-in" name="fade-delay-2" >
+                <div class="animate__animated " v-show="currentProgress < PROGRESS.firstSlide" 
                 :class="{
-                    'animate__fadeOutUp animate__delay-1s zoom-out-title' : currentProgress >= PROGRESS.firstSlide && progressType == PROGRESS_TYPES.forward , 
+                    'animate__fadeOutUp animate__delay-2s zoom-out-title' : currentProgress >= PROGRESS.firstSlide && progressType == PROGRESS_TYPES.forward , 
                     'animate__fadeInDown animate__delay-1s zoom-in-title' : currentProgress < PROGRESS.firstSlide && progressType == PROGRESS_TYPES.backward, 
                 }"
                 >
@@ -25,7 +25,7 @@
                  </div>
                  
                 </transition>
-                <transition mode="out-in"  name="fade-delay-2">
+                <transition mode="out-in"  name="fade-delay-3">
                     <div v-if="currentProgress >= PROGRESS.firstSlide" class="clients animate__animated " 
                     >
                     <clients-slider class="mb-5" />

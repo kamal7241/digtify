@@ -8,7 +8,7 @@
   >
 </scroll-animator> -->
   <CoreHomeSectionContainer class="home-sec--contact-us py-4">
-    <transition mode="out-in" name="fadeInRightBigOutDelayLeftBig">
+    <transition mode="out-in" name="fadeInRightBigOutLeftBigDelay2s">
         <div v-show="(currentProgress < PROGRESS.firstSlide)"
           class="animate__animated"
         >
@@ -25,23 +25,30 @@
           </div>
         </div>
       </transition>
-      <transition mode="out-in" name="fadeInDelayBigOutLeftBig">
-          <div v-if="currentProgress >= PROGRESS.firstSlide" class="home-sec__content animate__animated" >
-              <transition mode="out-in" name="fadeInOutLeft">
-                <Addresses
-                  class=" animate__animated"
-                  v-if="currentProgress == PROGRESS.firstSlide"
-                />
-                <Contacts
-                  class="animate__animated "
-                  v-else-if="currentProgress == PROGRESS.secondSlide "
-                />
-                <ContactUsFormSection class="animate__animated"
-                  v-else-if="currentProgress == PROGRESS.thirdSlide" 
+      <div class="home-sec__content" >
+        <transition mode="out-in" name="fadeInDelay3sBigOutLeftBig">
+                  <Addresses
+                    v-if="currentProgress == PROGRESS.firstSlide  && progressType == PROGRESS_TYPES.forward"
+                    class=" animate__animated"
+                    :delay="'3s'"
                   />
-              </transition>
-          </div>
-      </transition>
+        </transition>
+
+          <transition mode="out-in" name="fadeInBigOutLeftBig">
+          <Addresses
+            v-if="currentProgress == PROGRESS.firstSlide && progressType == PROGRESS_TYPES.backward"
+            class=" animate__animated"
+          />
+          <Contacts
+            class="animate__animated "
+            v-else-if="currentProgress == PROGRESS.secondSlide "
+          />
+          <ContactUsFormSection class="animate__animated"
+            v-else-if="currentProgress == PROGRESS.thirdSlide" 
+            />
+        </transition>
+     
+      </div> 
     </CoreHomeSectionContainer>
 </template>
 

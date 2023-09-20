@@ -42,6 +42,30 @@
 .fade-delay-2-leave-to {
   opacity: 0;
 }
+
+.fade-delay-3-enter-active,
+.fade-delay-3-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-delay-3-enter-active {
+  transition-delay: 3s;
+}
+.fade-delay-3-enter-from,
+.fade-delay-3-leave-to {
+  opacity: 0;
+}
+
+.fade-delay-4-enter-active,
+.fade-delay-4-leave-active {
+  transition: opacity 0.4s ease;
+}
+.fade-delay-4-enter-active {
+  transition-delay: 4s;
+}
+.fade-delay-4-enter-from,
+.fade-delay-4-leave-to {
+  opacity: 0;
+}
 // fadeInUpOutLeft-leave-active fadeInUpOutLeft-leave-to
 
 .fadeInUpOutLeft-enter-active {
@@ -133,11 +157,34 @@
   animation-name: fadeOutLeftBig;
   animation-delay: 1s;
 }
+.fadeInRightBigOutLeftBigDelay2s-enter-active {
+  animation-name: fadeInLeftBig;
+
+}
+.fadeInRightBigOutLeftBigDelay2s-leave-active {
+  animation-name: fadeOutLeftBig;
+  animation-delay: 2s;
+}
+.fadeInBigOutLeftBig-enter-active {
+  animation-name: fadeIn;
+}
+.fadeInBigOutLeftBig-leave-active {
+  animation-name: fadeOutLeftBig;
+}
+
 .fadeInDelayBigOutLeftBig-enter-active {
   animation-name: fadeIn;
   animation-delay: 1.8s;
 }
 .fadeInDelayBigOutLeftBig-leave-active {
+  animation-name: fadeOutLeftBig;
+}
+
+.fadeInDelay3sBigOutLeftBig-enter-active {
+  animation-name: fadeIn;
+  animation-delay: 3s;
+}
+.fadeInDelay3sBigOutLeftBig-leave-active {
   animation-name: fadeOutLeftBig;
 }
 
@@ -147,6 +194,14 @@
 }
 .fadeInDelayOut-leave-active {
   animation-name: fadeOut;
+}
+
+.fadeInDelay2sOutLeftBig-enter-active {
+  animation-name: fadeIn;
+  animation-delay: 2;
+}
+.fadeInDelay2sOutLeftBig-leave-active {
+  animation-name: fadeOutLeftBig;
 }
 
 
