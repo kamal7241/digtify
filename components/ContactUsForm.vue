@@ -154,7 +154,7 @@ export default {
     async getApi(formModel) {
       this.showLoader()
         await axios
-          .post(`http://104.236.254.17/api/v1/message/create` , formModel)
+          .post(`https://admin.digifymena.com/api/v1/message/create` , formModel)
           .then((response) => {
             this.$toast.default("Success, we will contact you soon", {
               position: "bottom-left",
