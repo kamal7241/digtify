@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import vsharp from "vite-plugin-vsharp";
-
+import rules from "./robots.config"
 const netilfyConfig = {
   baseURL: '/',
   buildAssetsDir: 'assets'
@@ -13,6 +13,7 @@ const ghPagesConfig = {
 const config = process.env.NUXT_ENV == 'gh' ? ghPagesConfig : 
 process.env.NUXT_ENV == 'netilfy' ? netilfyConfig : {}
 export default defineNuxtConfig({
+  //inlineSSRStyles:false,
   app: {
     ...config
   },
@@ -28,10 +29,19 @@ export default defineNuxtConfig({
           // additionalData: '@import "@/assets/sass/main-ltr.scss'
         }
       }
+    },
+    build:{
+      cssCodeSplit:false,
     }
   } ,
   modules: [
     // ...
     '@pinia/nuxt',
+    '@nuxtjs/robots',
+
   ],
+  robots:{
+    rules : rules
+  }
+    
 })

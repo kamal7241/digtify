@@ -115,38 +115,85 @@
         desktop : 0 , 
         tablet : 1 , 
         mobile : 2 ,
-    })
-    export default defineNuxtComponent({
-        head: {
-                title: 'Digify',
-                meta: [
-                        { charset: 'utf-8' },
-                        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-                        {
-                                hid: 'Digify is a full-featured digital media consultancy house founded in 2014 that provides all aspects of digital marketing & advertising services.',
-                                name: 'Digify is a full-featured digital media consultancy house founded in 2014 that provides all aspects of digital marketing & advertising services.',
-                                content: 'Digify is a full-featured digital media consultancy house founded in 2014 that provides all aspects of digital marketing & advertising services.'
-                        } , 
-                        {
-                                property : 'og:title' ,
-                                content : 'DIGIFY' ,
-                        } ,
-                        {
-                                property : 'og:description' ,
-                                content : 'Digify is a full-featured digital media consultancy house founded in 2014 that provides all aspects of digital marketing & advertising services.' ,
+        })
+        const meta = {
+        title : "DigifyMena",
+        desc : "Digify is a full-featured digital media consultancy house founded in 2014 that provides all aspects of digital marketing & advertising services."
+        }
+        export default defineNuxtComponent({
+                head(){
+                //  if(process.client)
+                        return {
+                        htmlAttrs: {
+                                lang: 'en'
                         },
-                        // {
-                        //         property : 'og:image' ,
-                        //         content : 'https://ahrefs.com/blog/wp-content/uploads/2019/12/fb-how-to-become-an-seo-expert.png' ,
-                        // }
-                ],
-                link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }] ,
-                script: [
-                        {
-                                src: "https://smtpjs.com/v3/smtp.js",
-                                body: true,
-                        },
-                ],
+                        title: meta.title,
+                        meta: [
+                                { charset: 'utf-8' },
+                                { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+                                {
+                                        hid: 'description',
+                                        name: 'description',
+                                        content: meta.desc,
+                                } , 
+                                {
+                                        name: 'robots',
+                                        content : 'index,follow' ,
+                                } , 
+                                // twitter
+                                {
+                                        hid: 'twitter:card',
+                                        name: 'twitter:card',
+                                        content: 'summary_large_image',
+                                },
+                                { hid: 'twitter:site', name: 'twitter:site', content: '@DigifyMENA' },
+                                {
+                                        hid: 'twitter:url',
+                                        name: 'twitter:url',
+                                        content: process.env?.NUXT_DOMAIN ,
+                                },
+                                {
+                                        hid: 'twitter:title',
+                                        name: 'twitter:title',
+                                        content: meta.title,
+                                },
+                                {
+                                        hid: 'twitter:description',
+                                        name: 'twitter:description',
+                                        content: meta.desc,
+                                },
+                                {
+                                        hid: 'twitter:image',
+                                        name: 'twitter:image',
+                                        content:
+                                        process.env?.NUXT_DOMAIN + '/favicon.ico',
+                                },
+                                // og
+                                {
+                                        property : 'og:title' ,
+                                        content : 'DIGIFY' ,
+                                } ,
+                                {
+                                        property : 'og:description' ,
+                                        content : 'Digify is a full-featured digital media consultancy house founded in 2014 that provides all aspects of digital marketing & advertising services.' ,
+                                },
+
+                                {
+                                        property : 'og:image' ,
+                                        content : process.env?.NUXT_DOMAIN + '/favicon.ico' ,
+                                }
+                        ],
+                        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' } ,
+                                { rel: 'canonical',href: process.env?.NUXT_DOMAIN ,},
+                        ] ,
+                        script: [
+                                {
+                                        src: "https://smtpjs.com/v3/smtp.js",
+                                        body: true,
+                                },
+                                
+                        ],
+                }
         },
         data(){
                 return {
@@ -226,7 +273,7 @@
                 },
                 updateActiveSlide(index , sliderindex){
                         if(this.index == sliderindex )
-                         this.activeSlideIndex = index;
+                                this.activeSlideIndex = index;
                 },
                 onReach(_index){
                         this.$nextTick(()=>{
@@ -254,7 +301,7 @@
                 hideLoader(){
                 this.mainStore.hideLoader()
                 },
-    
+        
         } ,
         mounted() {
                 this.registerArrowsScroll()
@@ -266,9 +313,9 @@
                         this.loadUntilFontsReady()
                 })
         },
-    })
-    </script>
-    <style lang="scss"  >
-    @use "@/assets/sass/main.ltr.scss";
-    
-    </style>
+        })
+        </script>
+        <style lang="scss"  >
+        @use "@/assets/sass/main.ltr.scss";
+        
+        </style>
