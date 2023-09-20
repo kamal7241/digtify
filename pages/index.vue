@@ -1,69 +1,32 @@
 <template>
-        <loader :show="isLoader" />
 
-        <core-screen-switcher :screens="[SCREENS.desktop]" >
+        <loader  :show="isLoader" />
+        <core-screen-switcher v-show="!isLoader" :screens="[SCREENS.desktop]" >
                 <core-mouse-indicator />
-                <!-- <div class=" navigators-btns w-100  position-fixed top-50 end-0" >
-                        <div class="container-fluid text-start" >
-                                <div class="d-inline-block w-auto text-center"  >
-                                        <transition-group>
-                                                <ul class="slide-indicator" v-if="index == 0" >
-                                                        <li class="indicator" v-for="indicatorIndex  in slidersNumbers[index]" :class="indicatorIndex - 1 == activeSlideIndex ? 'indicator--active':''"  ></li>
-                                                </ul>
-                                                <ul class="slide-indicator" v-if="index == 2 " >
-                                                        <li class="indicator indicator--primary" v-for="indicatorIndex  in slidersNumbers[index] - 1" :class="indicatorIndex  == activeSlideIndex ? 'indicator--active':''"  ></li>
-                                                </ul>
-                                                <ul class="slide-indicator" v-if="index == 3 || index == 5" >
-                                                        <li class="indicator" v-for="indicatorIndex  in slidersNumbers[index] -1" :class="indicatorIndex  == activeSlideIndex ? 'indicator--active':''"  ></li>
-                                                </ul>
-                                        </transition-group>
-                                </div>
-                        </div>
-                </div> -->
                 <!-- control btns -->
-                <div class=" navigators-btns position-fixed control-navs" >
-                        <div class="container-fluid text-start" >
-                                <div class="control-navs__btns"  >
-                                        <span :class="index>0 ? 'show pointer-events-auto' : ''" @click="index--" 
-                                                        class="d-block fade shadow-primary animate__animated  btn btn-outline-light p-2 border-2 rounded-circle square-size  z-1"  >
-                                                                <span class="icon-up-chevron-svgrepo-com h3" ></span>
-                                        </span>
-                                        <span :class="index<5 ? 'show pointer-events-auto' : ''" @click="index++" class=" d-block fade shadow-primary animate__animated  btn btn-outline-light p-2 border-2 rounded-circle square-size  z-1" >
-                                                <span class="icon-down-chevron-svgrepo-com h3 " ></span>
-                                        </span>
-                                        <div class="control-navs__btns__indicators">
-                                                <transition-group>
-                                                        <ul class="slide-indicator fade" :class="index == 0 ? 'show' : 'd-none'" >
-                                                                <li class="indicator" v-for="indicatorIndex  in slidersNumbers[index]" :class="indicatorIndex - 1 == activeSlideIndex ? 'indicator--active':''"  ></li>
-                                                        </ul>
-                                                        <ul class="slide-indicator fade" :class="index == 2 ? 'show':'d-none'" >
-                                                                <li class="indicator indicator--primary" v-for="indicatorIndex  in slidersNumbers[index] - 1" :class="indicatorIndex  == activeSlideIndex ? 'indicator--active':''"  ></li>
-                                                        </ul>
-                                                        <ul class="slide-indicator fade" :class="(index == 3 || index == 5) ? 'show':'d-none'" >
-                                                                <li class="indicator" v-for="indicatorIndex  in slidersNumbers[index] -1" :class="indicatorIndex  == activeSlideIndex ? 'indicator--active':''"  ></li>
-                                                        </ul>
-                                                </transition-group>
-                                        </div>
-                                </div>
-                        </div>
-                </div>
+
                 <!-- social items -->
-                <div class=" navigators-btns w-100  position-fixed bottom-0 end-0" >
+                <div   class=" navigators-btns w-100  position-fixed bottom-0 end-0" >
                         <div class="container-fluid text-end" >
                                 <div class="pe-0 pb-3 d-inline-flex flex-column gap-3" >
-                                        <social-links :drop-direction="1" />
-                                        <transition>
-                                                <button @click="index=0" v-if="index ==5" :disabled="index == 0" class="navigators-btns__up btn-primary btn  rounded-circle icon-up-chevron-svgrepo-com"  ></button>
-                                                <div v-else="index<5" class="mouse h2 m-auto pointer-events-auto"  data-bs-toggle="tooltip" data-bs-placement="left" title="Keep Scrolling">
-                                                        <span class="mouse-wheel"></span>
-                                                </div>
-                                        </transition>
-                                        <!-- <button @click="index=5" :disabled="index == 5" class="navigators-btns__down btn-primary btn  rounded-circle icon-down-chevron-svgrepo-com"  ></button> -->
+                                        <social-links :drop-direction="1" /> 
+                                <div class="control-navs__btns d-flex flex-column align-items-center gap-3"  >
+                                        <button @click="onSlidePrev" 
+                                                        :disabled="index == 0 && activeSlideIndex == 0"
+                                                        class="pointer-events-auto show fade shadow-primary animate__animated  btn btn-outline-light p-2 border-2 rounded-circle square-size  z-1"  >
+                                                                <span class="icon-up-chevron-svgrepo-com h5" ></span>
+                                        </button>
+                                        <button 
+                                        :disabled="index == 5  && activeSlideIndex ==  slidersNumbers[slidersNumbers.length -1 ] - 1"
+                                        @click="onSlideNext" class="pointer-events-auto show  fade shadow-primary animate__animated  btn btn-outline-light p-2 border-2 rounded-circle square-size  z-1" >
+                                                <span class="icon-down-chevron-svgrepo-com h5 " ></span>
+                                        </button>
+                                </div>
                                 </div>
                         </div>
                 </div>
                 <!-- slides -->
-                <core-scroll-snap-container :disable="false" full-screen >
+                <core-scroll-snap-container   :disable="false" full-screen >
                         <core-scroll-snap-item ref="snapItems" v-for="key in 6" :key="'scroll-snap'+ key"  >
                                                 <core-scroll-slider 
                                                 :press-next="index == 0 ? isPressNext : false " @update:press-next="isPressNext = false" 
@@ -120,35 +83,10 @@
                                                         </template>
                                                 </core-scroll-slider>
                         </core-scroll-snap-item>
-                        <!-- <core-scroll-snap-item :key="'scroll-snap'+ 2"  >
-                                <core-scroll-observer @reach="index = 1"   :thresHoldRatio="0.1" :observe="true"  > -->
-                                        <!-- <core-scroll-stopper  class="h-100" > -->
-                                                <!-- <core-scroll-slider @leave:next="index++" @prev="index--"  :slidesNumber="7" >
-                                                        <template v-slot="{slide}" >
-                                                                <AboutUs  :current-progress="slide" />
-                                                        </template>
-                                                </core-scroll-slider> -->
-                                                <!-- </core-scroll-stopper> -->
-                                <!-- </core-scroll-observer>
-                        </core-scroll-snap-item> -->
-                       <!-- <core-scroll-snap-item :key="'scroll-snap'+ 3" >
-                                <div class="bg-danger h-100" ></div>
-                       </core-scroll-snap-item> -->
-                       <!-- <core-scroll-snap-item :key="'scroll-snap'+ 4" > -->
-                         <!-- <Banner  /> -->
-                       <!-- </core-scroll-snap-item>
-                       <core-scroll-snap-item :key="'scroll-snap'+ 5" > -->
-                          <!-- <about-us  /> -->
-                       <!-- </core-scroll-snap-item> -->
-                       <!-- <core-scroll-snap-item :key="'scroll-snap'+ 6" >
-                        <services  />
-                       </core-scroll-snap-item> -->
-                       <!-- <portfolio  />
-                       <clients  />
-                       <contact-us  /> -->
+                
                 </core-scroll-snap-container>
         </core-screen-switcher>
-        <core-screen-switcher :screens="[SCREENS.tablet ]" >
+        <core-screen-switcher  :screens="[SCREENS.tablet ]" >
                 <div class=" navigators-btns w-100  position-fixed bottom-0 end-0" >
                         <div class="container-fluid text-end" >
                                 <div class="pe-0 pb-3 d-inline-flex flex-column gap-3" >
@@ -158,7 +96,7 @@
                 </div>
                 <tablet-container />
         </core-screen-switcher>  
-        <core-screen-switcher  :screens="[ SCREENS.mobile]" >
+        <core-screen-switcher   :screens="[ SCREENS.mobile]" >
                 <div class=" navigators-btns w-100  position-fixed bottom-0 end-0" >
                         <div class="container-fluid text-end" >
                                 <div class="pe-0 pb-3 d-inline-flex flex-column gap-3" >
@@ -167,18 +105,16 @@
                         </div>
                 </div>
                 <mobile-container />
-        </core-screen-switcher>      
+        </core-screen-switcher>     
     </template>
     <script >
-    import { mapState } from 'pinia'
+    import { mapState , mapStores } from 'pinia'
     import { useMainStore } from '~/store'
-    import _ from "lodash"
-    // import {mapGetters} from "vuex"
-    // console.log(mapGetters)
+    import _ from "lodash";
     const SCREENS = Object.freeze({
-    desktop : 0 , 
-    tablet : 1 , 
-    mobile : 2 ,
+        desktop : 0 , 
+        tablet : 1 , 
+        mobile : 2 ,
     })
     export default defineNuxtComponent({
         head: {
@@ -223,7 +159,9 @@
                                 2 , 2 , 7 , 4 , 2 , 4 
                         ] , 
                         activeSlideIndex : 0 , 
-                        debouncedHandler : undefined , 
+                        keyboardDebouncedHandler : undefined , 
+                        prevArrowDebouncedHandler : undefined , 
+                        nextArrowDebouncedHandler : undefined , 
                         
                 }
         } ,
@@ -232,11 +170,11 @@
                 SCREENS(){
                         return SCREENS
                 },
-                ...mapState(useMainStore, ['isLoader'])
+                ...mapState(useMainStore, ['isLoader']) ,
+                ...mapStores(useMainStore),
         },
         watch:{
                 index(curr , prev){
-                        console.log(this.index , "active slide index will be reseted")
                                 //this.slidersReset[this.index - 1] = true
                                 this.slidersReset =  this.slidersReset.map((isReset , index) => {
                                         return index != this.index ? true : this.slidersReset[this.index];
@@ -250,26 +188,40 @@
                 }
         } ,
         methods:{
+                onSlidePrev(){
+                        if(!this.debouncedHandler)
+                                this.prevArrowDebouncedHandler = _.debounce(()=> this.slidePrev() , 500 );
+                        this.prevArrowDebouncedHandler()
+              
+                },
+                onSlideNext(){
+                        if(!this.debouncedHandler)
+                                this.nextArrowDebouncedHandler = _.debounce(()=> this.slideNext() , 500 );
+
+                                this.nextArrowDebouncedHandler()
+              
+                },
+                slidePrev(){
+                        this.isPressPrev = true
+                },
+                slideNext(){
+                        this.isPressNext = true
+                },
                 onKeyDown(e){
-                        const [KeyDown , KeyUp  , KeyLeft , KeyRight] = Object.freeze(["ArrowDown" , "ArrowUp", "ArrowLeft", "ArrowRight"])
-                                console.log(e.key)
+                        const [KeyDown , KeyUp  ] = Object.freeze(["ArrowDown" , "ArrowUp"])
                                 if(e.key == KeyDown )
-                                        this.index > 4 || this.index++
-                                else if(e.key == KeyUp)
-                                        this.index < 1 || this.index--;
-                                else if(e.key == KeyLeft)
-                                        this.isPressPrev = true
-                                else if(e.key == KeyRight)
                                         this.isPressNext = true
+                                else if(e.key == KeyUp)
+                                        this.isPressPrev = true
                 },
                 registerArrowsScroll(){
                         onkeydown = (e)=>{
-                                const eventKeys = Object.freeze(["ArrowDown" , "ArrowUp", "ArrowLeft", "ArrowRight"])
+                                const eventKeys = Object.freeze(["ArrowDown" , "ArrowUp"])
                                 if( eventKeys.some(key => e.key == key ))
                                         e.preventDefault()
                                 if(!this.debouncedHandler)
-                                        this.debouncedHandler = _.debounce((e)=> this.onKeyDown(e) , 1000 );
-                                this.debouncedHandler(e);
+                                        this.keyboardDebouncedHandler = _.debounce((e)=> this.onKeyDown(e) , 500 );
+                                this.keyboardDebouncedHandler(e);
                         }
                 },
                 updateActiveSlide(index , sliderindex){
@@ -291,16 +243,27 @@
                                 this.index--
                         })
                 },
+                async loadUntilFontsReady() {
+                        this.showLoader()
+                        await document.fonts.ready;
+                        this.hideLoader()
+                },
+                showLoader(){
+                this.mainStore.showLoader()
+                },
+                hideLoader(){
+                this.mainStore.hideLoader()
+                },
     
         } ,
         mounted() {
                 this.registerArrowsScroll()
                 import("bootstrap").then(({Tooltip}) =>{
-                        console.log(Tooltip)
                         let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
                         let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
                         return new Tooltip(tooltipTriggerEl)
                         })
+                        this.loadUntilFontsReady()
                 })
         },
     })
