@@ -5,9 +5,8 @@
                 <div class="mouse">
                     <span class="mouse-wheel"></span>
                 </div>
-                <img style="width:10rem" src="@/assets/image/keyboard-arrows.png" />
             </div>
-            <h1 class="postion-relative text-white mt-3" > Scroll or use Arrows to Explore Digify</h1>
+            <h1 class="postion-relative text-white mt-3" > Scroll to Explore Digify</h1>
         </div> 
 
     </Transition>
