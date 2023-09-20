@@ -102,7 +102,7 @@
   }
 }
 .social-links{
-  @include define-responsive-property(--animate-translation-y , 10px , 10px , 5px , 5px);
+  @include define-responsive-property(--animate-translation-y , 12px , 12px , 7px , 7px);
   &.social-links--open{
     .dropdown{
       .btn-dropdown{
@@ -167,6 +167,7 @@
         //   }
         // }
         .drop-item{
+         // border: none;
           animation-duration:1s;
           animation-fill-mode:both;
         }
