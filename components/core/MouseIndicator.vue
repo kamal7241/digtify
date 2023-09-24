@@ -6,7 +6,7 @@
                     <span class="mouse-wheel"></span>
                 </div>
             </div>
-            <h1 class="postion-relative text-white mt-3" > Scroll to Explore Digify</h1>
+            <p class="postion-relative text-white mt-3 h1 " > Scroll to Explore Digify</p>
         </div> 
 
     </Transition>

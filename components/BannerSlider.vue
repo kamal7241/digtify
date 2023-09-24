@@ -22,7 +22,7 @@
                             <div class="col-12" >
                                     <span
                                         class="animate__animated title d-block"
-                                        >SHAPPING</span
+                                        >SHAPING</span
                                     >
                                     <span class="d-block animate__animated"
                                     >
@@ -40,11 +40,11 @@
 
                             </div>
                             <div class="col-12" >
-                                <span
+                                <h2
                                     class="animate__animated d-inline-block title title--bigger"
                                 >
                                     <span class="text-secondary" >ECO</span>SYSTEM
-                                </span>
+                            </h2>
                             </div>
                         </div>
                     </div>
@@ -58,11 +58,11 @@
                 </div>
                 <div class="home-sec--banner__slogan-group">
                     <div class="animate__animated home-sec--banner__slogan home-sec--banner__slogan--ternary" >
-                        <span class="title " >
+                        <h1 class="title " >
                             <span>DIGIFY</span>
                             <span><span class="" >WE</span> TALK</span>
                             <span>DIGITAL</span>
-                        </span>
+                        </h1>
                     </div>
                 </div></swiper-slide>
       </swiper>

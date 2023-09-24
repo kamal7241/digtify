@@ -9,7 +9,7 @@
  </template>
  <template #title >
    <div class="branch-details">
-   <h1 class="contact-us-branch-section__title"><span class="text-secondary">Digify </span>OFFICES</h1>
+   <h2 class="contact-us-branch-section__title"><span class="text-secondary">Digify </span>OFFICES</h2>
    <div class="contact-us-branch-section__desc">
     
   <p><span class="" >Egypt:</span>  82 AbdulAziz Fahmy Cairo Governorate , 11361.</p>

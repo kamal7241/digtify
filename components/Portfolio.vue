@@ -1,7 +1,4 @@
 <template>
-    <!-- <scroll-animator @next="currentProgress++" @prev="currentProgress--" :breakPointsNumber="7" :gap="500" :startThresHold="100" >
-    </scroll-animator> -->
-    <!-- <h1 class="text-secondary position-absolute top-0 left-0 z-10" >{{currentProgress}}</h1> -->
     <CoreHomeSectionContainer  class="home-sec--portfolio pt-4" >
             <div class="home-sec--portfolio__title-wrapper" 
             :class="[ 

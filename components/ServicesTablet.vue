@@ -1,7 +1,4 @@
 <template>
-    <!-- <scroll-animator @next="currentProgress++" @prev="currentProgress--" :breakPointsNumber="8" :gap="500" :startThresHold="100" >
-      </scroll-animator> -->
-    <!-- <h1 class="text-secondary position-absolute top-0 right-0 z-10" >{{currentProgress}} : {{ PROGRESS.titleMoveUpAndFade }}</h1> -->
     <CoreHomeSectionContainer class="bg-light home-sec--services py-4">
       <div class="home-sec--services__title-wrapper text-center">
         <div>
@@ -22,10 +19,10 @@
                             </div>
                         </template>
                         <template #title >
-                                <h1  data-aos="fade-up"
+                                <h2 class="h1" data-aos="fade-up"
                                 data-aos-easing="ease-out-cubic" >
                                 {{ services[0].title }}
-                            </h1>
+                            </h2>
                         </template>
                         <template #desc >
                             <p  data-aos="fade-up-left" >
@@ -42,10 +39,10 @@
                             </div>
                         </template>
                         <template #title >
-                                <h1  data-aos="fade-up"
+                                <h2 class="h1"  data-aos="fade-up"
                                 data-aos-easing="ease-out-cubic" >
                                 {{ services[1].title }}
-                            </h1>
+                            </h2>
                         </template>
                         <template #desc >
                             <p  data-aos="fade-up-left">
@@ -62,10 +59,10 @@
                             </div>
                         </template>
                         <template #title >
-                                <h1  data-aos="fade-up"
+                                <h2 class="h1" data-aos="fade-up"
                                 data-aos-easing="ease-out-cubic" >
                                 {{ services[2].title }}
-                            </h1>
+                            </h2>
                         </template>
                         <template #desc >
                             <p  data-aos="fade-up-left">
@@ -83,10 +80,10 @@
                             </div>
                         </template>
                         <template #title >
-                                <h1  data-aos="fade-up"
+                                <h2 class="h1"  data-aos="fade-up"
                                 data-aos-easing="ease-out-cubic" >
                                 {{ services[3].title }}
-                            </h1>
+                            </h2>
                         </template>
                         <template #desc >
                             <p  data-aos="fade-up-left">
@@ -103,10 +100,10 @@
                             </div>
                         </template>
                         <template #title >
-                                <h1  data-aos="fade-up"
+                                <h2 class="h1"  data-aos="fade-up"
                                 data-aos-easing="ease-out-cubic" >
                                 {{ services[4].title }}
-                            </h1>
+                            </h2>
                         </template>
                         <template #desc >
                             <p  data-aos="fade-up-left">
@@ -124,10 +121,10 @@
                             </div>
                         </template>
                         <template #title >
-                                <h1  data-aos="fade-up"
+                                <h2 class="h1"  data-aos="fade-up"
                                 data-aos-easing="ease-out-cubic" >
                                 {{ services[4].title }}
-                            </h1>
+                            </h2>
                         </template>
                         <template #desc >
                             <p  data-aos="fade-up-left">

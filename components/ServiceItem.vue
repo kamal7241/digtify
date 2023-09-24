@@ -4,9 +4,9 @@
                     <slot></slot>
                   </template>
                   <template #title >
-                        <h1>
+                        <h2 class="h1" >
                           {{ title }}
-                      </h1>
+                      </h2>
                   </template>
                   <template #desc >
                     <p>
