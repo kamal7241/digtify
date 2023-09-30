@@ -31,12 +31,15 @@ export default defineNuxtComponent({
                 this.onWheelDown();
             }
         },
+        /**
+         * check is current section active , if not activate it
+         */
         checkIsSliderActive(){
             if(!this.modelValue)
                 this.$emit("update:modelValue" , true)
         },
         onWheelUp(e){
-            this.checkIsSliderActive()
+          //  this.checkIsSliderActive()
             // if(this.isStart){
             //     this.$emit("leave:prev")
             // }
@@ -46,7 +49,7 @@ export default defineNuxtComponent({
             this.slide = 0;
         },
         onWheelDown(e){
-            this.checkIsSliderActive()
+           // this.checkIsSliderActive()
             if(this.isEnd){
                // this.resetSlider()
                 this.$emit("leave:next")
@@ -106,14 +109,12 @@ export default defineNuxtComponent({
             }
         },
         pressPrev(){
-            console.log("press Prev" , this.name)
             if(this.pressPrev){
                 this.onWheelUp();
                 this.$emit("update:pressPrev" , false );
             }
         },
         pressNext(){
-            console.log("press next" , this.name)
 
             if(this.pressNext){
                 this.onWheelDown();
