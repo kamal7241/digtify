@@ -200,6 +200,21 @@
                                                         `,
                                         type: "text/javascript",
                                 },
+                                {
+                                        type:"application/ld+json" , 
+                                        innerHTML:`{
+        "@context": "https://schema.org/",
+        "@type": "WebSite",
+        "name": "Digify Digital Marketing Agency",
+        "url": "https://digifymena.com/",
+        "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://digifymena.com/{search_term_string}",
+        "query-input": "required name=search_term_string"
+        }
+}`
+                                }
+                                
                         ],
                         noscript:[
                         {
