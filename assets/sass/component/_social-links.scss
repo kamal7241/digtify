@@ -1,14 +1,17 @@
 @keyframes sc-first{
   0%{
+    transform:translateY(calc(500% + 5 * var(--animate-translation-y)));
+  }
+  20%{
     transform:translateY(calc(400% + 4 * var(--animate-translation-y)));
   }
-  25%{
+  40%{
     transform:translateY(calc(300% + 3 * var(--animate-translation-y)));
   }
-  50%{
+  60%{
     transform:translateY(calc(200% + 2 * var(--animate-translation-y)));
   }
-  75%{
+  80%{
     transform:translateY(calc(100% + 1 * var(--animate-translation-y)));
   }
   100%{
@@ -20,81 +23,119 @@
   0%{
     transform:translateY(0%);
   }
-  25%{
+  20%{
     transform:translateY(calc(100% + 1 * var(--animate-translation-y)));
   }
-  50%{
+  40%{
     transform:translateY(calc(200% + 2 * var(--animate-translation-y)));
   }
-  75%{
+  60%{
     transform:translateY(calc(300% + 3 * var(--animate-translation-y)));
   }
-  100%{
+  80%{
     transform:translateY(calc(400% + 4 * var(--animate-translation-y)));
+  }
+  100%{
+    transform:translateY(calc(500% + 5 * var(--animate-translation-y)));
   }
   
 }
 @keyframes sc-sec{
   0%{
+    transform:translateY(calc(400% + 4 * var(--animate-translation-y)));
+  }
+  20%{
     transform:translateY(calc(300% + 3 * var(--animate-translation-y)));
   }
-  25%{
+  40%{
     transform:translateY(calc(200% + 2 * var(--animate-translation-y)));
   }
-  50%{
+  60%{
     transform:translateY(calc(100% + 1 * var(--animate-translation-y)));
   }
-  75%{
+  80%{
     transform:translateY(0%);
   }
 }
 @keyframes sc-sec-rev{
-  25%{
+  20%{
     transform:translateY(0%);
   }
-  50%{
+  40%{
     transform:translateY(calc(100% + 1 * var(--animate-translation-y)));
   }
-  75%{
+  60%{
+    transform:translateY(calc(200% + 2 * var(--animate-translation-y)));
+  }
+  80%{
+    transform:translateY(calc(300% + 3 * var(--animate-translation-y)));
+  }
+  100%{
+    transform:translateY(calc(400% + 4 * var(--animate-translation-y)));
+  }
+
+
+}
+@keyframes sc-third{
+  0%{
+    transform:translateY(calc(300% + 3 * var(--animate-translation-y)));
+  }
+  20%{
+    transform:translateY(calc(200% + 2 * var(--animate-translation-y)));
+  }
+  40%{
+    transform:translateY(calc(100% + 1 * var(--animate-translation-y)));
+  }
+  60%{
+    transform:translateY(0%);
+  }
+}
+@keyframes sc-third-rev{
+  40%{
+    transform:translateY(0%);
+  }
+  60%{
+    transform:translateY(calc(100% + 1 * var(--animate-translation-y)));
+  }
+  80%{
     transform:translateY(calc(200% + 2 * var(--animate-translation-y)));
   }
   100%{
     transform:translateY(calc(300% + 3 * var(--animate-translation-y)));
   }
-
 }
-@keyframes sc-third{
+@keyframes sc-fourth{
   0%{
     transform:translateY(calc(200% + 2 * var(--animate-translation-y)));
   }
-  25%{
+  20%{
     transform:translateY(calc(100% + 1 * var(--animate-translation-y)));
   }
-  50%{
+  40%{
     transform:translateY(0%);
   }
 }
-@keyframes sc-third-rev{
-  50%{
+@keyframes sc-fourth-rev{
+  60%{
     transform:translateY(0%);
   }
-  75%{
+  80%{
     transform:translateY(calc(100% + 1 * var(--animate-translation-y)));
   }
   100%{
     transform:translateY(calc(200% + 2 * var(--animate-translation-y)));
   }
 }
-@keyframes sc-fourth{
+@keyframes sc-fifth{
   0%{
     transform:translateY(calc(100% + 1 * var(--animate-translation-y)));
   }
-  25%{
+  20%{
     transform:translateY(0%);
   }
 }
-@keyframes sc-fourth-rev{
-  75%{
+@keyframes sc-fifth-rev{
+  80%{
     transform:translateY(0%);
   }
   100%{
@@ -217,6 +258,9 @@
               &:nth-child(4){
                   animation-name:sc-fourth;
             }
+            &:nth-child(5){
+              animation-name:sc-fifth;
+            }
             }  
           }
 
@@ -288,7 +332,6 @@
             @include define-responsive-property(margin-bottom , 10px , 10px , 5px , 5px);
               &:nth-child(1){
                   animation-name:sc-first-rev;
-            
             }
               &:nth-child(2){
                   animation-name:sc-sec-rev;
@@ -300,6 +343,9 @@
             }
               &:nth-child(4){
                   animation-name:sc-fourth-rev;
+            }
+            &:nth-child(5){
+              animation-name:sc-fifth-rev;
             }
             a {
               text-decoration: none;
