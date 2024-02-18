@@ -72,3 +72,11 @@ yarn preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+# Deployment 
+to get product dist run the following : 
+- npm run deploy:gh
+
+for demo purpose use 
+- npm run deploy:netilfy
+

@@ -16,7 +16,7 @@
             </div>
             <ul class=" list social-links__list" >
               <li class="drop-item ">
-                <a target="_blank" rel="noreferer noopener" href="https:/digifymena.com/blog/"> 
+                <a target="_blank" rel="noreferer noopener" href="/blog"> 
                   <span class="icon-blogger" >
                   </span>
                 </a>

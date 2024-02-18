@@ -132,6 +132,10 @@
                                 { charset: 'utf-8' },
                                 { name: 'viewport', content: 'width=device-width, initial-scale=1' },
                                 {
+                                   name:"google-site-verification",
+                                   content:"iMdwN4DKo2sWweOjPZiZ105AS0_YD_RMOtxoO7JGqCI"
+                                },
+                                {
                                         hid: 'description',
                                         name: 'description',
                                         content: meta.desc,
