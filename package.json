@@ -24,6 +24,7 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@types/node": "^18.17.1",
+    "css-loader": "^7.1.2",
     "gh-pages": "^6.0.0",
     "nuxt": "^3.6.5",
     "sass": "^1.64.2",
@@ -32,6 +33,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "@mdi/font": "^7.4.47",
     "@nuxtjs/robots": "^3.0.0",
     "@pinia/nuxt": "^0.4.11",
     "@vuelidate/core": "^2.0.3",
@@ -45,7 +47,9 @@
     "normalize.css": "^8.0.1",
     "pinia": "^2.1.6",
     "swiper": "^10.1.0",
-    "vue-toast-notification": "^3.1.1"
+    "vite-plugin-vuetify": "^2.0.4",
+    "vue-toast-notification": "^3.1.1",
+    "vuetify": "^3.7.2"
   },
   "version": "3.2.0",
   "overrides": {

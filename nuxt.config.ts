@@ -1,6 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import vsharp from "vite-plugin-vsharp";
-import rules from "./robots.config"
+import rules from "./robots.config";
+import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+
 const netilfyConfig = {
   baseURL: '/',
   buildAssetsDir: 'assets'
@@ -21,6 +23,9 @@ export default defineNuxtConfig({
   css: [
     // '@/assets/sass/main-ltr.scss',
   ],
+  build:{
+    transpile: ['vuetify'],
+  },
   vite: {
     plugins: [vsharp()],
     css: {
@@ -32,12 +37,24 @@ export default defineNuxtConfig({
     },
     build:{
       cssCodeSplit:false,
-    }
+
+    },
+        vue: {
+      template: {
+        transformAssetUrls,
+      },
+    },
   } ,
   modules: [
     // ...
     '@pinia/nuxt',
     '@nuxtjs/robots',
+        (_options, nuxt) => {
+      nuxt.hooks.hook('vite:extendConfig', (config) => {
+        // @ts-expect-error
+        config?.plugins.push(vuetify({ autoImport: true }))
+      })
+    },
 
   ],
   robots:{

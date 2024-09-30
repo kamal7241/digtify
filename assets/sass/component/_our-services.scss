@@ -1,0 +1,116 @@
+.our-services {
+  background-color: $primary;
+  overflow: hidden;
+  @include define-responsive-property(height, 110vh, 120vh, auto, auto);
+  .our-services__title-and-subtitle {
+    .logo {
+      min-width: 100px;
+      display: inline-block;
+      width: 11.68vw;
+    }
+    .subtitle {
+      font-weight: 200;
+      font-size: 1.3rem;
+      color: white;
+    }
+  }
+  .our-services__content-title {
+    font-family: $title-font-family;
+    font-weight: 400;
+    font-size: 3.5rem;
+    color: white;
+  }
+  .our-services__desc {
+    & > * {
+      color: white;
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+  }
+  .our-services__form {
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 20px;
+  }
+
+  .filed-style {
+    .v-field__overlay{
+        background-color: transparent !important;
+    }
+    .v-messages__message {
+      color: red;
+      font-weight: 400 !important;
+      font-size: .9rem !important;
+    }
+    color: white;
+    font-weight: 200;
+  }
+ 
+ .our-services__submit{
+      height: 40px;
+      width: 0px;
+      overflow: hidden;
+      background-color: transparent;
+      border-radius: 50px;
+      border: none;
+      caret-color: white !important;
+      color: white !important;
+      cursor: pointer;
+      transition:  0.3s ease-out;
+      min-width: 0px;
+    .submit-button{
+      position: absolute;
+      right: 0;
+      height: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .title-submit{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%); 
+      left: -200px;
+      transition:  0.3s  ease-in-out;
+      transition-delay: .1s;
+      font-family: $font-family;
+      @media screen and (max-width:767px) {
+        font-size: 18px;
+      } 
+
+    }
+
+    .submit-button {
+      padding: 10px;
+      img{
+        transition:  0.3s  ease-out;
+        @media screen and (max-width:767px) {
+          width: 75%;
+        }    
+            }
+            @media screen and (max-width:767px) {
+              padding: 8px;
+            }
+    }
+    &:hover{
+      // width: 160px;
+      width: 13rem;
+      background-color: $text;
+    }
+
+    &:hover .submit-button img{
+      transform: rotate(-25deg);
+    }
+
+    &:hover .title-submit{
+      left: 20px;
+    }
+    @media screen and (min-width:2500px) {
+      &:hover{
+        width: 12rem;
+        // width: 200px;
+        background-color: $text;
+      }
+  }
+      }
+ 
+}

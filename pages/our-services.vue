@@ -1,3 +1,3 @@
 <template>
-    hello from home
+    <OurServices/>
 </template>
