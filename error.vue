@@ -10,8 +10,3 @@ export default {
   props:["error"]
 }
 </script>
-
-  <style lang="scss"  >
-  @use "@/assets/sass/main.ltr.scss";
-  
-  </style>

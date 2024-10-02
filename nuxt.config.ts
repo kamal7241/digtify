@@ -2,9 +2,6 @@
 import vsharp from "vite-plugin-vsharp";
 import rules from "./robots.config";
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
-import enMessages from "./locales/en/our-services.json";
-import arMessages from "./locales/ar/our-services.json";
-import { dir } from "console";
 const netilfyConfig = {
   baseURL: '/',
   buildAssetsDir: 'assets'
@@ -28,8 +25,11 @@ export default defineNuxtConfig({
   build: {
     transpile: ["vuetify"],
   },
+  plugins: ['~/plugins/vuetify'],
   vite: {
-    plugins: [vsharp()],
+    plugins: [vsharp(),
+      vuetify()
+    ],
     css: {
       preprocessorOptions: {
         scss: {
@@ -51,6 +51,9 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "@nuxtjs/robots",
     "@nuxtjs/i18n",
+    /**
+     * @todo check use
+     */
     (_options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) => {
         // @ts-expect-error
@@ -62,9 +65,12 @@ export default defineNuxtConfig({
     // Module Options
     lazy: true,
     langDir: "locales/",
-    strategy: "prefix_except_default",
+    strategy: "prefix",
     defaultLocale: "en",
-    fallbackLocale: ['en'],
+    /**
+     * @todo check deprecated or not
+     */
+    // fallbackLocale: ['en'], 
     locales: [
       { code: "ar", iso: "ar-AR", dir: 'ltr', file: "ar/our-services.json" },
       { code: "en", iso: "en-US",dir: 'ltr', file: "en/our-services.json" },

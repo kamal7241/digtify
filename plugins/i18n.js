@@ -1,4 +1,7 @@
 // plugins/i18n.js
+/**
+ * @todo check installation and why not use [vue-i18n]
+ */
 import Vue from "vue";
 import VueI18Next from "vue-i18next";
 import i18next from "i18next";

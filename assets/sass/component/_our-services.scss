@@ -1,7 +1,9 @@
 .our-services {
-  background-color: $primary;
-  overflow: hidden;
-  @include define-responsive-property(height, 100vh, 100vh, auto, auto);
+  .logo {
+    min-width: 100px;
+    display: inline-block;
+    width: 11.68vw;
+  }
   .switch-style{
     color: white;
   }
@@ -10,28 +12,21 @@
     clip-path: none !important;
   }
   .our-services__title-and-subtitle {
-    .logo {
-      min-width: 100px;
-      display: inline-block;
-      width: 11.68vw;
-    }
     .subtitle {
       font-weight: 200;
-      font-size: 1.3rem;
       color: white;
     }
   }
   .our-services__content-title {
     font-family: $title-font-family;
     font-weight: 400;
-    font-size: 3.5rem;
     color: white;
   }
   .our-services__desc {
     & > * {
       color: white;
       font-weight: 400;
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
   }
   .our-services__form {

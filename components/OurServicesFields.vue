@@ -4,7 +4,7 @@
       v-model="state.firstName"
       :counter="50"
       :error-messages="v$.firstName.$errors.map((e) => e.$message)"
-      label="First Name"
+      :label="$t('firstNameLabel')"
       @blur="v$.firstName.$touch"
       @input="v$.firstName.$touch"
       class="filed-style"
@@ -14,7 +14,7 @@
       v-model="state.lastName"
       :counter="50"
       :error-messages="v$.lastName.$errors.map((e) => e.$message)"
-      label="Last Name"
+      :label="$t('lastNameLabel')"
       @blur="v$.lastName.$touch"
       @input="v$.lastName.$touch"
       class="filed-style"
@@ -24,7 +24,7 @@
       v-model="state.email"
       :counter="70"
       :error-messages="v$.email.$errors.map((e) => e.$message)"
-      label="E-mail"
+      :label="$t('emailLabel')"
       @blur="v$.email.$touch"
       @input="v$.email.$touch"
       class="filed-style"
@@ -34,7 +34,7 @@
       v-model="state.phoneNumber"
       :counter="50"
       :error-messages="v$.phoneNumber.$errors.map((e) => e.$message)"
-      label="Phone Number"
+      :label="$t('phoneLabel')"
       @blur="v$.phoneNumber.$touch"
       @input="v$.phoneNumber.$touch"
       class="filed-style"
@@ -47,7 +47,7 @@
       auto-grow
       v-model="state.message"
       :error-messages="v$.message.$errors.map((e) => e.$message)"
-      label="Your Message"
+      :label="$t('messageLabel')"
       @blur="v$.message.$touch"
       @change="v$.message.$touch"
       class="filed-style"
@@ -73,10 +73,10 @@
 </template>
 
 <script setup>
-import { reactive, ref } from "vue";
+import { reactive, computed,  ref } from "vue";
 import { useVuelidate } from "@vuelidate/core";
-import { required, email } from "@vuelidate/validators";
-
+import { required, email , numeric , helpers } from "@vuelidate/validators";
+const i18n = useI18n();
 const initialState = {
   firstName: "",
   lastName: "",
@@ -84,15 +84,17 @@ const initialState = {
   phoneNumber: "",
   message: "",
 };
-
 const state = reactive({ ...initialState });
+const _required = computed(() => helpers.withMessage(() => i18n.t('validations.requiredMsg') , required ));
+const _email = computed(() => helpers.withMessage(() => i18n.t('validations.emailMsg') , email ));
+const _phone = computed(() => helpers.withMessage(() => i18n.t('validations.phone') , numeric ));
 
 const rules = {
-  firstName: { required },
-  lastName: { required },
-  email: { required, email },
-  phoneNumber: { required },
-  message: { required },
+  firstName: { required : _required.value},
+  lastName: { required:_required.value },
+  email: { required:_required.value, email:_email.value },
+  phoneNumber: { required:_required.value , numeric:_phone.value},
+  message: { required:_required.value },
 };
 
 const v$ = useVuelidate(rules, state);
@@ -116,7 +118,7 @@ async function handleSubmit() {
     loading.value = true;
     try {
       await submitForm();
-      alert("Form submitted successfully!");
+      // alert("Form submitted successfully!");
       clear();
     } catch (error) {
       alert(error);

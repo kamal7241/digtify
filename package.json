@@ -9,8 +9,8 @@
     "generate": "nuxt generate",
     "generate:dev": "nuxt --dotenv .env.dev generate ",
     "generate:prod": "nuxt --dotenv .env.prod generate ",
-    "generate:gh": "nuxt --dotenv .env.prod.gh generate",
-    "generate:netilfy": "nuxt --dotenv .env.prod.netilfy generate",
+    "generate:gh": "dotenv -e .env.prod.gh nuxt generate",
+    "generate:netilfy": "dotenv -e .env.prod.netilfy nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "gh-publish": "gh-pages -d dist",
@@ -25,11 +25,14 @@
     "@nuxt/devtools": "latest",
     "@types/node": "^18.17.1",
     "css-loader": "^7.1.2",
+    "dotenv": "^16.4.5",
+    "dotenv-cli": "^7.4.2",
     "gh-pages": "^6.0.0",
     "nuxt": "^3.6.5",
     "sass": "^1.64.2",
     "sass-loader": "^10.4.1",
-    "vite-plugin-vsharp": "^1.4.2"
+    "vite-plugin-vsharp": "^1.4.2",
+    "vite-plugin-vuetify": "^2.0.4"
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
@@ -41,6 +44,7 @@
     "@vuelidate/validators": "^2.0.3",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
+    "axios": "^1.7.7",
     "bootstrap": "^5.3.1",
     "click-outside": "^2.0.2",
     "email-js": "^2.0.2",
@@ -51,7 +55,6 @@
     "normalize.css": "^8.0.1",
     "pinia": "^2.1.6",
     "swiper": "^10.1.0",
-    "vite-plugin-vuetify": "^2.0.4",
     "vue-i18next": "^0.9.4",
     "vue-toast-notification": "^3.1.1",
     "vuetify": "^3.7.2"

@@ -1,6 +1,19 @@
 {
   "services": {
-    "title": "حميع الخدمات",
-    "description": "متاح تقديم جميع الخدمات"
+    "title": "جميع الخدمات",
+    "description": "استكشف الخدمات المتاحة لدينا"
+  },
+  "visitOurWebsite": "زر موقعنا",
+  "downloadPortfolio":"تحميل اعمالنا",
+  "contactForMoreDetails":"للمزيد",
+  "firstNameLabel":"الاسم الاول",
+  "lastNameLabel":"الاسم الاخير",
+  "emailLabel":"البريد الالكتروني",
+  "phoneLabel":"رقم الهاتف",
+  "messageLabel":"الرسالة",
+  "validations":{
+    "requiredMsg":"هذا الحقل مطلوب",
+    "emailMsg":"يرجي ادخال البريد الالكترونى بشكل صحيح",
+    "phone":"يرجي ادخال رقم الهاتف بشكل صحيح"
   }
 }
