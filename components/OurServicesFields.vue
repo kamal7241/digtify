@@ -41,10 +41,10 @@
     ></v-text-field>
 
     <v-textarea
-      maxlength="120"
+      maxlength="80"
       counter
-                auto-grow
-
+      rows="3"
+      auto-grow
       v-model="state.message"
       :error-messages="v$.message.$errors.map((e) => e.$message)"
       label="Your Message"
@@ -57,7 +57,7 @@
       <v-btn
         :disabled="loading"
         :loading="loading"
-        class="our-services__submit   rounded-pill p-md-4 p-3 position-relative "
+        class="our-services__submit   rounded-pill p-md-4 p-3 position-relative mt-5 "
         color="rgb(81 81 81)"
         type="submit"
       >

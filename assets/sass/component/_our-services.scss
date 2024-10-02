@@ -1,7 +1,14 @@
 .our-services {
   background-color: $primary;
   overflow: hidden;
-  @include define-responsive-property(height, 110vh, 120vh, auto, auto);
+  @include define-responsive-property(height, 100vh, 100vh, auto, auto);
+  .switch-style{
+    color: white;
+  }
+  .test{
+    color: white;
+    clip-path: none !important;
+  }
   .our-services__title-and-subtitle {
     .logo {
       min-width: 100px;
@@ -40,8 +47,9 @@
     .v-messages__message {
       color: red;
       font-weight: 400 !important;
-      font-size: .9rem !important;
+      font-size: .8rem !important;
     }
+    max-height: 77px;
     color: white;
     font-weight: 200;
   }

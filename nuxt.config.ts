@@ -2,7 +2,9 @@
 import vsharp from "vite-plugin-vsharp";
 import rules from "./robots.config";
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
-
+import enMessages from "./locales/en/our-services.json";
+import arMessages from "./locales/ar/our-services.json";
+import { dir } from "console";
 const netilfyConfig = {
   baseURL: '/',
   buildAssetsDir: 'assets'
@@ -17,14 +19,14 @@ process.env.NUXT_ENV == 'netilfy' ? netilfyConfig : {}
 export default defineNuxtConfig({
   //inlineSSRStyles:false,
   app: {
-    ...config
+    ...config,
   },
   devtools: { enabled: true },
   css: [
     // '@/assets/sass/main-ltr.scss',
   ],
-  build:{
-    transpile: ['vuetify'],
+  build: {
+    transpile: ["vuetify"],
   },
   vite: {
     plugins: [vsharp()],
@@ -32,33 +34,43 @@ export default defineNuxtConfig({
       preprocessorOptions: {
         scss: {
           // additionalData: '@import "@/assets/sass/main-ltr.scss'
-        }
-      }
+        },
+      },
     },
-    build:{
-      cssCodeSplit:false,
-
+    build: {
+      cssCodeSplit: false,
     },
-        vue: {
+    vue: {
       template: {
         transformAssetUrls,
       },
     },
-  } ,
+  },
   modules: [
     // ...
-    '@pinia/nuxt',
-    '@nuxtjs/robots',
-        (_options, nuxt) => {
-      nuxt.hooks.hook('vite:extendConfig', (config) => {
+    "@pinia/nuxt",
+    "@nuxtjs/robots",
+    "@nuxtjs/i18n",
+    (_options, nuxt) => {
+      nuxt.hooks.hook("vite:extendConfig", (config) => {
         // @ts-expect-error
-        config?.plugins.push(vuetify({ autoImport: true }))
-      })
+        config?.plugins.push(vuetify({ autoImport: true }));
+      });
     },
-
   ],
-  robots:{
-    rules : rules
-  }
-    
-})
+  i18n: {
+    // Module Options
+    lazy: true,
+    langDir: "locales/",
+    strategy: "prefix_except_default",
+    defaultLocale: "en",
+    fallbackLocale: ['en'],
+    locales: [
+      { code: "ar", iso: "ar-AR", dir: 'ltr', file: "ar/our-services.json" },
+      { code: "en", iso: "en-US",dir: 'ltr', file: "en/our-services.json" },
+    ],
+  },
+  robots: {
+    rules: rules,
+  },
+});

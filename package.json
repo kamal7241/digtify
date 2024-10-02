@@ -34,6 +34,7 @@
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@mdi/font": "^7.4.47",
+    "@nuxtjs/i18n": "^8.5.5",
     "@nuxtjs/robots": "^3.0.0",
     "@pinia/nuxt": "^0.4.11",
     "@vuelidate/core": "^2.0.3",
@@ -43,11 +44,15 @@
     "bootstrap": "^5.3.1",
     "click-outside": "^2.0.2",
     "email-js": "^2.0.2",
+    "i18next": "^23.15.1",
+    "i18next-browser-languagedetector": "^8.0.0",
+    "i18next-http-backend": "^2.6.1",
     "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
     "pinia": "^2.1.6",
     "swiper": "^10.1.0",
     "vite-plugin-vuetify": "^2.0.4",
+    "vue-i18next": "^0.9.4",
     "vue-toast-notification": "^3.1.1",
     "vuetify": "^3.7.2"
   },
