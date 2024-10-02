@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: 
+Disallow: /cgi-bin/
+
+# Comment here
+Sitemap: https://digifymena.com/sitemap.xml
