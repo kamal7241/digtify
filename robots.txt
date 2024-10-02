@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: 
-Disallow: /cgi-bin/
-
-# Comment here
-Sitemap: https://gh-pages--venerable-shortbread-62aca8.netlify.app/sitemap.xml
