@@ -11,29 +11,33 @@
           src="@/assets/image/digify-logo.png"
         />
       </NuxtLink>
-        <v-switch v-model="model" :hide-details="true" 
-         false-value="En"
-          true-value="Ar"
-        class="switch-style"
-        @click="switchLanguage"
-        >
-          <template v-slot:label>
-            <span v-if="model === 'Ar'">
-              <img
-                src="@/assets/image/flags/Ar.png"
-                alt="Arabic"
-                style="width: 30px; height: 30px"
-              />
-            </span>
-            <span v-else>
-              <img
-                src="@/assets/image/flags/En.png"
-                alt="English"
-                style="width: 30px; height: 30px"
-              />
-            </span>
-          </template>
-        </v-switch>
+      <div 
+      :class="[
+      'd-flex flex-nowrap align-items-center gap-3',
+      lang === 'ar' ? 'flex-row-reverse' : 'flex-row',
+      ]" 
+      >
+        <img
+            src="@/assets/image/flags/En.png"
+            :class="lang == 'en' ? '' : 'opacity-50'"
+            alt="English"
+            style="width: 30px; height: 30px"
+          />
+          <v-switch :modelValue="lang" :hide-details="true" 
+           false-value="en"
+            true-value="ar"
+            class="switch-style"
+          @click="switchLanguage"
+          >
+          </v-switch>
+          <img
+          src="@/assets/image/flags/Ar.png"
+          :class="lang === 'ar' ? '' : 'opacity-50'"
+          alt="Arabic"
+          style="width: 30px; height: 30px"
+        />
+
+      </div>
       </div>
     </v-container>
     <v-container class="mb-6">
@@ -43,9 +47,6 @@
         </h1>
       </div>
       <v-row
-        align="flex-start"
-        justify="space-between"
-        no-gutters
       >
         <v-col cols="12" md="6">
           <v-sheet class="bg-transparent p-0 m-0">
@@ -124,14 +125,11 @@ export default {
     return{
       baseURL,
     }
-    },
-  data() {
-    return {
-      // Use a regular function to access this
-      model: this.$i18n.locale === "en" ? "En" : "Ar",
-    };
   },
   computed: {
+    lang(){
+      return this.$i18n.locale === "en" ? "en" : "ar";
+    },
     services() {
       return this.$i18n.locale === "en" ? ENServices : ARServices;
     },

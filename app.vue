@@ -28,11 +28,12 @@ watch(currentLang, (lang) => {
 
 
 useHead({
-    htmlAttrs: {
-      lang: currentLang.value,
-      dir: currentDir.value,
-    },
-
+    htmlAttrs: () => {
+        return {
+        lang: currentLang.value,
+        dir: currentDir.value,
+      }
+    } 
 });
     
 </script>
