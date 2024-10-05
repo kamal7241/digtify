@@ -2,6 +2,8 @@
 /*Import mixins and variables*/
 @import 'normalize.css/normalize.css';
 @import 'animate.css/animate.css';
+@import "bootstrap";
+@import "vue-toast-notification/dist/theme-sugar.css";
 @import './icomoon/icomoon.scss';
 @import "functions/functions";
 @import "mixins/mixins";
@@ -9,6 +11,6 @@
 @import "./global/global";
 @import "./component/components";
 @import 'aos/dist/aos.css';
-@import "vue-toast-notification/dist/theme-sugar.css";
+
 
 

@@ -15,17 +15,24 @@ const config = process.env.NUXT_ENV == 'gh' ? ghPagesConfig :
 process.env.NUXT_ENV == 'netilfy' ? netilfyConfig : {}
 export default defineNuxtConfig({
   //inlineSSRStyles:false,
+  ssr: false,
+
   app: {
     ...config,
   },
+
   devtools: { enabled: true },
+
   css: [
     // '@/assets/sass/main-ltr.scss',
   ],
+
   build: {
     transpile: ["vuetify"],
   },
+
   plugins: ['~/plugins/vuetify'],
+
   vite: {
     plugins: [vsharp(),
       vuetify()
@@ -46,6 +53,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   modules: [
     // ...
     "@pinia/nuxt",
@@ -61,6 +69,7 @@ export default defineNuxtConfig({
       });
     },
   ],
+
   i18n: {
     // Module Options
     lazy: true,
@@ -76,7 +85,10 @@ export default defineNuxtConfig({
       { code: "en", iso: "en-US",dir: 'ltr', file: "en/our-services.json" },
     ],
   },
+
   robots: {
     rules: rules,
   },
+
+  compatibilityDate: "2024-10-05"
 });

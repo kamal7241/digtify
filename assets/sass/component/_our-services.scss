@@ -18,7 +18,7 @@
     }
   }
   .our-services__content-title {
-    font-family: $title-font-family;
+    font-family: var(--title-font-family);
     font-weight: 400;
     color: white;
   }
@@ -75,7 +75,7 @@
       left: -200px;
       transition:  0.3s  ease-in-out;
       transition-delay: .1s;
-      font-family: $font-family;
+      font-family: var(--font-family);
       @media screen and (max-width:767px) {
         font-size: 18px;
       } 
