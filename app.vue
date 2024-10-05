@@ -1,7 +1,5 @@
 <template>
-    <v-app>
-    <NuxtPage />
-    </v-app>
+   <CoreAppDirectionStyleDecorator  :dir="currentDir" :lang="currentLang" />
 </template>
 
 <script  setup lang="ts">
@@ -15,45 +13,45 @@ const currentDir = computed(() => {
 const currentLang = computed(() => {
     return i18n.locale.value;
 })
-const { current } = useLocale()
+const locale = useLocale()
+console.log(locale);
+const { current} = locale;
 current.value = i18n.locale.value;
-watch(currentLang, (lang) => {
+console.log("locale:" , current.value);
+watch(currentDir, (lang) => {
     current.value = lang
+    console.log("locale:" , current.value);
 });
-const rtlCdnLink  = computed(() => {
-    return currentDir.value === 'rtl' ? '' : '';
 
-});
 
 useHead({
     htmlAttrs: {
       lang: currentLang.value,
       dir: currentDir.value,
     },
-    link: [
-        {
-            rel: 'stylesheet',
-            href: rtlCdnLink.value,
-        },
-    ],
-});
 
-const loadDirStyles = (dir:"ltr" | "rtl") => {
-    if(dir === 'ltr'){
-            console.log("loading ltr scss");
-            import("@/assets/sass/main.ltr.scss");
-            document.documentElement.classList.add("ltr")
-            document.documentElement.classList.remove("rtl")
-        }else{
-            console.log("loading rtl scss");
-            import("@/assets/sass/main.rtl.scss");
-            document.documentElement.classList.add("rtl")
-            document.documentElement.classList.remove("ltr")
-        }
-}
-loadDirStyles(currentDir.value)
-watch(currentDir, (dir) => {
-    loadDirStyles(dir)
-})
+});
     
 </script>
+<style lang="scss">
+/* rtl:begin:options: {
+  "autoRename": true,
+  "stringMap": [{
+    "name": "ltr-rtl",
+    "priority": 100,
+    "search": ["ltr"],
+    "replace": ["rtl"],
+    "options": {
+      "scope": "*",
+      "ignoreCase": false
+    }
+  }]
+} */
+// .ltr{
+//   @import "bootstrap";
+// }
+
+// .rtl{
+//   @import "bootstrap";
+// }
+</style>

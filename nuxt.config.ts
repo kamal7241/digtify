@@ -29,8 +29,14 @@ export default defineNuxtConfig({
 
   build: {
     transpile: ["vuetify"],
+    
   },
-
+  postcss: {
+    plugins: {
+      autoprefixer: {},
+      rtlcss: {}
+    }
+  },
   plugins: ['~/plugins/vuetify'],
 
   vite: {
@@ -46,6 +52,7 @@ export default defineNuxtConfig({
     },
     build: {
       cssCodeSplit: false,
+      
     },
     vue: {
       template: {
