@@ -11,11 +11,8 @@ $title-font-family: 'BebasNeue';
 $font-family:'Poppins';
 $font-path:'@/assets/fonts/Poppins';
 $title-font-path:'@/assets/fonts/BebasNeue';
-:root{
-  --font-family:'Poppins';
-  --title-font-family: 'BebasNeue';
-}
-:root.ltr{
+
+[dir="ltr"]:root{
   --font-family:'Poppins';
   --title-font-family: 'BebasNeue';
 }

@@ -22,8 +22,8 @@
 // $enable-rtl: true;
 // // Import Bootstrap
 // @import "bootstrap/scss/bootstrap";
-@import "./node_modules/bootstrap/dist/css/bootstrap.rtl.css";
-@import '@/assets/sass/variables/_rtl-direction.scss';
-@import "@/assets/sass/fonts/fonts.rtl";
-@import '@/assets/sass/main.scss';
+// @import "./node_modules/bootstrap/dist/css/bootstrap.rtl.css";
+// @import '@/assets/sass/variables/_rtl-direction.scss';
+// @import "@/assets/sass/fonts/fonts.rtl";
+// @import '@/assets/sass/main.scss';
 </style>

@@ -23,10 +23,10 @@
 // @import "bootstrap/scss/bootstrap";
 
 
-@import "bootstrap";
-@import '@/assets/sass/variables/_ltr-direction.scss';
-@import "@/assets/sass/fonts/fonts.ltr";
-@import '@/assets/sass/main.scss';
+// @import "bootstrap";
+// @import '@/assets/sass/variables/_ltr-direction.scss';
+// @import "@/assets/sass/fonts/fonts.ltr";
+// @import '@/assets/sass/main.scss';
 
 
 </style>

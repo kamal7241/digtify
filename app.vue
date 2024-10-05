@@ -1,5 +1,7 @@
 <template>
-   <CoreAppDirectionStyleDecorator  :dir="currentDir" :lang="currentLang" />
+    <v-app>
+    <NuxtPage />
+    </v-app>
 </template>
 
 <script  setup lang="ts">
@@ -8,6 +10,7 @@ import { useLocale } from 'vuetify'
 import {watch} from "vue";
 const i18n = useI18n();
 const currentDir = computed(() => {
+    console.log("currDir source:" , i18n.locale.value)
     return i18n.locale.value === 'ar' ? 'rtl' : 'ltr';;
 })
 const currentLang = computed(() => {
@@ -18,7 +21,7 @@ console.log(locale);
 const { current} = locale;
 current.value = i18n.locale.value;
 console.log("locale:" , current.value);
-watch(currentDir, (lang) => {
+watch(currentLang, (lang) => {
     current.value = lang
     console.log("locale:" , current.value);
 });
@@ -33,10 +36,10 @@ useHead({
 });
     
 </script>
-<style lang="scss">
+<style lang="scss" >
 /* rtl:begin:options: {
   "autoRename": true,
-  "stringMap": [{
+  "stringMap":[ {
     "name": "ltr-rtl",
     "priority": 100,
     "search": ["ltr"],
@@ -45,13 +48,14 @@ useHead({
       "scope": "*",
       "ignoreCase": false
     }
-  }]
+  } ]
 } */
-// .ltr{
-//   @import "bootstrap";
-// }
+  @import "bootstrap";
+/*rtl:end:options*/
 
-// .rtl{
-//   @import "bootstrap";
-// }
+
+/*rtl:begin:ignore*/	
+@import "@/assets/sass/main.scss";
+/*rtl:end:ignore*/	
+
 </style>

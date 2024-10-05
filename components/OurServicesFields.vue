@@ -62,7 +62,7 @@
         type="submit"
       >
         <span class="title-submit text-light pe-4 text-capitalize"
-          >Send Message</span
+          >{{ $t('sendMsg') }}</span
         >
            <span class="submit-button btn btn-secondary rounded-pill">
           <img src="../assets/image/arrow-right.png" alt="" />

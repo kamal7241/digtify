@@ -1,13 +1,10 @@
 // import this after install `@mdi/font` package
-import "@mdi/font/css/materialdesignicons.css";
 import { createVuetify } from "vuetify/lib/framework.mjs";
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
+import "@/assets/sass/vuetify.scss";
 
-/**
- * @todo styles should be moved to be before main styles to avoid override on main styles
- */
-import "vuetify/styles";
+
 import { th } from "vuetify/locale";
 
 export default defineNuxtPlugin((app) => {

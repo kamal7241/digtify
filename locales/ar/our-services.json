@@ -11,6 +11,7 @@
   "emailLabel":"البريد الالكتروني",
   "phoneLabel":"رقم الهاتف",
   "messageLabel":"الرسالة",
+  "sendMsg":"إرسال",
   "validations":{
     "requiredMsg":"هذا الحقل مطلوب",
     "emailMsg":"يرجي ادخال البريد الالكترونى بشكل صحيح",

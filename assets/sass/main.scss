@@ -3,8 +3,14 @@
 @import 'normalize.css/normalize.css';
 @import 'animate.css/animate.css';
 @import "vue-toast-notification/dist/theme-sugar.css";
+@import 'variables/_ltr-direction.scss';
+@import "fonts/fonts.ltr";
+@import 'variables/_rtl-direction.scss';
+@import "fonts/fonts.rtl";
 @import './icomoon/icomoon.scss';
 @import "functions/functions";
+
+
 @import "mixins/mixins";
 @import "variables/_variables.scss";
 @import "./global/global";

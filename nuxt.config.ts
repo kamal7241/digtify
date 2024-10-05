@@ -2,6 +2,8 @@
 import vsharp from "vite-plugin-vsharp";
 import rules from "./robots.config";
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+import { type Options } from "postcss-rtl";
+import {type ConfigOptions } from "rtlcss";
 const netilfyConfig = {
   baseURL: '/',
   buildAssetsDir: 'assets'
@@ -34,7 +36,15 @@ export default defineNuxtConfig({
   postcss: {
     plugins: {
       autoprefixer: {},
-      rtlcss: {}
+      'postcss-rtl': {
+        // prefix:'rtl',
+        // onlyDirection: 'rtl',
+      } as Options,
+      // Add rtlcss only for rtl blocks
+      // rtlcss: {
+
+      // } as ConfigOptions, 
+ 
     }
   },
   plugins: ['~/plugins/vuetify'],
@@ -52,6 +62,7 @@ export default defineNuxtConfig({
     },
     build: {
       cssCodeSplit: false,
+      minify:false,
       
     },
     vue: {

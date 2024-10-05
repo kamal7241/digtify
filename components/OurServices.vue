@@ -1,6 +1,6 @@
 <template>
   <div class="our-services ">
-    <v-container >
+    <v-container   >
       <div
         class="our-services__header d-flex justify-content-between items-center"
       >
@@ -48,7 +48,7 @@
         no-gutters
       >
         <v-col cols="12" md="6">
-          <v-sheet class="pa-2 ma-2 bg-transparent p-0 m-0">
+          <v-sheet class="bg-transparent p-0 m-0">
             <div class="our-services-content">
               <div class="our-services__desc">
                 <div class="mb-4" v-for="service in services" :key="service.id">
@@ -70,16 +70,20 @@
               </div>
             </div>
           </v-sheet>
-        </v-col>
-        <v-col>
-          <v-sheet class="pa-2 ma-2 bg-transparent pe-0 me-0 ps-4 ms-4">
+          <v-sheet class="bg-transparent">
             <div class="our-services-form">
               <OurServicesFields />
             </div>
           </v-sheet>
         </v-col>
-        <v-col cols="12">
-          <div class="d-flex justify-center gap-3">
+        <v-col cols="12" md="6">
+          <img
+          class="mw-100"
+          alt="digify-logo"
+          src="@/assets/image/our-services/landing-page.png"
+        />
+      
+          <div class="d-flex justify-center gap-3 mt-4">
             <!-- <h1>{{ $t('welcome') }}</h1>
         <p>{{ $t('our-services.description') }}</p> -->
             <!-- <button @click="changeLanguage('ar')">Switch to Arabic</button> -->
@@ -100,6 +104,7 @@
             </a>
           </div>
         </v-col>
+     
       </v-row>
     </v-container>
   </div>
