@@ -11,7 +11,7 @@
           src="@/assets/image/digify-logo.png"
         />
       </NuxtLink>
-        <!-- <v-switch v-model="model" :hide-details="true" 
+        <v-switch v-model="model" :hide-details="true" 
          false-value="En"
           true-value="Ar"
         class="switch-style"
@@ -33,7 +33,7 @@
               />
             </span>
           </template>
-        </v-switch> -->
+        </v-switch>
       </div>
     </v-container>
     <v-container class="mb-6">
