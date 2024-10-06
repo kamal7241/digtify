@@ -4,116 +4,125 @@
     display: inline-block;
     width: 11.68vw;
   }
-  .switch-style{
-    color: white;
+  .switch-style {
+    color: $light;
   }
-  .test{
-    color: white;
-    clip-path: none !important;
+ .our-services__banner-btn{
+  .btn{
+    font-size: 1.3rem;
+    @media screen and (max-width: 767px) {
+      font-size: 1.1rem;
+    }
   }
+ }
   .our-services__title-and-subtitle {
     .subtitle {
       font-weight: 200;
-      color: white;
+      color: $light;
     }
   }
   .our-services__content-title {
     font-family: var(--title-font-family);
     font-weight: 400;
-    color: white;
+    color: $light;
   }
   .our-services__desc {
     & > * {
-      color: white;
+      color: $light;
       font-weight: 400;
       font-size: 1rem;
     }
   }
   .our-services__form {
     padding: 20px;
-    border: 1px solid white;
+    border: 1px solid $light;
     border-radius: 20px;
   }
 
   .filed-style {
-    .v-field__overlay{
-        background-color: transparent !important;
+    .v-field__overlay {
+      background-color: transparent !important;
     }
+     .v-counter{
+       color: $light;
+     }
+    .v-label.v-field-label{
+       color: $light ; 
+     }
     .v-messages__message {
-      color: red;
+      color: $light;
       font-weight: 400 !important;
-      font-size: .8rem !important;
+      font-size: 0.75rem !important;
     }
     max-height: 77px;
-    color: white;
+    color: $light;
     font-weight: 200;
   }
- 
- .our-services__submit{
-      height: 40px;
-      width: 0px;
-      overflow: hidden;
-      background-color: transparent;
-      border-radius: 50px;
-      border: none;
-      caret-color: white !important;
-      color: white !important;
-      cursor: pointer;
-      transition:  0.3s ease-out;
-      min-width: 0px;
-    .submit-button{
+
+  .our-services__submit {
+    height: 40px;
+    overflow: hidden;
+    width: 40px;
+    background-color: transparent;
+    border-radius: 50px;
+    border: none;
+    caret-color: $light !important;
+    color: $light !important;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    min-width: 0px;
+    .submit-button {
       position: absolute;
       right: 0;
-      height: 100%;
       top: 50%;
       transform: translateY(-50%);
+      width: 40px;
+      height: 100%;
+      border-radius: 50%;
     }
-    .title-submit{
+    .title-submit {
       position: absolute;
       top: 50%;
-      transform: translateY(-50%); 
+      transform: translate(-50% , -50%);
       left: -200px;
-      transition:  0.3s  ease-in-out;
-      transition-delay: .1s;
+      transition: 0.3s ease-in-out;
+      transition-delay: 0.1s;
       font-family: var(--font-family);
-      @media screen and (max-width:767px) {
+      @media screen and (max-width: 767px) {
         font-size: 18px;
-      } 
-
+      }
     }
 
     .submit-button {
       padding: 10px;
-      img{
-        transition:  0.3s  ease-out;
-        @media screen and (max-width:767px) {
-          width: 75%;
-        }    
-            }
-            @media screen and (max-width:767px) {
-              padding: 8px;
-            }
+      img {
+        transition: 0.3s ease-out;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      
+      }
+    
     }
-    &:hover{
-      // width: 160px;
+    &:hover {
       width: 13rem;
       background-color: $text;
+      padding: auto;
     }
 
-    &:hover .submit-button img{
-      transform: rotate(-25deg);
+    &:hover .submit-button img {
+      transform: translate(-50%, -50%) rotate(-25deg);
     }
 
-    &:hover .title-submit{
-      left: 20px;
+    &:hover .title-submit {
+      left: 45%;
     }
-    @media screen and (min-width:2500px) {
-      &:hover{
+    @media screen and (min-width: 2500px) {
+      &:hover {
         width: 12rem;
-        // width: 200px;
         background-color: $text;
       }
+    }
   }
-      }
- 
 }
