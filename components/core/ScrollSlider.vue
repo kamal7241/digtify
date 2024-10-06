@@ -24,7 +24,6 @@ export default defineNuxtComponent({
     },
     methods:{
         slideByArrows(e){
-            console.log(e)
             if(e.key == "ArrowLeft")
                 this.onWheelUp();
             else if(e.key == "ArrowRight"){

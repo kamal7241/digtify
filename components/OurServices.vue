@@ -17,12 +17,11 @@
       lang === 'ar' ? 'flex-row-reverse' : 'flex-row',
       ]" 
       >
-        <img
-            src="@/assets/image/flags/En.png"
-            :class="lang == 'en' ? '' : 'opacity-50'"
-            alt="English"
-            style="width: 30px; height: 30px"
-          />
+          <span 
+          class="text-sm text-white fw-bold"
+          :class="lang === 'en' ? '' : 'opacity-50'"
+          
+          >EN</span>
           <v-switch :modelValue="lang" :hide-details="true" 
            false-value="en"
             true-value="ar"
@@ -30,12 +29,10 @@
           @click="switchLanguage"
           >
           </v-switch>
-          <img
-          src="@/assets/image/flags/Ar.png"
+          <span class="text-sm text-white fw-bold"
           :class="lang === 'ar' ? '' : 'opacity-50'"
-          alt="Arabic"
-          style="width: 30px; height: 30px"
-        />
+          >ع</span>
+     
 
       </div>
       </div>
@@ -59,7 +56,7 @@
                   </p>
                   <p>
                     <NuxtLink 
-                      class="inline-block text-white text-sm d-flex gap-2 fs-6" 
+                      class="d-inline-flex text-white text-sm gap-2 fs-6 mt-2" 
                       :to="`https://wa.me/${phoneNumber}`"
 
                       >
@@ -114,7 +111,7 @@
 <script>
 import ENServices from "@/static/en/services.json";
 import ARServices from "@/static/ar/services.json";
-const phoneNumber = "+201119858118";
+const phoneNumber = "+966 56 471 5121";
 const message = "";
 
 
@@ -134,7 +131,7 @@ export default {
       return this.$i18n.locale === "en" ? ENServices : ARServices;
     },
     phoneNumber(){
-      return "+201119858118";
+      return phoneNumber;
     }
   },
   methods: {
