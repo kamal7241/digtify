@@ -38,6 +38,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
       'postcss-rtl': {
         // prefix:'rtl',
+        
         // onlyDirection: 'rtl',
       } as Options,
       // Add rtlcss only for rtl blocks

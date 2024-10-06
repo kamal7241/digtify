@@ -33,6 +33,5 @@ export default defineNuxtPlugin((app) => {
     }
     // locale: app.$i18n.locale.value, // Set the current locale based on i18n
   });
-  console.log("value" , app.$i18n.locale.value)
   app.vueApp.use(vuetify);
 });
