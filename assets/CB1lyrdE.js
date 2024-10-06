@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./8Jjg09Jc.js","./CkBUOoUo.js","./CojnSkmx.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./DBNeddT8.js","./CDPd1Yk1.js","./DYtMGPfV.js"])))=>i.map(i=>d[i]);
 /**
 * @vue/shared v3.5.10
 * (c) 2018-present Yuxi (Evan) You and Vue contributors
@@ -15750,32 +15750,32 @@ const _routes = [
   {
     name: "lang-newPage___ar",
     path: "/ar/:lang()/newPage",
-    component: () => __vitePreload(() => import("./Zf-TJHFC.js"), true ? [] : void 0, import.meta.url)
+    component: () => __vitePreload(() => import("./CAF2Hir-.js"), true ? [] : void 0, import.meta.url)
   },
   {
     name: "lang-newPage___en",
     path: "/en/:lang()/newPage",
-    component: () => __vitePreload(() => import("./Zf-TJHFC.js"), true ? [] : void 0, import.meta.url)
+    component: () => __vitePreload(() => import("./CAF2Hir-.js"), true ? [] : void 0, import.meta.url)
   },
   {
     name: "index___ar",
     path: "/ar",
-    component: () => __vitePreload(() => import("./8Jjg09Jc.js"), true ? __vite__mapDeps([0,1]) : void 0, import.meta.url)
+    component: () => __vitePreload(() => import("./DBNeddT8.js"), true ? __vite__mapDeps([0,1]) : void 0, import.meta.url)
   },
   {
     name: "index___en",
     path: "/en",
-    component: () => __vitePreload(() => import("./8Jjg09Jc.js"), true ? __vite__mapDeps([0,1]) : void 0, import.meta.url)
+    component: () => __vitePreload(() => import("./DBNeddT8.js"), true ? __vite__mapDeps([0,1]) : void 0, import.meta.url)
   },
   {
     name: "our-services___ar",
     path: "/ar/our-services",
-    component: () => __vitePreload(() => import("./CojnSkmx.js"), true ? __vite__mapDeps([2,1]) : void 0, import.meta.url)
+    component: () => __vitePreload(() => import("./DYtMGPfV.js"), true ? __vite__mapDeps([2,1]) : void 0, import.meta.url)
   },
   {
     name: "our-services___en",
     path: "/en/our-services",
-    component: () => __vitePreload(() => import("./CojnSkmx.js"), true ? __vite__mapDeps([2,1]) : void 0, import.meta.url)
+    component: () => __vitePreload(() => import("./DYtMGPfV.js"), true ? __vite__mapDeps([2,1]) : void 0, import.meta.url)
   }
 ];
 const _wrapIf = (component, props, slots) => {
@@ -17377,7 +17377,7 @@ const localeCodes = [
 ];
 const localeLoaders = {
   "ar": [{ key: "../locales/ar/our-services.json", load: () => __vitePreload(() => import(
-    "./B8dXd0PK.js"
+    "./BuZGoeGp.js"
     /* webpackChunkName: "locale__Users_kamal_Documents_freelance_digtify_locales_ar_our_services_json" */
   ), true ? [] : void 0, import.meta.url), cache: true }],
   "en": [{ key: "../locales/en/our-services.json", load: () => __vitePreload(() => import(
@@ -50070,7 +50070,6 @@ const vuetify_8NhHJigKc1 = /* @__PURE__ */ defineNuxtPlugin((app) => {
     }
     // locale: app.$i18n.locale.value, // Set the current locale based on i18n
   });
-  console.log("value", app.$i18n.locale.value);
   app.vueApp.use(vuetify);
 });
 const i18n_sVHQBgnb3t = () => {
@@ -50733,20 +50732,16 @@ const _sfc_main$4 = /* @__PURE__ */ defineComponent$1({
   setup(__props) {
     const i18n = useI18n();
     const currentDir = computed(() => {
-      console.log("currDir source:", i18n.locale.value);
       return i18n.locale.value === "ar" ? "rtl" : "ltr";
     });
     const currentLang = computed(() => {
       return i18n.locale.value;
     });
     const locale = useLocale();
-    console.log(locale);
     const { current } = locale;
     current.value = i18n.locale.value;
-    console.log("locale:", current.value);
     watch(currentLang, (lang) => {
       current.value = lang;
-      console.log("locale:", current.value);
     });
     useHead({
       htmlAttrs: () => {
@@ -50780,7 +50775,7 @@ const _hoisted_2 = { class: "info-message__icon" };
 const _hoisted_3 = { class: "info-message__title" };
 const _hoisted_4 = { class: "info-message__body" };
 const _hoisted_5 = { class: "info-message__btn" };
-function _sfc_render$2(_ctx, _cache) {
+function _sfc_render$1(_ctx, _cache) {
   return openBlock(), createElementBlock("div", _hoisted_1$2, [
     createBaseVNode("div", _hoisted_2, [
       renderSlot(_ctx.$slots, "icon")
@@ -50796,11 +50791,11 @@ function _sfc_render$2(_ctx, _cache) {
     ])
   ]);
 }
-const __nuxt_component_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2]]);
+const __nuxt_component_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$1]]);
 const _sfc_main$2 = {
   name: "NotFound"
 };
-function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_NuxtLink = __nuxt_component_0$2;
   const _component_core_info_message = __nuxt_component_1$1;
   return openBlock(), createBlock(_component_core_info_message, { class: "text-center" }, {
@@ -50824,7 +50819,7 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
   });
 }
-const __nuxt_component_0 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1]]);
+const __nuxt_component_0 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render]]);
 const LayoutLoader = /* @__PURE__ */ defineComponent$1({
   name: "LayoutLoader",
   inheritAttrs: false,
@@ -50930,23 +50925,35 @@ const LayoutProvider = /* @__PURE__ */ defineComponent$1({
     };
   }
 });
-const _sfc_main$1 = {
-  props: ["error"]
-};
 const _hoisted_1$1 = { class: "bg-primary h-100vh" };
-function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-  const _component_CoreNotFound = __nuxt_component_0;
-  const _component_NuxtLayout = __nuxt_component_1;
-  return openBlock(), createBlock(_component_NuxtLayout, null, {
-    default: withCtx(() => [
-      createBaseVNode("div", _hoisted_1$1, [
-        createVNode(_component_CoreNotFound)
-      ])
-    ]),
-    _: 1
-  });
-}
-const ErrorComponent = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render]]);
+const _sfc_main$1 = /* @__PURE__ */ defineComponent$1({
+  __name: "error",
+  props: {
+    error: {}
+  },
+  setup(__props) {
+    useHead({
+      htmlAttrs: () => {
+        return {
+          lang: "en",
+          dir: "ltr"
+        };
+      }
+    });
+    return (_ctx, _cache) => {
+      const _component_CoreNotFound = __nuxt_component_0;
+      const _component_NuxtLayout = __nuxt_component_1;
+      return openBlock(), createBlock(_component_NuxtLayout, null, {
+        default: withCtx(() => [
+          createBaseVNode("div", _hoisted_1$1, [
+            createVNode(_component_CoreNotFound)
+          ])
+        ]),
+        _: 1
+      });
+    };
+  }
+});
 const _hoisted_1 = { key: 0 };
 const _sfc_main = {
   __name: "nuxt-root",
@@ -50974,7 +50981,7 @@ const _sfc_main = {
     return (_ctx, _cache) => {
       return openBlock(), createBlock(Suspense, { onResolve: unref(onResolve) }, {
         default: withCtx(() => [
-          unref(abortRender) ? (openBlock(), createElementBlock("div", _hoisted_1)) : unref(error) ? (openBlock(), createBlock(unref(ErrorComponent), {
+          unref(abortRender) ? (openBlock(), createElementBlock("div", _hoisted_1)) : unref(error) ? (openBlock(), createBlock(unref(_sfc_main$1), {
             key: 1,
             error: unref(error)
           }, null, 8, ["error"])) : unref(islandContext) ? (openBlock(), createBlock(unref(IslandRenderer), {
