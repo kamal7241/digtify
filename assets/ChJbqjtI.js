@@ -1,10 +1,11 @@
 const resource = {
   "services": {
+    "intro": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Digify is a digital media consultancy firm, established 2014 in Riyadh, Jeddah and Cairo. Served hundreds of clients in different industries. More" } },
     "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Our Services" } },
     "description": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "We offer various services." } }
   },
   "visitOurWebsite": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "VISIT US" } },
-  "downloadPortfolio": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Download Portfolio" } },
+  "downloadPortfolio": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Portfolio" } },
   "contactForMoreDetails": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "more" } },
   "firstNameLabel": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "First name" } },
   "lastNameLabel": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Last name" } },

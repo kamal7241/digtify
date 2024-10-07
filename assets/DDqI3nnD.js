@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./DBNeddT8.js","./CDPd1Yk1.js","./DYtMGPfV.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./Bd9S2oJV.js","./3oGQ_hKi.js","./rM6T3SG3.js"])))=>i.map(i=>d[i]);
 /**
 * @vue/shared v3.5.10
 * (c) 2018-present Yuxi (Evan) You and Vue contributors
@@ -15270,8 +15270,8 @@ function createRouter(options) {
   function handleRedirectRecord(to) {
     const lastMatched = to.matched[to.matched.length - 1];
     if (lastMatched && lastMatched.redirect) {
-      const { redirect } = lastMatched;
-      let newTargetLocation = typeof redirect === "function" ? redirect(to) : redirect;
+      const { redirect: redirect2 } = lastMatched;
+      let newTargetLocation = typeof redirect2 === "function" ? redirect2(to) : redirect2;
       if (typeof newTargetLocation === "string") {
         newTargetLocation = newTargetLocation.includes("?") || newTargetLocation.includes("#") ? newTargetLocation = locationAsObject(newTargetLocation) : (
           // force empty params
@@ -15746,36 +15746,41 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
     return baseModule().catch(handlePreloadError);
   });
 };
+const __nuxt_page_meta = {
+  middleware: "redirect"
+};
 const _routes = [
   {
     name: "lang-newPage___ar",
-    path: "/ar/:lang()/newPage",
-    component: () => __vitePreload(() => import("./CAF2Hir-.js"), true ? [] : void 0, import.meta.url)
+    path: "/ar/:lang()/newPage/",
+    component: () => __vitePreload(() => import("./C5p-hKpM.js"), true ? [] : void 0, import.meta.url)
   },
   {
     name: "lang-newPage___en",
-    path: "/en/:lang()/newPage",
-    component: () => __vitePreload(() => import("./CAF2Hir-.js"), true ? [] : void 0, import.meta.url)
+    path: "/en/:lang()/newPage/",
+    component: () => __vitePreload(() => import("./C5p-hKpM.js"), true ? [] : void 0, import.meta.url)
   },
   {
     name: "index___ar",
-    path: "/ar",
-    component: () => __vitePreload(() => import("./DBNeddT8.js"), true ? __vite__mapDeps([0,1]) : void 0, import.meta.url)
+    path: "/ar/",
+    meta: __nuxt_page_meta || {},
+    component: () => __vitePreload(() => import("./Bd9S2oJV.js"), true ? __vite__mapDeps([0,1]) : void 0, import.meta.url)
   },
   {
     name: "index___en",
-    path: "/en",
-    component: () => __vitePreload(() => import("./DBNeddT8.js"), true ? __vite__mapDeps([0,1]) : void 0, import.meta.url)
+    path: "/en/",
+    meta: __nuxt_page_meta || {},
+    component: () => __vitePreload(() => import("./Bd9S2oJV.js"), true ? __vite__mapDeps([0,1]) : void 0, import.meta.url)
   },
   {
-    name: "our-services___ar",
-    path: "/ar/our-services",
-    component: () => __vitePreload(() => import("./DYtMGPfV.js"), true ? __vite__mapDeps([2,1]) : void 0, import.meta.url)
+    name: "saudi-digital-campaign___ar",
+    path: "/ar/saudi-digital-campaign/",
+    component: () => __vitePreload(() => import("./rM6T3SG3.js"), true ? __vite__mapDeps([2,1]) : void 0, import.meta.url)
   },
   {
-    name: "our-services___en",
-    path: "/en/our-services",
-    component: () => __vitePreload(() => import("./DYtMGPfV.js"), true ? __vite__mapDeps([2,1]) : void 0, import.meta.url)
+    name: "saudi-digital-campaign___en",
+    path: "/en/saudi-digital-campaign/",
+    component: () => __vitePreload(() => import("./rM6T3SG3.js"), true ? __vite__mapDeps([2,1]) : void 0, import.meta.url)
   }
 ];
 const _wrapIf = (component, props, slots) => {
@@ -15906,7 +15911,9 @@ const globalMiddleware = [
   validate,
   manifest_45route_45rule
 ];
-const namedMiddleware = {};
+const namedMiddleware = {
+  redirect: () => __vitePreload(() => Promise.resolve().then(() => redirect), true ? void 0 : void 0, import.meta.url)
+};
 function createCurrentLocation(base, location2, renderedPath) {
   const { pathname, search, hash } = location2;
   const hashPos = base.indexOf("#");
@@ -17377,11 +17384,11 @@ const localeCodes = [
 ];
 const localeLoaders = {
   "ar": [{ key: "../locales/ar/our-services.json", load: () => __vitePreload(() => import(
-    "./BuZGoeGp.js"
+    "./Dp2S1xxc.js"
     /* webpackChunkName: "locale__Users_kamal_Documents_freelance_digtify_locales_ar_our_services_json" */
   ), true ? [] : void 0, import.meta.url), cache: true }],
   "en": [{ key: "../locales/en/our-services.json", load: () => __vitePreload(() => import(
-    "./DmUXezUe.js"
+    "./ChJbqjtI.js"
     /* webpackChunkName: "locale__Users_kamal_Documents_freelance_digtify_locales_en_our_services_json" */
   ), true ? [] : void 0, import.meta.url), cache: true }]
 };
@@ -17410,6 +17417,7 @@ const normalizedLocales = [
 ];
 const NUXT_I18N_MODULE_ID = "@nuxtjs/i18n";
 const parallelPlugin = false;
+const isSSG = false;
 const DEFAULT_DYNAMIC_PARAMS_KEY = "nuxtI18n";
 const DEFAULT_COOKIE_KEY = "i18n_redirected";
 const SWITCH_LOCALE_PATH_LINK_IDENTIFIER = "nuxt-i18n-slp";
@@ -17931,9 +17939,6 @@ function createLocaleFromRouteGetter() {
   };
   return getLocaleFromRoute;
 }
-function _setLocale(i18n, locale) {
-  return callVueI18nInterfaces(i18n, "setLocale", locale);
-}
 function setCookieLocale(i18n, locale) {
   return callVueI18nInterfaces(i18n, "setLocaleCookie", locale);
 }
@@ -18049,7 +18054,7 @@ function detectRedirect({
       redirectPath = !(route.from && route.from.fullPath === routePath) ? routePath : "";
     }
   }
-  if ((differentDomains || true) && routeLocaleGetter(route.to) !== targetLocale) {
+  if ((differentDomains || isSSG) && routeLocaleGetter(route.to) !== targetLocale) {
     const routePath = switchLocalePath(common, targetLocale, route.to);
     if (isString(routePath) && routePath && !isEqual$2(routePath, toFullPath) && !routePath.startsWith("//")) {
       redirectPath = routePath;
@@ -18257,13 +18262,6 @@ function detectBrowserLanguage(route, detectLocaleContext, locale = "") {
   }
   const { strategy } = (/* @__PURE__ */ useRuntimeConfig()).public.i18n;
   const { ssg, callType, firstAccess, localeCookie } = detectLocaleContext;
-  if (strategy === "no_prefix" && ssg === "ssg_ignore") {
-    return {
-      locale: "",
-      reason: "detect_ignore_on_ssg"
-      /* SSG_IGNORE */
-    };
-  }
   if (!firstAccess) {
     return {
       locale: strategy === "no_prefix" ? locale : "",
@@ -22602,7 +22600,7 @@ const i18n_sq1MuCrqbC = /* @__PURE__ */ defineNuxtPlugin({
       getLocaleFromRoute,
       getDefaultLocale(runtimeI18n.defaultLocale),
       {
-        ssg: runtimeI18n.strategy === "no_prefix" ? "ssg_ignore" : "normal",
+        ssg: "normal",
         callType: "setup",
         firstAccess: true,
         localeCookie: getLocaleCookie(localeCookie, _detectBrowserLanguage, runtimeI18n.defaultLocale)
@@ -22620,25 +22618,6 @@ const i18n_sq1MuCrqbC = /* @__PURE__ */ defineNuxtPlugin({
     const i18n = createI18n({ ...vueI18nOptions, locale: initialLocale });
     let notInitialSetup = true;
     const isInitialLocaleSetup = (locale) => initialLocale !== locale && notInitialSetup;
-    let ssgModeInitialSetup = true;
-    const isSSGModeInitialSetup = () => ssgModeInitialSetup;
-    if (isSSGModeInitialSetup() && runtimeI18n.strategy === "no_prefix" && true) {
-      const initialLocaleCookie = localeCookie.value;
-      nuxt.hook("app:mounted", () => {
-        const detected = detectBrowserLanguage(
-          route,
-          {
-            ssg: "ssg_setup",
-            callType: "setup",
-            firstAccess: true,
-            localeCookie: initialLocaleCookie
-          },
-          initialLocale
-        );
-        _setLocale(i18n, detected.locale);
-        ssgModeInitialSetup = false;
-      });
-    }
     extendI18n(i18n, {
       locales: runtimeI18n.configLocales,
       localeCodes,
@@ -22875,7 +22854,7 @@ const i18n_sq1MuCrqbC = /* @__PURE__ */ defineNuxtPlugin({
             return getLocale$1(i18n) || getDefaultLocale(runtimeI18n.defaultLocale);
           },
           {
-            ssg: isSSGModeInitialSetup() && runtimeI18n.strategy === "no_prefix" ? "ssg_ignore" : "normal",
+            ssg: "normal",
             callType: "routing",
             firstAccess: routeChangeCount === 0,
             localeCookie: getLocaleCookie(localeCookie, _detectBrowserLanguage, runtimeI18n.defaultLocale)
@@ -51036,75 +51015,78 @@ let entry;
     throw error;
   });
 }
+const redirect = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null
+}, Symbol.toStringTag, { value: "Module" }));
 export {
-  mapState as $,
-  normalizeClass as A,
-  renderSlot as B,
-  createVNode as C,
-  createTextVNode as D,
-  createCommentVNode as E,
-  commonjsGlobal as F,
-  getDefaultExportFromCjs as G,
-  normalizeStyle as H,
-  toDisplayString$1 as I,
-  TransitionGroup as J,
-  Fragment as K,
-  renderList as L,
-  onUpdated as M,
-  provide as N,
-  nextTick as O,
-  onMounted as P,
-  onBeforeUnmount as Q,
-  h as R,
-  onBeforeUpdate as S,
-  Transition as T,
-  computed as U,
-  resolveComponent as V,
-  mapStores as W,
-  useMainStore as X,
-  vModelText as Y,
-  withModifiers as Z,
+  Transition as $,
+  onBeforeMount as A,
+  watch as B,
+  isRef as C,
+  onBeforeUnmount as D,
+  isReactive as E,
+  Fragment as F,
+  isReadonly as G,
+  inject$1 as H,
+  provide as I,
+  nextTick as J,
+  getDefaultExportFromCjs as K,
+  useNuxtApp as L,
+  asyncDataDefaults as M,
+  shallowRef as N,
+  toRef as O,
+  onUnmounted as P,
+  onScopeDispose as Q,
+  createError as R,
+  getCurrentScope as S,
+  useHead as T,
+  useRoute$2 as U,
+  VTextField as V,
+  toRefs as W,
+  withDirectives as X,
+  vShow as Y,
+  createBlock as Z,
   _export_sfc as _,
-  asyncDataDefaults as a,
-  useI18n as a0,
-  VTextField as a1,
-  VTextarea as a2,
-  VBtn as a3,
-  VSwitch as a4,
-  VContainer as a5,
-  VRow as a6,
-  VCol as a7,
-  VSheet as a8,
-  VIcon as a9,
-  useRuntimeConfig as aa,
-  __nuxt_component_0$2 as ab,
-  isRef as ac,
-  isReactive as ad,
-  isReadonly as ae,
-  inject$1 as af,
-  onUnmounted as b,
-  onScopeDispose as c,
-  createError as d,
+  ref as a,
+  __vitePreload as a0,
+  createStaticVNode as a1,
+  renderSlot as a2,
+  createCommentVNode as a3,
+  commonjsGlobal as a4,
+  normalizeStyle as a5,
+  TransitionGroup as a6,
+  onUpdated as a7,
+  onMounted as a8,
+  h as a9,
+  onBeforeUpdate as aa,
+  resolveComponent as ab,
+  mapStores as ac,
+  useMainStore as ad,
+  vModelText as ae,
+  mapState as af,
+  createElementBlock as b,
+  computed as c,
+  createVNode as d,
   unref as e,
-  getCurrentScope as f,
-  getCurrentInstance$1 as g,
-  useHead as h,
-  useRoute$2 as i,
-  toRefs as j,
-  reactive as k,
-  withDirectives as l,
-  openBlock as m,
-  createElementBlock as n,
-  onBeforeMount as o,
-  createBaseVNode as p,
-  createBlock as q,
-  ref as r,
-  shallowRef as s,
-  toRef as t,
-  useNuxtApp as u,
-  vShow as v,
-  watch as w,
-  withCtx as x,
-  __vitePreload as y,
-  createStaticVNode as z
+  VTextarea as f,
+  createBaseVNode as g,
+  VBtn as h,
+  withModifiers as i,
+  VSwitch as j,
+  VContainer as k,
+  VRow as l,
+  VCol as m,
+  normalizeClass as n,
+  openBlock as o,
+  VSheet as p,
+  renderList as q,
+  reactive as r,
+  VIcon as s,
+  toDisplayString$1 as t,
+  useI18n as u,
+  createTextVNode as v,
+  withCtx as w,
+  useRuntimeConfig as x,
+  __nuxt_component_0$2 as y,
+  getCurrentInstance$1 as z
 };

@@ -1,7 +1,7 @@
-import { a0 as useI18n, k as reactive, U as computed, r as ref, m as openBlock, n as createElementBlock, C as createVNode, e as unref, a1 as VTextField, a2 as VTextarea, p as createBaseVNode, x as withCtx, I as toDisplayString, a3 as VBtn, Z as withModifiers, _ as _export_sfc, A as normalizeClass, a4 as VSwitch, a5 as VContainer, a6 as VRow, a7 as VCol, a8 as VSheet, K as Fragment, L as renderList, a9 as VIcon, D as createTextVNode, aa as useRuntimeConfig, ab as __nuxt_component_0$1 } from "./CB1lyrdE.js";
-import { c as common, r as required, e as email, n as numeric, u as useVuelidate, b as _imports_0, _ as _imports_0$1 } from "./CDPd1Yk1.js";
-const _hoisted_1$2 = { class: "d-flex justify-content-center" };
-const _hoisted_2$1 = { class: "title-submit text-light pe-4 text-capitalize" };
+import { u as useI18n, r as reactive, c as computed, a as ref, o as openBlock, b as createElementBlock, d as createVNode, e as unref, V as VTextField, f as VTextarea, g as createBaseVNode, w as withCtx, t as toDisplayString, h as VBtn, i as withModifiers, _ as _export_sfc, n as normalizeClass, j as VSwitch, k as VContainer, l as VRow, m as VCol, p as VSheet, F as Fragment, q as renderList, s as VIcon, v as createTextVNode, x as useRuntimeConfig, y as __nuxt_component_0$1 } from "./DDqI3nnD.js";
+import { c as common, r as required, e as email, n as numeric, u as useVuelidate, _ as _imports_0, a as axios, b as _imports_0$1 } from "./3oGQ_hKi.js";
+const _hoisted_1$2 = { class: "d-flex justify-content-center mt-4" };
+const _hoisted_2$1 = { class: "title-submit text-light text-capitalize text-center" };
 const _sfc_main$2 = {
   __name: "OurServicesFields",
   setup(__props) {
@@ -14,9 +14,15 @@ const _sfc_main$2 = {
       message: ""
     };
     const state = reactive({ ...initialState });
-    const _required = computed(() => common.withMessage(() => i18n.t("validations.requiredMsg"), required));
-    const _email = computed(() => common.withMessage(() => i18n.t("validations.emailMsg"), email));
-    const _phone = computed(() => common.withMessage(() => i18n.t("validations.phone"), numeric));
+    const _required = computed(
+      () => common.withMessage(() => i18n.t("validations.requiredMsg"), required)
+    );
+    const _email = computed(
+      () => common.withMessage(() => i18n.t("validations.emailMsg"), email)
+    );
+    const _phone = computed(
+      () => common.withMessage(() => i18n.t("validations.phone"), numeric)
+    );
     const rules = {
       firstName: { required: _required.value },
       lastName: { required: _required.value },
@@ -31,20 +37,20 @@ const _sfc_main$2 = {
       if (isValid) {
         loading.value = true;
         try {
-          await submitForm();
-          clear();
+          await sendMessage(state);
         } catch (error) {
-          alert(error);
         } finally {
           loading.value = false;
         }
       }
     }
-    async function submitForm() {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve();
-        }, 2e3);
+    async function sendMessage(formModel) {
+      await axios.post(`https://admin.digifymena.com/api/v1/message/create`, {
+        name: formModel.firstName + " " + formModel.lastName,
+        ...formModel
+      }).then((response) => {
+        clear();
+      }).catch((error) => {
       });
     }
     function clear() {
@@ -62,7 +68,7 @@ const _sfc_main$2 = {
           modelValue: state.firstName,
           "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => state.firstName = $event),
           counter: 50,
-          "error-messages": unref(v$).firstName.$errors.map((e) => e.$message),
+          "error-messages": unref(v$).firstName.$errors.map((e) => "* " + e.$message),
           label: _ctx.$t("firstNameLabel"),
           onBlur: unref(v$).firstName.$touch,
           onInput: unref(v$).firstName.$touch,
@@ -72,7 +78,7 @@ const _sfc_main$2 = {
           modelValue: state.lastName,
           "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => state.lastName = $event),
           counter: 50,
-          "error-messages": unref(v$).lastName.$errors.map((e) => e.$message),
+          "error-messages": unref(v$).lastName.$errors.map((e) => "* " + e.$message),
           label: _ctx.$t("lastNameLabel"),
           onBlur: unref(v$).lastName.$touch,
           onInput: unref(v$).lastName.$touch,
@@ -82,7 +88,7 @@ const _sfc_main$2 = {
           modelValue: state.email,
           "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => state.email = $event),
           counter: 70,
-          "error-messages": unref(v$).email.$errors.map((e) => e.$message),
+          "error-messages": unref(v$).email.$errors.map((e) => "* " + e.$message),
           label: _ctx.$t("emailLabel"),
           onBlur: unref(v$).email.$touch,
           onInput: unref(v$).email.$touch,
@@ -92,7 +98,7 @@ const _sfc_main$2 = {
           modelValue: state.phoneNumber,
           "onUpdate:modelValue": _cache[3] || (_cache[3] = ($event) => state.phoneNumber = $event),
           counter: 50,
-          "error-messages": unref(v$).phoneNumber.$errors.map((e) => e.$message),
+          "error-messages": unref(v$).phoneNumber.$errors.map((e) => "* " + e.$message),
           label: _ctx.$t("phoneLabel"),
           onBlur: unref(v$).phoneNumber.$touch,
           onInput: unref(v$).phoneNumber.$touch,
@@ -105,7 +111,7 @@ const _sfc_main$2 = {
           "auto-grow": "",
           modelValue: state.message,
           "onUpdate:modelValue": _cache[4] || (_cache[4] = ($event) => state.message = $event),
-          "error-messages": unref(v$).message.$errors.map((e) => e.$message),
+          "error-messages": unref(v$).message.$errors.map((e) => "* " + e.$message),
           label: _ctx.$t("messageLabel"),
           onBlur: unref(v$).message.$touch,
           onChange: unref(v$).message.$touch,
@@ -115,13 +121,13 @@ const _sfc_main$2 = {
           createVNode(VBtn, {
             disabled: loading.value,
             loading: loading.value,
-            class: "our-services__submit rounded-pill p-md-4 p-3 position-relative mt-5",
+            class: "our-services__submit rounded-pill position-relative mt-5",
             color: "rgb(81 81 81)",
             type: "submit"
           }, {
             default: withCtx(() => [
               createBaseVNode("span", _hoisted_2$1, toDisplayString(_ctx.$t("sendMsg")), 1),
-              _cache[5] || (_cache[5] = createBaseVNode("span", { class: "submit-button btn btn-secondary rounded-pill" }, [
+              _cache[5] || (_cache[5] = createBaseVNode("span", { class: "submit-button btn btn-secondary" }, [
                 createBaseVNode("img", {
                   src: _imports_0,
                   alt: ""
@@ -180,7 +186,7 @@ const ARServices = [
   }
 ];
 const _imports_1 = "" + new URL("landing-page.BvAxP0Fe.png", import.meta.url).href;
-const phoneNumber = "+966 56 471 5121";
+const phoneNumber = "+9660538492294";
 const message = "";
 const _sfc_main$1 = {
   setup() {
@@ -216,18 +222,18 @@ const _sfc_main$1 = {
 };
 const _hoisted_1$1 = { class: "our-services" };
 const _hoisted_2 = { class: "our-services__header d-flex justify-content-between items-center" };
-const _hoisted_3 = { class: "our-services__title-and-subtitle" };
+const _hoisted_3 = { class: "our-services__intro animate__animated animate__fadeInDown" };
 const _hoisted_4 = { class: "subtitle mt-3 mb-3" };
 const _hoisted_5 = { class: "our-services-content" };
-const _hoisted_6 = { class: "our-services__desc" };
-const _hoisted_7 = { class: "text-secondary" };
-const _hoisted_8 = { class: "mb-0" };
-const _hoisted_9 = { class: "" };
-const _hoisted_10 = { class: "our-services-form" };
-const _hoisted_11 = { class: "d-flex justify-center gap-3 mt-4" };
-const _hoisted_12 = { class: "btn btn-secondary text-uppercase fs-5 rounded-5 px-5" };
-const _hoisted_13 = ["href"];
-const _hoisted_14 = { class: "btn btn-success text-uppercase fs-5 rounded-5 px-5" };
+const _hoisted_6 = { class: "our-services__title-and-subtitle" };
+const _hoisted_7 = { class: "subtitle mt-3 mb-3" };
+const _hoisted_8 = { class: "our-services__desc" };
+const _hoisted_9 = { class: "text-secondary" };
+const _hoisted_10 = { class: "mb-0" };
+const _hoisted_11 = { class: "cursor-pointer" };
+const _hoisted_12 = { class: "our-services-form" };
+const _hoisted_13 = { class: "our-services__banner-btn d-flex justify-center gap-3 mt-4 items-center" };
+const _hoisted_14 = ["href"];
 function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_NuxtLink = __nuxt_component_0$1;
   const _component_OurServicesFields = _sfc_main$2;
@@ -270,37 +276,41 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
       ]),
       _: 1
     }),
-    createVNode(VContainer, { class: "mb-6" }, {
+    createVNode(VContainer, { class: "mb-6 animate__animated" }, {
       default: withCtx(() => [
         createBaseVNode("div", _hoisted_3, [
-          createBaseVNode("h1", _hoisted_4, toDisplayString(_ctx.$t("services.description")), 1)
+          createBaseVNode("h4", _hoisted_4, toDisplayString(_ctx.$t("services.intro")), 1)
         ]),
-        createVNode(VRow, null, {
+        createVNode(VRow, { class: "animate__animated animate__fadeInUpBig" }, {
           default: withCtx(() => [
             createVNode(VCol, {
               cols: "12",
-              md: "6"
+              md: "6",
+              class: "order-2 order-md-1"
             }, {
               default: withCtx(() => [
                 createVNode(VSheet, { class: "bg-transparent p-0 m-0" }, {
                   default: withCtx(() => [
                     createBaseVNode("div", _hoisted_5, [
                       createBaseVNode("div", _hoisted_6, [
+                        createBaseVNode("h1", _hoisted_7, toDisplayString(_ctx.$t("services.description")), 1)
+                      ]),
+                      createBaseVNode("div", _hoisted_8, [
                         (openBlock(true), createElementBlock(Fragment, null, renderList($options.services, (service) => {
                           return openBlock(), createElementBlock("div", {
                             class: "mb-4",
                             key: service.id
                           }, [
-                            createBaseVNode("h5", _hoisted_7, toDisplayString(service.title), 1),
-                            createBaseVNode("p", _hoisted_8, toDisplayString(service.description), 1),
+                            createBaseVNode("h5", _hoisted_9, toDisplayString(service.title), 1),
+                            createBaseVNode("p", _hoisted_10, toDisplayString(service.description), 1),
                             createBaseVNode("p", null, [
                               createVNode(_component_NuxtLink, {
                                 class: "d-inline-flex text-white text-sm gap-2 fs-6 mt-2",
-                                to: `https://wa.me/${$options.phoneNumber}`
+                                onClick: $options.openWhatsApp
                               }, {
                                 default: withCtx(() => [
-                                  createBaseVNode("span", _hoisted_9, toDisplayString(_ctx.$t("contactForMoreDetails")), 1),
-                                  createVNode(VIcon, { class: "text-xs" }, {
+                                  createBaseVNode("span", _hoisted_11, toDisplayString(_ctx.$t("contactForMoreDetails")), 1),
+                                  createVNode(VIcon, { class: "text-xs cursor-pointer" }, {
                                     default: withCtx(() => _cache[1] || (_cache[1] = [
                                       createTextVNode("mdi-whatsapp")
                                     ])),
@@ -308,7 +318,7 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                                   })
                                 ]),
                                 _: 1
-                              }, 8, ["to"])
+                              }, 8, ["onClick"])
                             ])
                           ]);
                         }), 128))
@@ -319,7 +329,7 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                 }),
                 createVNode(VSheet, { class: "bg-transparent" }, {
                   default: withCtx(() => [
-                    createBaseVNode("div", _hoisted_10, [
+                    createBaseVNode("div", _hoisted_12, [
                       createVNode(_component_OurServicesFields)
                     ])
                   ]),
@@ -330,7 +340,8 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
             }),
             createVNode(VCol, {
               cols: "12",
-              md: "6"
+              md: "6",
+              class: "order-1 order-md-2"
             }, {
               default: withCtx(() => [
                 _cache[3] || (_cache[3] = createBaseVNode("img", {
@@ -338,10 +349,12 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                   alt: "digify-logo",
                   src: _imports_1
                 }, null, -1)),
-                createBaseVNode("div", _hoisted_11, [
+                createBaseVNode("div", _hoisted_13, [
                   createVNode(_component_NuxtLink, { to: "/en" }, {
                     default: withCtx(() => [
-                      createBaseVNode("button", _hoisted_12, toDisplayString(_ctx.$t("visitOurWebsite")), 1)
+                      createBaseVNode("button", {
+                        class: normalizeClass(`btn btn-secondary text-uppercase rounded-5 px-sm-5     h-100 ${$options.lang === "ar" ? " px-4 " : "px-2 "}`)
+                      }, toDisplayString(_ctx.$t("visitOurWebsite")), 3)
                     ]),
                     _: 1
                   }),
@@ -350,7 +363,9 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                     target: "_blank",
                     download: "digify-portfolio.pdf"
                   }, [
-                    createBaseVNode("button", _hoisted_14, [
+                    createBaseVNode("button", {
+                      class: normalizeClass(`btn btn-success text-uppercase rounded-5 px-sm-5    ${$options.lang === "ar" ? " px-4" : "px-2 "}`)
+                    }, [
                       createTextVNode(toDisplayString(_ctx.$t("downloadPortfolio")) + " ", 1),
                       createVNode(VIcon, { class: "text-xs" }, {
                         default: withCtx(() => _cache[2] || (_cache[2] = [
@@ -358,8 +373,8 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                         ])),
                         _: 1
                       })
-                    ])
-                  ], 8, _hoisted_13)
+                    ], 2)
+                  ], 8, _hoisted_14)
                 ])
               ]),
               _: 1
@@ -381,7 +396,7 @@ function _sfc_render(_ctx, _cache) {
     createVNode(_component_OurServices)
   ]);
 }
-const ourServices = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+const saudiDigitalCampaign = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
 export {
-  ourServices as default
+  saudiDigitalCampaign as default
 };
