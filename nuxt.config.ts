@@ -18,7 +18,12 @@ process.env.NUXT_ENV == 'netilfy' ? netilfyConfig : {}
 export default defineNuxtConfig({
   //inlineSSRStyles:false,
   ssr: false,
-
+  // site: {
+  //   trailingSlash: true,
+  // },
+  // routeRules: {
+  //   '/**': { trailingSlash: true }, // Ensures all routes have trailing slashes
+  // },
   app: {
     ...config,
   },
@@ -89,6 +94,7 @@ export default defineNuxtConfig({
     langDir: "locales/",
     strategy: "prefix",
     defaultLocale: "en",
+    trailingSlash: true,
     /**
      * @todo check deprecated or not
      */
