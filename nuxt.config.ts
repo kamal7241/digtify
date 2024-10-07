@@ -16,9 +16,6 @@ const ghPagesConfig = {
 const config = process.env.NUXT_ENV == 'gh' ? ghPagesConfig : 
 process.env.NUXT_ENV == 'netilfy' ? netilfyConfig : {}
 export default defineNuxtConfig({
-  router: {
-    trailingSlash: true , 
-  },
   //inlineSSRStyles:false,
   ssr: false,
 

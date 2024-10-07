@@ -107,6 +107,11 @@
                 <mobile-container />
         </core-screen-switcher>     
     </template>
+    <script setup>
+definePageMeta({
+  middleware: "redirect",
+});
+</script>
     <script >
     import { mapState , mapStores } from 'pinia'
     import { useMainStore } from '~/store'
