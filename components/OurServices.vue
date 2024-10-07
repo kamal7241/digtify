@@ -63,7 +63,9 @@
                   <p>
                     <NuxtLink
                       class="d-inline-flex text-white text-sm gap-2 fs-6 mt-2"
-                      @click="openWhatsApp"
+                      :to="`https://wa.me/${phoneNumber}`"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <span class="cursor-pointer">{{ $t("contactForMoreDetails") }}</span>
                       <v-icon class="text-xs cursor-pointer">mdi-whatsapp</v-icon>
