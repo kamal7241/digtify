@@ -65,8 +65,8 @@
                       class="d-inline-flex text-white text-sm gap-2 fs-6 mt-2"
                       @click="openWhatsApp"
                     >
-                      <span class="">{{ $t("contactForMoreDetails") }}</span>
-                      <v-icon class="text-xs">mdi-whatsapp</v-icon>
+                      <span class="cursor-pointer">{{ $t("contactForMoreDetails") }}</span>
+                      <v-icon class="text-xs cursor-pointer">mdi-whatsapp</v-icon>
                     </NuxtLink>
                   </p>
                 </div>
@@ -125,7 +125,7 @@
 <script>
 import ENServices from "@/static/en/services.json";
 import ARServices from "@/static/ar/services.json";
-const phoneNumber = "+966564715121";
+const phoneNumber = "+9660538492294";
 const message = "";
 
 export default {

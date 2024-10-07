@@ -114,7 +114,7 @@ async function handleSubmit() {
   if (isValid) {
     loading.value = true;
     try {
-      await getApi(state);
+      await sendMessage(state);
     } catch (error) {
     } finally {
       loading.value = false;
@@ -122,9 +122,12 @@ async function handleSubmit() {
   }
 }
 
-async function getApi(formModel) {
+async function sendMessage(formModel) {
   await axios
-    .post(`https://admin.digifymena.com/api/v1/message/create`, formModel)
+    .post(`https://admin.digifymena.com/api/v1/message/create`, {
+      name: formModel.firstName + " " + formModel.lastName,
+      ...formModel
+    } )
     .then((response) => {
       // this.$toast.default("Success, we will contact you soon", {
       //   position: "bottom-left",

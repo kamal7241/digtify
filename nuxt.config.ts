@@ -16,6 +16,9 @@ const ghPagesConfig = {
 const config = process.env.NUXT_ENV == 'gh' ? ghPagesConfig : 
 process.env.NUXT_ENV == 'netilfy' ? netilfyConfig : {}
 export default defineNuxtConfig({
+  router: {
+    trailingSlash: true , 
+  },
   //inlineSSRStyles:false,
   ssr: false,
 
@@ -31,29 +34,24 @@ export default defineNuxtConfig({
 
   build: {
     transpile: ["vuetify"],
-    
   },
   postcss: {
     plugins: {
       autoprefixer: {},
-      'postcss-rtl': {
+      "postcss-rtl": {
         // prefix:'rtl',
-        
         // onlyDirection: 'rtl',
       } as Options,
       // Add rtlcss only for rtl blocks
       // rtlcss: {
 
-      // } as ConfigOptions, 
- 
-    }
+      // } as ConfigOptions,
+    },
   },
-  plugins: ['~/plugins/vuetify'],
+  plugins: ["~/plugins/vuetify"],
 
   vite: {
-    plugins: [vsharp(),
-      vuetify()
-    ],
+    plugins: [vsharp(), vuetify()],
     css: {
       preprocessorOptions: {
         scss: {
@@ -63,8 +61,7 @@ export default defineNuxtConfig({
     },
     build: {
       cssCodeSplit: false,
-      minify:false,
-      
+      minify: false,
     },
     vue: {
       template: {
@@ -98,10 +95,10 @@ export default defineNuxtConfig({
     /**
      * @todo check deprecated or not
      */
-    // fallbackLocale: ['en'], 
+    // fallbackLocale: ['en'],
     locales: [
-      { code: "ar", iso: "ar-AR", dir: 'ltr', file: "ar/our-services.json" },
-      { code: "en", iso: "en-US",dir: 'ltr', file: "en/our-services.json" },
+      { code: "ar", iso: "ar-AR", dir: "ltr", file: "ar/our-services.json" },
+      { code: "en", iso: "en-US", dir: "ltr", file: "en/our-services.json" },
     ],
   },
 
@@ -109,5 +106,5 @@ export default defineNuxtConfig({
     rules: rules,
   },
 
-  compatibilityDate: "2024-10-05"
+  compatibilityDate: "2024-10-05",
 });

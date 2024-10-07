@@ -151,7 +151,7 @@ export default {
     hideLoader(){
       this.mainStore.hideLoader()
     },
-    async getApi(formModel) {
+    async sendMessage(formModel) {
       this.showLoader()
         await axios
           .post(`https://admin.digifymena.com/api/v1/message/create` , formModel)
@@ -170,9 +170,7 @@ export default {
 
       },
     async submitForm() {
-      
       const isFormCorrect = await this.v$.$validate();
-          
       if (isFormCorrect) {
           const value = {
             name: this.name,
@@ -180,7 +178,7 @@ export default {
             subject: this.subject,
             message: this.message,
         };
-        this.getApi(value);
+        this.sendMessage(value);
       }
     },
     async sendMail(){
