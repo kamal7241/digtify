@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./Bp0bFv-b.js","./BWiABkhk.js","./D37vaSon.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./CIZOahel.js","./vuecCvnf.js","./CN1j90c6.js"])))=>i.map(i=>d[i]);
 /**
 * @vue/shared v3.5.10
 * (c) 2018-present Yuxi (Evan) You and Vue contributors
@@ -15753,34 +15753,50 @@ const _routes = [
   {
     name: "lang-newPage___ar",
     path: "/ar/:lang()/newPage/",
-    component: () => __vitePreload(() => import("./DOcsAu4P.js"), true ? [] : void 0, import.meta.url)
+    component: () => __vitePreload(() => import("./DgVQrB_S.js"), true ? [] : void 0, import.meta.url)
+  },
+  {
+    name: "lang-newPage___en___default",
+    path: "/:lang()/newPage/",
+    component: () => __vitePreload(() => import("./DgVQrB_S.js"), true ? [] : void 0, import.meta.url)
   },
   {
     name: "lang-newPage___en",
     path: "/en/:lang()/newPage/",
-    component: () => __vitePreload(() => import("./DOcsAu4P.js"), true ? [] : void 0, import.meta.url)
+    component: () => __vitePreload(() => import("./DgVQrB_S.js"), true ? [] : void 0, import.meta.url)
   },
   {
     name: "index___ar",
     path: "/ar/",
     meta: __nuxt_page_meta || {},
-    component: () => __vitePreload(() => import("./Bp0bFv-b.js"), true ? __vite__mapDeps([0,1]) : void 0, import.meta.url)
+    component: () => __vitePreload(() => import("./CIZOahel.js"), true ? __vite__mapDeps([0,1]) : void 0, import.meta.url)
+  },
+  {
+    name: "index___en___default",
+    path: "/",
+    meta: __nuxt_page_meta || {},
+    component: () => __vitePreload(() => import("./CIZOahel.js"), true ? __vite__mapDeps([0,1]) : void 0, import.meta.url)
   },
   {
     name: "index___en",
     path: "/en/",
     meta: __nuxt_page_meta || {},
-    component: () => __vitePreload(() => import("./Bp0bFv-b.js"), true ? __vite__mapDeps([0,1]) : void 0, import.meta.url)
+    component: () => __vitePreload(() => import("./CIZOahel.js"), true ? __vite__mapDeps([0,1]) : void 0, import.meta.url)
   },
   {
     name: "saudi-digital-campaign___ar",
     path: "/ar/saudi-digital-campaign/",
-    component: () => __vitePreload(() => import("./D37vaSon.js"), true ? __vite__mapDeps([2,1]) : void 0, import.meta.url)
+    component: () => __vitePreload(() => import("./CN1j90c6.js"), true ? __vite__mapDeps([2,1]) : void 0, import.meta.url)
+  },
+  {
+    name: "saudi-digital-campaign___en___default",
+    path: "/saudi-digital-campaign/",
+    component: () => __vitePreload(() => import("./CN1j90c6.js"), true ? __vite__mapDeps([2,1]) : void 0, import.meta.url)
   },
   {
     name: "saudi-digital-campaign___en",
     path: "/en/saudi-digital-campaign/",
-    component: () => __vitePreload(() => import("./D37vaSon.js"), true ? __vite__mapDeps([2,1]) : void 0, import.meta.url)
+    component: () => __vitePreload(() => import("./CN1j90c6.js"), true ? __vite__mapDeps([2,1]) : void 0, import.meta.url)
   }
 ];
 const _wrapIf = (component, props, slots) => {
@@ -15912,7 +15928,7 @@ const globalMiddleware = [
   manifest_45route_45rule
 ];
 const namedMiddleware = {
-  redirect: () => __vitePreload(() => import("./0yII0woc.js"), true ? [] : void 0, import.meta.url)
+  redirect: () => __vitePreload(() => import("./yWJLsoT5.js"), true ? [] : void 0, import.meta.url)
 };
 function createCurrentLocation(base, location2, renderedPath) {
   const { pathname, search, hash } = location2;
@@ -17417,6 +17433,7 @@ const normalizedLocales = [
 ];
 const NUXT_I18N_MODULE_ID = "@nuxtjs/i18n";
 const parallelPlugin = false;
+const isSSG = false;
 const DEFAULT_DYNAMIC_PARAMS_KEY = "nuxtI18n";
 const DEFAULT_COOKIE_KEY = "i18n_redirected";
 const SWITCH_LOCALE_PATH_LINK_IDENTIFIER = "nuxt-i18n-slp";
@@ -17938,9 +17955,6 @@ function createLocaleFromRouteGetter() {
   };
   return getLocaleFromRoute;
 }
-function _setLocale(i18n, locale) {
-  return callVueI18nInterfaces(i18n, "setLocale", locale);
-}
 function setCookieLocale(i18n, locale) {
   return callVueI18nInterfaces(i18n, "setLocaleCookie", locale);
 }
@@ -18056,7 +18070,7 @@ function detectRedirect({
       redirectPath = !(route.from && route.from.fullPath === routePath) ? routePath : "";
     }
   }
-  if ((differentDomains || true) && routeLocaleGetter(route.to) !== targetLocale) {
+  if ((differentDomains || isSSG) && routeLocaleGetter(route.to) !== targetLocale) {
     const routePath = switchLocalePath(common, targetLocale, route.to);
     if (isString(routePath) && routePath && !isEqual$2(routePath, toFullPath) && !routePath.startsWith("//")) {
       redirectPath = routePath;
@@ -18264,13 +18278,6 @@ function detectBrowserLanguage(route, detectLocaleContext, locale = "") {
   }
   const { strategy } = (/* @__PURE__ */ useRuntimeConfig()).public.i18n;
   const { ssg, callType, firstAccess, localeCookie } = detectLocaleContext;
-  if (strategy === "no_prefix" && ssg === "ssg_ignore") {
-    return {
-      locale: "",
-      reason: "detect_ignore_on_ssg"
-      /* SSG_IGNORE */
-    };
-  }
   if (!firstAccess) {
     return {
       locale: strategy === "no_prefix" ? locale : "",
@@ -22609,7 +22616,7 @@ const i18n_sq1MuCrqbC = /* @__PURE__ */ defineNuxtPlugin({
       getLocaleFromRoute,
       getDefaultLocale(runtimeI18n.defaultLocale),
       {
-        ssg: runtimeI18n.strategy === "no_prefix" ? "ssg_ignore" : "normal",
+        ssg: "normal",
         callType: "setup",
         firstAccess: true,
         localeCookie: getLocaleCookie(localeCookie, _detectBrowserLanguage, runtimeI18n.defaultLocale)
@@ -22627,25 +22634,6 @@ const i18n_sq1MuCrqbC = /* @__PURE__ */ defineNuxtPlugin({
     const i18n = createI18n({ ...vueI18nOptions, locale: initialLocale });
     let notInitialSetup = true;
     const isInitialLocaleSetup = (locale) => initialLocale !== locale && notInitialSetup;
-    let ssgModeInitialSetup = true;
-    const isSSGModeInitialSetup = () => ssgModeInitialSetup;
-    if (isSSGModeInitialSetup() && runtimeI18n.strategy === "no_prefix" && true) {
-      const initialLocaleCookie = localeCookie.value;
-      nuxt.hook("app:mounted", () => {
-        const detected = detectBrowserLanguage(
-          route,
-          {
-            ssg: "ssg_setup",
-            callType: "setup",
-            firstAccess: true,
-            localeCookie: initialLocaleCookie
-          },
-          initialLocale
-        );
-        _setLocale(i18n, detected.locale);
-        ssgModeInitialSetup = false;
-      });
-    }
     extendI18n(i18n, {
       locales: runtimeI18n.configLocales,
       localeCodes,
@@ -22882,7 +22870,7 @@ const i18n_sq1MuCrqbC = /* @__PURE__ */ defineNuxtPlugin({
             return getLocale$1(i18n) || getDefaultLocale(runtimeI18n.defaultLocale);
           },
           {
-            ssg: isSSGModeInitialSetup() && runtimeI18n.strategy === "no_prefix" ? "ssg_ignore" : "normal",
+            ssg: "normal",
             callType: "routing",
             firstAccess: routeChangeCount === 0,
             localeCookie: getLocaleCookie(localeCookie, _detectBrowserLanguage, runtimeI18n.defaultLocale)
