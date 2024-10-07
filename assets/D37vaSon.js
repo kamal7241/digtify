@@ -1,5 +1,5 @@
-import { u as useI18n, r as reactive, c as computed, a as ref, o as openBlock, b as createElementBlock, d as createVNode, e as unref, V as VTextField, f as VTextarea, g as createBaseVNode, w as withCtx, t as toDisplayString, h as VBtn, i as withModifiers, _ as _export_sfc, n as normalizeClass, j as VSwitch, k as VContainer, l as VRow, m as VCol, p as VSheet, F as Fragment, q as renderList, s as VIcon, v as createTextVNode, x as useRuntimeConfig, y as __nuxt_component_0$1 } from "./DDqI3nnD.js";
-import { c as common, r as required, e as email, n as numeric, u as useVuelidate, _ as _imports_0, a as axios, b as _imports_0$1 } from "./3oGQ_hKi.js";
+import { a0 as useI18n, k as reactive, U as computed, r as ref, m as openBlock, n as createElementBlock, C as createVNode, e as unref, a1 as VTextField, a2 as VTextarea, p as createBaseVNode, x as withCtx, I as toDisplayString, a3 as VBtn, Z as withModifiers, _ as _export_sfc, A as normalizeClass, a4 as VSwitch, a5 as VContainer, a6 as VRow, a7 as VCol, a8 as VSheet, K as Fragment, L as renderList, a9 as VIcon, D as createTextVNode, aa as useRuntimeConfig, ab as __nuxt_component_0$1 } from "./CHK84JHO.js";
+import { c as common, r as required, e as email, n as numeric, u as useVuelidate, d as _imports_0, b as axios, _ as _imports_0$1 } from "./BWiABkhk.js";
 const _hoisted_1$2 = { class: "d-flex justify-content-center mt-4" };
 const _hoisted_2$1 = { class: "title-submit text-light text-capitalize text-center" };
 const _sfc_main$2 = {
@@ -306,7 +306,9 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                             createBaseVNode("p", null, [
                               createVNode(_component_NuxtLink, {
                                 class: "d-inline-flex text-white text-sm gap-2 fs-6 mt-2",
-                                onClick: $options.openWhatsApp
+                                to: `https://wa.me/${$options.phoneNumber}`,
+                                target: "_blank",
+                                rel: "noopener noreferrer"
                               }, {
                                 default: withCtx(() => [
                                   createBaseVNode("span", _hoisted_11, toDisplayString(_ctx.$t("contactForMoreDetails")), 1),
@@ -318,7 +320,7 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                                   })
                                 ]),
                                 _: 1
-                              }, 8, ["onClick"])
+                              }, 8, ["to"])
                             ])
                           ]);
                         }), 128))
