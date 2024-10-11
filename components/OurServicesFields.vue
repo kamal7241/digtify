@@ -72,11 +72,14 @@
   </form>
 </template>
 
-<script setup>
+<script setup lang="ts" >
 import { reactive, computed, ref } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { required, email, numeric, helpers } from "@vuelidate/validators";
 import axios from "axios";
+import emailjs from '@emailjs/browser';
+import {useToast} from 'vue-toast-notification';
+const $toast = useToast();
 
 const i18n = useI18n();
 const initialState = {
@@ -112,34 +115,149 @@ async function handleSubmit() {
   const isValid = await v$.value.$validate();
 
   if (isValid) {
-    loading.value = true;
-    try {
       await sendMessage(state);
-    } catch (error) {
-    } finally {
-      loading.value = false;
-    }
   }
 }
 
 async function sendMessage(formModel) {
-  await axios
-    .post(`https://admin.digifymena.com/api/v1/message/create`, {
-      name: formModel.firstName + " " + formModel.lastName,
-      ...formModel
-    } )
-    .then((response) => {
-      // this.$toast.default("Success, we will contact you soon", {
-      //   position: "bottom-left",
-      // });
-      clear();
+  loading.value = true;
 
-    })
-    .catch((error) => {
-      // this.$toast.error("Sorry, something went wrong please try again", {
-      //   position: "bottom-left",
-      // });
-    });
+  const  data = {
+    service_id: 'service_wypna4e',
+    template_id: 'template_dwduqwa',
+    user_id: 'iqy0uj76_814S6jzT',
+    template_params: {
+      mail_title:`New Campaign Contact Request Received From ${formModel.email}`,
+    to_address:"Info@digifymena.com",
+    from_address:"Digify_Campaigns@outlook.com",
+    from_name:"Digify Campaigns",
+    message:`you have received a new contact request from user 
+    <table
+    style="padding: 20px;border-left: 4px solid #d0d0d0;font-style: italic;text-align: start;"
+    >
+    <thead>
+    <th
+      style="padding: 12px;"
+    >
+      Name
+    </th>
+    <th
+      style="padding: 12px;"
+    >
+      Email
+    </th>
+    <th
+      style="padding: 12px;"
+    >
+      Phone
+    </th>
+    <th
+      style="padding: 12px;"
+    >
+      Message
+    </th>
+    </thead>
+    <tbody>
+    <tr>
+    <td
+      style="padding: 12px;"
+    >
+    ${formModel.firstName} ${formModel.lastName} 
+    </td>
+    <td
+      style="padding: 12px;"
+    >
+    ${formModel.email}
+    </td>
+    <td
+      style="padding: 12px;"
+    >
+    ${formModel.phoneNumber}
+    </td>
+    <td
+      style="padding: 12px;"
+    >
+    ${formModel.message}
+    </td>
+    </tbody>
+    </table
+    `,
+    reply_to:"Info@digifymena.com"
+    }
+};
+/**
+ * @todo move all static variables to env file
+ */
+axios.post('https://api.emailjs.com/api/v1.0/email/send', data )
+.then((response) => {
+  $toast.success(i18n.t("successContactMsg"), {
+    
+    position: "bottom-left",
+  });
+  clear();
+})
+.catch((error) => {
+  $toast.error(i18n.t("failSendMsg"), {
+    position: "bottom-left",
+  })
+})
+  .finally(() => {
+    loading.value = false;
+  });
+
+
+// i could send by endpoint to me 
+
+
+  // const config = useRuntimeConfig();
+  // console.log(config.public)
+//   emailjs.init({
+//   publicKey: 'iqy0uj76_814S6jzT',
+//   // Do not allow headless browsers
+//   // blockHeadless: true,
+//   // blockList: {
+//   //   // Block the suspended emails
+//   //   list: ['foo@emailjs.com', 'bar@emailjs.com'],
+//   //   // The variable contains the email address
+//   //   watchVariable: 'userEmail',
+//   // },
+//   limitRate: {
+//     // Set the limit rate for the application
+//     id: 'app',
+//     // Allow 1 request per 10s
+//     throttle: 10000,
+//   },
+// });
+//   console.log("send msg")
+//   console.log();
+//   window.emailjs = emailjs;
+//   window.payload = formModel
+//   const sendResult = emailjs.sendForm('digify_jtqbwof', 'template_dwduqwa', formModel)
+    // .then((result) => {
+    //   console.log('Email sent successfully!', result.text);
+    // }, (error) => {
+    //   console.error('Failed to send email:', error.text);
+    // });
+  /**
+   * @note admin.digifymena.com throw error  
+   */
+  // await axios
+  //   .post(`https://admin.digifymena.com/api/v1/message/create`, {
+  //     name: formModel.firstName + " " + formModel.lastName,
+  //     ...formModel
+  //   } )
+  //   .then((response) => {
+  //     // this.$toast.default("Success, we will contact you soon", {
+  //     //   position: "bottom-left",
+  //     // });
+  //     clear();
+
+  //   })
+  //   .catch((error) => {
+  //     // this.$toast.error("Sorry, something went wrong please try again", {
+  //     //   position: "bottom-left",
+  //     // });
+  //   });
 }
 
 function clear() {

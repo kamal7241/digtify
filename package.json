@@ -48,7 +48,7 @@
     "vite-plugin-vuetify": "^2.0.4"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.11.0",
+    "@emailjs/browser": "^3.12.1",
     "@mdi/font": "^7.4.47",
     "@nuxtjs/i18n": "^8.5.5",
     "@nuxtjs/robots": "^3.0.0",
@@ -62,6 +62,7 @@
     "bootstrap": "^5.3.1",
     "click-outside": "^2.0.2",
     "email-js": "^2.0.2",
+    "emailjs-com": "^3.2.0",
     "i18next": "^23.15.1",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-http-backend": "^2.6.1",
