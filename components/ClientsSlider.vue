@@ -75,14 +75,3 @@
 
 </script>
 
-<style lang="scss" >
-// .swiper-slide{
-//     background: white;
-//     font-size: 50px;
-//     border:2px solid black;
-//     &.swiper-slide--transparent{
-//         background: transparent;
-//         color: orangered;
-//     }
-// }
-</style>

@@ -1,0 +1,23 @@
+{
+  "services": {
+    "intro": "Digify is a digital media consultancy firm, established 2014 in Riyadh, Jeddah and Cairo. Served hundreds of clients in different industries. More",
+    "title": "Our Services",
+    "description": "We offer various services."
+  },
+  "visitOurWebsite": "VISIT US",
+  "downloadPortfolio":"Portfolio",
+  "contactForMoreDetails":"Contact us via WhatsApp",
+  "firstNameLabel":"First name",
+  "lastNameLabel":"Last name",
+  "emailLabel":"Email",
+  "phoneLabel":"Phone Number",
+  "messageLabel":"Message",
+  "sendMsg":"Send",
+  "successContactMsg":"Success, we will contact you soon",
+  "failSendMsg":"Error, something went wrong please try again later",
+  "validations":{
+    "requiredMsg":"field is required",
+    "emailMsg":"please enter a valid email.",
+    "phone":"please enter a valid phone"
+  }
+}

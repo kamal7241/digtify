@@ -151,8 +151,11 @@ export default {
     hideLoader(){
       this.mainStore.hideLoader()
     },
-    async getApi(formModel) {
+    async sendMessage(formModel) {
       this.showLoader()
+      /**
+       * @todo use emailjs to send email like campaign contact us
+       */
         await axios
           .post(`https://admin.digifymena.com/api/v1/message/create` , formModel)
           .then((response) => {
@@ -170,9 +173,7 @@ export default {
 
       },
     async submitForm() {
-      
       const isFormCorrect = await this.v$.$validate();
-          
       if (isFormCorrect) {
           const value = {
             name: this.name,
@@ -180,7 +181,7 @@ export default {
             subject: this.subject,
             message: this.message,
         };
-        this.getApi(value);
+        this.sendMessage(value);
       }
     },
     async sendMail(){

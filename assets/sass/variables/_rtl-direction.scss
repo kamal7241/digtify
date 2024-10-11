@@ -10,3 +10,7 @@ $font-family: 'Cairo';
 
 $transform-direction: -1;
 $font-path:'@/assets/fonts/Cairo';
+[dir="rtl"]:root{
+  --font-family:'Cairo';
+  --title-font-family:'Cairo';
+}

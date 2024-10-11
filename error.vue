@@ -5,13 +5,19 @@
       </div>
     </NuxtLayout>
   </template>
-<script>
-export default {
-  props:["error"]
-}
+<script setup lang="ts" >
+  defineProps<{
+    error:any
+  }>();
+    useHead({
+        htmlAttrs: () => {
+          /**
+           * @todo bind with current lang
+           */
+            return {
+            lang: "en",
+            dir: "ltr",
+          }
+        } 
+    });
 </script>
-
-  <style lang="scss"  >
-  @use "@/assets/sass/main.ltr.scss";
-  
-  </style>

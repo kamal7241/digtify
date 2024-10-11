@@ -23,7 +23,7 @@
 @mixin placeholder{
     color:$light;
     font-size:22px;
-    font-family: $font-family;
+    font-family: var(--font-family);
     @media screen and (min-width:2500px) {
       font-size: 1.5rem;
     }
@@ -127,7 +127,7 @@
       transform: translateY(-50%); 
       left: -93px;
       transition:  0.3s  ease-out;
-      font-family: $font-family;
+      font-family: var(--font-family);
       @media screen and (max-width:767px) {
         font-size: 18px;
       } 
