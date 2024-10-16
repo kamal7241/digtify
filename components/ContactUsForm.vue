@@ -153,6 +153,9 @@ export default {
     },
     async sendMessage(formModel) {
       this.showLoader()
+      /**
+       * @todo use emailjs to send email like campaign contact us
+       */
         await axios
           .post(`https://admin.digifymena.com/api/v1/message/create` , formModel)
           .then((response) => {

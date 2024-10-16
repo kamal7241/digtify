@@ -75,8 +75,15 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 # Deployment 
 to get product dist run the following : 
-- npm run deploy:gh
-
+- npm run generate to generate the dist folder
 for demo purpose use 
 - npm run deploy:netilfy
 
+
+## About the Project
+- Project used SSR to provide SEO and images optimization
+- Project Support LTR , RTL but need some enhancement 
+
+## Still Need Enhancement
+- Support for RTL for landing page
+- fix all TODOs by search on @todo and @note
