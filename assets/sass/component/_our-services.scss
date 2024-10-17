@@ -7,14 +7,14 @@
   .switch-style {
     color: $light;
   }
- .our-services__banner-btn{
-  .btn{
-    font-size: 1.3rem;
-    @media screen and (max-width: 767px) {
-      font-size: 1.1rem;
+  .our-services__banner-btn {
+    .btn {
+      font-size: 1.3rem;
+      @media screen and (max-width: 767px) {
+        font-size: 1.1rem;
+      }
     }
   }
- }
   .our-services__title-and-subtitle {
     .subtitle {
       font-weight: 200;
@@ -43,12 +43,12 @@
     .v-field__overlay {
       background-color: transparent !important;
     }
-     .v-counter{
-       color: $light;
-     }
-    .v-label.v-field-label{
-       color: $light ; 
-     }
+    .v-counter {
+      color: $light;
+    }
+    .v-label.v-field-label {
+      color: $light;
+    }
     .v-messages__message {
       color: $light;
       font-weight: 400 !important;
@@ -83,7 +83,7 @@
     .title-submit {
       position: absolute;
       top: 50%;
-      transform: translate(-50% , -50%);
+      transform: translate(-50%, -50%);
       left: -200px;
       transition: 0.3s ease-in-out;
       transition-delay: 0.1s;
@@ -101,9 +101,7 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-      
       }
-    
     }
     &:hover {
       width: 13rem;
@@ -124,5 +122,39 @@
         background-color: $text;
       }
     }
+  }
+  .link__whatsapp {
+    width: fit-content;
+    .v-btn {
+      overflow: hidden;
+      position: relative;
+      background-color: #347474;
+      transition: 0.5s ease-in-out;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0%;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: $primary-light;
+        clip-path: circle(0% at 50% 100%);
+        transition: all 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        z-index: -1;
+      }
+      &:hover {
+        transform: scale(1.02);
+      }
+      &:hover::before {
+        clip-path: circle(100% at 50% 50%);
+      }
+    }
+  }
+
+  .whatsapp-img {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 15;
   }
 }
