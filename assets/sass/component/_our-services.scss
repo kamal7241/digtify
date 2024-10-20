@@ -150,7 +150,11 @@
       }
     }
   }
-
+.services__description{
+   [dir="rtl"] & {
+    text-align: justify;
+  }
+}
 .whatsapp-img {
   position: fixed;
   bottom: 20px;

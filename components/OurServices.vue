@@ -57,7 +57,7 @@
               <div class="our-services__desc">
                 <div class="mb-4" v-for="service in services" :key="service.id">
                   <h5 class="text-secondary">{{ service.title }}</h5>
-                  <p class="mb-0 text-justify">
+                  <p class="mb-0 services__description">
                     {{ service.description }}
                   </p>
                   <NuxtLink

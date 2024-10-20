@@ -14,3 +14,12 @@ $font-path:'@/assets/fonts/Cairo';
   --font-family:'Cairo';
   --title-font-family:'Cairo';
 }
+$title-font-family: 'Tahoma';
+$font-family: 'Tahoma';
+
+$transform-direction: -1;
+$font-path:'@/assets/fonts/Tahoma';
+[dir="rtl"]:root{
+  --font-family:'Tahoma';
+  --title-font-family:'Tahoma';
+}
