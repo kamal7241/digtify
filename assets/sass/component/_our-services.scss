@@ -151,13 +151,18 @@
     }
   }
 
-  .whatsapp-img {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 15;
-    img {
-      @include define-responsive-property ( width , 65px , 60px , 55px , 50px );
-    }
+.whatsapp-img {
+  position: fixed;
+  bottom: 20px;
+  z-index: 15;
+  right: 20px;
+  [dir="rtl"] & {
+    left: 20px;
+    right: auto;
   }
+
+  img {
+    @include define-responsive-property(width, 65px, 60px, 55px, 50px);
+  }
+}
 }
