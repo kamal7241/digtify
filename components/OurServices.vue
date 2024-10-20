@@ -66,7 +66,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <v-btn class="ma-2 rounded-pill"  color=" #25D366">
+                    <v-btn class=" rounded-pill"  color=" #25D366">
                       <span class="align-self-center  text-uppercase">
                         {{ $t("contactForMoreDetails") }}
                       </span>
@@ -136,8 +136,6 @@
           src="../assets/image/whatsapp.png"
           alt="whatsapp-image"
           :style="{ 'animation-delay': delay || '1s' }"
-          width="65"
-          height="65"
         />
       </NuxtLink>
     </div>
