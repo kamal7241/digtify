@@ -57,7 +57,7 @@ export default defineNuxtConfig({
       // } as ConfigOptions,
     },
   },
-  plugins: ["~/plugins/vuetify"],
+  plugins: ["~/plugins/vuetify", "~/plugins/analytics.js"],
 
   vite: {
     plugins: [vsharp(), vuetify()],
