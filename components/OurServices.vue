@@ -57,7 +57,7 @@
               <div class="our-services__desc">
                 <div class="mb-4" v-for="service in services" :key="service.id">
                   <h5 class="text-secondary">{{ service.title }}</h5>
-                  <p class="mb-0">
+                  <p class="mb-0 text-justify">
                     {{ service.description }}
                   </p>
                   <NuxtLink
@@ -127,8 +127,8 @@
 
     <div class="whatsapp-img">
       <NuxtLink
-        class="text-white d-flex align-items-end text-sm gap-2 fs-6 mt-2"
-        to="https://trendmedia-mea.com/our-services/"
+        class="text-white d-flex align-items-end text-sm gap-2 fs-6 mt-2 animate__animated animate__delay-1s animate__bounceInUp"
+        :to="`https://wa.me/${phoneNumber}`"
         target="_blank"
         rel="noopener noreferrer"
       >
