@@ -48,7 +48,7 @@
       <v-row class="animate__animated animate__fadeInUpBig">
         <v-col cols="12" md="6" class="order-2 order-md-1">
           <v-sheet class="bg-transparent p-0 m-0">
-            <div class="our-services-content ">
+            <div class="our-services-content">
               <div class="our-services__title-and-subtitle">
                 <h1 class="subtitle mt-3 mb-3">
                   {{ $t("services.description") }}
@@ -57,20 +57,22 @@
               <div class="our-services__desc">
                 <div class="mb-4" v-for="service in services" :key="service.id">
                   <h5 class="text-secondary">{{ service.title }}</h5>
-                  <p class="mb-0">
+                  <p class="mb-0 services__description">
                     {{ service.description }}
                   </p>
-                  <p>
-                    <NuxtLink
-                      class="d-inline-flex text-white text-sm gap-2 fs-6 mt-2"
-                      :to="`https://wa.me/${phoneNumber}`"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <span class="cursor-pointer">{{ $t("contactForMoreDetails") }}</span>
-                      <v-icon class="text-xs cursor-pointer">mdi-whatsapp</v-icon>
-                    </NuxtLink>
-                  </p>
+                  <NuxtLink
+                    class="text-white d-flex align-items-end text-sm gap-2 fs-6 mt-2 text-decoration-none link__whatsapp"
+                    :to="`https://wa.me/${phoneNumber}`"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <v-btn class=" rounded-pill"  color=" #25D366">
+                      <span class="align-self-center  text-uppercase">
+                        {{ $t("contactForMoreDetails") }}
+                      </span>
+                      <v-icon icon="mdi-whatsapp fs-4 " end></v-icon>
+                    </v-btn>
+                  </NuxtLink>
                 </div>
               </div>
             </div>
@@ -114,6 +116,7 @@
                 }`"
               >
                 {{ $t("downloadPortfolio") }}
+
                 <v-icon class="text-xs">mdi-arrow-down-thin</v-icon>
               </button>
             </a>
@@ -121,6 +124,21 @@
         </v-col>
       </v-row>
     </v-container>
+
+    <div class="whatsapp-img">
+      <NuxtLink
+        class="text-white d-flex align-items-end text-sm gap-2 fs-6 mt-2 animate__animated animate__delay-1s animate__bounceInUp"
+        :to="`https://wa.me/${phoneNumber}`"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="../assets/image/whatsapp.png"
+          alt="whatsapp-image"
+          :style="{ 'animation-delay': delay || '1s' }"
+        />
+      </NuxtLink>
+    </div>
   </div>
 </template>
 

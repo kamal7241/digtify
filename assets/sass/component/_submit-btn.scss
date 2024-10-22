@@ -1,0 +1,72 @@
+.base-btn {
+  &.base-btn--submit {
+    height: 40px;
+    overflow: hidden;
+    width: 13rem;
+    background-color: transparent;
+    border-radius: 50px;
+    border: none;
+    caret-color: $light !important;
+    color: $light !important;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    min-width: 0px;
+    .base-btn__arrow {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 100%;
+      border-radius: 50%;
+    }
+    .base-btn__title {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      left: 45%;
+      transition: 0.3s ease-in-out;
+      transition-delay: 0.1s;
+      font-family: var(--font-family);
+      @media screen and (max-width: 767px) {
+        font-size: 18px;
+      }
+    }
+
+    .base-btn__arrow {
+      padding: 10px;
+      img {
+        transition: 0.3s ease-out;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &.active-hover {
+    width: 40px;
+      .base-btn__title{
+        left:-200px;
+      }
+      &:hover {
+        width: 13rem;
+        background-color: $text;
+        padding: auto;
+      }
+
+      &:hover .base-btn__arrow img {
+        transform: translate(-50%, -50%) rotate(-25deg);
+      }
+
+      &:hover .base-btn__title {
+        left: 45%;
+      }
+      @media screen and (min-width: 2500px) {
+        &:hover {
+          width: 12rem;
+          background-color: $text;
+        }
+      }
+    }
+  }
+}
