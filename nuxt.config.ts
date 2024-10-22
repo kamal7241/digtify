@@ -57,8 +57,23 @@ export default defineNuxtConfig({
       // } as ConfigOptions,
     },
   },
-  plugins: ["~/plugins/vuetify", "~/plugins/analytics.js"],
-
+  plugins: [
+    "~/plugins/vuetify",
+    // '~/plugins/vue-gtag.js',
+    ],
+    // googleAnalytics: {
+    //   id: 'UA-XXXXXXXXX-X',  // Replace with your Google Analytics tracking ID
+    // },
+    modules: ['nuxt-gtag'],
+    gtag: {
+      id: 'G-XXXXXXXXXX',  // Replace with your GA4 measurement ID
+      config: {
+        anonymize_ip: true,  // Optional: Anonymize user IPs
+        send_page_view: true, // Enable initial page view tracking
+      },
+      debug: false,  // Set to true to debug in development
+      disableAutoPageTrack: false, // Set to true if you want manual page tracking
+    },
   vite: {
     plugins: [vsharp(), vuetify()],
     css: {
@@ -84,6 +99,7 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "@nuxtjs/robots",
     "@nuxtjs/i18n",
+    // '@nuxtjs/google-analytics',
     /**
      * @todo check use
      */
