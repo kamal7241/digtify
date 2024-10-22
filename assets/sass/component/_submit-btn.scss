@@ -1,5 +1,6 @@
 .base-btn {
-  .btn__submit {
+  //
+  &.base-btn--submit {
     height: 40px;
     overflow: hidden;
     width: 13rem;
@@ -11,7 +12,7 @@
     cursor: pointer;
     transition: 0.3s ease-out;
     min-width: 0px;
-    .submit-button {
+    .base-btn__arrow {
       position: absolute;
       right: 0;
       top: 50%;
@@ -20,7 +21,7 @@
       height: 100%;
       border-radius: 50%;
     }
-    .title-submit {
+    .base-btn__title {
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
@@ -33,7 +34,7 @@
       }
     }
 
-    .submit-button {
+    .base-btn__arrow {
       padding: 10px;
       img {
         transition: 0.3s ease-out;
@@ -45,7 +46,7 @@
     }
     &.active-hover {
     width: 40px;
-      .title-submit{
+      .base-btn__title{
         left:-200px;
       }
       &:hover {
@@ -54,11 +55,11 @@
         padding: auto;
       }
 
-      &:hover .submit-button img {
+      &:hover .base-btn__arrow img {
         transform: translate(-50%, -50%) rotate(-25deg);
       }
 
-      &:hover .title-submit {
+      &:hover .base-btn__title {
         left: 45%;
       }
       @media screen and (min-width: 2500px) {
