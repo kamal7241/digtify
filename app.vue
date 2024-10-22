@@ -1,5 +1,6 @@
 <template>
     <v-app>
+      <TestSendAction/>
     <NuxtPage />
     </v-app>
 </template>
