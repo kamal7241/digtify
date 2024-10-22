@@ -1,5 +1,5 @@
 export default defineNuxtPlugin((nuxtApp) => {
-  const GA_TRACKING_ID = proccess.env.NUXT_PUBLIC_GOOGLE_ANALYTICS_KEY;
+  const GA_TRACKING_ID = process.env.NUXT_PUBLIC_GOOGLE_ANALYTICS_KEY;
   if (process.client) {
     window.dataLayer = window.dataLayer || [];
     function gtag() {
