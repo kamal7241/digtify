@@ -1,0 +1,72 @@
+.base-btn {
+  .btn__submit {
+    height: 40px;
+    overflow: hidden;
+    width: 13rem;
+    background-color: transparent;
+    border-radius: 50px;
+    border: none;
+    caret-color: $light !important;
+    color: $light !important;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    min-width: 0px;
+    .submit-button {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 100%;
+      border-radius: 50%;
+    }
+    .title-submit {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      left: 45%;
+      transition: 0.3s ease-in-out;
+      transition-delay: 0.1s;
+      font-family: var(--font-family);
+      @media screen and (max-width: 767px) {
+        font-size: 18px;
+      }
+    }
+
+    .submit-button {
+      padding: 10px;
+      img {
+        transition: 0.3s ease-out;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &.active-hover {
+    width: 40px;
+      .title-submit{
+        left:-200px;
+      }
+      &:hover {
+        width: 13rem;
+        background-color: $text;
+        padding: auto;
+      }
+
+      &:hover .submit-button img {
+        transform: translate(-50%, -50%) rotate(-25deg);
+      }
+
+      &:hover .title-submit {
+        left: 45%;
+      }
+      @media screen and (min-width: 2500px) {
+        &:hover {
+          width: 12rem;
+          background-color: $text;
+        }
+      }
+    }
+  }
+}
