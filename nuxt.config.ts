@@ -14,9 +14,6 @@ const ghPagesConfig = {
 }
 
 
-console.log("NUXT_EMAIL_SERVICE_ID" , process.env.NUXT_EMAIL_SERVICE_ID)
-console.log("NUXT_ENV" , process.env.NUXT_ENV)
-
 const config = process.env.NUXT_ENV == 'gh' ? ghPagesConfig : 
 process.env.NUXT_ENV == 'netilfy' ? netilfyConfig : {}
 export default defineNuxtConfig({
@@ -57,23 +54,8 @@ export default defineNuxtConfig({
       // } as ConfigOptions,
     },
   },
-  plugins: [
-    "~/plugins/vuetify",
-    // '~/plugins/vue-gtag.js',
-    ],
-    // googleAnalytics: {
-    //   id: 'UA-XXXXXXXXX-X',  // Replace with your Google Analytics tracking ID
-    // },
-    modules: ['nuxt-gtag'],
-    gtag: {
-      id: 'G-XXXXXXXXXX',  // Replace with your GA4 measurement ID
-      config: {
-        anonymize_ip: true,  // Optional: Anonymize user IPs
-        send_page_view: true, // Enable initial page view tracking
-      },
-      debug: false,  // Set to true to debug in development
-      disableAutoPageTrack: false, // Set to true if you want manual page tracking
-    },
+  plugins: ["~/plugins/vuetify", "~/plugins/vue-gtag.client"],
+
   vite: {
     plugins: [vsharp(), vuetify()],
     css: {
@@ -99,7 +81,6 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "@nuxtjs/robots",
     "@nuxtjs/i18n",
-    // '@nuxtjs/google-analytics',
     /**
      * @todo check use
      */
