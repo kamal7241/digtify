@@ -54,20 +54,7 @@
     ></v-textarea>
 
     <div class="d-flex justify-content-center mt-4">
-      <v-btn
-        :disabled="loading"
-        :loading="loading"
-        class="our-services__submit rounded-pill position-relative mt-5"
-        color="rgb(81 81 81)"
-        type="submit"
-      >
-        <span class="title-submit text-light text-capitalize text-center">
-          {{ $t("sendMsg") }}
-        </span>
-        <span class="submit-button btn btn-secondary">
-          <img src="../assets/image/arrow-right.png" alt="" />
-        </span>
-      </v-btn>
+          <SubmitBtn :loading="loading" @submit="handleSubmit"  :activeHover="false" />
     </div>
   </form>
 </template>
