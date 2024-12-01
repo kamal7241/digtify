@@ -14,7 +14,6 @@ const compileSCSS = (inputFile, outputFile, isMinified) => {
             console.error(`Error compiling ${inputFile}:`, stderr);
             return;
         }
-        console.log(`Successfully compiled ${inputFile} to ${outputFile}`);
     });
 };
 

@@ -54,20 +54,26 @@
     ></v-textarea>
 
     <div class="d-flex justify-content-center mt-4">
-      <v-btn
-        :disabled="loading"
-        :loading="loading"
-        class="our-services__submit rounded-pill position-relative mt-5"
-        color="rgb(81 81 81)"
-        type="submit"
-      >
-        <span class="title-submit text-light text-capitalize text-center">
-          {{ $t("sendMsg") }}
-        </span>
-        <span class="submit-button btn btn-secondary">
-          <img src="../assets/image/arrow-right.png" alt="" />
-        </span>
-      </v-btn>
+       <AnalyticsClickEventProvider
+        eventNames="click:submit-campagin-msg"
+        eventCategory="Button Actions"
+        eventLabel="Track Button Click"
+        >
+        <v-btn
+                :disabled="loading"
+                :loading="loading"
+                class="our-services__submit rounded-pill position-relative mt-5"
+                color="rgb(81 81 81)"
+                type="submit"
+              >
+                <span class="title-submit text-light text-capitalize text-center">
+                  {{ $t("sendMsg") }}
+                </span>
+                <span class="submit-button btn btn-secondary">
+                  <img src="../assets/image/arrow-right.png" alt="" />
+                </span>
+        </v-btn>
+        </AnalyticsClickEventProvider>
     </div>
   </form>
 </template>
@@ -79,6 +85,7 @@ import { required, email, numeric, helpers } from "@vuelidate/validators";
 import axios from "axios";
 import emailjs from '@emailjs/browser';
 import {useToast} from 'vue-toast-notification';
+import { trackEventsClick } from '~/utils/handelAnalyticsEvents';
 const $toast = useToast();
 
 const i18n = useI18n();
@@ -194,16 +201,18 @@ axios.post('https://api.emailjs.com/api/v1.0/email/send', data )
     
     position: "bottom-left",
   });
+  trackEventsClick("success:submit-campagin-msg", "Campaigns", "success");
   clear();
 })
 .catch((error) => {
   $toast.error(i18n.t("failSendMsg"), {
     position: "bottom-left",
   })
+  trackEventsClick("failed:submit-campagin-msg", "Campaigns", "failed");
 })
-  .finally(() => {
-    loading.value = false;
-  });
+.finally(() => {
+  loading.value = false;
+});
 
 
 // i could send by endpoint to me 

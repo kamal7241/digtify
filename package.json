@@ -6,7 +6,7 @@
     "start": "npm run dev",
     "build": "nuxt build",
     "build:watch": "nuxt build --watch",
-    "dev": "nuxt dev --o",
+    "dev": "dotenv -e .env.dev nuxt dev --o",
     "build:css": "node scripts/sass/compile-sass.js",
     "build:css:vite": "vite build",
     "generate": "nuxt generate",

@@ -62,14 +62,20 @@
                   </p>
                   <p>
                     <NuxtLink
-                      class="d-inline-flex text-white text-sm gap-2 fs-6 mt-2"
-                      :to="`https://wa.me/${phoneNumber}`"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    class="d-inline-flex text-white text-sm gap-2 fs-6 mt-2"
+                    :to="`https://wa.me/${phoneNumber}`"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     >
-                      <span class="cursor-pointer">{{ $t("contactForMoreDetails") }}</span>
-                      <v-icon class="text-xs cursor-pointer">mdi-whatsapp</v-icon>
-                    </NuxtLink>
+                    <AnalyticsClickEventProvider 
+                      eventName="click:whatsapp-contact"
+                      eventCategory="whatsapp contact"
+                      eventLabel="whatsapp contact"
+                    >
+                        <span class="cursor-pointer">{{ $t("contactForMoreDetails") }}</span>
+                        <v-icon class="text-xs cursor-pointer">mdi-whatsapp</v-icon>
+                      </AnalyticsClickEventProvider>
+                      </NuxtLink>
                   </p>
                 </div>
               </div>
@@ -95,20 +101,31 @@
         <p>{{ $t('our-services.description') }}</p> -->
             <!-- <button @click="changeLanguage('ar')">Switch to Arabic</button> -->
             <NuxtLink to="/en">
+              <AnalyticsClickEventProvider
+                eventName="click:visit-our-website"
+                eventCategory="visit Our Website"
+                eventLabel="visit Our Website"
+              >
               <button
                 :class="`btn btn-secondary text-uppercase rounded-5 px-sm-5     h-100 ${
                   lang === 'ar' ? ' px-4 ' : 'px-2 '
                 }`"
               >
                 {{ $t("visitOurWebsite") }}
-              </button>
+              </button>  
+              </AnalyticsClickEventProvider>
             </NuxtLink>
             <a
               :href="`${baseURL}/digify-portfolio.pdf`"
               target="_blank"
               download="digify-portfolio.pdf"
             >
-              <button
+              <AnalyticsClickEventProvider
+                eventName="click:download-portoflio"
+                eventCategory="Download Portfolio"
+                eventLabel="Download Portfolio"
+              >
+                <button
                 :class="`btn btn-success text-uppercase rounded-5 px-sm-5    ${
                   lang === 'ar' ? ' px-4' : 'px-2 '
                 }`"
@@ -116,6 +133,7 @@
                 {{ $t("downloadPortfolio") }}
                 <v-icon class="text-xs">mdi-arrow-down-thin</v-icon>
               </button>
+              </AnalyticsClickEventProvider>
             </a>
           </div>
         </v-col>
@@ -127,16 +145,21 @@
 <script>
 import ENServices from "@/static/en/services.json";
 import ARServices from "@/static/ar/services.json";
+import AnalyticsClickEventProvider from "@/components/AnalyticsClickEventProvider.vue";
 const phoneNumber = "+9660538492294";
 const message = "";
 
 export default {
+  
   setup() {
     const config = useRuntimeConfig();
     const baseURL = config.public.baseURL || ""; // Fallback to empty if baseURL is not defined
     return {
       baseURL,
     };
+  },
+    components: {
+    AnalyticsClickEventProvider,
   },
   computed: {
     lang() {

@@ -131,7 +131,6 @@ export default defineNuxtComponent({
         //     forward
         // else 
         //     backward
-        console.log("prog: " , progress , "prev:" ,  this.currentProgress )
         if(progress > this.currentProgress){
             // console.log("forward")
             this.next()
