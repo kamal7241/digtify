@@ -106,8 +106,8 @@
             <NuxtLink to="/en">
               <AnalyticsClickEventProvider
                 eventName="click:visit-our-website"
-                eventCategory="visit Our Website"
-                eventLabel="visit Our Website"
+                eventCategory="Click Events"
+                eventLabel="Visit Us Btn"
               >
               <button
                 :class="`btn btn-secondary text-uppercase rounded-5 px-sm-5     h-100 ${
@@ -125,8 +125,8 @@
             >
               <AnalyticsClickEventProvider
                 eventName="click:download-portoflio"
-                eventCategory="Download Portfolio"
-                eventLabel="Download Portfolio"
+                eventCategory="Click Events"
+                eventLabel="Download Portfolio Btn"
               >
                 <button
                 :class="`btn btn-success text-uppercase rounded-5 px-sm-5    ${
