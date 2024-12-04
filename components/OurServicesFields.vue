@@ -54,8 +54,14 @@
     ></v-textarea>
 
     <div class="d-flex justify-content-center mt-4">
-          <SubmitBtn :loading="loading" @submit="handleSubmit"  :activeHover="false" />
-    </div>
+        <AnalyticsClickEventProvider
+          eventNames="click:submit-campagin-msg"
+          eventCategory="Button Actions"
+          eventLabel="Track Button Click"
+          >
+            <SubmitBtn :loading="loading" @submit="handleSubmit"  :activeHover="false" />
+        </AnalyticsClickEventProvider>
+      </div>
   </form>
 </template>
 
@@ -66,6 +72,7 @@ import { required, email, numeric, helpers } from "@vuelidate/validators";
 import axios from "axios";
 import emailjs from '@emailjs/browser';
 import {useToast} from 'vue-toast-notification';
+import { trackEventsClick } from '~/utils/handelAnalyticsEvents';
 const $toast = useToast();
 
 const i18n = useI18n();
@@ -181,16 +188,18 @@ axios.post('https://api.emailjs.com/api/v1.0/email/send', data )
     
     position: "bottom-left",
   });
+  trackEventsClick("success:submit-campagin-msg", "Campaigns", "success");
   clear();
 })
 .catch((error) => {
   $toast.error(i18n.t("failSendMsg"), {
     position: "bottom-left",
   })
+  trackEventsClick("failed:submit-campagin-msg", "Campaigns", "failed");
 })
-  .finally(() => {
-    loading.value = false;
-  });
+.finally(() => {
+  loading.value = false;
+});
 
 
 // i could send by endpoint to me 

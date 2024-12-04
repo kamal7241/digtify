@@ -116,6 +116,7 @@ export default defineNuxtConfig({
     public: {
       VITE_EMAIL_SERVICE_ID: process.env.NUXT_EMAIL_SERVICE_ID,
       VITE_EMAIL_TEMPLATE_ID: process.env.NUXT_EMAIL_TEMPLATE_ID,
+      GOOGLE_ANALYTICS_KEY: process.env.NUXT_PUBLIC_GOOGLE_ANALYTICS_KEY ,
     },
   },
 
