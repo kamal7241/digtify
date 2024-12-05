@@ -22,7 +22,7 @@
     "deploy": "npm run  gh-publish",
     "deploy:gh": "npm run generate:gh && npm run deploy",
     "deploy:netilfy": "npm run generate:netilfy && npm run deploy",
-    "release:prod": "npm run generate && zip -r ./release/$npm_package_name-dist-$npm_package_version.prod.zip dist",
+    "release:prod": "npm run generate:prod && zip -r ./release/$npm_package_name-dist-$npm_package_version.prod.zip dist",
     "postversion": "npm run release:prod",
     "build:bootstrap": "postcss assets/sass/bootstrap.scss -o assest/css/bootstrap.css"
   },
