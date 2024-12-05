@@ -1,5 +1,6 @@
 {
   "name": "digify",
+  "version": "0.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -21,8 +22,8 @@
     "deploy": "npm run  gh-publish",
     "deploy:gh": "npm run generate:gh && npm run deploy",
     "deploy:netilfy": "npm run generate:netilfy && npm run deploy",
-    "preversion": "npm run deploy:netilfy",
-    "postversion": "git push && git push --tags",
+    "release:prod": "npm run generate && zip -r ./release/$npm_package_name-dist-$npm_package_version.prod.zip dist",
+    "postversion": "npm run release:prod",
     "build:bootstrap": "postcss assets/sass/bootstrap.scss -o assest/css/bootstrap.css"
   },
   "devDependencies": {
