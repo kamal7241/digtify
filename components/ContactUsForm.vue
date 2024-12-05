@@ -42,17 +42,23 @@
           <div class="error-msg">{{ v$.message?.$errors[0]?.$message }}</div>
         </div>
       </div>
-      <button
-        type="submit"
-        class="contact-us-form__submit mt-4 mt-xxl-5 rounded-pill p-md-4 p-3 position-relative"
-      >
-        <span class="title-submit text-light pe-4 text-capitalize"
-          >Send Message</span
-        >
-        <span class="submit-button btn btn-secondary rounded-pill">
-          <img src="../assets/image/arrow-right.png" alt="" />
-        </span>
-      </button>
+          <AnalyticsClickEventProvider
+            eventNames="click:submit-contact-us-msg"
+            eventCategory="Button Actions"
+            eventLabel="Track Button Click"
+          >
+              <button
+                type="submit"
+                class="contact-us-form__submit mt-4 mt-xxl-5 rounded-pill p-md-4 p-3 position-relative"
+              >
+                <span class="title-submit text-light pe-4 text-capitalize"
+                  >Send Message</span
+                >
+                <span class="submit-button btn btn-secondary rounded-pill">
+                  <img src="../assets/image/arrow-right.png" alt="" />
+                </span>
+              </button>
+          </AnalyticsClickEventProvider>
     </div>
     </form>
 
@@ -162,11 +168,14 @@ export default {
             this.$toast.default("Success, we will contact you soon", {
               position: "bottom-left",
             });
+              trackEventsClick("success:submit-contact-us-msg", "Campaigns", "success");
           })
           .catch((error) => {
             this.$toast.error("Sorry, something went wrong please try again", {
               position: "bottom-left",
             });
+              trackEventsClick("failed:submit-contact-us-msg", "Campaigns", "failed");
+
           });
 
           this.hideLoader();
@@ -196,7 +205,6 @@ export default {
     //     Subject : "This is the subject",
     //     Body : "And this is the body"
     // })
-      console.log(msg)
     }
  
   },

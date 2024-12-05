@@ -66,12 +66,19 @@
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <v-btn class=" rounded-pill"  color=" #25D366">
-                      <span class="align-self-center  text-uppercase">
-                        {{ $t("contactForMoreDetails") }}
-                      </span>
-                      <v-icon icon="mdi-whatsapp fs-4 " end></v-icon>
-                    </v-btn>
+                  <AnalyticsClickEventProvider 
+                      eventName="click:whatsapp-contact"
+                      eventCategory="whatsapp contact"
+                      eventLabel="whatsapp contact"
+                    >
+                        <v-btn class=" rounded-pill"  color=" #25D366">
+                          <span class="align-self-center  text-uppercase">
+                            {{ $t("contactForMoreDetails") }}
+                          </span>
+                          <v-icon icon="mdi-whatsapp fs-4 " end></v-icon>
+                        </v-btn>
+                      </AnalyticsClickEventProvider>
+
                   </NuxtLink>
                 </div>
               </div>
@@ -97,20 +104,31 @@
         <p>{{ $t('our-services.description') }}</p> -->
             <!-- <button @click="changeLanguage('ar')">Switch to Arabic</button> -->
             <NuxtLink to="/en">
+              <AnalyticsClickEventProvider
+                eventName="click:visit-our-website"
+                eventCategory="Click Events"
+                eventLabel="Visit Us Btn"
+              >
               <button
                 :class="`btn btn-secondary text-uppercase rounded-5 px-sm-5     h-100 ${
                   lang === 'ar' ? ' px-4 ' : 'px-2 '
                 }`"
               >
                 {{ $t("visitOurWebsite") }}
-              </button>
+              </button>  
+              </AnalyticsClickEventProvider>
             </NuxtLink>
             <a
               :href="`${baseURL}/digify-portfolio.pdf`"
               target="_blank"
               download="digify-portfolio.pdf"
             >
-              <button
+              <AnalyticsClickEventProvider
+                eventName="click:download-portoflio"
+                eventCategory="Click Events"
+                eventLabel="Download Portfolio Btn"
+              >
+                <button
                 :class="`btn btn-success text-uppercase rounded-5 px-sm-5    ${
                   lang === 'ar' ? ' px-4' : 'px-2 '
                 }`"
@@ -119,6 +137,7 @@
 
                 <v-icon class="text-xs">mdi-arrow-down-thin</v-icon>
               </button>
+              </AnalyticsClickEventProvider>
             </a>
           </div>
         </v-col>
@@ -145,16 +164,21 @@
 <script>
 import ENServices from "@/static/en/services.json";
 import ARServices from "@/static/ar/services.json";
+import AnalyticsClickEventProvider from "@/components/AnalyticsClickEventProvider.vue";
 const phoneNumber = "+9660538492294";
 const message = "";
 
 export default {
+  
   setup() {
     const config = useRuntimeConfig();
     const baseURL = config.public.baseURL || ""; // Fallback to empty if baseURL is not defined
     return {
       baseURL,
     };
+  },
+    components: {
+    AnalyticsClickEventProvider,
   },
   computed: {
     lang() {

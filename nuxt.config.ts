@@ -14,9 +14,6 @@ const ghPagesConfig = {
 }
 
 
-console.log("NUXT_EMAIL_SERVICE_ID" , process.env.NUXT_EMAIL_SERVICE_ID)
-console.log("NUXT_ENV" , process.env.NUXT_ENV)
-
 const config = process.env.NUXT_ENV == 'gh' ? ghPagesConfig : 
 process.env.NUXT_ENV == 'netilfy' ? netilfyConfig : {}
 export default defineNuxtConfig({
@@ -57,7 +54,7 @@ export default defineNuxtConfig({
       // } as ConfigOptions,
     },
   },
-  plugins: ["~/plugins/vuetify"],
+  plugins: ["~/plugins/vuetify", "~/plugins/vue-gtag.client"],
 
   vite: {
     plugins: [vsharp(), vuetify()],
@@ -119,6 +116,7 @@ export default defineNuxtConfig({
     public: {
       VITE_EMAIL_SERVICE_ID: process.env.NUXT_EMAIL_SERVICE_ID,
       VITE_EMAIL_TEMPLATE_ID: process.env.NUXT_EMAIL_TEMPLATE_ID,
+      GOOGLE_ANALYTICS_KEY: process.env.NUXT_PUBLIC_GOOGLE_ANALYTICS_KEY ,
     },
   },
 
